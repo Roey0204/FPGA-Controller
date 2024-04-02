@@ -1,6 +1,6 @@
 # FPGA-Controller
 
-# Title: Design of Zigbee based wireless stepper motor controller using FPGA
+## Title: Design of Zigbee based wireless stepper motor controller using FPGA
 - Design stepper motor FPGA controller using Quartus II software.
 - PWM technique and A4988 drivers were designed in FPGA controller to rotate the
 motor with adjustable angles, speeds and direction.
