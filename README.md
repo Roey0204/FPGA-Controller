@@ -18,11 +18,14 @@ wireless connection between FPGA board and PC.
 - Result such as square wave or number of clock can be simulated using ModelSim in
 Quartus II.
 
-# Idea Concept - Blog diagram
+## Idea Concept - Blog diagram
 <img src="https://github.com/Roey0204/FPGA-Controller/blob/main/img/Block%20diagram.png" alt="Image1">
 
-# Schematic Diagram
+## Schematic Diagram
 <img src="https://github.com/Roey0204/FPGA-Controller/blob/main/img/Schematic.PNG" alt="Image1">
 
-# FPGA UART Controller Architecture
+## FPGA UART Controller Architecture
 <img src="https://github.com/Roey0204/FPGA-Controller/blob/main/img/Architecture.png" alt="Image1">
+
+## Result 
+<img src="https://github.com/Roey0204/FPGA-Controller/blob/main/img/result.png" alt="Image1">
