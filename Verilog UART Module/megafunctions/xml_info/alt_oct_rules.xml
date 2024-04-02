@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<ROOT>
+	<INCLUDE FILE="mfam_family_macros.xml" />
+	<MACROS>
+		<MACRO NAME="mfam_stratixiii_oct" DEFINITION="mfam_family_stratixiii and !mfam_family_stratixv and !mfam_family_arriav and !mfam_family_cyclonev" />
+	</MACROS>
+	<PARAMETER_RULES>
+		<PARAMETER NAME="OCT_BLOCK_NUMBER" VALUE="1-11" />
+		<PARAMETER NAME="ALLOW_SERIAL_DATA_FROM_CORE" VALUE="TRUE|FALSE" DEFAULT_VALUE="FALSE" /> 
+		<PARAMETER NAME="TEST_MODE" VALUE="TRUE|FALSE|UNUSED" DEFAULT_VALUE="FALSE" />
+		<PARAMETER NAME="POWER_DOWN" VALUE="TRUE|FALSE|UNUSED" DEFAULT_VALUE="TRUE" /> 
+		<PARAMETER NAME="ENABLE_PARALLEL_TERMINATION" VALUE="TRUE|FALSE|UNUSED" />
+		<PARAMETER NAME="WIDTH_STC" TYPE="INTEGER">
+			<FORCE_VALUE TO="14" WHEN="mfam_stratixiii_oct" />
+			<FORCE_VALUE TO="16" WHEN="mfam_family_stratixv || mfam_family_arriav || mfam_family_cyclonev" />
+		</PARAMETER>
+		<PARAMETER NAME="WIDTH_PTC" TYPE="INTEGER">
+			<FORCE_VALUE TO="14" WHEN="mfam_stratixiii_oct" />
+			<FORCE_VALUE TO="16" WHEN="mfam_family_stratixv || mfam_family_arriav || mfam_family_cyclonev" />
+		</PARAMETER>
+	</PARAMETER_RULES>
+	<PORT_RULES>
+		<PORT NAME="rup" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE TO="UNUSED" WHEN="mfam_family_stratixv || mfam_family_arriav || mfam_family_cyclonev" ELSE="USED" />
+		</PORT>
+		<PORT NAME="rdn" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE TO="UNUSED" WHEN="mfam_family_stratixv || mfam_family_arriav || mfam_family_cyclonev" ELSE="USED" />
+		</PORT>
+		<PORT NAME="rzqin" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE TO="USED" WHEN="mfam_family_stratixv || mfam_family_arriav || mfam_family_cyclonev" ELSE="UNUSED" />
+		</PORT>
+		<PORT NAME="clock" USAGE="USED" />
+		<PORT NAME="clken" USAGE="VARIABLE">
+			<STATE V="VARIABLE" WHEN="!mfam_family_cycloneiii_strict" />
+		</PORT>
+		<PORT NAME="aclr" USAGE="VARIABLE" />
+		<PORT NAME="calibration_request" USAGE="VARIABLE">
+			<STATE TO="USED" WHEN="mfam_family_stratixiii"/>
+		</PORT>
+		<PORT NAME="calibration_wait" USAGE="VARIABLE" />
+		<PORT NAME="s2pload" USAGE="VARIABLE" >
+			<STATE V="USED" WHEN="mfam_family_stratixiii" />
+		</PORT>
+		<PORT NAME="cal_shift_busy" USAGE="VARIABLE" >
+			<STATE V="UNUSED" WHEN="mfam_family_cycloneiii_strict || !is_used(calibration_request)" />
+		</PORT>
+		<PORT NAME="shift_busy" USAGE="VARIABLE" >
+			<STATE V="USED" WHEN="mfam_family_stratixiii and is_used(shift_only_req)" />
+		</PORT>
+		<PORT NAME="calibration_busy"  USAGE="VARIABLE" >
+			<STATE V="UNUSED" WHEN="mfam_family_cycloneiii_strict" />
+		</PORT>
+		<PORT NAME="seriesterminationcontrol" USAGE="VARIABLE" >
+			<STATE V="UNUSED" WHEN="mfam_family_cycloneiii_strict" />
+		</PORT>
+		<PORT NAME="parallelterminationcontrol" USAGE="VARIABLE" >
+			<STATE V="UNUSED" WHEN="mfam_family_cycloneiii_strict" />
+		</PORT>
+		<PORT NAME="calibration_done" USAGE="VARIABLE" >
+			<STATE V="UNUSED" WHEN="mfam_stratixiii_oct" />
+		</PORT>
+		<PORT NAME="termination_control" USAGE="VARIABLE" >
+			<STATE V="UNUSED" WHEN="mfam_stratixiii_oct" />
+		</PORT>
+		<PORT NAME="scanout" USAGE="VARIABLE" >
+			<STATE V="UNUSED" WHEN="TEST_MODE == FALSE"/>
+		</PORT>
+		<PORT NAME="terminationcontrolprobe" USAGE="VARIABLE" >
+			<STATE V="UNUSED" WHEN="TEST_MODE == FALSE"/>
+		</PORT>
+		<PORT NAME="incrup" USAGE="VARIABLE" >
+			<STATE V="UNUSED" WHEN="TEST_MODE == FALSE"/>
+			<STATE V="UNUSED" WHEN="mfam_stratixiii_oct" />
+		</PORT>
+		<PORT NAME="incrdn" USAGE="VARIABLE" >
+			<STATE V="UNUSED" WHEN="TEST_MODE == FALSE"/>
+			<STATE V="UNUSED" WHEN="mfam_stratixiii_oct" />
+		</PORT>
+		<PORT NAME="shiftregisterprobe" USAGE="VARIABLE" >
+			<STATE V="UNUSED" WHEN="TEST_MODE == FALSE"/>
+			<STATE V="UNUSED" WHEN="mfam_stratixiii_oct" />
+		</PORT>
+		
+	</PORT_RULES>
+</ROOT>

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<ROOT>
+	<INCLUDE FILE="mfam_family_macros.xml" />
+	<MACROS>
+		<MACRO NAME="m_read_used" >
+			<DEFINITION>
+				used(rx_eqdcgain_out) || 
+				used(rx_eqctrl_out) || 
+				used(tx_preemp_0t_out) ||
+				used(tx_preemp_1t_out) ||
+				used(tx_preemp_2t_out) ||
+				used(tx_vodctrl_out)
+			</DEFINITION>
+		</MACRO>
+	</MACROS>
+	<MERGING>
+		<BASE SIZE="4" />
+	</MERGING>
+	<PARAMETERS>
+		<PARAMETER NAME="BASE_PORT_WIDTH" MERGE_RULE="BASE" >
+			<FORCE_RANGE TO="1|NUMBER_OF_CHANNELS" />
+		</PARAMETER>
+		<PARAMETER NAME="NUMBER_OF_CHANNELS" MERGE_RULE="BASE" >
+			<FORCE_RANGE MIN="1" MAX="160" />
+		</PARAMETER>
+		<PARAMETER NAME="NUMBER_OF_RECONFIG_PORTS" TYPE="INTEGER" >
+			<FORCE_VALUE TO="NUMBER_OF_CHANNELS/4" WHEN="(NUMBER_OF_CHANNELS % 4) == 0" ELSE="(NUMBER_OF_CHANNELS quot 4) + 1" />
+		</PARAMETER>
+		<PARAMETER NAME="ENABLE_BUF_CAL" MERGE_RULE="OR" />
+		<PARAMETER NAME="ENABLE_CHL_ADDR_FOR_ANALOG_CTRL" MERGE_RULE="OR" />
+		<PARAMETER NAME="READ_BASE_PORT_WIDTH" MERGE_RULE="BASE" />
+		<PARAMETER NAME="RECONFIG_FROMGXB_WIDTH" MERGE_RULE="ADD" />
+		<PARAMETER NAME="RECONFIG_TOGXB_WIDTH" MERGE_RULE="MAX" />
+		<PARAMETER NAME="DATA_LATENCY" MERGE_RULE="MIN" />
+		<PARAMETER NAME="ENABLE_FULL_WRITE" MERGE_RULE="OR" />
+		<PARAMETER NAME="ENABLE_ILLEGAL_MODE_CHECK" MERGE_RULE="OR" />
+		<PARAMETER NAME="ENABLE_RX_TX_DUPLEX_SEL" MERGE_RULE="OR" />
+		<PARAMETER NAME="ENABLE_SELF_RECOVERY" MERGE_RULE="OR" />
+		<PARAMETER NAME="LOGICAL_PLL_SEL_WIDTH" MERGE_RULE="MAX" />
+		<PARAMETER NAME="MIF_ADDRESS_WIDTH" MERGE_RULE="MAX" />
+		<PARAMETER NAME="RECONFIG_MODE_SEL_WIDTH" MERGE_RULE="MAX" />
+		<PARAMETER NAME="RX_EQDCGAIN_PORT_WIDTH" MERGE_RULE="MAX" />
+		<PARAMETER NAME="TX_PREEMP_PORT_WIDTH" MERGE_RULE="MAX" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="data_valid" USAGE="VARIABLE" MERGE_RULE="SHARED" >
+			<STATE TO="USED" WHEN="m_read_used" ELSE="UNUSED" />
+		</PORT>
+		<PORT NAME="read" USAGE="VARIABLE" MERGE_RULE="OR" MERGE_ROLE="MUX_ACCESS" >
+			<STATE TO="USED" WHEN="m_read_used" ELSE="UNUSED" />
+		</PORT>
+		<PORT NAME="rx_eqdcgain_out" USAGE="VARIABLE" MERGE_RULE="BUS" >
+			<STATE TO="UNUSED" WHEN="!used(rx_eqdcgain)" />
+		</PORT>
+		<PORT NAME="rx_eqctrl_out" USAGE="VARIABLE" MERGE_RULE="BUS" >
+			<STATE TO="UNUSED" WHEN="!used(rx_eqctrl)" />
+		</PORT>
+		<PORT NAME="tx_vodctrl_out" USAGE="VARIABLE" MERGE_RULE="BUS" >
+			<STATE TO="UNUSED" WHEN="!used(tx_vodctrl)" />
+		</PORT>
+		<PORT NAME="tx_preemp_0t_out" USAGE="VARIABLE" MERGE_RULE="BUS" >
+			<STATE TO="UNUSED" WHEN="!used(tx_preemp_0t)" />
+		</PORT>
+		<PORT NAME="tx_preemp_1t_out" USAGE="VARIABLE" MERGE_RULE="BUS" >
+			<STATE TO="UNUSED" WHEN="!used(tx_preemp_1t)" />
+		</PORT>
+		<PORT NAME="tx_preemp_2t_out" USAGE="VARIABLE" MERGE_RULE="BUS" >
+			<STATE TO="UNUSED" WHEN="!used(tx_preemp_2t)" />
+		</PORT>
+		<PORT NAME="reconfig_togxb" MERGE_RULE="SHARED" />
+		<PORT NAME="reconfig_fromgxb" MERGE_RULE="CONCAT" />
+		<PORT NAME="busy" MERGE_RULE="SHARED" />
+		<PORT NAME="reconfig_clk" MERGE_RULE="SINGLE" MERGE_ROLE="CLOCK" />
+		<PORT NAME="write_all" MERGE_RULE="OR" MERGE_ROLE="MUX_ACCESS" />
+		<PORT NAME="rx_eqdcgain" MERGE_RULE="BUS" />
+		<PORT NAME="rx_eqctrl" MERGE_RULE="BUS" />
+		<PORT NAME="tx_vodctrl" MERGE_RULE="BUS" />
+		<PORT NAME="tx_preemp_0t" MERGE_RULE="BUS" />
+		<PORT NAME="tx_preemp_1t" MERGE_RULE="BUS" />
+		<PORT NAME="tx_preemp_2t" MERGE_RULE="BUS" />
+		<PORT NAME="channel_reconfig_done" MERGE_RULE="SHARED" />
+		<PORT NAME="error" MERGE_RULE="SHARED" />
+		<PORT NAME="logical_channel_address" MERGE_RULE="MUX" />
+		<PORT NAME="logical_tx_pll_sel" MERGE_RULE="MUX" />
+		<PORT NAME="logical_tx_pll_sel_en" MERGE_RULE="OR" />
+		<PORT NAME="offset_cancellation_reset" MERGE_RULE="OR" />
+		<PORT NAME="rate_switch_ctrl" MERGE_RULE="MUX" />
+		<PORT NAME="rate_switch_out" MERGE_RULE="SHARED" />
+		<PORT NAME="reconfig_address" MERGE_RULE="MUX" />
+		<PORT NAME="reconfig_addres_en" MERGE_RULE="SHARED" />
+		<PORT NAME="reconfig_address_out" MERGE_RULE="SHARED" />
+		<PORT NAME="reconfig_data" MERGE_RULE="MUX" />
+		<PORT NAME="reconfig_mode_sel" MERGE_RULE="MUX" />
+		<PORT NAME="reconfig_reset" MERGE_RULE="OR" />
+		<PORT NAME="reset_reconfig_address" MERGE_RULE="OR" />
+		<PORT NAME="rx_tx_duplex_sel" MERGE_RULE="MUX" />
+	</PORTS>
+	<WIZARD_DATA>
+		<WIZARD_MAP NAME="ALT2GXB_RECONFIG" WIZARD_NAME="ALT2GXB_RECONFIG" MODULE_NAME="alt2gxb_reconfig" MAP_CONSTANTS="ON" MAP_USED_PORTS="ON" />
+	</WIZARD_DATA>
+</ROOT>

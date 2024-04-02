@@ -1,0 +1,548 @@
+<?xml version="1.0" ?>
+<ROOT>
+    <MACROS>
+    <!-- Protocol sub-conditions -->
+        <MACRO NAME="m_basic_6g_wordalign" DEFINITION="m_basic and (double_mode and (((tx_channel_width % 16) != 0) || m_is_8b10b_endecoder_used || m_is_byte_order_used || m_is_rate_match_fifo_used) || m_is_word_align_state_machine_mode)" />
+        <MACRO NAME="m_basic_3g_wordalign" DEFINITION="m_basic and (single_mode and (m_is_word_align_state_machine_mode and (tx_channel_width == 8) and !m_is_8b10b_endecoder_used and !m_basic_rev_ser))" />
+        <MACRO NAME="m_tse" ARGUMENTS="Wiz_Subprotocol" DEFINITION="(Wiz_Subprotocol == TSE) || (Wiz_Subprotocol == GIGE-Enhanced)" />
+    <!-- DPRIO port constant -->
+        <MACRO NAME="DPRIO_PMA_MASK" DEFINITION="1" />
+        <MACRO NAME="DPRIO_CHN_INTERNALS_MASK" DEFINITION="2" />
+        <MACRO NAME="DPRIO_CHN_INTERFACE_MASK" DEFINITION="4" />
+        <MACRO NAME="DPRIO_ADCE_MASK" DEFINITION="8" />
+        <MACRO NAME="DPRIO_CMU_PLL_RECONFIG_MASK" DEFINITION="16" />
+    <!-- DPRIO port rules -->
+        <MACRO NAME="m_is_dprio_used" DEFINITION="m_is_dprio_pma || (m_is_dprio_adce and m_is_dprio_adce_allowed) || m_is_dprio_chn_internals || m_is_dprio_chn_interface || m_is_dprio_rx_buf_cal" />
+        <MACRO NAME="m_is_dprio_pma" ARGUMENTS="reconfig_dprio_mode" DEFINITION="(reconfig_dprio_mode and DPRIO_PMA_MASK) == DPRIO_PMA_MASK and !(rx_dprio_mode == pma_electricals || tx_dprio_mode == pma_electricals)" />
+        <MACRO NAME="m_is_dprio_chn_internals" ARGUMENTS="reconfig_dprio_mode" DEFINITION="(reconfig_dprio_mode and DPRIO_CHN_INTERNALS_MASK) == DPRIO_CHN_INTERNALS_MASK and !(rx_dprio_mode == pma_electricals || tx_dprio_mode == pma_electricals)" />
+        <MACRO NAME="m_is_dprio_chn_interface" ARGUMENTS="reconfig_dprio_mode" DEFINITION="(reconfig_dprio_mode and DPRIO_CHN_INTERFACE_MASK) == DPRIO_CHN_INTERFACE_MASK and !(rx_dprio_mode == pma_electricals || tx_dprio_mode == pma_electricals)" />
+        <MACRO NAME="m_is_dprio_cmu_pll_reconfig" ARGUMENTS="reconfig_dprio_mode" DEFINITION="((reconfig_dprio_mode and DPRIO_CMU_PLL_RECONFIG_MASK) == DPRIO_CMU_PLL_RECONFIG_MASK) and m_is_dprio_chn_internals and !(rx_dprio_mode == pma_electricals || tx_dprio_mode == pma_electricals)" />
+        <MACRO NAME="m_is_dprio_cmu_pll_reconfig_allowed" DEFINITION="m_is_dprio_chn_internals and !m_channel_bonded" />
+        <MACRO NAME="m_is_dprio_adce" ARGUMENTS="reconfig_dprio_mode" DEFINITION="(reconfig_dprio_mode and DPRIO_ADCE_MASK) == DPRIO_ADCE_MASK and !(rx_dprio_mode == pma_electricals || tx_dprio_mode == pma_electricals)" />
+        <MACRO NAME="m_is_dprio_adce_allowed" DEFINITION="!m_tx_only" />
+        <MACRO NAME="m_is_dprio_rx_buf_cal" DEFINITION="mfam_family_tgx and !m_tx_only" />
+    <!-- Channel bonding -->
+        <MACRO NAME="m_channel_bonded" DEFINITION="(tx_channel_bonding != indv) || (rx_channel_bonding != indv)" />
+    <!-- TX pll -->
+        <MACRO NAME="m_is_train_rx_pll_from_pll_inclk" DEFINITION="(!is_used(rx_cruclk) and !m_tx_only) || (m_is_dprio_chn_interface and m_is_dprio_cmu_pll_reconfig)" />
+        <MACRO NAME="m_lc_pll" DEFINITION="(tx_pll_type == ATX) || (tx_pll_type == 'High speed ATX')" />
+        <MACRO NAME="m_is_dprio_use_alt_pll" DEFINITION="m_is_dprio_chn_internals and (tx_reconfig_data_rate != 0) and !(m_is_dprio_cmu_pll_reconfig and m_is_dprio_cmu_pll_reconfig_allowed)" />
+    <!-- Byte ordering -->
+        <MACRO NAME="m_is_byte_order_used" DEFINITION="rx_byte_ordering_mode != none" />
+        <MACRO NAME="m_is_byte_order_pattern" DEFINITION="rx_byte_order_pld_ctrl_enable == true" />
+    <!-- Word Aligner -->
+        <MACRO NAME="m_is_8b10b_endecoder_used" DEFINITION="!m_no_8b10b" />
+        <MACRO NAME="m_is_rate_match_fifo_used" DEFINITION="m_is_8b10b_endecoder_used and (rx_rate_match_fifo_mode != none)" />
+        <MACRO NAME="m_is_rx_wordalign_mode" DEFINITION="m_pcie || (m_basic and (m_basic_6g_wordalign || m_basic_3g_wordalign))" />
+        <MACRO NAME="m_is_rx_bitslip_mode" DEFINITION="(rx_bitslip_enable == true)" />
+        <MACRO NAME="m_is_word_align_state_machine_mode" DEFINITION="(rx_use_align_state_machine == true) and single_mode || m_sonet96" />
+    <!-- Self test -->
+        <MACRO NAME="m_is_selftest_mode_noselftest" DEFINITION="rx_enable_self_test_mode == false" />
+        <MACRO NAME="m_is_selftest_mode_used" DEFINITION="!m_is_selftest_mode_noselftest" />
+        <MACRO NAME="m_is_selftest_mode_prbs_7" DEFINITION="rx_self_test_mode == prbs7" />
+        <MACRO NAME="m_is_selftest_mode_prbs_8" DEFINITION="rx_self_test_mode == prbs8" />
+        <MACRO NAME="m_is_selftest_mode_prbs_10" DEFINITION="rx_self_test_mode == prbs10" />
+        <MACRO NAME="m_is_selftest_mode_prbs_23" DEFINITION="rx_self_test_mode == prbs23" />
+        <MACRO NAME="m_is_selftest_mode_lofreq" DEFINITION="rx_self_test_mode == 'low frequency'" />
+        <MACRO NAME="m_is_selftest_mode_mixfreq" DEFINITION="rx_self_test_mode == 'mixed frequency'" />
+        <MACRO NAME="m_is_selftest_mode_hifreq" DEFINITION="rx_self_test_mode == 'high frequency'" />
+        <MACRO NAME="m_is_selftest_mode_incremental" DEFINITION="rx_self_test_mode == incremental" />
+        <MACRO NAME="m_is_selftest_mode_cjpat" DEFINITION="rx_self_test_mode == cjpat" />
+        <MACRO NAME="m_is_selftest_mode_crpat" DEFINITION="rx_self_test_mode == crpat" />
+        <MACRO NAME="m_is_selftest_mode_prbs" DEFINITION="m_is_selftest_mode_prbs_7 || m_is_selftest_mode_prbs_8 || m_is_selftest_mode_prbs_10 || m_is_selftest_mode_prbs_23" />
+    <!-- Loopback -->
+        <MACRO NAME="m_is_loopback_mode_nolb" DEFINITION="loopback_mode == none" />
+        <MACRO NAME="m_is_loopback_mode_slb" DEFINITION="loopback_mode == slb" />
+        <MACRO NAME="m_is_loopback_mode_plb" DEFINITION="loopback_mode == plb" />
+        <MACRO NAME="m_is_loopback_mode_precdr_rslb" DEFINITION="loopback_mode == precdr_rslb" />
+        <MACRO NAME="m_is_loopback_mode_postcdr_rslb" DEFINITION="loopback_mode == postcdr_rslb" />
+        <MACRO NAME="m_is_loopback_mode_rplb" DEFINITION="loopback_mode == rplb" />
+        <MACRO NAME="m_is_parallel_lpbk" DEFINITION="m_basic" />
+    <!-- Others -->
+        <MACRO NAME="m_is_generic_polarity_inversion_enabled" DEFINITION="rx_allow_align_polarity_inversion == true" />
+        <MACRO NAME="m_is_rx_enable_bit_reversal" DEFINITION="rx_enable_bit_reversal == true" />
+        <MACRO NAME="m_is_pcs_bypassed" DEFINITION="(rx_datapath_low_latency_mode == true) || (tx_datapath_low_latency_mode == true)" />
+        <MACRO NAME="m_is_tgx_cpri_mode" DEFINITION="mfam_family_tgx and (m_basic_det_latency || m_cpri)" />
+        <MACRO NAME="m_is_tgx_bist_mode" DEFINITION="mfam_family_tgx and m_bist" />
+        <MACRO NAME="m_is_tgx_prbs_mode" DEFINITION="mfam_family_tgx and m_prbs" />
+        <MACRO NAME="m_is_bitslipboundary_allowed" DEFINITION="(m_basic || m_cpri) and !m_is_pcs_bypassed and !m_is_tgx_bist_mode and !m_is_tgx_prbs_mode" />
+        <MACRO NAME="m_is_tx_ctrlenable_allowed" DEFINITION="m_is_8b10b_endecoder_used and !m_is_dprio_chn_interface and !m_rx_only" />
+        <MACRO NAME="m_is_tx_forcedisp_dispval_allowed" DEFINITION="m_is_8b10b_endecoder_used and !m_is_dprio_chn_interface and !m_is_tgx_bist_mode and !m_is_tgx_prbs_mode" />
+        <MACRO NAME="m_is_tx_allow_polarity_inversion" DEFINITION="tx_allow_polarity_inversion == true" />
+        <MACRO NAME="m_is_rx_a1a2sizeout_allowed" DEFINITION="!m_is_dprio_chn_interface and !m_tx_only" />
+        <MACRO NAME="m_rx_ports_allowed" DEFINITION="m_is_8b10b_endecoder_used and !m_tx_only and !m_is_tgx_bist_mode and !m_is_tgx_prbs_mode" />
+        <MACRO NAME="m_is_rx_rlv_enabled" DEFINITION="rx_run_length_enable == true" />
+        <MACRO NAME="m_is_tx_clkout_used" DEFINITION="!m_rx_only and !m_xaui and !m_channel_bonded and (!m_pcie || m_is_dprio_chn_interface || (tx_channel_bonding == indv))" />
+    </MACROS>
+
+	<PORT_RULES>
+		<PORT NAME="aeq_togxb" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!m_is_dprio_used" />
+			<STATE V="USED" WHEN="m_is_dprio_used and m_is_dprio_adce and m_is_dprio_adce_allowed" />
+		</PORT>
+		<PORT NAME="cal_blk_clk" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED"/>
+			<STATE V="USED" WHEN="mfam_family_tgx" />
+		</PORT>
+		<PORT NAME="cal_blk_powerdown" TYPE="INPUT" USAGE="VARIABLE">
+		<!--<STATE V="UNUSED"/>
+			<STATE V="USED"/>-->
+		</PORT>
+		<PORT NAME="fixedclk" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_pcie || (m_is_dprio_used and m_is_dprio_adce and m_is_dprio_adce_allowed))"/>
+			<STATE V="USED" WHEN="m_pcie || (m_is_dprio_used and m_is_dprio_adce and m_is_dprio_adce_allowed)"/>
+		</PORT>
+		<PORT NAME="fixedclk_fast" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" />
+		<!--<STATE V="USED" WHEN="" />-->
+		</PORT>
+		<PORT NAME="gxb_powerdown" TYPE="INPUT" USAGE="VARIABLE">
+		<!--<STATE V="UNUSED"/>
+			<STATE V="USED"/>-->
+		</PORT>
+		<PORT NAME="pipe8b10binvpolarity" TYPE="INPUT" USAGE="VARIABLE">
+		    <STATE V="UNUSED" WHEN="!m_pcie"/>
+			<STATE V="USED" WHEN="m_pcie"/>
+		</PORT>
+		<PORT NAME="pll_inclk" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!((m_is_train_rx_pll_from_pll_inclk and m_duplex) || !m_rx_only)" />
+			<STATE V="USED" WHEN="(m_is_train_rx_pll_from_pll_inclk and m_duplex) || !m_rx_only" />
+		</PORT>
+		<PORT NAME="pll_inclk_rx_cruclk" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_is_dprio_cmu_pll_reconfig and m_is_dprio_cmu_pll_reconfig_allowed and !m_lc_pll)" />
+			<STATE V="USED" WHEN="m_is_dprio_cmu_pll_reconfig and m_is_dprio_cmu_pll_reconfig_allowed and !m_lc_pll" />
+		</PORT>
+		<PORT NAME="pll_powerdown" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_rx_only" />
+			<STATE V="USED" WHEN="!m_rx_only" />
+		</PORT>
+		<PORT NAME="powerdn" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!m_pcie" />
+			<STATE V="USED" WHEN="m_pcie" />
+		</PORT>
+		<PORT NAME="rateswitch" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_pcie_gen2 || m_is_dprio_chn_interface)" />
+			<STATE V="USED" WHEN="m_pcie_gen2" />
+		</PORT>
+		<PORT NAME="reconfig_clk" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!m_is_dprio_used" />
+			<STATE V="USED" WHEN="m_is_dprio_used" />
+		</PORT>
+		<PORT NAME="reconfig_togxb" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!m_is_dprio_used" />
+			<STATE V="USED" WHEN="m_is_dprio_used" />
+		</PORT>
+		<PORT NAME="rx_a1a2size" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!m_sonet96" />
+			<STATE V="USED" WHEN="m_sonet96" />
+		</PORT>
+		<PORT NAME="rx_analogreset" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+			<STATE V="USED" WHEN="!m_tx_only" />
+		</PORT>
+		<PORT NAME="rx_bitslip" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and m_is_rx_bitslip_mode)" />
+			<STATE V="USED" WHEN="!m_tx_only and m_is_rx_bitslip_mode" />
+		</PORT>
+		<PORT NAME="rx_coreclk" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and !(m_cpri || m_basic_pma_direct) and is_used(rx_coreclk))" />
+			<STATE V="USED" WHEN="!m_tx_only and !(m_cpri || m_basic_pma_direct) and is_used(rx_coreclk)" />
+		</PORT>
+		<PORT NAME="rx_cruclk" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+			<STATE V="USED" WHEN="!m_tx_only" />
+		</PORT>
+		<PORT NAME="rx_datain" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+			<STATE V="USED" WHEN="!m_tx_only" />
+		</PORT>
+		<PORT NAME="rx_digitalreset" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and !m_basic_pma_direct and is_used(rx_digitalreset))" />
+			<STATE V="USED" WHEN="!m_tx_only and !m_basic_pma_direct and is_used(rx_digitalreset)" />
+		</PORT>
+		<PORT NAME="rx_elecidleinfersel" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!m_pcie"/>
+		<!--<STATE V="USED" WHEN="m_pcie"/>-->
+		</PORT>
+		<PORT NAME="rx_enabyteord" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and (m_is_byte_order_used and m_is_byte_order_pattern))" />
+			<STATE V="USED" WHEN="!m_tx_only and (m_is_byte_order_used and m_is_byte_order_pattern)" />
+		</PORT>
+		<PORT NAME="rx_enapatternalign" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only || !(m_sonet || ((m_basic || m_sdi || m_srio || m_cpri || m_gige) and (m_is_rx_wordalign_mode and !m_is_selftest_mode_used)))" />
+			<STATE V="USED" WHEN="!m_tx_only and (m_sonet || ((m_basic || m_sdi || m_srio || m_cpri || m_gige) and (m_is_rx_wordalign_mode and !m_is_selftest_mode_used)))" />
+		</PORT>
+		<PORT NAME="rx_invpolarity" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and !m_pcie and m_is_generic_polarity_inversion_enabled)" />
+			<STATE V="USED" WHEN="!m_tx_only and !m_pcie and m_is_generic_polarity_inversion_enabled" />
+		</PORT>
+		<PORT NAME="rx_locktodata" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only || m_is_parallel_lpbk" />
+			<STATE V="USED" WHEN="!m_tx_only and !m_is_parallel_lpbk" />
+		</PORT>
+		<PORT NAME="rx_locktorefclk" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only || m_is_parallel_lpbk" />
+			<STATE V="USED" WHEN="!m_tx_only and !m_is_parallel_lpbk" />
+		</PORT>
+		<PORT NAME="rx_phfifordenable" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="rx_phfiforeset" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="rx_phfifowrdisable" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only"/>
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="rx_powerdown" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="rx_prbscidenable" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="rx_revbitorderwa" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!((rx_bitslip_enable == true || rx_enable_bit_reversal == true) || (m_is_dprio_chn_interface || m_is_dprio_chn_internals) and is_used(rx_revbitorderwa))" />
+			<STATE V="USED" WHEN="(rx_bitslip_enable == true || rx_enable_bit_reversal == true) || (m_is_dprio_chn_interface || m_is_dprio_chn_internals) and is_used(rx_revbitorderwa)" />
+		</PORT>
+		<PORT NAME="rx_revbyteorderwa" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!((m_basic_none || m_basic_x4 || m_basic_x8) and !m_tx_only and double_mode and is_used(rx_revbyteorderwa))" />
+			<STATE V="USED" WHEN="(m_basic_none || m_basic_x4 || m_basic_x8) and !m_tx_only and double_mode and is_used(rx_revbyteorderwa)" />
+		</PORT>
+		<PORT NAME="rx_rmfifordena" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+			<STATE V="USED" WHEN="!m_tx_only" />
+		</PORT>
+		<PORT NAME="rx_rmfiforeset" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+			<STATE V="USED" WHEN="!m_tx_only" />
+		</PORT>
+		<PORT NAME="rx_rmfifowrena" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!((m_is_dprio_chn_interface || m_is_dprio_chn_internals) and m_is_rx_enable_bit_reversal and !m_basic and is_used(rx_rmfifowrena))" />
+			<STATE V="USED" WHEN="(m_is_dprio_chn_interface || m_is_dprio_chn_internals) and m_is_rx_enable_bit_reversal and !m_basic and is_used(rx_rmfifowrena)" />
+		</PORT>
+		<PORT NAME="rx_seriallpbken" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and m_is_loopback_mode_slb)" />
+			<STATE V="USED" WHEN="!m_tx_only and m_is_loopback_mode_slb" />
+		</PORT>
+		<PORT NAME="rx_seriallpbkin" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_rx_only and m_is_loopback_mode_slb)" />
+			<STATE V="USED" WHEN="m_rx_only and m_is_loopback_mode_slb" />
+		</PORT>
+		<PORT NAME="scanclk" TYPE="INPUT" USAGE="VARIABLE">
+		    <STATE V="UNUSED" />
+		<!--<STATE V="USED" />-->
+		</PORT>
+		<PORT NAME="scanin" TYPE="INPUT" USAGE="VARIABLE">
+		    <STATE V="UNUSED" />
+		<!--<STATE V="USED" />-->
+		</PORT>
+		<PORT NAME="scanmode" TYPE="INPUT" USAGE="VARIABLE">
+		    <STATE V="UNUSED" />
+		<!--<STATE V="USED" />-->
+		</PORT>
+		<PORT NAME="scanshift" TYPE="INPUT" USAGE="VARIABLE">
+		    <STATE V="UNUSED" />
+		<!--<STATE V="USED" />-->
+		</PORT>
+		<PORT NAME="testin" TYPE="INPUT" USAGE="VARIABLE">
+		    <STATE V="UNUSED" />
+		<!--<STATE V="USED" />-->
+		</PORT>
+		<PORT NAME="tx_bitslipboundaryselect" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_rx_only and m_is_bitslipboundary_allowed and ((rx_phfiforegmode == true) || is_used(tx_bitslipboundaryselect)))" />
+			<STATE V="USED" WHEN="!m_rx_only and m_is_bitslipboundary_allowed and ((rx_phfiforegmode == true) || is_used(tx_bitslipboundaryselect))" />
+		</PORT>
+		<PORT NAME="tx_coreclk" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_rx_only and is_used(tx_coreclk))" />
+			<STATE V="USED" WHEN="!m_rx_only and is_used(tx_coreclk)" />
+		</PORT>
+		<PORT NAME="tx_ctrlenable" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_rx_only and (!(m_bist || m_prbs) || m_pcie) and m_is_tx_ctrlenable_allowed)" />
+			<STATE V="USED" WHEN="!m_rx_only and (!(m_bist || m_prbs) || m_pcie) and m_is_tx_ctrlenable_allowed" />
+		</PORT>
+		<PORT NAME="tx_datain" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_rx_only and !(m_bist || m_prbs) and !m_is_dprio_chn_interface)" />
+			<STATE V="USED" WHEN="!m_rx_only and !(m_bist || m_prbs) and !m_is_dprio_chn_interface" />
+		</PORT>
+		<PORT NAME="tx_datainfull" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_rx_only and m_is_dprio_chn_interface and m_is_dprio_used)" />
+			<STATE V="USED" WHEN="!m_rx_only and m_is_dprio_chn_interface and m_is_dprio_used" />
+		</PORT>
+		<PORT NAME="tx_detectrxloop" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_pcie and is_used(tx_detectrxloop))" />
+			<STATE V="USED" WHEN="m_pcie and is_used(tx_detectrxloop)" />
+		</PORT>
+		<PORT NAME="tx_digitalreset" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_rx_only and !m_basic_pma_direct and is_used(tx_digitalreset))" />
+			<STATE V="USED" WHEN="!m_rx_only and !m_basic_pma_direct and is_used(tx_digitalreset)" />
+		</PORT>
+		<PORT NAME="tx_dispval" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_rx_only and (m_basic || m_sdi || m_srio || m_cpri || m_gige) and m_is_tx_forcedisp_dispval_allowed and is_used(tx_forcedisp))" />
+			<STATE V="USED" WHEN="!m_rx_only and (m_basic || m_sdi || m_srio || m_cpri || m_gige) and m_is_tx_forcedisp_dispval_allowed and is_used(tx_forcedisp)" />
+		</PORT>
+		<PORT NAME="tx_forcedisp" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_rx_only and (m_basic || m_sdi || m_srio || m_cpri || m_gige) and m_is_tx_forcedisp_dispval_allowed and is_used(tx_forcedisp))" />
+			<STATE V="USED" WHEN="!m_rx_only and (m_basic || m_sdi || m_srio || m_cpri || m_gige) and m_is_tx_forcedisp_dispval_allowed and is_used(tx_forcedisp)" />
+		</PORT>
+		<PORT NAME="tx_forcedispcompliance" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_pcie and m_is_tx_forcedisp_dispval_allowed and is_used(tx_forcedispcompliance))" />
+			<STATE V="USED" WHEN="m_pcie and m_is_tx_forcedisp_dispval_allowed and is_used(tx_forcedispcompliance)" />
+		</PORT>
+		<PORT NAME="tx_forceelecidle" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_pcie and is_used(tx_forceelecidle))" />
+			<STATE V="USED" WHEN="m_pcie and is_used(tx_forceelecidle)" />
+		</PORT>
+		<PORT NAME="tx_invpolarity" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_rx_only and m_is_tx_allow_polarity_inversion)" />
+			<STATE V="USED" WHEN="!m_rx_only and m_is_tx_allow_polarity_inversion" />
+		</PORT>
+		<PORT NAME="tx_phfiforeset" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_rx_only" />
+		<!--<STATE V="USED" WHEN="!m_rx_only" />-->
+		</PORT>
+		<PORT NAME="tx_pipedeemph" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_pcie_gen2 and is_used(tx_pipedeemph))" />
+			<STATE V="USED" WHEN="m_pcie_gen2 and is_used(tx_pipedeemph)" />
+		</PORT>
+		<PORT NAME="tx_pipemargin" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_pcie_gen2 and is_used(tx_pipemargin))" />
+			<STATE V="USED" WHEN="m_pcie_gen2 and is_used(tx_pipemargin)" />
+		</PORT>
+		<PORT NAME="tx_pipeswing" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_pcie_gen2 and is_used(tx_pipeswing))" />
+			<STATE V="USED" WHEN="m_pcie_gen2 and is_used(tx_pipeswing)" />
+		</PORT>
+		<PORT NAME="tx_pllreset" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_rx_only" />
+		<!--<STATE V="USED" WHEN="!m_rx_only" />-->
+		</PORT>
+		<PORT NAME="tx_revparallellpbken" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_rx_only" />
+			<STATE V="USED" WHEN="!m_rx_only and !m_pcie and m_is_loopback_mode_rplb" />
+		</PORT>
+		<PORT NAME="tx_revseriallpbkin" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_tx_only and (m_is_loopback_mode_precdr_rslb || m_is_loopback_mode_postcdr_rslb))" />
+			<STATE V="USED" WHEN="m_tx_only and (m_is_loopback_mode_precdr_rslb || m_is_loopback_mode_postcdr_rslb)" />
+		</PORT>
+		<PORT NAME="aeq_fromgxb" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_is_dprio_used and m_is_dprio_adce and m_is_dprio_adce_allowed)" />
+			<STATE V="USED" WHEN="m_is_dprio_used and m_is_dprio_adce and m_is_dprio_adce_allowed" />
+		</PORT>
+		<PORT NAME="cal_blk_calibrationstatus" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" />
+		<!--<STATE V="USED" />-->
+		</PORT>
+		<PORT NAME="coreclkout" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_rx_only and m_channel_bonded)" />
+			<STATE V="USED" WHEN="!m_rx_only and m_channel_bonded" />
+		</PORT>
+		<PORT NAME="hip_tx_clkout" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!m_hip_enable" />
+			<STATE V="USED" WHEN="m_hip_enable" />
+		</PORT>
+		<PORT NAME="pipedatavalid" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_pcie and is_used(pipedatavalid))" />
+			<STATE V="USED" WHEN="m_pcie and is_used(pipedatavalid)" />
+		</PORT>
+		<PORT NAME="pipeelecidle" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_pcie and is_used(pipeelecidle))" />
+			<STATE V="USED" WHEN="m_pcie and is_used(pipeelecidle)" />
+		</PORT>
+		<PORT NAME="pipephydonestatus" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_pcie and is_used(pipephydonestatus))" />
+			<STATE V="USED" WHEN="m_pcie and is_used(pipephydonestatus)" />
+		</PORT>
+		<PORT NAME="pipestatus" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_pcie and is_used(pipestatus))" />
+			<STATE V="USED" WHEN="m_pcie and is_used(pipestatus)" />
+		</PORT>
+		<PORT NAME="pll_locked" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_rx_only and is_used(pll_locked))" />
+			<STATE V="USED" WHEN="!m_rx_only and is_used(pll_locked)" />
+		</PORT>
+		<PORT NAME="pll_locked_alt" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_rx_only and m_is_dprio_use_alt_pll)" />
+			<STATE V="USED" WHEN="!m_rx_only and m_is_dprio_use_alt_pll" />
+		</PORT>
+		<PORT NAME="rateswitchbaseclock" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!m_hip_enable" />
+			<STATE V="USED" WHEN="m_hip_enable" />
+		</PORT>
+		<PORT NAME="reconfig_fromgxb" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_is_dprio_used" />
+			<STATE V="USED" WHEN="m_is_dprio_used" />
+		</PORT>
+		<PORT NAME="reconfig_fromgxb_oe" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_is_dprio_used" />
+			<STATE V="USED" WHEN="m_is_dprio_used" />
+		</PORT>
+		<PORT NAME="rx_a1a2sizeout" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_sonet and m_is_rx_a1a2sizeout_allowed)" />
+			<STATE V="USED" WHEN="m_sonet and m_is_rx_a1a2sizeout_allowed" />
+		</PORT>
+		<PORT NAME="rx_a1detect" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="rx_a2detect" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="rx_bistdone" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and m_is_selftest_mode_used and is_used(rx_bistdone))" />
+			<STATE V="USED" WHEN="!m_tx_only and m_is_selftest_mode_used and is_used(rx_bistdone)" />
+		</PORT>
+		<PORT NAME="rx_bisterr" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and m_is_selftest_mode_used and is_used(rx_bisterr))" />
+			<STATE V="USED" WHEN="!m_tx_only and m_is_selftest_mode_used and is_used(rx_bisterr)" />
+		</PORT>
+		<PORT NAME="rx_bitslipboundaryselectout" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and m_is_bitslipboundary_allowed and is_used(rx_bitslipboundaryselectout))" />
+			<STATE V="USED" WHEN="!m_tx_only and m_is_bitslipboundary_allowed and is_used(rx_bitslipboundaryselectout)" />
+		</PORT>
+		<PORT NAME="rx_byteorderalignstatus" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and m_is_byte_order_used and !(m_bist || m_prbs))" />
+			<STATE V="USED" WHEN="!m_tx_only and m_is_byte_order_used and !(m_bist || m_prbs)" />
+		</PORT>
+		<PORT NAME="rx_channelaligned" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!m_xaui" />
+			<STATE V="USED" WHEN="m_xaui" />
+		</PORT>
+		<PORT NAME="rx_clkout" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and (!(m_is_rate_match_fifo_used and m_pcie) || m_is_loopback_mode_plb) and is_used(rx_clkout))" />
+			<STATE V="USED" WHEN="!m_tx_only and (!(m_is_rate_match_fifo_used and m_pcie) || m_is_loopback_mode_plb) and is_used(rx_clkout)" />
+		</PORT>
+		<PORT NAME="rx_ctrldetect" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_rx_ports_allowed and is_used(rx_ctrldetect))" />
+			<STATE V="USED" WHEN="m_rx_ports_allowed and is_used(rx_ctrldetect)" />
+		</PORT>
+		<PORT NAME="rx_dataout" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+			<STATE V="USED" WHEN="!m_tx_only and !(m_bist || m_prbs) and !m_is_dprio_chn_interface" />
+		</PORT>
+		<PORT NAME="rx_dataoutfull" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and m_is_dprio_chn_interface and m_is_dprio_used)" />
+			<STATE V="USED" WHEN="!m_tx_only and m_is_dprio_chn_interface and m_is_dprio_used" />
+		</PORT>
+		<PORT NAME="rx_disperr" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_rx_ports_allowed and is_used(rx_disperr))" />
+			<STATE V="USED" WHEN="m_rx_ports_allowed and is_used(rx_disperr)" />
+		</PORT>
+		<PORT NAME="rx_errdetect" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_rx_ports_allowed and is_used(rx_errdetect))" />
+			<STATE V="USED" WHEN="m_rx_ports_allowed and is_used(rx_errdetect)" />
+		</PORT>
+		<PORT NAME="rx_freqlocked" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and !m_is_parallel_lpbk and is_used(rx_freqlocked))" />
+			<STATE V="USED" WHEN="!m_tx_only and !m_is_parallel_lpbk and is_used(rx_freqlocked)" />
+		</PORT>
+		<PORT NAME="rx_k1detect" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="rx_k2detect" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="rx_patterndetect" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and !m_is_dprio_chn_interface and is_used(rx_patterndetect))" />
+			<STATE V="USED" WHEN="!m_tx_only and !m_is_dprio_chn_interface and is_used(rx_patterndetect)" />
+		</PORT>
+		<PORT NAME="rx_phase_comp_fifo_error" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and !m_basic_pma_direct and !m_cpri and is_used(rx_phase_comp_fifo_error))" />
+			<STATE V="USED" WHEN="!m_tx_only and !m_basic_pma_direct and !m_cpri and is_used(rx_phase_comp_fifo_error)" />
+		</PORT>
+		<PORT NAME="rx_phfifooverflow" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="rx_phfifounderflow" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="rx_pipebufferstat" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="rx_pll_locked" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and !m_is_parallel_lpbk and is_used(rx_pll_locked))" />
+			<STATE V="USED" WHEN="!m_tx_only and !m_is_parallel_lpbk and is_used(rx_pll_locked)" />
+		</PORT>
+		<PORT NAME="rx_recovclkout" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="rx_revseriallpbkout" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_rx_only and (m_is_loopback_mode_precdr_rslb || m_is_loopback_mode_postcdr_rslb))" />
+			<STATE V="USED" WHEN="m_rx_only and (m_is_loopback_mode_precdr_rslb || m_is_loopback_mode_postcdr_rslb)" />
+		</PORT>
+		<PORT NAME="rx_rlv" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and m_is_rx_rlv_enabled)" />
+			<STATE V="USED" WHEN="!m_tx_only and m_is_rx_rlv_enabled" />
+		</PORT>
+		<PORT NAME="rx_rmfifoalmostempty" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="rx_rmfifoalmostfull" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_tx_only" />
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="rx_rmfifodatadeleted" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and is_used(rx_rmfifodatadeleted) || m_tse)" />
+			<STATE V="USED" WHEN="!m_tx_only and is_used(rx_rmfifodatadeleted) || m_tse" />
+		</PORT>
+		<PORT NAME="rx_rmfifodatainserted" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and is_used(rx_rmfifodatainserted) || m_tse)" />
+			<STATE V="USED" WHEN="!m_tx_only and is_used(rx_rmfifodatainserted) || m_tse" />
+		</PORT>
+		<PORT NAME="rx_rmfifoempty" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and is_used(rx_rmfifoempty))" />
+			<STATE V="USED" WHEN="!m_tx_only and is_used(rx_rmfifoempty)" />
+		</PORT>
+		<PORT NAME="rx_rmfifofull" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and is_used(rx_rmfifofull))" />
+			<STATE V="USED" WHEN="!m_tx_only and is_used(rx_rmfifofull)" />
+		</PORT>
+		<PORT NAME="rx_runningdisp" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_rx_ports_allowed and is_used(rx_runningdisp))" />
+			<STATE V="USED" WHEN="m_rx_ports_allowed and is_used(rx_runningdisp)" />
+		</PORT>
+		<PORT NAME="rx_signaldetect" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_pcie and !m_is_parallel_lpbk and is_used(rx_signaldetect))" />
+			<STATE V="USED" WHEN="m_pcie and !m_is_parallel_lpbk and is_used(rx_signaldetect)" />
+		</PORT>
+		<PORT NAME="rx_syncstatus" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_tx_only and !m_is_dprio_chn_interface and is_used(rx_syncstatus))" />
+			<STATE V="USED" WHEN="!m_tx_only and !m_is_dprio_chn_interface and is_used(rx_syncstatus)" />
+		</PORT>
+		<PORT NAME="tx_clkout" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!m_is_tx_clkout_used" />
+			<STATE V="USED" WHEN="m_is_tx_clkout_used" />
+		</PORT>
+		<PORT NAME="tx_dataout" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_rx_only" />
+			<STATE V="USED" WHEN="!m_rx_only" />
+		</PORT>
+		<PORT NAME="tx_phase_comp_fifo_error" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(!m_rx_only and !m_basic_pma_direct and !m_cpri and is_used(tx_phase_comp_fifo_error))" />
+			<STATE V="USED" WHEN="!m_rx_only and !m_basic_pma_direct and !m_cpri and is_used(tx_phase_comp_fifo_error)" />
+		</PORT>
+		<PORT NAME="tx_phfifooverflow" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_rx_only" />
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="tx_phfifounderflow" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="m_rx_only" />
+		<!--<STATE V="USED" WHEN="!m_tx_only" />-->
+		</PORT>
+		<PORT NAME="tx_seriallpbkout" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE V="UNUSED" WHEN="!(m_tx_only and m_is_loopback_mode_slb)" />
+			<STATE V="USED" WHEN="m_tx_only and m_is_loopback_mode_slb" />
+		</PORT>
+	</PORT_RULES>
+</ROOT>

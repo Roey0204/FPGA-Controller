@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="cont_cal_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_rx_cal_tw" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_tx_cal_tw" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rtest" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="send_rx_cal_status" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rx_cal_wt_value" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="tx_cal_wt_value" TYPE="Integer" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="migrated_from_prev_family" TYPE="STRING" VALUE="false" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriaiigz_hssi_calibration_block" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="powerdn" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enabletestbus" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="testctrl" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="nonusertocmu" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="calibrationstatus" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

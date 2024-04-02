@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_hps_interface_tpiu_trace">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_hps_interface_tpiu_trace" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="traceclk_ctl" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="traceclkin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="traceclk" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="trace_data" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

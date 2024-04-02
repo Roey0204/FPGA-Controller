@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_soc_interface_s2f_interrupts">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_soc_interface_s2f_interrupts" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="fakedin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="intrdma" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="intrgpio" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="intrnand" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="intrnor" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="intrqspi" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="intrsdio" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="intrspi" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="intremac0" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="intremac1" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="intri2c" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="intrmcan" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="intrtimer" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="intrusbotg" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="intrwatchdog" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

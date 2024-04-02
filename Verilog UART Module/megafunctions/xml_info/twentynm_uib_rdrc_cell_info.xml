@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_uib_rdrc_cell">
+	<PARAMETERS>
+		<PARAMETER NAME="read_mode" TYPE="String" VALUE="QDR_RR|QDR_RF|DDR_R|DDR_F|SDR|MUX_BYPASS" DEFAULT_VALUE="QDR_RF"/>
+		<PARAMETER NAME="loopback_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="clock_enable" TYPE="String" VALUE="None|ENA0" DEFAULT_VALUE="None"/>
+		<PARAMETER NAME="logical_name" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="logical_function" TYPE="String" VALUE="None|RAM|GENERIC" DEFAULT_VALUE="None"/>
+		<PARAMETER NAME="user_port_name" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="port_bit_index" TYPE="Integer" DEFAULT_VALUE="-1"/>
+		<PARAMETER NAME="user_port_type" TYPE="String" VALUE="DATA|ADDRESS|CONTROL|GENERIC" DEFAULT_VALUE="GENERIC"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_uib_rdrc_cell" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clk0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clk1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ena0" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="clr" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="extdatain" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dataout" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

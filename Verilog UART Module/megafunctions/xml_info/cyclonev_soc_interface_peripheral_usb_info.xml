@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_soc_interface_peripheral_usb">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_soc_interface_peripheral_usb" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="ulpidir" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ulpinxt" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="utmifsclk48" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ulpidatain" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="utmifsrx" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="devhirdrcvdtgl" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="outmil1suspendn" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="outmisleepn" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ulpistp" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="utmifstxdm" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="devhirdrcvd" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="ulpidataout" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="utmifstx" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

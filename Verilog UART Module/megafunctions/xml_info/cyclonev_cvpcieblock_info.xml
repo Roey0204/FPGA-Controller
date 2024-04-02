@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_cvpcieblock">
+	<PARAMETERS>
+		<PARAMETER NAME="cvp_opbit" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="aux_cvp_opbit" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="en_cvp_confdone" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="cvp_dbg" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="test_cvp_dbg_val" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="15"/>
+		<PARAMETER NAME="cvp_dfx" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="iocsr_ready_from_csrdone" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="dft_opbits" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="test_dft_opbits_val" TYPE="Integer" VALUE="0..31" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_cvpcieblock" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="startxfer" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cvpconfig" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fullconfig" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="data" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="configready" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iocsrready" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iocsrreadydly" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="en" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="configerror" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="confdone" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="usermode" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

@@ -1,0 +1,1087 @@
+<?xml version="1.0" ?>
+<ROOT>
+	<MACROS>
+		<MACRO	NAME="mfam_family_arriagx_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Arria GX")|| (INTENDED_DEVICE_FAMILY == "ARRIA GX")|| (INTENDED_DEVICE_FAMILY == "arria gx") || (INTENDED_DEVICE_FAMILY == "ArriaGX")|| (INTENDED_DEVICE_FAMILY == "ARRIAGX")|| (INTENDED_DEVICE_FAMILY == "arriagx") || (INTENDED_DEVICE_FAMILY == "Stratix II GX Lite")|| (INTENDED_DEVICE_FAMILY == "STRATIX II GX LITE")|| (INTENDED_DEVICE_FAMILY == "stratix ii gx lite") || (INTENDED_DEVICE_FAMILY == "StratixIIGXLite")|| (INTENDED_DEVICE_FAMILY == "STRATIXIIGXLITE")|| (INTENDED_DEVICE_FAMILY == "stratixiigxlite")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_arriagx"	DEFINITION="'Arria GX'" />
+		<MACRO	NAME="mfam_family_stratixiigxlite_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_arriagx_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixiigxlite"	DEFINITION="'Arria GX'" />
+		<MACRO	NAME="mfam_family_arriaiigx_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Arria II GX")|| (INTENDED_DEVICE_FAMILY == "ARRIA II GX")|| (INTENDED_DEVICE_FAMILY == "arria ii gx") || (INTENDED_DEVICE_FAMILY == "ArriaIIGX")|| (INTENDED_DEVICE_FAMILY == "ARRIAIIGX")|| (INTENDED_DEVICE_FAMILY == "arriaiigx") || (INTENDED_DEVICE_FAMILY == "Arria IIGX")|| (INTENDED_DEVICE_FAMILY == "ARRIA IIGX")|| (INTENDED_DEVICE_FAMILY == "arria iigx") || (INTENDED_DEVICE_FAMILY == "ArriaII GX")|| (INTENDED_DEVICE_FAMILY == "ARRIAII GX")|| (INTENDED_DEVICE_FAMILY == "arriaii gx") || (INTENDED_DEVICE_FAMILY == "Arria II")|| (INTENDED_DEVICE_FAMILY == "ARRIA II")|| (INTENDED_DEVICE_FAMILY == "arria ii") || (INTENDED_DEVICE_FAMILY == "ArriaII")|| (INTENDED_DEVICE_FAMILY == "ARRIAII")|| (INTENDED_DEVICE_FAMILY == "arriaii") || (INTENDED_DEVICE_FAMILY == "Arria II (GX/E)")|| (INTENDED_DEVICE_FAMILY == "ARRIA II (GX/E)")|| (INTENDED_DEVICE_FAMILY == "arria ii (gx/e)") || (INTENDED_DEVICE_FAMILY == "ArriaII(GX/E)")|| (INTENDED_DEVICE_FAMILY == "ARRIAII(GX/E)")|| (INTENDED_DEVICE_FAMILY == "arriaii(gx/e)") || (INTENDED_DEVICE_FAMILY == "PIRANHA")|| (INTENDED_DEVICE_FAMILY == "piranha")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_arriaiigx"	DEFINITION="'Arria II GX'" />
+		<MACRO	NAME="mfam_family_arriaii_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_arriaiigx_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_arriaii"	DEFINITION="'Arria II GX'" />
+		<MACRO	NAME="mfam_family_arriaii_gx_e__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_arriaiigx_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_arriaii_gx_e_"	DEFINITION="'Arria II GX'" />
+		<MACRO	NAME="mfam_family_piranha_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_arriaiigx_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_piranha"	DEFINITION="'Arria II GX'" />
+		<MACRO	NAME="mfam_family_arriaiigz_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Arria II GZ")|| (INTENDED_DEVICE_FAMILY == "ARRIA II GZ")|| (INTENDED_DEVICE_FAMILY == "arria ii gz") || (INTENDED_DEVICE_FAMILY == "ArriaII GZ")|| (INTENDED_DEVICE_FAMILY == "ARRIAII GZ")|| (INTENDED_DEVICE_FAMILY == "arriaii gz") || (INTENDED_DEVICE_FAMILY == "Arria IIGZ")|| (INTENDED_DEVICE_FAMILY == "ARRIA IIGZ")|| (INTENDED_DEVICE_FAMILY == "arria iigz") || (INTENDED_DEVICE_FAMILY == "ArriaIIGZ")|| (INTENDED_DEVICE_FAMILY == "ARRIAIIGZ")|| (INTENDED_DEVICE_FAMILY == "arriaiigz")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_arriaiigz"	DEFINITION="'Arria II GZ'" />
+		<MACRO	NAME="mfam_family_arriavgz_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Arria V GZ")|| (INTENDED_DEVICE_FAMILY == "ARRIA V GZ")|| (INTENDED_DEVICE_FAMILY == "arria v gz") || (INTENDED_DEVICE_FAMILY == "ArriaVGZ")|| (INTENDED_DEVICE_FAMILY == "ARRIAVGZ")|| (INTENDED_DEVICE_FAMILY == "arriavgz")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_arriavgz"	DEFINITION="'Arria V GZ'" />
+		<MACRO	NAME="mfam_family_arriav_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Arria V")|| (INTENDED_DEVICE_FAMILY == "ARRIA V")|| (INTENDED_DEVICE_FAMILY == "arria v") || (INTENDED_DEVICE_FAMILY == "Arria V (GT/GX)")|| (INTENDED_DEVICE_FAMILY == "ARRIA V (GT/GX)")|| (INTENDED_DEVICE_FAMILY == "arria v (gt/gx)") || (INTENDED_DEVICE_FAMILY == "ArriaV(GT/GX)")|| (INTENDED_DEVICE_FAMILY == "ARRIAV(GT/GX)")|| (INTENDED_DEVICE_FAMILY == "arriav(gt/gx)") || (INTENDED_DEVICE_FAMILY == "ArriaV")|| (INTENDED_DEVICE_FAMILY == "ARRIAV")|| (INTENDED_DEVICE_FAMILY == "arriav") || (INTENDED_DEVICE_FAMILY == "Arria V (GT/GX/ST/SX)")|| (INTENDED_DEVICE_FAMILY == "ARRIA V (GT/GX/ST/SX)")|| (INTENDED_DEVICE_FAMILY == "arria v (gt/gx/st/sx)") || (INTENDED_DEVICE_FAMILY == "ArriaV(GT/GX/ST/SX)")|| (INTENDED_DEVICE_FAMILY == "ARRIAV(GT/GX/ST/SX)")|| (INTENDED_DEVICE_FAMILY == "arriav(gt/gx/st/sx)") || (INTENDED_DEVICE_FAMILY == "Arria V (GT)")|| (INTENDED_DEVICE_FAMILY == "ARRIA V (GT)")|| (INTENDED_DEVICE_FAMILY == "arria v (gt)") || (INTENDED_DEVICE_FAMILY == "ArriaV(GT)")|| (INTENDED_DEVICE_FAMILY == "ARRIAV(GT)")|| (INTENDED_DEVICE_FAMILY == "arriav(gt)") || (INTENDED_DEVICE_FAMILY == "Arria V (GX)")|| (INTENDED_DEVICE_FAMILY == "ARRIA V (GX)")|| (INTENDED_DEVICE_FAMILY == "arria v (gx)") || (INTENDED_DEVICE_FAMILY == "ArriaV(GX)")|| (INTENDED_DEVICE_FAMILY == "ARRIAV(GX)")|| (INTENDED_DEVICE_FAMILY == "arriav(gx)") || (INTENDED_DEVICE_FAMILY == "Arria V (ST)")|| (INTENDED_DEVICE_FAMILY == "ARRIA V (ST)")|| (INTENDED_DEVICE_FAMILY == "arria v (st)") || (INTENDED_DEVICE_FAMILY == "ArriaV(ST)")|| (INTENDED_DEVICE_FAMILY == "ARRIAV(ST)")|| (INTENDED_DEVICE_FAMILY == "arriav(st)") || (INTENDED_DEVICE_FAMILY == "Arria V (SX)")|| (INTENDED_DEVICE_FAMILY == "ARRIA V (SX)")|| (INTENDED_DEVICE_FAMILY == "arria v (sx)") || (INTENDED_DEVICE_FAMILY == "ArriaV(SX)")|| (INTENDED_DEVICE_FAMILY == "ARRIAV(SX)")|| (INTENDED_DEVICE_FAMILY == "arriav(sx)")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_arriav"	DEFINITION="'Arria V'" />
+		<MACRO	NAME="mfam_family_arriav_gt_gx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_arriav_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_arriav_gt_gx_"	DEFINITION="'Arria V'" />
+		<MACRO	NAME="mfam_family_arriav_gt_gx_st_sx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_arriav_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_arriav_gt_gx_st_sx_"	DEFINITION="'Arria V'" />
+		<MACRO	NAME="mfam_family_arriav_gt__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_arriav_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_arriav_gt_"	DEFINITION="'Arria V'" />
+		<MACRO	NAME="mfam_family_arriav_gx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_arriav_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_arriav_gx_"	DEFINITION="'Arria V'" />
+		<MACRO	NAME="mfam_family_arriav_st__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_arriav_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_arriav_st_"	DEFINITION="'Arria V'" />
+		<MACRO	NAME="mfam_family_arriav_sx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_arriav_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_arriav_sx_"	DEFINITION="'Arria V'" />
+		<MACRO	NAME="mfam_family_arriavi_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Arria VI")|| (INTENDED_DEVICE_FAMILY == "ARRIA VI")|| (INTENDED_DEVICE_FAMILY == "arria vi") || (INTENDED_DEVICE_FAMILY == "ArriaVI")|| (INTENDED_DEVICE_FAMILY == "ARRIAVI")|| (INTENDED_DEVICE_FAMILY == "arriavi")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_arriavi"	DEFINITION="'Arria VI'" />
+		<MACRO	NAME="mfam_family_bs_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "BS")|| (INTENDED_DEVICE_FAMILY == "bs")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_bs"	DEFINITION="'BS'" />
+		<MACRO	NAME="mfam_family_cycloneii_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Cyclone II")|| (INTENDED_DEVICE_FAMILY == "CYCLONE II")|| (INTENDED_DEVICE_FAMILY == "cyclone ii") || (INTENDED_DEVICE_FAMILY == "Cycloneii")|| (INTENDED_DEVICE_FAMILY == "CYCLONEII")|| (INTENDED_DEVICE_FAMILY == "cycloneii") || (INTENDED_DEVICE_FAMILY == "Magellan")|| (INTENDED_DEVICE_FAMILY == "MAGELLAN")|| (INTENDED_DEVICE_FAMILY == "magellan") || (INTENDED_DEVICE_FAMILY == "CycloneII")|| (INTENDED_DEVICE_FAMILY == "CYCLONEII")|| (INTENDED_DEVICE_FAMILY == "cycloneii")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cycloneii"	DEFINITION="'Cyclone II'" />
+		<MACRO	NAME="mfam_family_magellan_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneii_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_magellan"	DEFINITION="'Cyclone II'" />
+		<MACRO	NAME="mfam_family_cycloneiiils_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Cyclone III LS")|| (INTENDED_DEVICE_FAMILY == "CYCLONE III LS")|| (INTENDED_DEVICE_FAMILY == "cyclone iii ls") || (INTENDED_DEVICE_FAMILY == "CycloneIIILS")|| (INTENDED_DEVICE_FAMILY == "CYCLONEIIILS")|| (INTENDED_DEVICE_FAMILY == "cycloneiiils") || (INTENDED_DEVICE_FAMILY == "Cyclone III LPS")|| (INTENDED_DEVICE_FAMILY == "CYCLONE III LPS")|| (INTENDED_DEVICE_FAMILY == "cyclone iii lps") || (INTENDED_DEVICE_FAMILY == "Cyclone LPS")|| (INTENDED_DEVICE_FAMILY == "CYCLONE LPS")|| (INTENDED_DEVICE_FAMILY == "cyclone lps") || (INTENDED_DEVICE_FAMILY == "CycloneLPS")|| (INTENDED_DEVICE_FAMILY == "CYCLONELPS")|| (INTENDED_DEVICE_FAMILY == "cyclonelps") || (INTENDED_DEVICE_FAMILY == "Tarpon")|| (INTENDED_DEVICE_FAMILY == "TARPON")|| (INTENDED_DEVICE_FAMILY == "tarpon") || (INTENDED_DEVICE_FAMILY == "Cyclone IIIE")|| (INTENDED_DEVICE_FAMILY == "CYCLONE IIIE")|| (INTENDED_DEVICE_FAMILY == "cyclone iiie")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cycloneiiils"	DEFINITION="'Cyclone III LS'" />
+		<MACRO	NAME="mfam_family_cycloneiiilps_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneiiils_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cycloneiiilps"	DEFINITION="'Cyclone III LS'" />
+		<MACRO	NAME="mfam_family_cyclonelps_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneiiils_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cyclonelps"	DEFINITION="'Cyclone III LS'" />
+		<MACRO	NAME="mfam_family_tarpon_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneiiils_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_tarpon"	DEFINITION="'Cyclone III LS'" />
+		<MACRO	NAME="mfam_family_cycloneiiie_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneiiils_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cycloneiiie"	DEFINITION="'Cyclone III LS'" />
+		<MACRO	NAME="mfam_family_cycloneiii_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Cyclone III")|| (INTENDED_DEVICE_FAMILY == "CYCLONE III")|| (INTENDED_DEVICE_FAMILY == "cyclone iii") || (INTENDED_DEVICE_FAMILY == "CycloneIII")|| (INTENDED_DEVICE_FAMILY == "CYCLONEIII")|| (INTENDED_DEVICE_FAMILY == "cycloneiii") || (INTENDED_DEVICE_FAMILY == "Barracuda")|| (INTENDED_DEVICE_FAMILY == "BARRACUDA")|| (INTENDED_DEVICE_FAMILY == "barracuda") || (INTENDED_DEVICE_FAMILY == "Cuda")|| (INTENDED_DEVICE_FAMILY == "CUDA")|| (INTENDED_DEVICE_FAMILY == "cuda") || (INTENDED_DEVICE_FAMILY == "CIII")|| (INTENDED_DEVICE_FAMILY == "ciii")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cycloneiii"	DEFINITION="'Cyclone III'" />
+		<MACRO	NAME="mfam_family_barracuda_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneiii_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_barracuda"	DEFINITION="'Cyclone III'" />
+		<MACRO	NAME="mfam_family_cuda_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneiii_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cuda"	DEFINITION="'Cyclone III'" />
+		<MACRO	NAME="mfam_family_ciii_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneiii_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_ciii"	DEFINITION="'Cyclone III'" />
+		<MACRO	NAME="mfam_family_cycloneive_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Cyclone IV E")|| (INTENDED_DEVICE_FAMILY == "CYCLONE IV E")|| (INTENDED_DEVICE_FAMILY == "cyclone iv e") || (INTENDED_DEVICE_FAMILY == "CycloneIV E")|| (INTENDED_DEVICE_FAMILY == "CYCLONEIV E")|| (INTENDED_DEVICE_FAMILY == "cycloneiv e") || (INTENDED_DEVICE_FAMILY == "Cyclone IVE")|| (INTENDED_DEVICE_FAMILY == "CYCLONE IVE")|| (INTENDED_DEVICE_FAMILY == "cyclone ive") || (INTENDED_DEVICE_FAMILY == "CycloneIVE")|| (INTENDED_DEVICE_FAMILY == "CYCLONEIVE")|| (INTENDED_DEVICE_FAMILY == "cycloneive")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cycloneive"	DEFINITION="'Cyclone IV E'" />
+		<MACRO	NAME="mfam_family_cycloneivgx_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Cyclone IV GX")|| (INTENDED_DEVICE_FAMILY == "CYCLONE IV GX")|| (INTENDED_DEVICE_FAMILY == "cyclone iv gx") || (INTENDED_DEVICE_FAMILY == "Cyclone IVGX")|| (INTENDED_DEVICE_FAMILY == "CYCLONE IVGX")|| (INTENDED_DEVICE_FAMILY == "cyclone ivgx") || (INTENDED_DEVICE_FAMILY == "CycloneIV GX")|| (INTENDED_DEVICE_FAMILY == "CYCLONEIV GX")|| (INTENDED_DEVICE_FAMILY == "cycloneiv gx") || (INTENDED_DEVICE_FAMILY == "CycloneIVGX")|| (INTENDED_DEVICE_FAMILY == "CYCLONEIVGX")|| (INTENDED_DEVICE_FAMILY == "cycloneivgx") || (INTENDED_DEVICE_FAMILY == "Cyclone IV")|| (INTENDED_DEVICE_FAMILY == "CYCLONE IV")|| (INTENDED_DEVICE_FAMILY == "cyclone iv") || (INTENDED_DEVICE_FAMILY == "CycloneIV")|| (INTENDED_DEVICE_FAMILY == "CYCLONEIV")|| (INTENDED_DEVICE_FAMILY == "cycloneiv") || (INTENDED_DEVICE_FAMILY == "Cyclone IV (GX)")|| (INTENDED_DEVICE_FAMILY == "CYCLONE IV (GX)")|| (INTENDED_DEVICE_FAMILY == "cyclone iv (gx)") || (INTENDED_DEVICE_FAMILY == "CycloneIV(GX)")|| (INTENDED_DEVICE_FAMILY == "CYCLONEIV(GX)")|| (INTENDED_DEVICE_FAMILY == "cycloneiv(gx)") || (INTENDED_DEVICE_FAMILY == "Cyclone III GX")|| (INTENDED_DEVICE_FAMILY == "CYCLONE III GX")|| (INTENDED_DEVICE_FAMILY == "cyclone iii gx") || (INTENDED_DEVICE_FAMILY == "CycloneIII GX")|| (INTENDED_DEVICE_FAMILY == "CYCLONEIII GX")|| (INTENDED_DEVICE_FAMILY == "cycloneiii gx") || (INTENDED_DEVICE_FAMILY == "Cyclone IIIGX")|| (INTENDED_DEVICE_FAMILY == "CYCLONE IIIGX")|| (INTENDED_DEVICE_FAMILY == "cyclone iiigx") || (INTENDED_DEVICE_FAMILY == "CycloneIIIGX")|| (INTENDED_DEVICE_FAMILY == "CYCLONEIIIGX")|| (INTENDED_DEVICE_FAMILY == "cycloneiiigx") || (INTENDED_DEVICE_FAMILY == "Cyclone III GL")|| (INTENDED_DEVICE_FAMILY == "CYCLONE III GL")|| (INTENDED_DEVICE_FAMILY == "cyclone iii gl") || (INTENDED_DEVICE_FAMILY == "CycloneIII GL")|| (INTENDED_DEVICE_FAMILY == "CYCLONEIII GL")|| (INTENDED_DEVICE_FAMILY == "cycloneiii gl") || (INTENDED_DEVICE_FAMILY == "Cyclone IIIGL")|| (INTENDED_DEVICE_FAMILY == "CYCLONE IIIGL")|| (INTENDED_DEVICE_FAMILY == "cyclone iiigl") || (INTENDED_DEVICE_FAMILY == "CycloneIIIGL")|| (INTENDED_DEVICE_FAMILY == "CYCLONEIIIGL")|| (INTENDED_DEVICE_FAMILY == "cycloneiiigl") || (INTENDED_DEVICE_FAMILY == "Stingray")|| (INTENDED_DEVICE_FAMILY == "STINGRAY")|| (INTENDED_DEVICE_FAMILY == "stingray")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cycloneivgx"	DEFINITION="'Cyclone IV GX'" />
+		<MACRO	NAME="mfam_family_cycloneiv_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneivgx_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cycloneiv"	DEFINITION="'Cyclone IV GX'" />
+		<MACRO	NAME="mfam_family_cycloneiv_gx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneivgx_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cycloneiv_gx_"	DEFINITION="'Cyclone IV GX'" />
+		<MACRO	NAME="mfam_family_cycloneiiigx_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneivgx_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cycloneiiigx"	DEFINITION="'Cyclone IV GX'" />
+		<MACRO	NAME="mfam_family_cycloneiiigl_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneivgx_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cycloneiiigl"	DEFINITION="'Cyclone IV GX'" />
+		<MACRO	NAME="mfam_family_stingray_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneivgx_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stingray"	DEFINITION="'Cyclone IV GX'" />
+		<MACRO	NAME="mfam_family_cyclonev_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Cyclone V")|| (INTENDED_DEVICE_FAMILY == "CYCLONE V")|| (INTENDED_DEVICE_FAMILY == "cyclone v") || (INTENDED_DEVICE_FAMILY == "CycloneV")|| (INTENDED_DEVICE_FAMILY == "CYCLONEV")|| (INTENDED_DEVICE_FAMILY == "cyclonev") || (INTENDED_DEVICE_FAMILY == "Cyclone V (GT/GX/E/SX)")|| (INTENDED_DEVICE_FAMILY == "CYCLONE V (GT/GX/E/SX)")|| (INTENDED_DEVICE_FAMILY == "cyclone v (gt/gx/e/sx)") || (INTENDED_DEVICE_FAMILY == "CycloneV(GT/GX/E/SX)")|| (INTENDED_DEVICE_FAMILY == "CYCLONEV(GT/GX/E/SX)")|| (INTENDED_DEVICE_FAMILY == "cyclonev(gt/gx/e/sx)") || (INTENDED_DEVICE_FAMILY == "Cyclone V (E/GX/GT/SX/SE/ST)")|| (INTENDED_DEVICE_FAMILY == "CYCLONE V (E/GX/GT/SX/SE/ST)")|| (INTENDED_DEVICE_FAMILY == "cyclone v (e/gx/gt/sx/se/st)") || (INTENDED_DEVICE_FAMILY == "CycloneV(E/GX/GT/SX/SE/ST)")|| (INTENDED_DEVICE_FAMILY == "CYCLONEV(E/GX/GT/SX/SE/ST)")|| (INTENDED_DEVICE_FAMILY == "cyclonev(e/gx/gt/sx/se/st)") || (INTENDED_DEVICE_FAMILY == "Cyclone V (E)")|| (INTENDED_DEVICE_FAMILY == "CYCLONE V (E)")|| (INTENDED_DEVICE_FAMILY == "cyclone v (e)") || (INTENDED_DEVICE_FAMILY == "CycloneV(E)")|| (INTENDED_DEVICE_FAMILY == "CYCLONEV(E)")|| (INTENDED_DEVICE_FAMILY == "cyclonev(e)") || (INTENDED_DEVICE_FAMILY == "Cyclone V (GX)")|| (INTENDED_DEVICE_FAMILY == "CYCLONE V (GX)")|| (INTENDED_DEVICE_FAMILY == "cyclone v (gx)") || (INTENDED_DEVICE_FAMILY == "CycloneV(GX)")|| (INTENDED_DEVICE_FAMILY == "CYCLONEV(GX)")|| (INTENDED_DEVICE_FAMILY == "cyclonev(gx)") || (INTENDED_DEVICE_FAMILY == "Cyclone V (GT)")|| (INTENDED_DEVICE_FAMILY == "CYCLONE V (GT)")|| (INTENDED_DEVICE_FAMILY == "cyclone v (gt)") || (INTENDED_DEVICE_FAMILY == "CycloneV(GT)")|| (INTENDED_DEVICE_FAMILY == "CYCLONEV(GT)")|| (INTENDED_DEVICE_FAMILY == "cyclonev(gt)") || (INTENDED_DEVICE_FAMILY == "Cyclone V (SX)")|| (INTENDED_DEVICE_FAMILY == "CYCLONE V (SX)")|| (INTENDED_DEVICE_FAMILY == "cyclone v (sx)") || (INTENDED_DEVICE_FAMILY == "CycloneV(SX)")|| (INTENDED_DEVICE_FAMILY == "CYCLONEV(SX)")|| (INTENDED_DEVICE_FAMILY == "cyclonev(sx)") || (INTENDED_DEVICE_FAMILY == "Cyclone V (SE)")|| (INTENDED_DEVICE_FAMILY == "CYCLONE V (SE)")|| (INTENDED_DEVICE_FAMILY == "cyclone v (se)") || (INTENDED_DEVICE_FAMILY == "CycloneV(SE)")|| (INTENDED_DEVICE_FAMILY == "CYCLONEV(SE)")|| (INTENDED_DEVICE_FAMILY == "cyclonev(se)") || (INTENDED_DEVICE_FAMILY == "Cyclone V (ST)")|| (INTENDED_DEVICE_FAMILY == "CYCLONE V (ST)")|| (INTENDED_DEVICE_FAMILY == "cyclone v (st)") || (INTENDED_DEVICE_FAMILY == "CycloneV(ST)")|| (INTENDED_DEVICE_FAMILY == "CYCLONEV(ST)")|| (INTENDED_DEVICE_FAMILY == "cyclonev(st)")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cyclonev"	DEFINITION="'Cyclone V'" />
+		<MACRO	NAME="mfam_family_cyclonev_gt_gx_e_sx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cyclonev_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cyclonev_gt_gx_e_sx_"	DEFINITION="'Cyclone V'" />
+		<MACRO	NAME="mfam_family_cyclonev_e_gx_gt_sx_se_st__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cyclonev_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cyclonev_e_gx_gt_sx_se_st_"	DEFINITION="'Cyclone V'" />
+		<MACRO	NAME="mfam_family_cyclonev_e__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cyclonev_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cyclonev_e_"	DEFINITION="'Cyclone V'" />
+		<MACRO	NAME="mfam_family_cyclonev_gx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cyclonev_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cyclonev_gx_"	DEFINITION="'Cyclone V'" />
+		<MACRO	NAME="mfam_family_cyclonev_gt__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cyclonev_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cyclonev_gt_"	DEFINITION="'Cyclone V'" />
+		<MACRO	NAME="mfam_family_cyclonev_sx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cyclonev_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cyclonev_sx_"	DEFINITION="'Cyclone V'" />
+		<MACRO	NAME="mfam_family_cyclonev_se__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cyclonev_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cyclonev_se_"	DEFINITION="'Cyclone V'" />
+		<MACRO	NAME="mfam_family_cyclonev_st__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cyclonev_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cyclonev_st_"	DEFINITION="'Cyclone V'" />
+		<MACRO	NAME="mfam_family_cyclone_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Cyclone")|| (INTENDED_DEVICE_FAMILY == "CYCLONE")|| (INTENDED_DEVICE_FAMILY == "cyclone") || (INTENDED_DEVICE_FAMILY == "ACEX2K")|| (INTENDED_DEVICE_FAMILY == "acex2k") || (INTENDED_DEVICE_FAMILY == "ACEX 2K")|| (INTENDED_DEVICE_FAMILY == "acex 2k") || (INTENDED_DEVICE_FAMILY == "Tornado")|| (INTENDED_DEVICE_FAMILY == "TORNADO")|| (INTENDED_DEVICE_FAMILY == "tornado")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_cyclone"	DEFINITION="'Cyclone'" />
+		<MACRO	NAME="mfam_family_acex2k_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cyclone_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_acex2k"	DEFINITION="'Cyclone'" />
+		<MACRO	NAME="mfam_family_tornado_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cyclone_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_tornado"	DEFINITION="'Cyclone'" />
+		<MACRO	NAME="mfam_family_hardcopyii_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "HardCopy II")|| (INTENDED_DEVICE_FAMILY == "HARDCOPY II")|| (INTENDED_DEVICE_FAMILY == "hardcopy ii") || (INTENDED_DEVICE_FAMILY == "HardCopyII")|| (INTENDED_DEVICE_FAMILY == "HARDCOPYII")|| (INTENDED_DEVICE_FAMILY == "hardcopyii") || (INTENDED_DEVICE_FAMILY == "Fusion")|| (INTENDED_DEVICE_FAMILY == "FUSION")|| (INTENDED_DEVICE_FAMILY == "fusion")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_hardcopyii"	DEFINITION="'HardCopy II'" />
+		<MACRO	NAME="mfam_family_fusion_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_hardcopyii_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_fusion"	DEFINITION="'HardCopy II'" />
+		<MACRO	NAME="mfam_family_hardcopyiii_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "HardCopy III")|| (INTENDED_DEVICE_FAMILY == "HARDCOPY III")|| (INTENDED_DEVICE_FAMILY == "hardcopy iii") || (INTENDED_DEVICE_FAMILY == "HardCopyIII")|| (INTENDED_DEVICE_FAMILY == "HARDCOPYIII")|| (INTENDED_DEVICE_FAMILY == "hardcopyiii") || (INTENDED_DEVICE_FAMILY == "HCX")|| (INTENDED_DEVICE_FAMILY == "hcx")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_hardcopyiii"	DEFINITION="'HardCopy III'" />
+		<MACRO	NAME="mfam_family_hcx_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_hardcopyiii_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_hcx"	DEFINITION="'HardCopy III'" />
+		<MACRO	NAME="mfam_family_hardcopyiv_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "HardCopy IV")|| (INTENDED_DEVICE_FAMILY == "HARDCOPY IV")|| (INTENDED_DEVICE_FAMILY == "hardcopy iv") || (INTENDED_DEVICE_FAMILY == "HardCopyIV")|| (INTENDED_DEVICE_FAMILY == "HARDCOPYIV")|| (INTENDED_DEVICE_FAMILY == "hardcopyiv") || (INTENDED_DEVICE_FAMILY == "HardCopy IV (GX)")|| (INTENDED_DEVICE_FAMILY == "HARDCOPY IV (GX)")|| (INTENDED_DEVICE_FAMILY == "hardcopy iv (gx)") || (INTENDED_DEVICE_FAMILY == "HardCopy IV (E)")|| (INTENDED_DEVICE_FAMILY == "HARDCOPY IV (E)")|| (INTENDED_DEVICE_FAMILY == "hardcopy iv (e)") || (INTENDED_DEVICE_FAMILY == "HardCopyIV(GX)")|| (INTENDED_DEVICE_FAMILY == "HARDCOPYIV(GX)")|| (INTENDED_DEVICE_FAMILY == "hardcopyiv(gx)") || (INTENDED_DEVICE_FAMILY == "HardCopyIV(E)")|| (INTENDED_DEVICE_FAMILY == "HARDCOPYIV(E)")|| (INTENDED_DEVICE_FAMILY == "hardcopyiv(e)") || (INTENDED_DEVICE_FAMILY == "HCXIV")|| (INTENDED_DEVICE_FAMILY == "hcxiv") || (INTENDED_DEVICE_FAMILY == "HardCopy IV (GX/E)")|| (INTENDED_DEVICE_FAMILY == "HARDCOPY IV (GX/E)")|| (INTENDED_DEVICE_FAMILY == "hardcopy iv (gx/e)") || (INTENDED_DEVICE_FAMILY == "HardCopy IV (E/GX)")|| (INTENDED_DEVICE_FAMILY == "HARDCOPY IV (E/GX)")|| (INTENDED_DEVICE_FAMILY == "hardcopy iv (e/gx)") || (INTENDED_DEVICE_FAMILY == "HardCopyIV(GX/E)")|| (INTENDED_DEVICE_FAMILY == "HARDCOPYIV(GX/E)")|| (INTENDED_DEVICE_FAMILY == "hardcopyiv(gx/e)") || (INTENDED_DEVICE_FAMILY == "HardCopyIV(E/GX)")|| (INTENDED_DEVICE_FAMILY == "HARDCOPYIV(E/GX)")|| (INTENDED_DEVICE_FAMILY == "hardcopyiv(e/gx)")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_hardcopyiv"	DEFINITION="'HardCopy IV'" />
+		<MACRO	NAME="mfam_family_hardcopyiv_gx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_hardcopyiv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_hardcopyiv_gx_"	DEFINITION="'HardCopy IV'" />
+		<MACRO	NAME="mfam_family_hardcopyiv_e__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_hardcopyiv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_hardcopyiv_e_"	DEFINITION="'HardCopy IV'" />
+		<MACRO	NAME="mfam_family_hcxiv_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_hardcopyiv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_hcxiv"	DEFINITION="'HardCopy IV'" />
+		<MACRO	NAME="mfam_family_hardcopyiv_gx_e__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_hardcopyiv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_hardcopyiv_gx_e_"	DEFINITION="'HardCopy IV'" />
+		<MACRO	NAME="mfam_family_hardcopyiv_e_gx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_hardcopyiv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_hardcopyiv_e_gx_"	DEFINITION="'HardCopy IV'" />
+		<MACRO	NAME="mfam_family_maxii_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "MAX II")|| (INTENDED_DEVICE_FAMILY == "max ii") || (INTENDED_DEVICE_FAMILY == "MAXII")|| (INTENDED_DEVICE_FAMILY == "maxii") || (INTENDED_DEVICE_FAMILY == "Tsunami")|| (INTENDED_DEVICE_FAMILY == "TSUNAMI")|| (INTENDED_DEVICE_FAMILY == "tsunami")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_maxii"	DEFINITION="'MAX II'" />
+		<MACRO	NAME="mfam_family_tsunami_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_maxii_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_tsunami"	DEFINITION="'MAX II'" />
+		<MACRO	NAME="mfam_family_maxv_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "MAX V")|| (INTENDED_DEVICE_FAMILY == "max v") || (INTENDED_DEVICE_FAMILY == "MAXV")|| (INTENDED_DEVICE_FAMILY == "maxv") || (INTENDED_DEVICE_FAMILY == "Jade")|| (INTENDED_DEVICE_FAMILY == "JADE")|| (INTENDED_DEVICE_FAMILY == "jade")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_maxv"	DEFINITION="'MAX V'" />
+		<MACRO	NAME="mfam_family_jade_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_maxv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_jade"	DEFINITION="'MAX V'" />
+		<MACRO	NAME="mfam_family_max3000a_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "MAX3000A")|| (INTENDED_DEVICE_FAMILY == "max3000a") || (INTENDED_DEVICE_FAMILY == "MAX 3000A")|| (INTENDED_DEVICE_FAMILY == "max 3000a")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_max3000a"	DEFINITION="'MAX3000A'" />
+		<MACRO	NAME="mfam_family_max7000ae_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "MAX7000AE")|| (INTENDED_DEVICE_FAMILY == "max7000ae") || (INTENDED_DEVICE_FAMILY == "MAX 7000AE")|| (INTENDED_DEVICE_FAMILY == "max 7000ae")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_max7000ae"	DEFINITION="'MAX7000AE'" />
+		<MACRO	NAME="mfam_family_max7000b_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "MAX7000B")|| (INTENDED_DEVICE_FAMILY == "max7000b") || (INTENDED_DEVICE_FAMILY == "MAX 7000B")|| (INTENDED_DEVICE_FAMILY == "max 7000b")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_max7000b"	DEFINITION="'MAX7000B'" />
+		<MACRO	NAME="mfam_family_max7000s_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "MAX7000S")|| (INTENDED_DEVICE_FAMILY == "max7000s") || (INTENDED_DEVICE_FAMILY == "MAX 7000S")|| (INTENDED_DEVICE_FAMILY == "max 7000s")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_max7000s"	DEFINITION="'MAX7000S'" />
+		<MACRO	NAME="mfam_family_stratixgx_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Stratix GX")|| (INTENDED_DEVICE_FAMILY == "STRATIX GX")|| (INTENDED_DEVICE_FAMILY == "stratix gx") || (INTENDED_DEVICE_FAMILY == "Stratix-GX")|| (INTENDED_DEVICE_FAMILY == "STRATIX-GX")|| (INTENDED_DEVICE_FAMILY == "stratix-gx") || (INTENDED_DEVICE_FAMILY == "StratixGX")|| (INTENDED_DEVICE_FAMILY == "STRATIXGX")|| (INTENDED_DEVICE_FAMILY == "stratixgx") || (INTENDED_DEVICE_FAMILY == "Aurora")|| (INTENDED_DEVICE_FAMILY == "AURORA")|| (INTENDED_DEVICE_FAMILY == "aurora")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixgx"	DEFINITION="'Stratix GX'" />
+		<MACRO	NAME="mfam_family_stratix_gx_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixgx_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratix_gx"	DEFINITION="'Stratix GX'" />
+		<MACRO	NAME="mfam_family_aurora_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixgx_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_aurora"	DEFINITION="'Stratix GX'" />
+		<MACRO	NAME="mfam_family_stratixiigx_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Stratix II GX")|| (INTENDED_DEVICE_FAMILY == "STRATIX II GX")|| (INTENDED_DEVICE_FAMILY == "stratix ii gx") || (INTENDED_DEVICE_FAMILY == "StratixIIGX")|| (INTENDED_DEVICE_FAMILY == "STRATIXIIGX")|| (INTENDED_DEVICE_FAMILY == "stratixiigx")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixiigx"	DEFINITION="'Stratix II GX'" />
+		<MACRO	NAME="mfam_family_stratixii_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Stratix II")|| (INTENDED_DEVICE_FAMILY == "STRATIX II")|| (INTENDED_DEVICE_FAMILY == "stratix ii") || (INTENDED_DEVICE_FAMILY == "StratixII")|| (INTENDED_DEVICE_FAMILY == "STRATIXII")|| (INTENDED_DEVICE_FAMILY == "stratixii") || (INTENDED_DEVICE_FAMILY == "Armstrong")|| (INTENDED_DEVICE_FAMILY == "ARMSTRONG")|| (INTENDED_DEVICE_FAMILY == "armstrong")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixii"	DEFINITION="'Stratix II'" />
+		<MACRO	NAME="mfam_family_armstrong_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixii_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_armstrong"	DEFINITION="'Stratix II'" />
+		<MACRO	NAME="mfam_family_stratixiii_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Stratix III")|| (INTENDED_DEVICE_FAMILY == "STRATIX III")|| (INTENDED_DEVICE_FAMILY == "stratix iii") || (INTENDED_DEVICE_FAMILY == "StratixIII")|| (INTENDED_DEVICE_FAMILY == "STRATIXIII")|| (INTENDED_DEVICE_FAMILY == "stratixiii") || (INTENDED_DEVICE_FAMILY == "Titan")|| (INTENDED_DEVICE_FAMILY == "TITAN")|| (INTENDED_DEVICE_FAMILY == "titan") || (INTENDED_DEVICE_FAMILY == "SIII")|| (INTENDED_DEVICE_FAMILY == "siii")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixiii"	DEFINITION="'Stratix III'" />
+		<MACRO	NAME="mfam_family_titan_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiii_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_titan"	DEFINITION="'Stratix III'" />
+		<MACRO	NAME="mfam_family_siii_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiii_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_siii"	DEFINITION="'Stratix III'" />
+		<MACRO	NAME="mfam_family_stratixiv_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Stratix IV")|| (INTENDED_DEVICE_FAMILY == "STRATIX IV")|| (INTENDED_DEVICE_FAMILY == "stratix iv") || (INTENDED_DEVICE_FAMILY == "TGX")|| (INTENDED_DEVICE_FAMILY == "tgx") || (INTENDED_DEVICE_FAMILY == "StratixIV")|| (INTENDED_DEVICE_FAMILY == "STRATIXIV")|| (INTENDED_DEVICE_FAMILY == "stratixiv") || (INTENDED_DEVICE_FAMILY == "Stratix IV (GT)")|| (INTENDED_DEVICE_FAMILY == "STRATIX IV (GT)")|| (INTENDED_DEVICE_FAMILY == "stratix iv (gt)") || (INTENDED_DEVICE_FAMILY == "Stratix IV (GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIX IV (GX)")|| (INTENDED_DEVICE_FAMILY == "stratix iv (gx)") || (INTENDED_DEVICE_FAMILY == "Stratix IV (E)")|| (INTENDED_DEVICE_FAMILY == "STRATIX IV (E)")|| (INTENDED_DEVICE_FAMILY == "stratix iv (e)") || (INTENDED_DEVICE_FAMILY == "StratixIV(GT)")|| (INTENDED_DEVICE_FAMILY == "STRATIXIV(GT)")|| (INTENDED_DEVICE_FAMILY == "stratixiv(gt)") || (INTENDED_DEVICE_FAMILY == "StratixIV(GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIXIV(GX)")|| (INTENDED_DEVICE_FAMILY == "stratixiv(gx)") || (INTENDED_DEVICE_FAMILY == "StratixIV(E)")|| (INTENDED_DEVICE_FAMILY == "STRATIXIV(E)")|| (INTENDED_DEVICE_FAMILY == "stratixiv(e)") || (INTENDED_DEVICE_FAMILY == "StratixIIIGX")|| (INTENDED_DEVICE_FAMILY == "STRATIXIIIGX")|| (INTENDED_DEVICE_FAMILY == "stratixiiigx") || (INTENDED_DEVICE_FAMILY == "Stratix IV (GT/GX/E)")|| (INTENDED_DEVICE_FAMILY == "STRATIX IV (GT/GX/E)")|| (INTENDED_DEVICE_FAMILY == "stratix iv (gt/gx/e)") || (INTENDED_DEVICE_FAMILY == "Stratix IV (GT/E/GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIX IV (GT/E/GX)")|| (INTENDED_DEVICE_FAMILY == "stratix iv (gt/e/gx)") || (INTENDED_DEVICE_FAMILY == "Stratix IV (E/GT/GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIX IV (E/GT/GX)")|| (INTENDED_DEVICE_FAMILY == "stratix iv (e/gt/gx)") || (INTENDED_DEVICE_FAMILY == "Stratix IV (E/GX/GT)")|| (INTENDED_DEVICE_FAMILY == "STRATIX IV (E/GX/GT)")|| (INTENDED_DEVICE_FAMILY == "stratix iv (e/gx/gt)") || (INTENDED_DEVICE_FAMILY == "StratixIV(GT/GX/E)")|| (INTENDED_DEVICE_FAMILY == "STRATIXIV(GT/GX/E)")|| (INTENDED_DEVICE_FAMILY == "stratixiv(gt/gx/e)") || (INTENDED_DEVICE_FAMILY == "StratixIV(GT/E/GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIXIV(GT/E/GX)")|| (INTENDED_DEVICE_FAMILY == "stratixiv(gt/e/gx)") || (INTENDED_DEVICE_FAMILY == "StratixIV(E/GX/GT)")|| (INTENDED_DEVICE_FAMILY == "STRATIXIV(E/GX/GT)")|| (INTENDED_DEVICE_FAMILY == "stratixiv(e/gx/gt)") || (INTENDED_DEVICE_FAMILY == "StratixIV(E/GT/GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIXIV(E/GT/GX)")|| (INTENDED_DEVICE_FAMILY == "stratixiv(e/gt/gx)") || (INTENDED_DEVICE_FAMILY == "Stratix IV (GX/E)")|| (INTENDED_DEVICE_FAMILY == "STRATIX IV (GX/E)")|| (INTENDED_DEVICE_FAMILY == "stratix iv (gx/e)") || (INTENDED_DEVICE_FAMILY == "StratixIV(GX/E)")|| (INTENDED_DEVICE_FAMILY == "STRATIXIV(GX/E)")|| (INTENDED_DEVICE_FAMILY == "stratixiv(gx/e)")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixiv"	DEFINITION="'Stratix IV'" />
+		<MACRO	NAME="mfam_family_tgx_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_tgx"	DEFINITION="'Stratix IV'" />
+		<MACRO	NAME="mfam_family_stratixiv_gt__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixiv_gt_"	DEFINITION="'Stratix IV'" />
+		<MACRO	NAME="mfam_family_stratixiv_gx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixiv_gx_"	DEFINITION="'Stratix IV'" />
+		<MACRO	NAME="mfam_family_stratixiv_e__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixiv_e_"	DEFINITION="'Stratix IV'" />
+		<MACRO	NAME="mfam_family_stratixiiigx_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixiiigx"	DEFINITION="'Stratix IV'" />
+		<MACRO	NAME="mfam_family_stratixiv_gt_gx_e__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixiv_gt_gx_e_"	DEFINITION="'Stratix IV'" />
+		<MACRO	NAME="mfam_family_stratixiv_gt_e_gx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixiv_gt_e_gx_"	DEFINITION="'Stratix IV'" />
+		<MACRO	NAME="mfam_family_stratixiv_e_gt_gx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixiv_e_gt_gx_"	DEFINITION="'Stratix IV'" />
+		<MACRO	NAME="mfam_family_stratixiv_e_gx_gt__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixiv_e_gx_gt_"	DEFINITION="'Stratix IV'" />
+		<MACRO	NAME="mfam_family_stratixiv_gx_e__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixiv_gx_e_"	DEFINITION="'Stratix IV'" />
+		<MACRO	NAME="mfam_family_stratixv_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Stratix V")|| (INTENDED_DEVICE_FAMILY == "STRATIX V")|| (INTENDED_DEVICE_FAMILY == "stratix v") || (INTENDED_DEVICE_FAMILY == "StratixV")|| (INTENDED_DEVICE_FAMILY == "STRATIXV")|| (INTENDED_DEVICE_FAMILY == "stratixv") || (INTENDED_DEVICE_FAMILY == "Stratix V (GS)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (GS)")|| (INTENDED_DEVICE_FAMILY == "stratix v (gs)") || (INTENDED_DEVICE_FAMILY == "StratixV(GS)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(GS)")|| (INTENDED_DEVICE_FAMILY == "stratixv(gs)") || (INTENDED_DEVICE_FAMILY == "Stratix V (GT)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (GT)")|| (INTENDED_DEVICE_FAMILY == "stratix v (gt)") || (INTENDED_DEVICE_FAMILY == "StratixV(GT)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(GT)")|| (INTENDED_DEVICE_FAMILY == "stratixv(gt)") || (INTENDED_DEVICE_FAMILY == "Stratix V (GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (GX)")|| (INTENDED_DEVICE_FAMILY == "stratix v (gx)") || (INTENDED_DEVICE_FAMILY == "StratixV(GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(GX)")|| (INTENDED_DEVICE_FAMILY == "stratixv(gx)") || (INTENDED_DEVICE_FAMILY == "Stratix V (GS/GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (GS/GX)")|| (INTENDED_DEVICE_FAMILY == "stratix v (gs/gx)") || (INTENDED_DEVICE_FAMILY == "StratixV(GS/GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(GS/GX)")|| (INTENDED_DEVICE_FAMILY == "stratixv(gs/gx)") || (INTENDED_DEVICE_FAMILY == "Stratix V (GS/GT)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (GS/GT)")|| (INTENDED_DEVICE_FAMILY == "stratix v (gs/gt)") || (INTENDED_DEVICE_FAMILY == "StratixV(GS/GT)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(GS/GT)")|| (INTENDED_DEVICE_FAMILY == "stratixv(gs/gt)") || (INTENDED_DEVICE_FAMILY == "Stratix V (GT/GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (GT/GX)")|| (INTENDED_DEVICE_FAMILY == "stratix v (gt/gx)") || (INTENDED_DEVICE_FAMILY == "StratixV(GT/GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(GT/GX)")|| (INTENDED_DEVICE_FAMILY == "stratixv(gt/gx)") || (INTENDED_DEVICE_FAMILY == "Stratix V (GX/GS)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (GX/GS)")|| (INTENDED_DEVICE_FAMILY == "stratix v (gx/gs)") || (INTENDED_DEVICE_FAMILY == "StratixV(GX/GS)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(GX/GS)")|| (INTENDED_DEVICE_FAMILY == "stratixv(gx/gs)") || (INTENDED_DEVICE_FAMILY == "Stratix V (GT/GS)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (GT/GS)")|| (INTENDED_DEVICE_FAMILY == "stratix v (gt/gs)") || (INTENDED_DEVICE_FAMILY == "StratixV(GT/GS)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(GT/GS)")|| (INTENDED_DEVICE_FAMILY == "stratixv(gt/gs)") || (INTENDED_DEVICE_FAMILY == "Stratix V (GX/GT)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (GX/GT)")|| (INTENDED_DEVICE_FAMILY == "stratix v (gx/gt)") || (INTENDED_DEVICE_FAMILY == "StratixV(GX/GT)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(GX/GT)")|| (INTENDED_DEVICE_FAMILY == "stratixv(gx/gt)") || (INTENDED_DEVICE_FAMILY == "Stratix V (GS/GT/GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (GS/GT/GX)")|| (INTENDED_DEVICE_FAMILY == "stratix v (gs/gt/gx)") || (INTENDED_DEVICE_FAMILY == "Stratix V (GS/GX/GT)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (GS/GX/GT)")|| (INTENDED_DEVICE_FAMILY == "stratix v (gs/gx/gt)") || (INTENDED_DEVICE_FAMILY == "Stratix V (GT/GS/GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (GT/GS/GX)")|| (INTENDED_DEVICE_FAMILY == "stratix v (gt/gs/gx)") || (INTENDED_DEVICE_FAMILY == "Stratix V (GT/GX/GS)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (GT/GX/GS)")|| (INTENDED_DEVICE_FAMILY == "stratix v (gt/gx/gs)") || (INTENDED_DEVICE_FAMILY == "Stratix V (GX/GS/GT)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (GX/GS/GT)")|| (INTENDED_DEVICE_FAMILY == "stratix v (gx/gs/gt)") || (INTENDED_DEVICE_FAMILY == "Stratix V (GX/GT/GS)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (GX/GT/GS)")|| (INTENDED_DEVICE_FAMILY == "stratix v (gx/gt/gs)") || (INTENDED_DEVICE_FAMILY == "StratixV(GS/GT/GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(GS/GT/GX)")|| (INTENDED_DEVICE_FAMILY == "stratixv(gs/gt/gx)") || (INTENDED_DEVICE_FAMILY == "StratixV(GS/GX/GT)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(GS/GX/GT)")|| (INTENDED_DEVICE_FAMILY == "stratixv(gs/gx/gt)") || (INTENDED_DEVICE_FAMILY == "StratixV(GT/GS/GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(GT/GS/GX)")|| (INTENDED_DEVICE_FAMILY == "stratixv(gt/gs/gx)") || (INTENDED_DEVICE_FAMILY == "StratixV(GT/GX/GS)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(GT/GX/GS)")|| (INTENDED_DEVICE_FAMILY == "stratixv(gt/gx/gs)") || (INTENDED_DEVICE_FAMILY == "StratixV(GX/GS/GT)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(GX/GS/GT)")|| (INTENDED_DEVICE_FAMILY == "stratixv(gx/gs/gt)") || (INTENDED_DEVICE_FAMILY == "StratixV(GX/GT/GS)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(GX/GT/GS)")|| (INTENDED_DEVICE_FAMILY == "stratixv(gx/gt/gs)") || (INTENDED_DEVICE_FAMILY == "Stratix V (GS/GT/GX/E)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (GS/GT/GX/E)")|| (INTENDED_DEVICE_FAMILY == "stratix v (gs/gt/gx/e)") || (INTENDED_DEVICE_FAMILY == "StratixV(GS/GT/GX/E)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(GS/GT/GX/E)")|| (INTENDED_DEVICE_FAMILY == "stratixv(gs/gt/gx/e)") || (INTENDED_DEVICE_FAMILY == "Stratix V (E)")|| (INTENDED_DEVICE_FAMILY == "STRATIX V (E)")|| (INTENDED_DEVICE_FAMILY == "stratix v (e)") || (INTENDED_DEVICE_FAMILY == "StratixV(E)")|| (INTENDED_DEVICE_FAMILY == "STRATIXV(E)")|| (INTENDED_DEVICE_FAMILY == "stratixv(e)")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_gs__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_gs_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_gt__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_gt_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_gx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_gx_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_gs_gx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_gs_gx_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_gs_gt__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_gs_gt_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_gt_gx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_gt_gx_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_gx_gs__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_gx_gs_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_gt_gs__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_gt_gs_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_gx_gt__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_gx_gt_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_gs_gt_gx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_gs_gt_gx_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_gs_gx_gt__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_gs_gx_gt_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_gt_gs_gx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_gt_gs_gx_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_gt_gx_gs__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_gt_gx_gs_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_gx_gs_gt__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_gx_gs_gt_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_gx_gt_gs__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_gx_gt_gs_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_gs_gt_gx_e__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_gs_gt_gx_e_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixv_e__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixv_e_"	DEFINITION="'Stratix V'" />
+		<MACRO	NAME="mfam_family_stratixvi_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Stratix VI")|| (INTENDED_DEVICE_FAMILY == "STRATIX VI")|| (INTENDED_DEVICE_FAMILY == "stratix vi") || (INTENDED_DEVICE_FAMILY == "StratixVI")|| (INTENDED_DEVICE_FAMILY == "STRATIXVI")|| (INTENDED_DEVICE_FAMILY == "stratixvi") || (INTENDED_DEVICE_FAMILY == "Night Fury")|| (INTENDED_DEVICE_FAMILY == "NIGHT FURY")|| (INTENDED_DEVICE_FAMILY == "night fury") || (INTENDED_DEVICE_FAMILY == "nightfury")|| (INTENDED_DEVICE_FAMILY == "NIGHTFURY") || (INTENDED_DEVICE_FAMILY == "Stratix VI (GS/GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIX VI (GS/GX)")|| (INTENDED_DEVICE_FAMILY == "stratix vi (gs/gx)") || (INTENDED_DEVICE_FAMILY == "StratixVI(GS/GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIXVI(GS/GX)")|| (INTENDED_DEVICE_FAMILY == "stratixvi(gs/gx)") || (INTENDED_DEVICE_FAMILY == "Stratix VI (GS)")|| (INTENDED_DEVICE_FAMILY == "STRATIX VI (GS)")|| (INTENDED_DEVICE_FAMILY == "stratix vi (gs)") || (INTENDED_DEVICE_FAMILY == "StratixVI(GS)")|| (INTENDED_DEVICE_FAMILY == "STRATIXVI(GS)")|| (INTENDED_DEVICE_FAMILY == "stratixvi(gs)") || (INTENDED_DEVICE_FAMILY == "Stratix VI (GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIX VI (GX)")|| (INTENDED_DEVICE_FAMILY == "stratix vi (gx)") || (INTENDED_DEVICE_FAMILY == "StratixVI(GX)")|| (INTENDED_DEVICE_FAMILY == "STRATIXVI(GX)")|| (INTENDED_DEVICE_FAMILY == "stratixvi(gx)")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixvi"	DEFINITION="'Stratix VI'" />
+		<MACRO	NAME="mfam_family_nightfury_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixvi_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_nightfury"	DEFINITION="'Stratix VI'" />
+		<MACRO	NAME="mfam_family_stratixvi_gs_gx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixvi_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixvi_gs_gx_"	DEFINITION="'Stratix VI'" />
+		<MACRO	NAME="mfam_family_stratixvi_gs__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixvi_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixvi_gs_"	DEFINITION="'Stratix VI'" />
+		<MACRO	NAME="mfam_family_stratixvi_gx__strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixvi_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratixvi_gx_"	DEFINITION="'Stratix VI'" />
+		<MACRO	NAME="mfam_family_stratix_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(INTENDED_DEVICE_FAMILY == "Stratix")|| (INTENDED_DEVICE_FAMILY == "STRATIX")|| (INTENDED_DEVICE_FAMILY == "stratix") || (INTENDED_DEVICE_FAMILY == "Yeager")|| (INTENDED_DEVICE_FAMILY == "YEAGER")|| (INTENDED_DEVICE_FAMILY == "yeager")
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_stratix"	DEFINITION="'Stratix'" />
+		<MACRO	NAME="mfam_family_yeager_strict"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratix_strict(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_get_preferred_user_family_name_for_yeager"	DEFINITION="'Stratix'" />
+		<MACRO	NAME="mfam_family_flex6000"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				((INTENDED_DEVICE_FAMILY == "FLEX6000") )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_flex8000"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				((INTENDED_DEVICE_FAMILY == "FLEX8000") )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_flex10k"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				((INTENDED_DEVICE_FAMILY == "FLEX10K") || (INTENDED_DEVICE_FAMILY == "FLEX10KA") )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_flex10ke"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				((INTENDED_DEVICE_FAMILY == "FLEX10KE") || (INTENDED_DEVICE_FAMILY == "ACEX1K") )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_apex20k"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				((INTENDED_DEVICE_FAMILY == "APEX20K") )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_apex20ke"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				((INTENDED_DEVICE_FAMILY == "APEX20KE") || (INTENDED_DEVICE_FAMILY == "EXCALIBUR_ARM") || (INTENDED_DEVICE_FAMILY == "APEX20KC") )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_acex1k"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				((INTENDED_DEVICE_FAMILY == "ACEX1K") )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_apexii"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				((INTENDED_DEVICE_FAMILY == "APEXII") || (INTENDED_DEVICE_FAMILY == "APEX20KF") )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_mercury"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				((INTENDED_DEVICE_FAMILY == "Mercury") )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_aurora"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixgx(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stratix_gx"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixgx(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stratixgx"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixgx_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_acex2k"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cyclone(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_tornado"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cyclone(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_cyclone"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_cyclone_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_stratixiigx"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiigx_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_arriagx_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_stratixiii"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiii_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixiv(INTENDED_DEVICE_FAMILY) ||  mfam_family_hardcopyiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_arriavgz"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_arriavgz_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_arriavi"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_arriavi_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_stratixv"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_arriavgz(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_nightfury"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixvi(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stratixvi_gs_gx_"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixvi(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stratixvi_gs_"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixvi(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stratixvi_gx_"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixvi(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stratixvi"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixvi_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixvi_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_arriavi(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_stratixii"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixii_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_hardcopyii_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixiigx(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_cycloneiiigl"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneivgx(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_cycloneiv"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneivgx(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_cycloneiv_gx_"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneivgx(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_cycloneiiigx"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneivgx(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stingray"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_cycloneivgx(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_cycloneivgx"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_cycloneivgx_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneivgx_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_cycloneive"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_cycloneive_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_cycloneiii"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_cycloneiii_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneiiils_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneivgx(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneive(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_stratix_hc"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				((INTENDED_DEVICE_FAMILY == "StratixHC") )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_hardcopyii"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_hardcopyii_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_stratix"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratix_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix_hc(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixgx(INTENDED_DEVICE_FAMILY) ||  mfam_family_cyclone(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixii(INTENDED_DEVICE_FAMILY) ||  mfam_family_maxii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_maxii"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_maxii_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_maxv(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_maxv"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_maxv_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_cycloneii"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_cycloneii_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_excalibur"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				((INTENDED_DEVICE_FAMILY == "EXCALIBUR_ARM") )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_tgx"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stratixiv_gt_"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stratixiv_gx_"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stratixiv_e_"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stratixiiigx"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stratixiv_gt_gx_e_"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stratixiv_gt_e_gx_"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stratixiv_e_gt_gx_"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stratixiv_e_gx_gt_"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stratixiv_gx_e_"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_stratixiv(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_stratixiv"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiv_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_arriaiigx_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_hardcopyiv(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixv(INTENDED_DEVICE_FAMILY) ||  mfam_family_arriav(INTENDED_DEVICE_FAMILY) ||  mfam_family_arriaiigz(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixvi(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_arriaiigz"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_arriaiigz_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_stratixiii_only"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiii_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_piranha"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_arriaiigx(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_arriaii"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_arriaiigx(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_arriaii_gx_e_"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_arriaiigx(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_arriaiigx"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_arriaiigx_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_hcx"	ARGUMENTS="INTENDED_DEVICE_FAMILY"	DEFINITION="mfam_family_hardcopyiii(INTENDED_DEVICE_FAMILY)" />
+		<MACRO	NAME="mfam_family_hardcopyiii"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_hardcopyiii_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_hardcopyiii_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_hardcopyiv"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_hardcopyiv_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_hardcopyiv_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_cyclonev"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_cyclonev_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_arriav"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_arriav_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_cyclonev(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_base_stratixii"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixii_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_hardcopyii_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixiigx(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_base_stratix"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratix_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixgx_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_base_cycloneii"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_cycloneii_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_base_cyclone"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_cyclone_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_base_cycloneiii"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_cycloneiii_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneiiils_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneivgx_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneive(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_base_stratixiii"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiii_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixiv(INTENDED_DEVICE_FAMILY) ||  mfam_family_hardcopyiii_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_base_stratixv"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_arriavgz(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_stratix_nongx"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratix_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_is_hardcopy"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratix_hc(INTENDED_DEVICE_FAMILY) ||  mfam_family_hardcopyii(INTENDED_DEVICE_FAMILY) ||  mfam_family_hardcopyiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_hardcopyiv(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_classic"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				((INTENDED_DEVICE_FAMILY == "CLASSIC") )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_max"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				((INTENDED_DEVICE_FAMILY == "MAX5000") ||  mfam_family_max3000a_strict(INTENDED_DEVICE_FAMILY) || (INTENDED_DEVICE_FAMILY == "MAX7000") || (INTENDED_DEVICE_FAMILY == "MAX7000A") ||  mfam_family_max7000ae_strict(INTENDED_DEVICE_FAMILY) || (INTENDED_DEVICE_FAMILY == "MAX7000E") ||  mfam_family_max7000s_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_max7000b_strict(INTENDED_DEVICE_FAMILY) || (INTENDED_DEVICE_FAMILY == "MAX9000") )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_flex"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_flex6000(INTENDED_DEVICE_FAMILY) ||  mfam_family_flex8000(INTENDED_DEVICE_FAMILY) ||  mfam_family_flex10k(INTENDED_DEVICE_FAMILY) ||  mfam_family_flex10ke(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20k(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20ke(INTENDED_DEVICE_FAMILY) ||  mfam_family_mercury(INTENDED_DEVICE_FAMILY) ||  mfam_family_apexii(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_eab"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_flex10k(INTENDED_DEVICE_FAMILY) ||  mfam_family_has_dualport_eab(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_dualport_eab"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_flex10ke(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20k(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20ke(INTENDED_DEVICE_FAMILY) ||  mfam_family_mercury(INTENDED_DEVICE_FAMILY) ||  mfam_family_apexii(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix(INTENDED_DEVICE_FAMILY) and !  mfam_family_maxii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_pll"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_flex10k(INTENDED_DEVICE_FAMILY) ||  mfam_family_flex10ke(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20k(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20ke(INTENDED_DEVICE_FAMILY) ||  mfam_family_mercury(INTENDED_DEVICE_FAMILY) ||  mfam_family_apexii(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix(INTENDED_DEVICE_FAMILY) and !  mfam_family_maxii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_altpll"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixii(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix(INTENDED_DEVICE_FAMILY) and !  mfam_family_maxii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_native_aload"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_flex6000(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20k(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20ke(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_clearable_counter_mode"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(!  mfam_family_flex6000(INTENDED_DEVICE_FAMILY) and !  mfam_family_apex20k(INTENDED_DEVICE_FAMILY) and !  mfam_family_mercury(INTENDED_DEVICE_FAMILY) and !  mfam_family_apexii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_updown_counter_mode"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(!  mfam_family_flex6000(INTENDED_DEVICE_FAMILY) and !  mfam_family_apex20k(INTENDED_DEVICE_FAMILY) and !  mfam_family_mercury(INTENDED_DEVICE_FAMILY) and !  mfam_family_apexii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_enable_lut_input"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_flex10k(INTENDED_DEVICE_FAMILY) ||  mfam_family_flex10ke(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20ke(INTENDED_DEVICE_FAMILY) ||  mfam_family_mercury(INTENDED_DEVICE_FAMILY) ||  mfam_family_apexii(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_labwide_sclr"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_flex6000(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20k(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20ke(INTENDED_DEVICE_FAMILY) ||  mfam_family_mercury(INTENDED_DEVICE_FAMILY) ||  mfam_family_apexii(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_labwide_sload"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_flex6000(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20k(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20ke(INTENDED_DEVICE_FAMILY) ||  mfam_family_mercury(INTENDED_DEVICE_FAMILY) ||  mfam_family_apexii(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_need_dffea_for_async"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_flex10ke(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix(INTENDED_DEVICE_FAMILY) ||  mfam_family_flex10k(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_uses_altqpram"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_apexii(INTENDED_DEVICE_FAMILY) ||  mfam_family_mercury(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_cascade"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_flex6000(INTENDED_DEVICE_FAMILY) ||  mfam_family_flex8000(INTENDED_DEVICE_FAMILY) ||  mfam_family_flex10k(INTENDED_DEVICE_FAMILY) ||  mfam_family_flex10ke(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20k(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20ke(INTENDED_DEVICE_FAMILY) ||  mfam_family_apexii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_dsp_block"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratix_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix_hc(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixgx_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_36_bit_multiplier"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_has_dsp_block(INTENDED_DEVICE_FAMILY) and !  mfam_family_cycloneii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_dsp_has_two_level_reg"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_cycloneii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_dsp_stratixiii"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_altera_mult_add_flow"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixv(INTENDED_DEVICE_FAMILY) ||  mfam_family_arriav(INTENDED_DEVICE_FAMILY) ||  mfam_family_cyclonev(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixvi(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_is_altmult_add_eol"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixvi(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_stratixv_style_ram"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixv(INTENDED_DEVICE_FAMILY) ||  mfam_family_arriav(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixvi(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_megaram"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratix_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix_hc(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixgx_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixii(INTENDED_DEVICE_FAMILY) and !  mfam_family_arriaiigx(INTENDED_DEVICE_FAMILY) and !  mfam_family_has_stratixv_style_ram(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_m512"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratix_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix_hc(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixgx_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixii_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixiigx(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_m8k"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(!  mfam_family_has_stratixv_style_ram(INTENDED_DEVICE_FAMILY) and  mfam_family_stratixiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_m4k"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_base_stratix(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_stratixii(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_cycloneii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cyclone(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_lutram"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_has_stratixv_style_ram(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_m144k"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiii(INTENDED_DEVICE_FAMILY) and !  mfam_family_arriaiigx(INTENDED_DEVICE_FAMILY) and !  mfam_family_has_stratixv_style_ram(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_m20k"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixv(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixvi(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_m10k"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_arriav(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_smaller_mram"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_has_m144k(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_initializable_mram"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_has_m144k(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_stratix_style_ram"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratix(INTENDED_DEVICE_FAMILY) and !  mfam_family_maxii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_stratixi_style_ram"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratix_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix_hc(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixgx(INTENDED_DEVICE_FAMILY) ||  mfam_family_cyclone(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_stratixii_style_ram"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_stratixiii_style_ram"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_supports_ram_benchmarking"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				((INTENDED_DEVICE_FAMILY == "NO_FAMILY") )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_clearable_ram_address_reg"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_base_stratix(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_cyclone(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_stratixiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_cycloneiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_ram_addressstall"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_base_stratixii(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_cycloneii(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_stratixiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_cycloneiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_ram_block_type_is_lutram"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				((INTENDED_DEVICE_FAMILY == "LUTRAM") || (INTENDED_DEVICE_FAMILY == "MLAB") )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_stratix_style_pll"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_cyclone(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix_hc(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixgx(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_stratixii_style_pll"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixii(INTENDED_DEVICE_FAMILY) and !  mfam_family_stratixiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneii(INTENDED_DEVICE_FAMILY) and !  mfam_family_cycloneiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_stratixiii_style_pll"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_no_pll_enable"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_uses_stratixiii_pll"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_uses_generic_pll"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixv(INTENDED_DEVICE_FAMILY) ||  mfam_family_arriav(INTENDED_DEVICE_FAMILY) ||  mfam_family_cyclonev(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixvi(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_rublock"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratix_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixgx_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixii_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixiigx(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_uses_unified_serdes"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_arriav(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_serdes_block"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratix_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixgx(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixii(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20ke(INTENDED_DEVICE_FAMILY) ||  mfam_family_apexii(INTENDED_DEVICE_FAMILY) ||  mfam_family_mercury(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix_hc(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_flexible_lvds"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_cyclone(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneii(INTENDED_DEVICE_FAMILY) ||  mfam_family_maxv(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_use_lvds_pll_in_source_synchronous_mode"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_uses_DPA_deadzone_fix_soft_cdr"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_hardcopyiv(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixiv_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_lvds_no_outclk_phase_shift"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_base_cyclone(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_cycloneii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_ddio"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratix_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixgx(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cyclone(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneii(INTENDED_DEVICE_FAMILY) ||  mfam_family_apexii(INTENDED_DEVICE_FAMILY) ||  mfam_family_mercury(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix_hc(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_inverted_output_ddio"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_cycloneii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_oe_out"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_dq"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_base_stratix(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_stratixii(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_cycloneii(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_cycloneiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_arriaiigx(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_asmi"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_cyclone_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneii_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixii_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixiigx(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_altoct"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_clkctrl_block"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_clkctrl_block_with_glitch_free_implementation_support"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_stratixv_style_clkctrl_block"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixv(INTENDED_DEVICE_FAMILY) ||  mfam_family_arriav(INTENDED_DEVICE_FAMILY) ||  mfam_family_cyclonev(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_dqs_support_in_ddio_bidir"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratix_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratix_hc(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixgx_strict(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_gxb"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiigx(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixiv(INTENDED_DEVICE_FAMILY) ||  mfam_family_arriaiigx(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneivgx(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_gxb_reconfig"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiigx(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixiv(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneivgx(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_gxb_reconfig_in_wizard"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_has_gxb_reconfig(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_stratix_le"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratix(INTENDED_DEVICE_FAMILY) and !  mfam_family_stratixii(INTENDED_DEVICE_FAMILY) and !  mfam_family_cycloneii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_diff_reg_lut_primitives"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixii(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_lut_has_inverta"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_base_stratix(INTENDED_DEVICE_FAMILY) ||  mfam_family_cyclone(INTENDED_DEVICE_FAMILY) ||  mfam_family_maxii(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_stratixii(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_stratixiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_jtag_accessible_extensions"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_maxii(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20k(INTENDED_DEVICE_FAMILY) ||  mfam_family_apex20ke(INTENDED_DEVICE_FAMILY) ||  mfam_family_apexii(INTENDED_DEVICE_FAMILY) ||  mfam_family_mercury(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_stratix(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_stratix(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_cyclone(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_stratixii(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_cycloneii(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_stratixiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_base_cycloneiii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_signaltap_support"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_has_jtag_accessible_extensions(INTENDED_DEVICE_FAMILY) and !  mfam_family_maxii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_supports_metastability_analysis"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixiii_only(INTENDED_DEVICE_FAMILY) ||  mfam_family_cycloneiii(INTENDED_DEVICE_FAMILY) ||  mfam_family_arriaiigx(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixiv_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY) ||  mfam_family_arriavgz(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_family_has_6input_lut"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				( mfam_family_stratixii(INTENDED_DEVICE_FAMILY) )
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="mfam_le_ram_max_num_words"	DEFINITION="2048"/>
+		<MACRO NAME="mfam_le_ram_max_num_bits"	DEFINITION="8192"/>
+		<MACRO NAME="mfam_ram_max_address_width"	DEFINITION="25"/>
+		<MACRO NAME="mfam_lutram"	DEFINITION="'MLAB'"/>
+		<MACRO NAME="mfam_m20k"	DEFINITION="'M20K'"/>
+		<MACRO NAME="mfam_m10k"	DEFINITION="'M10K'"/>
+		<MACRO NAME="mfam_m9k"	DEFINITION="'M9K'"/>
+		<MACRO NAME="mfam_m144k"	DEFINITION="'M144K'"/>
+		<MACRO NAME="mfam_m4k"	DEFINITION="'M4K'"/>
+		<MACRO NAME="mfam_m512"	DEFINITION="'M512'"/>
+		<MACRO NAME="mfam_mram"	DEFINITION="'M-RAM'"/>
+		<MACRO NAME="mfam_auto"	DEFINITION="'AUTO'"/>
+		<MACRO NAME="mfam_periphery_clock"	DEFINITION="'Periphery clock'"/>
+		<MACRO	NAME="mfam_get_preferred_user_family_name"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(mfam_family_stratixgx_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_stratixgx : 
+				(mfam_family_cycloneivgx_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_cycloneivgx : 
+				(mfam_family_hardcopyii_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_hardcopyii : 
+				(mfam_family_cycloneiii_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_cycloneiii : 
+				(mfam_family_stratixiigx_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_stratixiigx : 
+				(mfam_family_cycloneiiils_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_cycloneiiils : 
+				(mfam_family_maxv_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_maxv : 
+				(mfam_family_stratixii_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_stratixii : 
+				(mfam_family_hardcopyiii_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_hardcopyiii : 
+				(mfam_family_arriavi_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_arriavi : 
+				(mfam_family_arriaiigx_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_arriaiigx : 
+				(mfam_family_arriagx_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_arriagx : 
+				(mfam_family_hardcopyiv_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_hardcopyiv : 
+				(mfam_family_max7000b_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_max7000b : 
+				(mfam_family_stratix_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_stratix : 
+				(mfam_family_max7000s_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_max7000s : 
+				(mfam_family_bs_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_bs : 
+				(mfam_family_arriaiigz_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_arriaiigz : 
+				(mfam_family_cycloneii_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_cycloneii : 
+				(mfam_family_cyclonev_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_cyclonev : 
+				(mfam_family_max3000a_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_max3000a : 
+				(mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_stratixv : 
+				(mfam_family_arriav_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_arriav : 
+				(mfam_family_stratixvi_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_stratixvi : 
+				(mfam_family_arriavgz_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_arriavgz : 
+				(mfam_family_maxii_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_maxii : 
+				(mfam_family_cyclone_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_cyclone : 
+				(mfam_family_cycloneive_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_cycloneive : 
+				(mfam_family_stratixiv_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_stratixiv : 
+				(mfam_family_max7000ae_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_max7000ae : 
+				(mfam_family_stratixiii_strict(INTENDED_DEVICE_FAMILY) ? mfam_get_preferred_user_family_name_for_stratixiii : 
+				INTENDED_DEVICE_FAMILY)))))))))))))))))))))))))))))))
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_wysiwyg_library_name"	ARGUMENTS="INTENDED_DEVICE_FAMILY" >
+			<DEFINITION>
+				(mfam_family_armstrong_strict(INTENDED_DEVICE_FAMILY) ? 'stratixii' : 
+				(mfam_family_max7000b_strict(INTENDED_DEVICE_FAMILY) ? 'max' : 
+				(mfam_family_fusion_strict(INTENDED_DEVICE_FAMILY) ? 'hardcopyii' : 
+				(mfam_family_max7000s_strict(INTENDED_DEVICE_FAMILY) ? 'max' : 
+				(mfam_family_stingray_strict(INTENDED_DEVICE_FAMILY) ? 'cycloneiv' : 
+				(mfam_family_tgx_strict(INTENDED_DEVICE_FAMILY) ? 'stratixiv' : 
+				(mfam_family_arriaiigz_strict(INTENDED_DEVICE_FAMILY) ? 'arriaiigz' : 
+				(mfam_family_cycloneii_strict(INTENDED_DEVICE_FAMILY) ? 'cycloneii' : 
+				(mfam_family_max3000a_strict(INTENDED_DEVICE_FAMILY) ? 'max' : 
+				(mfam_family_cyclonev_strict(INTENDED_DEVICE_FAMILY) ? 'cyclonev' : 
+				(mfam_family_stratixv_strict(INTENDED_DEVICE_FAMILY) ? 'stratixv' : 
+				(mfam_family_yeager_strict(INTENDED_DEVICE_FAMILY) ? 'stratix' : 
+				(mfam_family_hcx_strict(INTENDED_DEVICE_FAMILY) ? 'hardcopyiii' : 
+				(mfam_family_arriav_strict(INTENDED_DEVICE_FAMILY) ? 'arriav' : 
+				(mfam_family_piranha_strict(INTENDED_DEVICE_FAMILY) ? 'arriaii' : 
+				(mfam_family_stratixiigx_strict(INTENDED_DEVICE_FAMILY) ? 'stratixiigx' : 
+				(mfam_family_stratixiigxlite_strict(INTENDED_DEVICE_FAMILY) ? 'arriagx' : 
+				(mfam_family_titan_strict(INTENDED_DEVICE_FAMILY) ? 'stratixiii' : 
+				(mfam_family_hcxiv_strict(INTENDED_DEVICE_FAMILY) ? 'hardcopyiv' : 
+				(mfam_family_tsunami_strict(INTENDED_DEVICE_FAMILY) ? 'maxii' : 
+				(mfam_family_arriavgz_strict(INTENDED_DEVICE_FAMILY) ? 'arriavgz' : 
+				(mfam_family_cuda_strict(INTENDED_DEVICE_FAMILY) ? 'cycloneiii' : 
+				(mfam_family_maxv_strict(INTENDED_DEVICE_FAMILY) ? 'maxv' : 
+				(mfam_family_nightfury_strict(INTENDED_DEVICE_FAMILY) ? 'twentynm' : 
+				(mfam_family_arriavi_strict(INTENDED_DEVICE_FAMILY) ? 'arriavi' : 
+				(mfam_family_cycloneive_strict(INTENDED_DEVICE_FAMILY) ? 'cycloneive' : 
+				(mfam_family_tarpon_strict(INTENDED_DEVICE_FAMILY) ? 'cycloneiiils' : 
+				(mfam_family_tornado_strict(INTENDED_DEVICE_FAMILY) ? 'cyclone' : 
+				(mfam_family_aurora_strict(INTENDED_DEVICE_FAMILY) ? 'stratixgx' : 
+				(mfam_family_max7000ae_strict(INTENDED_DEVICE_FAMILY) ? 'max' : 
+				INTENDED_DEVICE_FAMILY))))))))))))))))))))))))))))))
+			</DEFINITION>
+		</MACRO>
+		<MACRO	NAME="mfam_get_family_name_from_wysiwyg_library"	ARGUMENTS="WYS_LIB_NAME" >
+			<DEFINITION>
+				((WYS_LIB_NAME == 'stratix') ? mfam_get_preferred_user_family_name_for_yeager : 
+				((WYS_LIB_NAME == 'stratixgx') ? mfam_get_preferred_user_family_name_for_aurora : 
+				((WYS_LIB_NAME == 'max') ? mfam_get_preferred_user_family_name_for_max7000b : 
+				((WYS_LIB_NAME == 'hardcopyii') ? mfam_get_preferred_user_family_name_for_fusion : 
+				((WYS_LIB_NAME == 'cycloneiii') ? mfam_get_preferred_user_family_name_for_cuda : 
+				((WYS_LIB_NAME == 'arriaiigz') ? mfam_get_preferred_user_family_name_for_arriaiigz : 
+				((WYS_LIB_NAME == 'cycloneii') ? mfam_get_preferred_user_family_name_for_cycloneii : 
+				((WYS_LIB_NAME == 'cyclonev') ? mfam_get_preferred_user_family_name_for_cyclonev : 
+				((WYS_LIB_NAME == 'stratixv') ? mfam_get_preferred_user_family_name_for_stratixv : 
+				((WYS_LIB_NAME == 'arriaii') ? mfam_get_preferred_user_family_name_for_piranha : 
+				((WYS_LIB_NAME == 'arriav') ? mfam_get_preferred_user_family_name_for_arriav : 
+				((WYS_LIB_NAME == 'cycloneiv') ? mfam_get_preferred_user_family_name_for_stingray : 
+				((WYS_LIB_NAME == 'stratixiigx') ? mfam_get_preferred_user_family_name_for_stratixiigx : 
+				((WYS_LIB_NAME == 'arriavgz') ? mfam_get_preferred_user_family_name_for_arriavgz : 
+				((WYS_LIB_NAME == 'maxii') ? mfam_get_preferred_user_family_name_for_tsunami : 
+				((WYS_LIB_NAME == 'cyclone') ? mfam_get_preferred_user_family_name_for_tornado : 
+				((WYS_LIB_NAME == 'twentynm') ? mfam_get_preferred_user_family_name_for_nightfury : 
+				((WYS_LIB_NAME == 'cycloneiiils') ? mfam_get_preferred_user_family_name_for_tarpon : 
+				((WYS_LIB_NAME == 'maxv') ? mfam_get_preferred_user_family_name_for_maxv : 
+				((WYS_LIB_NAME == 'cycloneive') ? mfam_get_preferred_user_family_name_for_cycloneive : 
+				((WYS_LIB_NAME == 'arriavi') ? mfam_get_preferred_user_family_name_for_arriavi : 
+				((WYS_LIB_NAME == 'stratixii') ? mfam_get_preferred_user_family_name_for_armstrong : 
+				((WYS_LIB_NAME == 'hardcopyiii') ? mfam_get_preferred_user_family_name_for_hcx : 
+				((WYS_LIB_NAME == 'stratixiv') ? mfam_get_preferred_user_family_name_for_tgx : 
+				((WYS_LIB_NAME == 'arriagx') ? mfam_get_preferred_user_family_name_for_stratixiigxlite : 
+				((WYS_LIB_NAME == 'hardcopyiv') ? mfam_get_preferred_user_family_name_for_hcxiv : 
+				((WYS_LIB_NAME == 'stratixiii') ? mfam_get_preferred_user_family_name_for_titan : 
+				WYS_LIB_NAME)))))))))))))))))))))))))))
+			</DEFINITION>
+		</MACRO>
+	</MACROS>
+</ROOT>

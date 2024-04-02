@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_soc_interface_peripheral_emac">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_soc_interface_peripheral_emac" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="col" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rxclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rxcrs" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rxdv" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rxer" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rxd" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="gtxclk" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="txen" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="txer" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="txd" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_cmu_fpll_refclk_select">
+	<PARAMETERS>
+		<PARAMETER NAME="pll_clkin_0_src" TYPE="String" VALUE="pll_clkin_0_src_vss|pll_clkin_0_src_core_ref_clk|pll_clkin_0_src_tx_rx_core_ref_clk|pll_clkin_0_src_ref_clk|pll_clkin_0_src_adj_pll_clk|pll_clkin_0_src_lvpecl" DEFAULT_VALUE="pll_clkin_0_src_vss"/>
+		<PARAMETER NAME="pll_clkin_1_src" TYPE="String" VALUE="pll_clkin_1_src_vss|pll_clkin_1_src_core_ref_clk|pll_clkin_1_src_tx_rx_core_ref_clk|pll_clkin_1_src_ref_clk|pll_clkin_1_src_adj_pll_clk|pll_clkin_1_src_lvpecl" DEFAULT_VALUE="pll_clkin_1_src_vss"/>
+		<PARAMETER NAME="pll_auto_clk_sw_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_clk_loss_edge" TYPE="String" VALUE="pll_clk_loss_both_edges|pll_clk_loss_rising_edge" DEFAULT_VALUE="pll_clk_loss_both_edges"/>
+		<PARAMETER NAME="pll_clk_loss_sw_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_clk_sw_dly" TYPE="Integer" VALUE="0..7" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="pll_manu_clk_sw_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_sw_refclk_src" TYPE="String" VALUE="pll_sw_refclk_src_clk_0|pll_sw_refclk_src_clk_1" DEFAULT_VALUE="pll_sw_refclk_src_clk_0"/>
+		<PARAMETER NAME="xpm_iqref_mux0_iqclk_sel" TYPE="String" VALUE="ref_iqclk0|ref_iqclk1|ref_iqclk2|ref_iqclk3|ref_iqclk4|ref_iqclk5|ref_iqclk6|ref_iqclk7|ref_iqclk8|ref_iqclk9|ref_iqclk10|ref_iqclk11|iqtxrxclk0|iqtxrxclk1|iqtxrxclk2|iqtxrxclk3|iqtxrxclk4|iqtxrxclk5|power_down" DEFAULT_VALUE="power_down"/>
+		<PARAMETER NAME="xpm_iqref_mux0_scratch0_src" TYPE="String" VALUE="scratch0_refclk" DEFAULT_VALUE="scratch0_refclk"/>
+		<PARAMETER NAME="xpm_iqref_mux0_scratch1_src" TYPE="String" VALUE="scratch1_refclk" DEFAULT_VALUE="scratch1_refclk"/>
+		<PARAMETER NAME="xpm_iqref_mux0_scratch2_src" TYPE="String" VALUE="scratch2_refclk" DEFAULT_VALUE="scratch2_refclk"/>
+		<PARAMETER NAME="xpm_iqref_mux0_scratch3_src" TYPE="String" VALUE="scratch3_refclk" DEFAULT_VALUE="scratch3_refclk"/>
+		<PARAMETER NAME="xpm_iqref_mux0_scratch4_src" TYPE="String" VALUE="scratch4_refclk" DEFAULT_VALUE="scratch4_refclk"/>
+		<PARAMETER NAME="xpm_iqref_mux1_iqclk_sel" TYPE="String" VALUE="ref_iqclk0|ref_iqclk1|ref_iqclk2|ref_iqclk3|ref_iqclk4|ref_iqclk5|ref_iqclk6|ref_iqclk7|ref_iqclk8|ref_iqclk9|ref_iqclk10|ref_iqclk11|iqtxrxclk0|iqtxrxclk1|iqtxrxclk2|iqtxrxclk3|iqtxrxclk4|iqtxrxclk5|power_down" DEFAULT_VALUE="power_down"/>
+		<PARAMETER NAME="xpm_iqref_mux1_scratch0_src" TYPE="String" VALUE="scratch0_refclk" DEFAULT_VALUE="scratch0_refclk"/>
+		<PARAMETER NAME="xpm_iqref_mux1_scratch1_src" TYPE="String" VALUE="scratch1_refclk" DEFAULT_VALUE="scratch1_refclk"/>
+		<PARAMETER NAME="xpm_iqref_mux1_scratch2_src" TYPE="String" VALUE="scratch2_refclk" DEFAULT_VALUE="scratch2_refclk"/>
+		<PARAMETER NAME="xpm_iqref_mux1_scratch3_src" TYPE="String" VALUE="scratch3_refclk" DEFAULT_VALUE="scratch3_refclk"/>
+		<PARAMETER NAME="xpm_iqref_mux1_scratch4_src" TYPE="String" VALUE="scratch4_refclk" DEFAULT_VALUE="scratch4_refclk"/>
+		<PARAMETER NAME="silicon_rev" TYPE="String" VALUE="reve|es" DEFAULT_VALUE="reve"/>
+		<PARAMETER NAME="refclk_select0" TYPE="String" VALUE="ref_iqclk0|ref_iqclk1|ref_iqclk2|ref_iqclk3|ref_iqclk4|ref_iqclk5|ref_iqclk6|ref_iqclk7|ref_iqclk8|ref_iqclk9|ref_iqclk10|ref_iqclk11|iqtxrxclk0|iqtxrxclk1|iqtxrxclk2|iqtxrxclk3|iqtxrxclk4|iqtxrxclk5|coreclk|fixed_clk|lvpecl|adj_pll_clk|power_down" DEFAULT_VALUE="ref_iqclk0"/>
+		<PARAMETER NAME="refclk_select1" TYPE="String" VALUE="ref_iqclk0|ref_iqclk1|ref_iqclk2|ref_iqclk3|ref_iqclk4|ref_iqclk5|ref_iqclk6|ref_iqclk7|ref_iqclk8|ref_iqclk9|ref_iqclk10|ref_iqclk11|iqtxrxclk0|iqtxrxclk1|iqtxrxclk2|iqtxrxclk3|iqtxrxclk4|iqtxrxclk5|coreclk|fixed_clk|lvpecl|adj_pll_clk|power_down" DEFAULT_VALUE="ref_iqclk0"/>
+		<PARAMETER NAME="mux0_inclk0_logical_to_physical_mapping" TYPE="String" VALUE="ref_iqclk0|ref_iqclk1|ref_iqclk2|ref_iqclk3|ref_iqclk4|ref_iqclk5|ref_iqclk6|ref_iqclk7|ref_iqclk8|ref_iqclk9|ref_iqclk10|ref_iqclk11|iqtxrxclk0|iqtxrxclk1|iqtxrxclk2|iqtxrxclk3|iqtxrxclk4|iqtxrxclk5|coreclk|fixed_clk|lvpecl|adj_pll_clk|power_down" DEFAULT_VALUE="ref_iqclk0"/>
+		<PARAMETER NAME="mux0_inclk1_logical_to_physical_mapping" TYPE="String" VALUE="ref_iqclk0|ref_iqclk1|ref_iqclk2|ref_iqclk3|ref_iqclk4|ref_iqclk5|ref_iqclk6|ref_iqclk7|ref_iqclk8|ref_iqclk9|ref_iqclk10|ref_iqclk11|iqtxrxclk0|iqtxrxclk1|iqtxrxclk2|iqtxrxclk3|iqtxrxclk4|iqtxrxclk5|coreclk|fixed_clk|lvpecl|adj_pll_clk|power_down" DEFAULT_VALUE="ref_iqclk0"/>
+		<PARAMETER NAME="mux0_inclk2_logical_to_physical_mapping" TYPE="String" VALUE="ref_iqclk0|ref_iqclk1|ref_iqclk2|ref_iqclk3|ref_iqclk4|ref_iqclk5|ref_iqclk6|ref_iqclk7|ref_iqclk8|ref_iqclk9|ref_iqclk10|ref_iqclk11|iqtxrxclk0|iqtxrxclk1|iqtxrxclk2|iqtxrxclk3|iqtxrxclk4|iqtxrxclk5|coreclk|fixed_clk|lvpecl|adj_pll_clk|power_down" DEFAULT_VALUE="ref_iqclk0"/>
+		<PARAMETER NAME="mux0_inclk3_logical_to_physical_mapping" TYPE="String" VALUE="ref_iqclk0|ref_iqclk1|ref_iqclk2|ref_iqclk3|ref_iqclk4|ref_iqclk5|ref_iqclk6|ref_iqclk7|ref_iqclk8|ref_iqclk9|ref_iqclk10|ref_iqclk11|iqtxrxclk0|iqtxrxclk1|iqtxrxclk2|iqtxrxclk3|iqtxrxclk4|iqtxrxclk5|coreclk|fixed_clk|lvpecl|adj_pll_clk|power_down" DEFAULT_VALUE="ref_iqclk0"/>
+		<PARAMETER NAME="mux0_inclk4_logical_to_physical_mapping" TYPE="String" VALUE="ref_iqclk0|ref_iqclk1|ref_iqclk2|ref_iqclk3|ref_iqclk4|ref_iqclk5|ref_iqclk6|ref_iqclk7|ref_iqclk8|ref_iqclk9|ref_iqclk10|ref_iqclk11|iqtxrxclk0|iqtxrxclk1|iqtxrxclk2|iqtxrxclk3|iqtxrxclk4|iqtxrxclk5|coreclk|fixed_clk|lvpecl|adj_pll_clk|power_down" DEFAULT_VALUE="ref_iqclk0"/>
+		<PARAMETER NAME="mux1_inclk0_logical_to_physical_mapping" TYPE="String" VALUE="ref_iqclk0|ref_iqclk1|ref_iqclk2|ref_iqclk3|ref_iqclk4|ref_iqclk5|ref_iqclk6|ref_iqclk7|ref_iqclk8|ref_iqclk9|ref_iqclk10|ref_iqclk11|iqtxrxclk0|iqtxrxclk1|iqtxrxclk2|iqtxrxclk3|iqtxrxclk4|iqtxrxclk5|coreclk|fixed_clk|lvpecl|adj_pll_clk|power_down" DEFAULT_VALUE="ref_iqclk0"/>
+		<PARAMETER NAME="mux1_inclk1_logical_to_physical_mapping" TYPE="String" VALUE="ref_iqclk0|ref_iqclk1|ref_iqclk2|ref_iqclk3|ref_iqclk4|ref_iqclk5|ref_iqclk6|ref_iqclk7|ref_iqclk8|ref_iqclk9|ref_iqclk10|ref_iqclk11|iqtxrxclk0|iqtxrxclk1|iqtxrxclk2|iqtxrxclk3|iqtxrxclk4|iqtxrxclk5|coreclk|fixed_clk|lvpecl|adj_pll_clk|power_down" DEFAULT_VALUE="ref_iqclk0"/>
+		<PARAMETER NAME="mux1_inclk2_logical_to_physical_mapping" TYPE="String" VALUE="ref_iqclk0|ref_iqclk1|ref_iqclk2|ref_iqclk3|ref_iqclk4|ref_iqclk5|ref_iqclk6|ref_iqclk7|ref_iqclk8|ref_iqclk9|ref_iqclk10|ref_iqclk11|iqtxrxclk0|iqtxrxclk1|iqtxrxclk2|iqtxrxclk3|iqtxrxclk4|iqtxrxclk5|coreclk|fixed_clk|lvpecl|adj_pll_clk|power_down" DEFAULT_VALUE="ref_iqclk0"/>
+		<PARAMETER NAME="mux1_inclk3_logical_to_physical_mapping" TYPE="String" VALUE="ref_iqclk0|ref_iqclk1|ref_iqclk2|ref_iqclk3|ref_iqclk4|ref_iqclk5|ref_iqclk6|ref_iqclk7|ref_iqclk8|ref_iqclk9|ref_iqclk10|ref_iqclk11|iqtxrxclk0|iqtxrxclk1|iqtxrxclk2|iqtxrxclk3|iqtxrxclk4|iqtxrxclk5|coreclk|fixed_clk|lvpecl|adj_pll_clk|power_down" DEFAULT_VALUE="ref_iqclk0"/>
+		<PARAMETER NAME="mux1_inclk4_logical_to_physical_mapping" TYPE="String" VALUE="ref_iqclk0|ref_iqclk1|ref_iqclk2|ref_iqclk3|ref_iqclk4|ref_iqclk5|ref_iqclk6|ref_iqclk7|ref_iqclk8|ref_iqclk9|ref_iqclk10|ref_iqclk11|iqtxrxclk0|iqtxrxclk1|iqtxrxclk2|iqtxrxclk3|iqtxrxclk4|iqtxrxclk5|coreclk|fixed_clk|lvpecl|adj_pll_clk|power_down" DEFAULT_VALUE="ref_iqclk0"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_cmu_fpll_refclk_select" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="avmmclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="avmmread" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="avmmrstn" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="avmmwrite" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="core_refclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="extswitch" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="pll_cascade_in" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="refclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="tx_rx_core_refclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="avmmaddress" TYPE="INPUT" WIDTH="9" DEFAULT_VALUE="0"/>
+		<PORT NAME="avmmwritedata" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="iqtxrxclk" TYPE="INPUT" WIDTH="6" DEFAULT_VALUE="0"/>
+		<PORT NAME="ref_iqclk" TYPE="INPUT" WIDTH="12" DEFAULT_VALUE="0"/>
+		<PORT NAME="blockselect" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clk0bad" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clk1bad" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="extswitch_buf" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="outclk" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="pllclksel" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="avmmreaddata" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="clk_src" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="termination" TYPE="String" VALUE="Off|OCT 85 Ohms|OCT 100 Ohms|OCT 150 Ohms" DEFAULT_VALUE="OCT 100 Ohms" />
+		<PARAMETER NAME="common_mode" TYPE="String" VALUE="tristate|0.82V" DEFAULT_VALUE="0.82V" />
+		<PARAMETER NAME="dprio_config_mode" TYPE="Vector" DEFAULT_VALUE="000000" WIDTH="6" />
+		<PARAMETER NAME="channel_number" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="protocol_hint" TYPE="String" VALUE="gige|pcie|basic|bist|prbs|cpri|xaui|srio|sdi_3g|sdi_hd" DEFAULT_VALUE="basic" />
+		<PARAMETER NAME="deserialization_factor" TYPE="Integer" VALUE="8|10" DEFAULT_VALUE="8" />
+		<PARAMETER NAME="logical_channel_address" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="pd_rising_edge_only" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="eq_dc_gain" TYPE="Integer" VALUE="0|3|6" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="eq_setting" TYPE="Integer" VALUE="0|1|4|5|7" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="signal_detect_hysteresis_valid_threshold" TYPE="Integer" VALUE="1..14" DEFAULT_VALUE="14" />
+		<PARAMETER NAME="force_signal_detect" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="signal_detect_loss_threshold" TYPE="Integer" VALUE="1..14" DEFAULT_VALUE="3" />
+		<PARAMETER NAME="signal_detect_hysteresis" TYPE="Integer" VALUE="1..8" DEFAULT_VALUE="4" />
+		<PARAMETER NAME="use_external_termination" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="ppmselect" TYPE="Integer" VALUE="0..63" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="enable_initial_phase_selection" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true" />
+		<PARAMETER NAME="initial_phase_value" TYPE="Integer" VALUE="0..63" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="allow_serial_loopback" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="send_reverse_serial_loopback_data" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="send_reverse_serial_loopback_recovered_clk" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_dpa_shift" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="phase_step_add_setting" TYPE="Integer" VALUE="1..3" DEFAULT_VALUE="2" />
+		<PARAMETER NAME="phase_step_sub_setting" TYPE="Integer" VALUE="1..3" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="pd1_counter_setting" TYPE="Integer" VALUE="0..7" DEFAULT_VALUE="3" />
+		<PARAMETER NAME="pd2_counter_setting" TYPE="Integer" VALUE="0..7" DEFAULT_VALUE="2" />
+		<PARAMETER NAME="enable_pd_counter_accumulate_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true" />
+		<PARAMETER NAME="effective_data_rate" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="ppm_post_eidle" TYPE="Integer" VALUE="0..1" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="ppm_gen1_2_xcnt_en" TYPE="Integer" VALUE="0..1" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="enable_ltr" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_ltd" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="offset_cancellation" TYPE="Integer" VALUE="0..255" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="pi_frequency_selector" TYPE="Integer" VALUE="0..1250" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="enable_local_divider" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="loop_1_digital_filter" TYPE="Integer" VALUE="1..13" DEFAULT_VALUE="8" />
+		<PARAMETER NAME="enable_second_order_loop" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cycloneiv_hssi_rx_pma" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="dpriodisable" TYPE="INPUT" DEFAULT_VALUE="1" />
+		<PORT NAME="deserclock" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="powerdn" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxpmareset" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="locktodata" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="locktoref" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="datain" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ppmdetectrefclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="seriallpbkin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dpashift" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="crupowerdn" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dprioin" TYPE="INPUT" WIDTH="300" DEFAULT_VALUE="0" />
+		<PORT NAME="testbussel" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="signaldetect" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clockout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="locktorefout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="reverselpbkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="diagnosticlpbkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="freqlocked" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="datastrobeout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dprioout" TYPE="OUTPUT" WIDTH="300" DEFAULT_VALUE="0" />
+		<PORT NAME="recoverdataout" TYPE="OUTPUT" WIDTH="10" DEFAULT_VALUE="0" />
+		<PORT NAME="analogtestbus" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

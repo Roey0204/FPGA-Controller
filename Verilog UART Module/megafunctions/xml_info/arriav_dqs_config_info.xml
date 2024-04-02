@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_dqs_config" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="datain" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ena" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="update" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="postamblephaseinvert" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dqshalfratebypass" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enadqsenablephasetransferreg" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dataout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="postamblephasesetting" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="dqsbusoutdelaysetting" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0" />
+		<PORT NAME="octdelaysetting" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0" />
+		<PORT NAME="dqsenablegatingdelaysetting" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0" />
+		<PORT NAME="dqsenableungatingdelaysetting" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

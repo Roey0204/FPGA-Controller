@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_s2f_clk_r_mux">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_s2f_clk_r_mux" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="emac0_tx_clk_o" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="emac1_tx_clk_o" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="hps_tck" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="qspi_sck_out" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_cold_rst_n" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk0_sel0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk0_sel1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk1_sel0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk1_sel1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk2_sel0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk2_sel1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk3_sel0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk3_sel1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk4_sel0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk4_sel1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk5_sel0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk5_sel1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk6_sel0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk6_sel1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk7_sel0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk7_sel1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk8_sel0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_right_clk8_sel1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_rst_n" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_user0_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_user1_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_user2_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="spim0_sclk_out" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="spim1_sclk_out" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="tpiu_trace_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2f_clk_r" TYPE="OUTPUT" WIDTH="9" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

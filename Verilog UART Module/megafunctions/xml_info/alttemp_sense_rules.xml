@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<ROOT>
+	
+	<!-- macros -->
+	<MACROS>
+		<MACRO NAME="m_no_wys"  DEFINITION="USE_WYS==off" />
+	</MACROS>
+	
+	<PARAMETERS>
+		<PARAMETER NAME="USE_WYS" TYPE="STRING">
+		    <FORCE_VALUE TO="on" />
+		</PARAMETER>
+		<PARAMETER NAME="CLOCK_DIVIDER_ENABLE" TYPE="STRING">
+		    <FORCE_VALUE TO="on" WHEN="(CLK_FREQUENCY > 1)" />
+		    <FORCE_VALUE TO="off" WHEN="(CLK_FREQUENCY <= 1)" />
+		</PARAMETER>
+		<PARAMETER NAME="CLK_FREQUENCY" DEFAULT_VALUE="1.0" />
+		<PARAMETER NAME="CLOCK_DIVIDER_VALUE" DEFAULT_VALUE="40">
+		    <FORCE_VALUE TO="40|80" />
+		</PARAMETER>
+	</PARAMETERS>
+	
+	<PORTS>	
+		<!-- input ports -->
+  		    <PORT NAME="clr" TYPE="INPUT" USAGE="VARIABLE" />
+  		    <PORT NAME="ce" TYPE="INPUT" USAGE="VARIABLE" />
+		<!-- internal input ports -->
+		    <PORT NAME="testin" TYPE="INPUT" USAGE="VARIABLE" >
+		    	<STATE TO="UNUSED" WHEN="m_no_wys" />
+		    </PORT>
+		    <PORT NAME="offset" TYPE="INPUT" USAGE="VARIABLE" >
+		        <STATE TO="UNUSED" WHEN="m_no_wys" />
+		    </PORT>
+		    <PORT NAME="compouttest" TYPE="INPUT" USAGE="VARIABLE" >
+		        <STATE TO="UNUSED" WHEN="m_no_wys" />
+		    </PORT>		
+		    <PORT NAME="fdbkctrlfromcore" TYPE="INPUT" USAGE="VARIABLE" >
+		        <STATE TO="UNUSED" WHEN="m_no_wys" />
+		    </PORT>
+		    <PORT NAME="tsd_trig" TYPE="INPUT" USAGE="VARIABLE" >
+		        <STATE TO="UNUSED" WHEN="m_no_wys" />
+		    </PORT>
+		<!-- internal output ports -->
+		    <PORT NAME="offsetout" TYPE="OUTPUT" USAGE="VARIABLE" >
+		        <STATE TO="UNUSED" WHEN="m_no_wys" />
+		    </PORT>
+		    <PORT NAME="tsdcompout" TYPE="OUTPUT" USAGE="VARIABLE" >
+		        <STATE TO="UNUSED" WHEN="m_no_wys" />
+		    </PORT>
+		    <PORT NAME="tsd_busy" TYPE="OUTPUT" USAGE="VARIABLE" >
+		        <STATE TO="UNUSED" WHEN="m_no_wys" />
+		    </PORT>
+		    <PORT NAME="tsd_avg" TYPE="OUTPUT" USAGE="VARIABLE" >
+		        <STATE TO="UNUSED" WHEN="m_no_wys" />
+		    </PORT>
+	</PORTS>
+</ROOT>

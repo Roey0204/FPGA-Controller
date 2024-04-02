@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="dprio_config_mode" TYPE="Vector" DEFAULT_VALUE="000000" WIDTH="6" />
+		<PARAMETER NAME="datapath_protocol" TYPE="String" VALUE="basic|pipe|xaui" DEFAULT_VALUE="basic" />
+		<PARAMETER NAME="protocol_hint" TYPE="String" VALUE="gige|pcie|basic|bist|prbs|cpri|xaui|srio|sdi_3g|sdi_hd" DEFAULT_VALUE="basic" />
+		<PARAMETER NAME="channel_bonding" TYPE="String" VALUE="none|x2|x4" DEFAULT_VALUE="none" />
+		<PARAMETER NAME="pipe_auto_speed_nego_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="use_deskew_fifo" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rx_phfifo_wait_cnt" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="channel_width" TYPE="Integer" VALUE="8|10|16|20" DEFAULT_VALUE="8" />
+		<PARAMETER NAME="channel_number" TYPE="Integer" VALUE="0|1|2|3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="auto_spd_phystatus_notify_count" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="logical_channel_address" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="datapath_low_latency_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="use_double_data_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="recovered_clk_mux_select" TYPE="String" VALUE="recovered clock|local reference clock|digital reference clock" DEFAULT_VALUE="recovered clock" />
+		<PARAMETER NAME="clk1_mux_select" TYPE="String" VALUE="recovered clock|local reference clock|digital reference clock|master clock" DEFAULT_VALUE="recovered clock" />
+		<PARAMETER NAME="clk2_mux_select" TYPE="String" VALUE="recovered clock|local reference clock|digital reference clock" DEFAULT_VALUE="recovered clock" />
+		<PARAMETER NAME="rd_clk_mux_select" TYPE="String" VALUE="core clock|int clock" DEFAULT_VALUE="int clock" />
+		<PARAMETER NAME="reset_clock_output_during_digital_reset" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="align_pattern_length" TYPE="Integer" VALUE="7|10|16" DEFAULT_VALUE="7" />
+		<PARAMETER NAME="align_pattern" TYPE="String" DEFAULT_VALUE="UNUSED" />
+		<PARAMETER NAME="bit_slip_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="disable_running_disp_in_word_align" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="use_alignment_state_machine" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="num_align_loss_sync_error" TYPE="Integer" VALUE="1..64" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="align_ordered_set_based" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="num_align_code_groups_in_ordered_set" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="num_align_cons_good_data" TYPE="Integer" VALUE="1..256" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="num_align_cons_pat" TYPE="Integer" VALUE="1..256" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="disallow_kchar_after_pattern_ordered_set" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="allow_align_polarity_inversion" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_bit_reversal" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="run_length" TYPE="Integer" VALUE="4..160" DEFAULT_VALUE="4" />
+		<PARAMETER NAME="run_length_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="infiniband_invalid_code" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="dec_8b_10b_mode" TYPE="String" VALUE="none|normal" DEFAULT_VALUE="none" />
+		<PARAMETER NAME="dec_8b_10b_compatibility_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rate_match_fifo_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rate_match_pattern1" TYPE="String" DEFAULT_VALUE="UNUSED" />
+		<PARAMETER NAME="rate_match_pattern2" TYPE="String" DEFAULT_VALUE="UNUSED" />
+		<PARAMETER NAME="rate_match_pattern_size" TYPE="Integer" VALUE="10|20" DEFAULT_VALUE="10" />
+		<PARAMETER NAME="rate_match_skip_set_based" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rate_match_ordered_set_based" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rate_match_back_to_back" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rate_match_reset_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rate_match_start_threshold" TYPE="Integer" VALUE="0..7" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="rate_match_insert_threshold" TYPE="Integer" VALUE="0..31" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="rate_match_delete_threshold" TYPE="Integer" VALUE="0..31" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="rate_match_full_threshold" TYPE="Integer" VALUE="0..31" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="rate_match_empty_threshold" TYPE="Integer" VALUE="0..7" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="rate_match_pipe_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="insert_pad_on_underflow" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="byte_order_mode" TYPE="String" VALUE="none|8|9|10" DEFAULT_VALUE="none" />
+		<PARAMETER NAME="byte_order_pattern" TYPE="String" DEFAULT_VALUE="UNUSED" />
+		<PARAMETER NAME="byte_order_pad_pattern" TYPE="String" DEFAULT_VALUE="UNUSED" />
+		<PARAMETER NAME="byte_order_invalid_code_or_run_disp_error" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="byte_order_pld_ctrl_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="byte_order_back_compat_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="disable_auto_idle_insertion" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="ph_fifo_low_latency_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="ph_fifo_reg_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="ph_fifo_reset_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="ph_fifo_user_ctrl_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="elec_idle_infer_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="elec_idle_num_com_detect" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="rx_detect_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="allow_pipe_polarity_inversion" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="elec_idle_eios_detect_priority_over_eidle_disable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="elec_idle_gen1_sigdet_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="cdrctrl_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="cdrctrl_cid_mode_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="cdrctrl_rxvalid_mask" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="cdrctrl_min_lock_to_ref_cycle" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="cdrctrl_mask_cycle" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="cdrctrl_bypass_ppm_detector_cycle" TYPE="Integer" VALUE="0..1023" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="hip_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="use_parallel_loopback" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rxstatus_error_report_mode" TYPE="Integer" VALUE="0..1" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="phystatus_reset_toggle" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="phystatus_delay" TYPE="Integer" VALUE="0..7" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="error_from_wa_or_8b_10b_select" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_self_test_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="self_test_mode" TYPE="String" VALUE="prbs7|prbs8|prbs10|prbs23|low frequency|mixed frequency|high frequency|incremental|cjpat|crpat" DEFAULT_VALUE="prbs7" />
+		<PARAMETER NAME="prbs_all_one_detect" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="test_bus_sel" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="prbs_cid_pattern" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="prbs_cid_pattern_length" TYPE="Integer" VALUE="0..255" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="force_signal_detect_dig" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="deskew_pattern" TYPE="String" DEFAULT_VALUE="UNUSED" />
+		<PARAMETER NAME="align_to_deskew_pattern_pos_disp_only" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="auto_spd_deassert_ph_fifo_rst_count" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="core_clock_0ppm" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="clk_pd_enable" TYPE="STRING" VALUE="false" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cycloneiv_hssi_rx_pcs" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="quadreset" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="digitalreset" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="coreclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="recoveredclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="localrefclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="refclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="a1a2size" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enapatternalign" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="bitslip" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="revbitorderwa" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="revbyteorderwa" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="invpol" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rmfifordena" TYPE="INPUT" DEFAULT_VALUE="1" SIM_DEFAULT_VALUE="0" />
+		<PORT NAME="rmfifowrena" TYPE="INPUT" DEFAULT_VALUE="1" SIM_DEFAULT_VALUE="0" />
+		<PORT NAME="rmfiforeset" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dpriodisable" TYPE="INPUT" DEFAULT_VALUE="1" />
+		<PORT NAME="enabyteord" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifordenable" TYPE="INPUT" DEFAULT_VALUE="1" />
+		<PORT NAME="phfifowrdisable" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfiforeset" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifox4wrclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifox4wrenable" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifox4rdenable" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifox4bytesel" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="signaldetected" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pipe8b10binvpolarity" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pipeenrevparallellpbkfromtx" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxdetectvalid" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="cdrctrllocktorefcl" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="hip8b10binvpolarity" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="prbscidenable" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="wareset" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="alignstatus" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="alignstatussync" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enabledeskew" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="fiforesetrd" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="xgmctrlin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="fifordin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="masterclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="xauilatencycomp" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="xauiinsertincomplete" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="xauififoovr" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="xauidelcondmet" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="datain" TYPE="INPUT" WIDTH="10" DEFAULT_VALUE="0" />
+		<PORT NAME="powerdn" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="pipepowerdown" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="pipepowerstate" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="rxfound" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="dprioin" TYPE="INPUT" WIDTH="400" DEFAULT_VALUE="0" />
+		<PORT NAME="grayelecidleinferselfromtx" TYPE="INPUT" WIDTH="3" DEFAULT_VALUE="0" />
+		<PORT NAME="elecidleinfersel" TYPE="INPUT" WIDTH="3" DEFAULT_VALUE="0" />
+		<PORT NAME="hippowerdown" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="hipelecidleinfersel" TYPE="INPUT" WIDTH="3" DEFAULT_VALUE="0" />
+		<PORT NAME="parallelfdbk" TYPE="INPUT" WIDTH="20" DEFAULT_VALUE="0" />
+		<PORT NAME="pmatestbusin" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="xgmdatain" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="syncstatusdeskew" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="adetectdeskew" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rdalign" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rmfifofull" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rmfifoempty" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="byteorderalignstatus" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifooverflow" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifounderflow" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="a1detect" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="a2detect" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="k1detect" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="k2detect" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rlv" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="signaldetect" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="cdrctrlearlyeios" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pipedatavalid" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pipeelecidle" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pipestatetransdoneout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pipephydonestatus" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="cdrctrllocktorefclkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="hipdatavalid" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="hipelecidle" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="hipphydonestatus" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="bisterr" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="bistdone" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifordenableout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifowrdisableout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="coreclkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfiforesetout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="alignstatussyncout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="xgmctrldet" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="xgmdatavalid" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="xgmrunningdisp" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="fifordout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="xauilatencycompout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="xauiinsertincompleteout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="xauififoovrout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="xauidelcondmetout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dataout" TYPE="OUTPUT" WIDTH="20" DEFAULT_VALUE="0" />
+		<PORT NAME="dataoutfull" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0" />
+		<PORT NAME="syncstatus" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="patterndetect" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="a1a2sizeout" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="ctrldetect" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="errdetect" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="disperr" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="runningdisp" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="rmfifodatainserted" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="rmfifodatadeleted" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="bitslipboundaryselectout" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0" />
+		<PORT NAME="pipebufferstat" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="dprioout" TYPE="OUTPUT" WIDTH="400" DEFAULT_VALUE="0" />
+		<PORT NAME="pipestatus" TYPE="OUTPUT" WIDTH="3" DEFAULT_VALUE="0" />
+		<PORT NAME="hipstatus" TYPE="OUTPUT" WIDTH="3" DEFAULT_VALUE="0" />
+		<PORT NAME="hipdataout" TYPE="OUTPUT" WIDTH="9" DEFAULT_VALUE="0" />
+		<PORT NAME="revparallelfdbkdata" TYPE="OUTPUT" WIDTH="20" DEFAULT_VALUE="0" />
+		<PORT NAME="xgmdataout" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="observablephfifordenable" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observabledigitalreset" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablequadreset" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablea1a2size" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observableenapatternalign" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablebitslip" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observableinvpol" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observableenabyteorder" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablephfifowrdisable" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablepipe8b10binvpolarity" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablerevbitorderwa" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablerevbyteorderwa" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablephfiforeset" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablermfiforeset" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observableelecidleinfersel" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+	</PORTS>
+</ROOT>

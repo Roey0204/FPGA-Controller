@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<ROOT>
+	<INCLUDE FILE="mfam_family_macros.xml" />
+	<MACROS>
+		<MACRO NAME="m_actual_d_int" DEFINITION="m_non_stx ? 1 : ((OUTPUT_DATA_RATE gt 0) ? (m_le_impl ? (2000000 double_div OUTPUT_DATA_RATE) : (1000000 double_div OUTPUT_DATA_RATE)) : 1)" />
+		<MACRO NAME="m_actual_d" DEFINITION="to_int(m_actual_d_int)" /> 
+		<MACRO NAME="m_le_impl" >
+			<DEFINITION>
+			mfam_family_cyclone || mfam_family_cycloneii || mfam_family_maxv ||
+			(mfam_family_stratix and (IMPLEMENT_IN_LES == ON))
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_wiz" DEFINITION="(USE_WIZARD == ON)" />
+		<MACRO NAME="m_non_stx" DEFINITION="false" />
+		<MACRO NAME="m_ext_pll" DEFINITION="USE_EXTERNAL_PLL == ON" />
+		<MACRO NAME="m_d1" DEFINITION="DESERIALIZATION_FACTOR == 1" />
+		<MACRO NAME="m_d2" DEFINITION="DESERIALIZATION_FACTOR == 2" />
+		<MACRO NAME="m_d1d2" DEFINITION="m_d1 || m_d2" />
+		<MACRO NAME="m_stx" DEFINITION="(IMPLEMENT_IN_LES == OFF) and mfam_family_stratix and !mfam_family_stratixii and !mfam_family_cyclone and !mfam_family_cycloneii" />
+		<MACRO NAME="m_cyc_non_50_dc" DEFINITION="(OUTCLOCK_DIVIDE_BY == DESERIALIZATION_FACTOR) and (OUTCLOCK_MULTIPLY_BY == 1) and mfam_family_cyclone" />
+		<MACRO NAME="m_le_non_50_dc" DEFINITION="(OUTCLOCK_DIVIDE_BY == DESERIALIZATION_FACTOR) and m_le_impl and !mfam_family_cyclone" />
+		<MACRO NAME="m_titan" DEFINITION="mfam_family_stratixiii and (IMPLEMENT_IN_LES == OFF)" />
+	</MACROS>
+	<PARAMETERS>
+		<PARAMETER NAME="INTENDED_DEVICE_FAMILY" TYPE="STRING" DEFAULT_VALUE="stratix iii" />
+		<PARAMETER NAME="OUTPUT_DATA_RATE" TYPE="INTEGER" DEFAULT_VALUE="800" />
+		<PARAMETER NAME="PLL_FREQ" TYPE="STRING" DEFAULT_VALUE="35.0"/>
+		<PARAMETER NAME="USING_FLEXIBLE_LVDS" TYPE="STRING" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="LVDS_RX" TYPE="STRING" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="LE_SERDES" TYPE="STRING" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="DATA_RATE" TYPE="STRING" />
+    		<PARAMETER NAME="REFCLK_FREQUENCY" TYPE="STRING" />
+		
+		<PARAMETER NAME="VALID_FREQS" TYPE="STRING" >
+			<FORCE_RANGE TO="20" WHEN="mfam_family_maxv"/>
+			<FORCE_RANGE TO="qcl_pllc_pll_mwiz$get_valid_frequencies_for_data_rate(DATA_RATE, PLL_FREQ,IMPLEMENT_IN_LES,INTENDED_DEVICE_FAMILY,DESERIALIZATION_FACTOR,LVDS_RX,CORECLOCK_DIVIDE_BY)"/>
+			<!--<FORCE_RANGE TO="1|2|4|7|8|10" />-->
+			<!--<FORCE_VALUE TO="qcl_pllc_pll_mwiz$get_valid_frequencies_for_data_rate(5000, 10,1,INTENDED_DEVICE_FAMILY,4,1,2)"/>-->
+			
+		</PARAMETER>
+		<PARAMETER NAME="VALID_PHASE_INCLOCK" TYPE="STRING" DEFAULT_VALUE="0.00">
+			<FORCE_RANGE TO="qcl_pllc_pll_mwiz$get_valid_phases_for_data_rate(OUTPUT_DATA_RATE, PLL_FREQ,USING_FLEXIBLE_LVDS,INTENDED_DEVICE_FAMILY,DESERIALIZATION_FACTOR,LVDS_RX,CORECLOCK_DIVIDE_BY,0,LE_SERDES)"/>
+		</PARAMETER>
+		<PARAMETER NAME="VALID_PHASE_OUTCLOCK" TYPE="STRING" DEFAULT_VALUE="0.00">
+			<FORCE_RANGE TO="qcl_pllc_pll_mwiz$get_valid_phases_for_data_rate(OUTPUT_DATA_RATE, PLL_FREQ,USING_FLEXIBLE_LVDS,INTENDED_DEVICE_FAMILY,DESERIALIZATION_FACTOR,LVDS_RX,CORECLOCK_DIVIDE_BY,OUTCLOCK_DIVIDE_BY,LE_SERDES)"/>
+		</PARAMETER>
+		<PARAMETER NAME="CENTER_ALIGN_MSB" >
+			<FORCE_RANGE TO="UNUSED|OFF" />
+		</PARAMETER>
+		<PARAMETER NAME="MULTI_CLOCK" >
+			<FORCE_RANGE TO="UNUSED|OFF"  />
+		</PARAMETER>
+		
+		<PARAMETER NAME="DESERIALIZATION_FACTOR" >
+			<FORCE_RANGE TO="1|2|4|7|8|10" WHEN="m_stx and !m_le_impl" />
+			<FORCE_RANGE TO="1|2|3|4|5|6|7|8|9|10" WHEN="mfam_family_maxv and !m_le_impl" />
+			<FORCE_RANGE TO="1|2|4|5|6|7|8|9|10" WHEN="mfam_family_stratixii and !m_le_impl" />
+			<FORCE_RANGE TO="1|2|3|4|5|6|7|8|9|10" WHEN="m_titan and !m_le_impl" />
+		</PARAMETER>
+		<PARAMETER NAME="INCLOCK_PERIOD" TYPE="INTEGER" DEFAULT_VALUE="1250" >
+					</PARAMETER>
+		<PARAMETER NAME="OUTCLOCK_DIVIDE_BY" >
+			<FORCE_RANGE TO="1|2|4" WHEN="(DESERIALIZATION_FACTOR == 4) and is_used(tx_outclock)" />
+			<FORCE_RANGE TO="1|2|6" WHEN="(DESERIALIZATION_FACTOR == 6) and is_used(tx_outclock)" />
+			<FORCE_RANGE TO="1|2|4|8" WHEN="(DESERIALIZATION_FACTOR == 8) and is_used(tx_outclock)" />
+			<FORCE_RANGE TO="1|2|10" WHEN="(DESERIALIZATION_FACTOR == 10) and is_used(tx_outclock)" />
+			<FORCE_RANGE TO="1|5" WHEN="(DESERIALIZATION_FACTOR == 5) and is_used(tx_outclock)" />
+			<FORCE_RANGE TO="1|7" WHEN="(DESERIALIZATION_FACTOR == 7) and is_used(tx_outclock)" />
+			<FORCE_RANGE TO="1|9" WHEN="(DESERIALIZATION_FACTOR == 9) and is_used(tx_outclock)" />
+			<FORCE_RANGE TO="1|3" WHEN="(DESERIALIZATION_FACTOR == 3) and is_used(tx_outclock)" />
+		<!--	<FORCE_VALUE TO="UNUSED" WHEN="!is_used(tx_outclock)" /> -->
+		</PARAMETER>
+		<PARAMETER NAME="REGISTERED_INPUT" >
+			<FORCE_RANGE TO="OFF|ON|TX_CLKIN|TX_CORECLK" />
+		</PARAMETER>
+		<PARAMETER NAME="OUTCLOCK_MULTIPLY_BY" VALUE="1-2" >
+			<FORCE_VALUE TO="1" WHEN="!m_le_impl || (DESERIALIZATION_FACTOR != OUTCLOCK_DIVIDE_BY)" />
+		</PARAMETER>
+		<PARAMETER NAME="CORECLOCK_DIVIDE_BY" DEFAULT_VALUE="1" VALUE="1-2" >
+			<FORCE_VALUE TO="1" WHEN="!m_le_impl || (mfam_family_cyclone and (OUTCLOCK_MULTIPLY_BY == 2))" />
+		</PARAMETER>
+		<PARAMETER NAME="USE_EXTERNAL_PLL" VALUE="OFF" >
+			<FORCE_VALUE TO="OFF" WHEN="!m_le_impl and !mfam_family_stratixii" />
+			<FORCE_VALUE TO="OFF" WHEN="m_d1d2 and !mfam_family_maxv" />
+		</PARAMETER>
+		<PARAMETER NAME="OUTCLOCK_DUTY_CYCLE" VALUE="50" >
+			<FORCE_RANGE TO="50|57" WHEN="(DESERIALIZATION_FACTOR == 7) and (m_cyc_non_50_dc || m_le_non_50_dc)" />
+			<FORCE_RANGE TO="50|56" WHEN="(DESERIALIZATION_FACTOR == 9) and (m_cyc_non_50_dc || m_le_non_50_dc)" />
+			<FORCE_RANGE TO="50|60" WHEN="(DESERIALIZATION_FACTOR == 5) and (m_cyc_non_50_dc || m_le_non_50_dc)" />	
+			<FORCE_VALUE TO="50" WHEN="!((m_cyc_non_50_dc || m_le_non_50_dc) and ((DESERIALIZATION_FACTOR % 2) == 1))" />		
+		</PARAMETER>		
+		<PARAMETER NAME="PLL_SELF_RESET_ON_LOSS_LOCK" >
+			<FORCE_VALUE TO="UNUSED|OFF" WHEN="!(mfam_family_cycloneiii || mfam_family_stratixiii and IMPLEMENT_IN_LES==ON) || m_d1d2" />
+		</PARAMETER>
+		<PARAMETER NAME="PLL_COMPENSATION_MODE" DEFAULT_VALUE="AUTO" >
+			<FORCE_VALUE TO="AUTO" WHEN="!mfam_family_cyclonev" />
+		</PARAMETER>
+		
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="pll_areset" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="m_ext_pll || m_d1d2" />
+		</PORT>
+
+		<PORT NAME="sync_inclock" USAGE="VARIABLE">
+			<STATE TO="USED" WHEN="MULTI_CLOCK == ON" ELSE="UNUSED" />
+		</PORT>
+		<PORT NAME="tx_coreclock" USAGE="VARIABLE">
+			<STATE TO="UNUSED" WHEN="m_ext_pll || m_d1d2" />
+		</PORT>
+		<PORT NAME="tx_enable" USAGE="VARIABLE">
+			<STATE TO="USED" WHEN="m_ext_pll" ELSE="UNUSED" />
+		</PORT>
+		<PORT NAME="tx_locked" USAGE="VARIABLE">
+			<STATE TO="UNUSED" WHEN="m_ext_pll || m_d1d2" />
+		</PORT>
+		<PORT NAME="tx_in" USAGE="USED" />
+		<PORT NAME="tx_out" USAGE="USED" />
+		<PORT NAME="tx_outclock" USAGE="VARIABLE">
+			<STATE TO="UNUSED" WHEN="m_d1" />	
+		</PORT>
+		<PORT NAME="tx_pll_enable" USAGE="VARIABLE">
+			<STATE TO="UNUSED" WHEN="m_ext_pll || m_d1d2 || mfam_family_has_no_pll_enable" />
+		</PORT>
+		<PORT NAME="tx_inclock" USAGE="VARIABLE">
+			<STATE TO="UNUSED" WHEN="m_d1" />
+		</PORT>
+		<PORT NAME="tx_syncclock" USAGE="VARIABLE" />
+
+	</PORTS>
+</ROOT>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_te_test_atom">
+	<PARAMETERS>
+		<PARAMETER NAME="silicon_rev" TYPE="String" VALUE="reve|es" DEFAULT_VALUE="reve"/>
+		<PARAMETER NAME="ip_type" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="config_fname" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_te_test_atom" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="te_test_atom_inp" TYPE="INPUT" WIDTH="8192" DEFAULT_VALUE="0"/>
+		<PORT NAME="te_test_atom_out" TYPE="OUTPUT" WIDTH="8192" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

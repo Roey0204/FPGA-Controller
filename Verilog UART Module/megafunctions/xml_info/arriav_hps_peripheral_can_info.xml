@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_hps_peripheral_can">
+	<PARAMETERS>
+		<PARAMETER NAME="dummy_param" TYPE="Integer" DEFAULT_VALUE="256"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_hps_peripheral_can" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="can_rxd" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="can_txd" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

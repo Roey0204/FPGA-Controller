@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="dca_calibration_block_input_select" TYPE="Integer" VALUE="0..12" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="use_pvt_compensation" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="stratixv_dqs_config" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="datain" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ena" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="update" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rankselectread" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rankselectwrite" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="corerankselectreadin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rankclkin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="calibrationdone" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="coremultirankdelayctrlin" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="delayctrlin" TYPE="INPUT" WIDTH="7" DEFAULT_VALUE="0" />
+		<PORT NAME="dftin" TYPE="INPUT" WIDTH="21" DEFAULT_VALUE="0" />
+		<PORT NAME="rankselectreadout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="addrpowerdown" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="addrphaseinvert" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dqsoutputpowerdown" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dqsoutputphaseinvert" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dqoutputpowerdown" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dqoutputphaseinvert" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="resyncinputpowerdown" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="resyncinputphaseinvert" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="resyncinputzerophaseinvert" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dqs2xoutputpowerdown" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dqs2xoutputphaseinvert" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ck2xoutputpowerdown" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ck2xoutputphaseinvert" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dq2xoutputpowerdown" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dq2xoutputphaseinvert" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="postamblepowerdown" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="postamblephaseinvert" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="postamblezeropowerdown" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dividerioehratephaseinvert" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dividerphaseinvert" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enainputcycledelaysetting" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enadqsphasetransferreg" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enadqsenablephasetransferreg" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enaoctphasetransferreg" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enaoutputphasetransferreg" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enainputphasetransferreg" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dataout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="coremultirankdelayctrlout" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="addrphasesetting" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="dqsoutputphasesetting" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="dqoutputphasesetting" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="dqoutputzerophasesetting" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="resyncinputphasesetting" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="dqs2xoutputphasesetting" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="ck2xoutputphasesetting" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="dq2xoutputphasesetting" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="postamblephasesetting" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="postamblezerophasesetting" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="dqsbusoutdelaysetting" TYPE="OUTPUT" WIDTH="6" DEFAULT_VALUE="0" />
+		<PORT NAME="dqsbusoutdelaysetting2" TYPE="OUTPUT" WIDTH="6" DEFAULT_VALUE="0" />
+		<PORT NAME="dqsinputphasesetting" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="dutycycledelaysetting" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="enadqscycledelaysetting" TYPE="OUTPUT" WIDTH="3" DEFAULT_VALUE="0" />
+		<PORT NAME="enaoctcycledelaysetting" TYPE="OUTPUT" WIDTH="3" DEFAULT_VALUE="0" />
+		<PORT NAME="enaoutputcycledelaysetting" TYPE="OUTPUT" WIDTH="3" DEFAULT_VALUE="0" />
+		<PORT NAME="dqsenabledelaysetting" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="dqsdisablendelaysetting" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="octdelaysetting1" TYPE="OUTPUT" WIDTH="6" DEFAULT_VALUE="0" />
+		<PORT NAME="octdelaysetting2" TYPE="OUTPUT" WIDTH="6" DEFAULT_VALUE="0" />
+		<PORT NAME="dftout" TYPE="OUTPUT" WIDTH="7" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

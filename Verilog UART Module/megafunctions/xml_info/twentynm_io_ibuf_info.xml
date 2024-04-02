@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_io_ibuf">
+	<PARAMETERS>
+		<PARAMETER NAME="bus_hold" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="differential_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="simulate_z_as" TYPE="String" VALUE="vcc|gnd|x|z" DEFAULT_VALUE="z"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_io_ibuf" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="i" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ibar" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dynamicterminationcontrol" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="o" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

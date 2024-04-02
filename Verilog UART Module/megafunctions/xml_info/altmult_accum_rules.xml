@@ -1,0 +1,813 @@
+<?xml version="1.0"?>
+<ROOT>
+	<INCLUDE FILE="mfam_family_macros.xml" />
+	<MACROS>
+		<MACRO NAME="m_clock0_port_used" DEFINITION="is_used(CLOCK0) ? 1 : 0" />
+		<MACRO NAME="m_clock1_port_used" DEFINITION="is_used(CLOCK1) ? 1 : 0" />
+		<MACRO NAME="m_clock2_port_used" DEFINITION="is_used(CLOCK2) ? 1 : 0" />
+		<MACRO NAME="m_clock3_port_used" DEFINITION="is_used(CLOCK3) ? 1 : 0" />
+		<MACRO NAME="m_clock_count" DEFINITION="m_clock0_port_used + m_clock1_port_used + m_clock2_port_used + m_clock3_port_used" />
+		<MACRO NAME="m_cycloneii_dsp_block"  DEFINITION="(DEDICATED_MULTIPLIER_CIRCUITRY == YES || DEDICATED_MULTIPLIER_CIRCUITRY == AUTO || USE_WIZARD == ON) and (mfam_family_cycloneii || mfam_family_cycloneiii)" />
+		<MACRO NAME="m_titan_dsp_block"  DEFINITION="(DEDICATED_MULTIPLIER_CIRCUITRY == YES || DEDICATED_MULTIPLIER_CIRCUITRY == AUTO) and mfam_family_stratixiii" />
+		<MACRO NAME="m_stratixv_dsp_block" DEFINITION="(DEDICATED_MULTIPLIER_CIRCUITRY == YES || DEDICATED_MULTIPLIER_CIRCUITRY == AUTO || USE_WIZARD == ON) and mfam_family_stratixv" />
+		<MACRO NAME="m_stratix_mac_only" >
+			<DEFINITION>
+				(WIDTH_A lt 19) and (WIDTH_B lt 19) and (WIDTH_RESULT lt 52) and (mfam_family_base_stratixii || mfam_family_base_stratix)
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_base_stratixii_features" >
+			<DEFINITION>
+				is_used(mult_round) || is_used(mult_saturation) ||
+				is_used(accum_round) || is_used(accum_saturation) ||
+				MULTIPLIER_ROUNDING == "YES" || MULTIPLIER_SATURATION == "YES" ||
+				ACCUMULATOR_ROUNDING == "YES" || ACCUMULATOR_SATURATION == "YES"
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_stratixii_features" >
+			<DEFINITION>
+				m_base_stratixii_features || is_used(accum_sload_upper_data)
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_asud_max_width_1" >
+			<DEFINITION>
+				(WIDTH_A + WIDTH_B + 16) gt 36 ? 36 : (WIDTH_A + WIDTH_B + 16)
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_asud_max_width" >
+			<DEFINITION>
+				(WIDTH_RESULT) lt (WIDTH_A + WIDTH_B + 16) ? (m_asud_max_width_1 - ((WIDTH_A + WIDTH_B + 16) - WIDTH_RESULT)) : m_asud_max_width_1
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_no_scanout" >
+			<DEFINITION>
+				(NUMBER_OF_MULTIPLIERS == 3 and !m_titan_dsp_block) || (WIDTH_A gt 18) || (WIDTH_B gt 18)
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_use_full_mac" >
+			<DEFINITION>
+				is_used(mult_saturation) ||
+				is_used(accum_saturation) ||
+				MULTIPLIER_SATURATION == "YES" ||
+				ACCUMULATOR_SATURATION == "YES"
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_clock0_used" >
+			<DEFINITION>
+				(INPUT_REG_A == "CLOCK0") || (INPUT_REG_B == "CLOCK0") || (MULTIPLIER_REG == "CLOCK0") || OUTPUT_REG == "CLOCK0" ||
+				SIGN_REG_A == "CLOCK0" || SIGN_PIPELINE_REG_A == "CLOCK0" ||
+				SIGN_REG_B == "CLOCK0" || SIGN_PIPELINE_REG_B == "CLOCK0" ||
+				ADDNSUB_REG == "CLOCK0" || ADDNSUB_PIPELINE_REG == "CLOCK0" ||
+				ACCUM_SLOAD_REG == "CLOCK0" || ACCUM_SLOAD_PIPELINE_REG == "CLOCK0" ||
+				ACCUM_SLOAD_UPPER_DATA_REG == "CLOCK0" || ACCUM_SLOAD_UPPER_DATA_PIPELINE_REG == "CLOCK0" ||
+				MULT_ROUND_REG == "CLOCK0" ||
+				MULT_SATURATION_REG == "CLOCK0" ||
+				ACCUM_ROUND_REG == "CLOCK0" || ACCUM_ROUND_PIPELINE_REG == "CLOCK0" ||
+				ACCUM_SATURATION_REG == "CLOCK0" || ACCUM_SATURATION_PIPELINE_REG == "CLOCK0"
+
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_clock1_used" >
+			<DEFINITION>
+				INPUT_REG_A == "CLOCK1" || INPUT_REG_B == "CLOCK1" || MULTIPLIER_REG == "CLOCK1" || OUTPUT_REG == "CLOCK1" ||
+				SIGN_REG_A == "CLOCK1" || SIGN_PIPELINE_REG_A == "CLOCK1" ||
+				SIGN_REG_B == "CLOCK1" || SIGN_PIPELINE_REG_B == "CLOCK1" ||
+				ADDNSUB_REG == "CLOCK1" || ADDNSUB_PIPELINE_REG == "CLOCK1" ||
+				ACCUM_SLOAD_REG == "CLOCK1" || ACCUM_SLOAD_PIPELINE_REG == "CLOCK1" ||
+				ACCUM_SLOAD_UPPER_DATA_REG == "CLOCK1" || ACCUM_SLOAD_UPPER_DATA_PIPELINE_REG == "CLOCK1" ||
+				MULT_ROUND_REG == "CLOCK1" ||
+				MULT_SATURATION_REG == "CLOCK1" ||
+				ACCUM_ROUND_REG == "CLOCK1" || ACCUM_ROUND_PIPELINE_REG == "CLOCK1" ||
+				ACCUM_SATURATION_REG == "CLOCK1" || ACCUM_SATURATION_PIPELINE_REG == "CLOCK1"
+
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_clock2_used" >
+			<DEFINITION>
+				INPUT_REG_A == "CLOCK2" || INPUT_REG_B == "CLOCK2" || MULTIPLIER_REG == "CLOCK2" || OUTPUT_REG == "CLOCK2" ||
+				SIGN_REG_A == "CLOCK2" || SIGN_PIPELINE_REG_A == "CLOCK2" ||
+				SIGN_REG_B == "CLOCK2" || SIGN_PIPELINE_REG_B == "CLOCK2" ||
+				ADDNSUB_REG == "CLOCK2" || ADDNSUB_PIPELINE_REG == "CLOCK2" ||
+				ACCUM_SLOAD_REG == "CLOCK2" || ACCUM_SLOAD_PIPELINE_REG == "CLOCK2" ||
+				ACCUM_SLOAD_UPPER_DATA_REG == "CLOCK2" || ACCUM_SLOAD_UPPER_DATA_PIPELINE_REG == "CLOCK2" ||
+				MULT_ROUND_REG == "CLOCK2" ||
+				MULT_SATURATION_REG == "CLOCK2" ||
+				ACCUM_ROUND_REG == "CLOCK2" || ACCUM_ROUND_PIPELINE_REG == "CLOCK2" ||
+				ACCUM_SATURATION_REG == "CLOCK2" || ACCUM_SATURATION_PIPELINE_REG == "CLOCK2"
+
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_clock3_used" >
+			<DEFINITION>
+					(
+				INPUT_REG_A == "CLOCK3" || INPUT_REG_B == "CLOCK3" || MULTIPLIER_REG == "CLOCK3" || OUTPUT_REG == "CLOCK3" ||
+				SIGN_REG_A == "CLOCK3" || SIGN_PIPELINE_REG_A == "CLOCK3" ||
+				SIGN_REG_B == "CLOCK3" || SIGN_PIPELINE_REG_B == "CLOCK3" ||
+				ADDNSUB_REG == "CLOCK3" || ADDNSUB_PIPELINE_REG == "CLOCK3" ||
+				ACCUM_SLOAD_REG == "CLOCK3" || ACCUM_SLOAD_PIPELINE_REG == "CLOCK3" ||
+				ACCUM_SLOAD_UPPER_DATA_REG == "CLOCK3" || ACCUM_SLOAD_UPPER_DATA_PIPELINE_REG == "CLOCK3" ||
+				MULT_ROUND_REG == "CLOCK3" ||
+				MULT_SATURATION_REG == "CLOCK3" ||
+				ACCUM_ROUND_REG == "CLOCK3" || ACCUM_ROUND_PIPELINE_REG == "CLOCK3" ||
+				ACCUM_SATURATION_REG == "CLOCK3" || ACCUM_SATURATION_PIPELINE_REG == "CLOCK3"
+				) and !m_stratixv_dsp_block
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_aclr0_used" >
+			<DEFINITION>
+				INPUT_ACLR_A == "ACLR0" || INPUT_ACLR_B == "ACLR0" || MULTIPLIER_ACLR == "ACLR0" || OUTPUT_ACLR == "ACLR0" ||
+				SIGN_ACLR_A == "ACLR0" || SIGN_PIPELINE_ACLR_A == "ACLR0" ||
+				SIGN_ACLR_B == "ACLR0" || SIGN_PIPELINE_ACLR_B == "ACLR0" ||
+				ADDNSUB_ACLR == "ACLR0" || ADDNSUB_PIPELINE_ACLR == "ACLR0" ||
+				ACCUM_SLOAD_ACLR == "ACLR0" || ACCUM_SLOAD_PIPELINE_ACLR == "ACLR0" ||
+				ACCUM_SLOAD_UPPER_DATA_ACLR == "ACLR0" || ACCUM_SLOAD_UPPER_DATA_PIPELINE_ACLR == "ACLR0" ||
+				MULT_ROUND_ACLR == "ACLR0" ||
+				MULT_SATURATION_ACLR == "ACLR0" ||
+				ACCUM_ROUND_ACLR == "ACLR0" || ACCUM_ROUND_PIPELINE_ACLR == "ACLR0" ||
+				ACCUM_SATURATION_ACLR == "ACLR0" || ACCUM_SATURATION_PIPELINE_ACLR == "ACLR0"
+
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_aclr1_used" >
+			<DEFINITION>
+				INPUT_ACLR_A == "ACLR1" || INPUT_ACLR_B == "ACLR1" || MULTIPLIER_ACLR == "ACLR1" || OUTPUT_ACLR == "ACLR1" ||
+				SIGN_ACLR_A == "ACLR1" || SIGN_PIPELINE_ACLR_A == "ACLR1" ||
+				SIGN_ACLR_B == "ACLR1" || SIGN_PIPELINE_ACLR_B == "ACLR1" ||
+				ADDNSUB_ACLR == "ACLR1" || ADDNSUB_PIPELINE_ACLR == "ACLR1" ||
+				ACCUM_SLOAD_ACLR == "ACLR1" || ACCUM_SLOAD_PIPELINE_ACLR == "ACLR1" ||
+				ACCUM_SLOAD_UPPER_DATA_ACLR == "ACLR1" || ACCUM_SLOAD_UPPER_DATA_PIPELINE_ACLR == "ACLR1" ||
+				MULT_ROUND_ACLR == "ACLR1" ||
+				MULT_SATURATION_ACLR == "ACLR1" ||
+				ACCUM_ROUND_ACLR == "ACLR1" || ACCUM_ROUND_PIPELINE_ACLR == "ACLR1" ||
+				ACCUM_SATURATION_ACLR == "ACLR1" || ACCUM_SATURATION_PIPELINE_ACLR == "ACLR1"
+
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_aclr2_used" >
+			<DEFINITION>
+				(
+				INPUT_ACLR_A == "ACLR2" || INPUT_ACLR_B == "ACLR2" || MULTIPLIER_ACLR == "ACLR2" || OUTPUT_ACLR == "ACLR2" ||
+				SIGN_ACLR_A == "ACLR2" || SIGN_PIPELINE_ACLR_A == "ACLR2" ||
+				SIGN_ACLR_B == "ACLR2" || SIGN_PIPELINE_ACLR_B == "ACLR2" ||
+				ADDNSUB_ACLR == "ACLR2" || ADDNSUB_PIPELINE_ACLR == "ACLR2" ||
+				ACCUM_SLOAD_ACLR == "ACLR2" || ACCUM_SLOAD_PIPELINE_ACLR == "ACLR2" ||
+				ACCUM_SLOAD_UPPER_DATA_ACLR == "ACLR2" || ACCUM_SLOAD_UPPER_DATA_PIPELINE_ACLR == "ACLR2" ||
+				MULT_ROUND_ACLR == "ACLR2" ||
+				MULT_SATURATION_ACLR == "ACLR2" ||
+				ACCUM_ROUND_ACLR == "ACLR2" || ACCUM_ROUND_PIPELINE_ACLR == "ACLR2" ||
+				ACCUM_SATURATION_ACLR == "ACLR2" || ACCUM_SATURATION_PIPELINE_ACLR == "ACLR2"
+				) and !m_stratixv_dsp_block
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_aclr3_used" >
+			<DEFINITION>
+				(
+				INPUT_ACLR_A == "ACLR3" || INPUT_ACLR_B == "ACLR3" || MULTIPLIER_ACLR == "ACLR3" || OUTPUT_ACLR == "ACLR3" ||
+				SIGN_ACLR_A == "ACLR3" || SIGN_PIPELINE_ACLR_A == "ACLR3" ||
+				SIGN_ACLR_B == "ACLR3" || SIGN_PIPELINE_ACLR_B == "ACLR3" ||
+				ADDNSUB_ACLR == "ACLR3" || ADDNSUB_PIPELINE_ACLR == "ACLR3" ||
+				ACCUM_SLOAD_ACLR == "ACLR3" || ACCUM_SLOAD_PIPELINE_ACLR == "ACLR3" ||
+				ACCUM_SLOAD_UPPER_DATA_ACLR == "ACLR3" || ACCUM_SLOAD_UPPER_DATA_PIPELINE_ACLR == "ACLR3" ||
+				MULT_ROUND_ACLR == "ACLR3" ||
+				MULT_SATURATION_ACLR == "ACLR3" ||
+				ACCUM_ROUND_ACLR == "ACLR3" || ACCUM_ROUND_PIPELINE_ACLR == "ACLR3" ||
+				ACCUM_SATURATION_ACLR == "ACLR3" || ACCUM_SATURATION_PIPELINE_ACLR == "ACLR3"
+				) and !m_stratixv_dsp_block
+
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_preadder_coef_capable" >
+			<DEFINITION>
+				((WIDTH_A lt 26) and (WIDTH_B lt 26) and (WIDTH_COEF lt 28))
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_preadder_constant_capable" >
+			<DEFINITION>
+				((WIDTH_A lt 28) and (WIDTH_COEF lt 28))
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_preadder_input_capable" >
+			<DEFINITION>
+				((WIDTH_A lt 26) and (WIDTH_B lt 26) and (WIDTH_C lt 23) and (NUMBER_OF_MULTIPLIERS == 1))
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_preadder_square_capable" >
+			<DEFINITION>
+				((WIDTH_A lt 19) and (WIDTH_B lt 18) and (NUMBER_OF_MULTIPLIERS == 2))
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_systolic_capable" >
+			<DEFINITION>
+				(m_preadder_coef_capable and m_preadder_constant_capable and (NUMBER_OF_MULTIPLIERS == 2 || NUMBER_OF_MULTIPLIERS == 4))
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_unsigned_out" >
+			<DEFINITION>
+				(REPRESENTATION_A == UNSIGNED) and (REPRESENTATION_A == UNSIGNED) <!-- remove dynamic sign for Q61. only -->
+			</DEFINITION>
+		</MACRO>
+
+	</MACROS>
+	<PARAMETER_RULES>
+		<PARAMETER NAME="NUMBER_OF_MULTIPLIERS" VALUE="1-4" DEFAULT_VALUE="1">
+			<FORCE_VALUE TO="1" WHEN="PREADDER_MODE == INPUT"/>
+			<FORCE_VALUE TO="2" WHEN="PREADDER_MODE == SQUARE"/>
+		</PARAMETER>
+		<PARAMETER NAME="WIDTH_A" DEFAULT_VALUE="16" >
+			<FORCE_RANGE MAX="16" MIN="4" WHEN="m_base_stratixii_features" />
+			<FORCE_VALUE TO="16" WHEN="(USE_WIZARD == ON) and m_base_stratixii_features" />
+			<FORCE_VALUE TO="16" WHEN="m_titan_dsp_block and m_base_stratixii_features" />
+		</PARAMETER>
+
+		<PARAMETER NAME="WIDTH_B" DEFAULT_VALUE="16" >
+			<FORCE_RANGE MAX="16" MIN="4" WHEN="m_stratixii_features" />
+			<FORCE_VALUE TO="16" WHEN="m_titan_dsp_block and m_base_stratixii_features" />
+			<FORCE_VALUE TO="16" WHEN="(USE_WIZARD == ON) and m_base_stratixii_features" />
+			<VALUE_RULE> (((WIDTH_A + WIDTH_B) gt 17) and m_base_stratixii_features) || !m_base_stratixii_features </VALUE_RULE>
+		</PARAMETER>
+		<PARAMETER NAME="WIDTH_RESULT" DEFAULT_VALUE="48" >
+			<FORCE_RANGE MAX="WIDTH_A + WIDTH_B +16" MIN="WIDTH_A + WIDTH_B - 5" />
+			<FORCE_RANGE TO="31|32|48" WHEN="(USE_WIZARD == ON) and m_base_stratixii_features" />
+			<FORCE_VALUE TO="48" WHEN="m_titan_dsp_block and m_base_stratixii_features" />
+			<FORCE_VALUE TO="WIDTH_A + WIDTH_B + 8" WHEN="m_titan_dsp_block" />
+			<FORCE_VALUE TO="WIDTH_A + WIDTH_B + 16" WHEN="(USE_WIZARD == OFF) and m_base_stratixii_features" />
+			<FORCE_VALUE TO="WIDTH_A + WIDTH_B + 16" WHEN="!m_base_stratixii_features and is_used(accum_sload_upper_data) and mfam_family_stratixii" />
+		</PARAMETER>
+		<PARAMETER NAME="extra_multiplier_latency" DEFAULT_VALUE="0" >
+			<FORCE_VALUE TO="0" WHEN="(MULTIPLIER_REG == UNREGISTERED) || m_stratixii_features" />
+		</PARAMETER>
+		<PARAMETER NAME="extra_accumulator_latency" DEFAULT_VALUE="0" >
+			<FORCE_VALUE TO="0" WHEN="m_stratixii_features" />
+		</PARAMETER>
+
+		<PARAMETER NAME="INPUT_SOURCE_A" DEFAULT_VALUE="str(DATAA)" >
+			<FORCE_VALUE TO="str(DATAA)" WHEN="(PREADDER_MODE == SIMPLE || PREADDER_MODE == CONSTANT) and m_stratixv_dsp_block" />
+			<FORCE_VALUE TO="str(PREADDER)" WHEN="(PREADDER_MODE == COEF || PREADDER_MODE == INPUT || PREADDER_MODE == SQUARE) and m_stratixv_dsp_block" />
+			<FORCE_VALUE TO="str(DATAA)" WHEN="!m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="INPUT_SOURCE_B" DEFAULT_VALUE="str(DATAB)" >
+			<FORCE_RANGE TO="str(DATAB)" WHEN="m_titan_dsp_block" />
+			<FORCE_VALUE TO="str(DATAB)" WHEN="PREADDER_MODE == SIMPLE and m_stratixv_dsp_block" />
+			<FORCE_VALUE TO="str(COEF)" WHEN="(PREADDER_MODE == COEF || PREADDER_MODE == CONSTANT) and m_stratixv_dsp_block " />
+			<FORCE_VALUE TO="str(DATAC)" WHEN="PREADDER_MODE == INPUT and m_stratixv_dsp_block" />
+			<FORCE_VALUE TO="str(PREADDER)" WHEN="PREADDER_MODE == SQUARE and m_stratixv_dsp_block" />
+			<FORCE_RANGE TO="str(DATAB)" WHEN="!m_titan_dsp_block and !m_stratixv_dsp_block" />
+		</PARAMETER>
+
+		<PARAMETER NAME="ADDNSUB_REG" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|str(CLOCK0)" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="!is_used(addnsub)" />
+			<VALUE_RULE> is_used(addnsub) and ADDNSUB_REG != "UNREGISTERED" || !is_used(addnsub) </VALUE_RULE>
+		</PARAMETER>
+		<PARAMETER NAME="ADDNSUB_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="str(ACLR0)" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_VALUE TO="str(ACLR0)" WHEN="!is_used(addnsub) || ADDNSUB_REG == UNREGISTERED" />
+		</PARAMETER>
+		<PARAMETER NAME="ADDNSUB_PIPELINE_REG" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|str(CLOCK0)" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="!is_used(addnsub)" />
+			<VALUE_RULE> is_used(addnsub) and ADDNSUB_PIPELINE_REG != "UNREGISTERED" || !is_used(addnsub) </VALUE_RULE>
+		</PARAMETER>
+		<PARAMETER NAME="ADDNSUB_PIPELINE_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="str(ACLR0)" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_VALUE TO="str(ACLR0)" WHEN="!is_used(addnsub) || ADDNSUB_PIPELINE_REG == UNREGISTERED" />
+		</PARAMETER>
+		<PARAMETER NAME="ACCUM_DIRECTION" DEFAULT_VALUE="str(ADD)" >
+			<FORCE_VALUE TO="str(ADD)" WHEN="is_used(addnsub)" />
+			<FORCE_RANGE TO="str(ADD)|str(SUB)" WHEN="m_titan_dsp_block" />
+			<FORCE_VALUE TO="str(ADD)" WHEN="m_titan_dsp_block and REPRESENTATION_A == UNSIGNED and REPRESENTATION_A == UNSIGNED" />
+		</PARAMETER>
+
+		<PARAMETER NAME="ACCUM_SLOAD_REG" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|str(CLOCK0)" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_RANGE TO="str(UNREGISTERED)|INPUT_REG_A|INPUT_REG_B" WHEN="m_titan_dsp_block" />
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="!is_used(accum_sload)" />
+			<VALUE_RULE> is_used(accum_sload) and ACCUM_SLOAD_REG != "UNREGISTERED" || !is_used(accum_sload) </VALUE_RULE>
+		</PARAMETER>
+		<PARAMETER NAME="ACCUM_SLOAD_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="str(ACLR0)" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="m_titan_dsp_block and is_used(accum_sload) and ACCUM_SLOAD_REG != UNREGISTERED" />
+			<FORCE_VALUE TO="str(ACLR0)" WHEN="!is_used(accum_sload) || ACCUM_SLOAD_REG == UNREGISTERED" />
+		</PARAMETER>
+		<PARAMETER NAME="ACCUM_SLOAD_PIPELINE_REG" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|str(CLOCK0)" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_RANGE TO="str(UNREGISTERED)|MULTIPLIER_REG" WHEN="m_titan_dsp_block" />
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="!is_used(accum_sload)" />
+			<VALUE_RULE> is_used(accum_sload) and ACCUM_SLOAD_PIPELINE_REG != "UNREGISTERED" || !is_used(accum_sload) </VALUE_RULE>
+		</PARAMETER>
+		<PARAMETER NAME="ACCUM_SLOAD_PIPELINE_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="str(ACLR0)" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_VALUE TO="MULTIPLIER_ACLR" WHEN="m_titan_dsp_block and is_used(accum_sload) and ACCUM_SLOAD_PIPELINE_REG != UNREGISTERED" />
+			<FORCE_VALUE TO="str(ACLR0)" WHEN="!is_used(accum_sload) || ACCUM_SLOAD_PIPELINE_REG == UNREGISTERED" />
+		</PARAMETER>
+
+		<PARAMETER NAME="REPRESENTATION_A" DEFAULT_VALUE="str(UNSIGNED)" >
+			<FORCE_VALUE TO="str(SIGNED)" WHEN="m_base_stratixii_features and (USE_WIZARD == ON)" />
+			<FORCE_VALUE To="str(SIGNED)" WHEN="is_used(signa)" />
+		</PARAMETER>
+		<PARAMETER NAME="REPRESENTATION_A" DEFAULT_VALUE="str(UNSIGNED)" >
+			<FORCE_VALUE TO="str(SIGNED)" WHEN="m_base_stratixii_features and (USE_WIZARD == ON)" />
+			<FORCE_VALUE To="str(SIGNED)" WHEN="is_used(signb)" />
+		</PARAMETER>
+
+		<PARAMETER NAME="SIGN_REG_A" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|str(CLOCK0)" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_RANGE TO="str(UNREGISTERED)|INPUT_REG_A|INPUT_REG_B" WHEN="m_titan_dsp_block " />
+			<FORCE_VALUE TO="ACCUM_SLOAD_UPPER_DATA_REG" WHEN="mfam_family_stratixii and is_used(signa) and is_used(accum_sload_upper_data) and (WIDTH_RESULT lt (WIDTH_A + WIDTH_B + 16))" />
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="!is_used(signa)" />
+			<VALUE_RULE> is_used(signa) and SIGN_REG_A != "UNREGISTERED" || !is_used(signa) </VALUE_RULE>
+		</PARAMETER>
+		<PARAMETER NAME="SIGN_ACLR_A" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="m_titan_dsp_block and is_used(signa) and SIGN_REG_A != UNREGISTERED" />
+			<FORCE_VALUE TO="ACCUM_SLOAD_UPPER_DATA_ACLR" WHEN="mfam_family_stratixii and is_used(signa) and is_used(accum_sload_upper_data) and (WIDTH_RESULT lt (WIDTH_A + WIDTH_B + 16))" />
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="!is_used(signa) || SIGN_REG_A == UNREGISTERED" />
+		</PARAMETER>
+		<PARAMETER NAME="SIGN_PIPELINE_REG_A" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|str(CLOCK0)" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_RANGE TO="MULTIPLIER_REG" WHEN="m_titan_dsp_block" />
+			<FORCE_VALUE TO="ACCUM_SLOAD_UPPER_DATA_PIPELINE_REG" WHEN="mfam_family_stratixii and is_used(signa) and is_used(accum_sload_upper_data) and (WIDTH_RESULT lt (WIDTH_A + WIDTH_B + 16))" />
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="!is_used(signa)" />
+			<VALUE_RULE> is_used(signa) and SIGN_PIPELINE_REG_A != "UNREGISTERED" || !is_used(signa) </VALUE_RULE>
+		</PARAMETER>
+		<PARAMETER NAME="SIGN_PIPELINE_ACLR_A" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_VALUE TO="MULTIPLIER_ACLR" WHEN="m_titan_dsp_block and is_used(signa) and SIGN_PIPELINE_REG_A != UNREGISTERED" />
+			<FORCE_VALUE TO="ACCUM_SLOAD_UPPER_DATA_PIPELINE_ACLR" WHEN="mfam_family_stratixii and is_used(signa) and is_used(accum_sload_upper_data) and (WIDTH_RESULT lt (WIDTH_A + WIDTH_B + 16))" />
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="!is_used(signa) || SIGN_PIPELINE_REG_A == UNREGISTERED" />
+		</PARAMETER>
+
+		<PARAMETER NAME="SIGN_REG_B" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|str(CLOCK0)" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_RANGE TO="str(UNREGISTERED)|INPUT_REG_A|INPUT_REG_B" WHEN="m_titan_dsp_block" />
+			<FORCE_VALUE TO="ACCUM_SLOAD_UPPER_DATA_REG" WHEN="mfam_family_stratixii and is_used(signb) and is_used(accum_sload_upper_data) and (WIDTH_RESULT lt (WIDTH_A + WIDTH_B + 16))" />
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="!is_used(signb)" />
+			<VALUE_RULE> is_used(signb) and SIGN_REG_B != "UNREGISTERED" || !is_used(signb) </VALUE_RULE>
+		</PARAMETER>
+		<PARAMETER NAME="SIGN_ACLR_B" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="m_titan_dsp_block and is_used(signb) and SIGN_REG_B != UNREGISTERED" />
+			<FORCE_VALUE TO="ACCUM_SLOAD_UPPER_DATA_ACLR" WHEN="mfam_family_stratixii and is_used(signb) and is_used(accum_sload_upper_data) and (WIDTH_RESULT lt (WIDTH_A + WIDTH_B + 16))" />
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="!is_used(signb) || SIGN_REG_B == UNREGISTERED" />
+		</PARAMETER>
+		<PARAMETER NAME="SIGN_PIPELINE_REG_B" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|str(CLOCK0)" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_RANGE TO="MULTIPLIER_REG" WHEN="m_titan_dsp_block" />
+			<FORCE_VALUE TO="ACCUM_SLOAD_UPPER_DATA_PIPELINE_REG" WHEN="mfam_family_stratixii and is_used(signb) and is_used(accum_sload_upper_data) and (WIDTH_RESULT lt (WIDTH_A + WIDTH_B + 16))" />
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="!is_used(signb)" />
+			<VALUE_RULE> is_used(signb) and SIGN_PIPELINE_REG_B != "UNREGISTERED" || !is_used(signb) </VALUE_RULE>
+		</PARAMETER>
+		<PARAMETER NAME="SIGN_PIPELINE_ACLR_B" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="INPUT_ACLR_A" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_VALUE TO="MULTIPLIER_ACLR" WHEN="m_titan_dsp_block and is_used(signb) and SIGN_PIPELINE_REG_B != UNREGISTERED" />
+			<FORCE_VALUE TO="ACCUM_SLOAD_UPPER_DATA_PIPELINE_ACLR" WHEN="mfam_family_stratixii and is_used(signb) and is_used(accum_sload_upper_data) and (WIDTH_RESULT lt (WIDTH_A + WIDTH_B + 16))" />
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="!is_used(signb) || SIGN_PIPELINE_REG_B == UNREGISTERED" />
+		</PARAMETER>
+
+		<PARAMETER NAME="OUTPUT_REG" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_VALUE TO="str(CLOCK0)" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_RANGE TO="str(CLOCK0)|str(CLOCK1)|str(CLOCK2)|str(CLOCK3)" WHEN="!m_cycloneii_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="OUTPUT_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="INPUT_ACLR_A" WHEN="m_cycloneii_dsp_block" />
+		</PARAMETER>
+
+		<PARAMETER NAME="MULTIPLIER_REG" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|str(CLOCK0)" WHEN="m_cycloneii_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="MULTIPLIER_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="mfam_family_cycloneii" />
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="MULTIPLIER_REG == UNREGISTERED" />
+		</PARAMETER>
+
+		<PARAMETER NAME="INPUT_REG_A" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|str(CLOCK0)" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_RANGE TO="str(CLOCK0)|str(CLOCK1)" WHEN="m_titan_dsp_block and (is_used(scanouta) || is_used(scanoutb))" />
+		</PARAMETER>
+		<PARAMETER NAME="INPUT_ACLR_A" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="str(ACLR0)" WHEN="mfam_family_cycloneii" />
+			<FORCE_VALUE TO="str(ACLR0)" WHEN="INPUT_REG_A == UNREGISTERED" />
+		</PARAMETER>
+
+		<PARAMETER NAME="INPUT_REG_B" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="INPUT_REG_A" WHEN="m_titan_dsp_block and is_used(scanoutb)" />
+			<FORCE_RANGE TO="str(UNREGISTERED)|INPUT_REG_A" WHEN="m_titan_dsp_block" />
+			<FORCE_RANGE TO="str(UNREGISTERED)|str(CLOCK0)" WHEN="m_cycloneii_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="INPUT_ACLR_B" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="mfam_family_cycloneii" />
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="m_titan_dsp_block and INPUT_REG_B !=UNREGISTERED" />
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="INPUT_REG_B == UNREGISTERED" />
+		</PARAMETER>
+
+		<PARAMETER NAME="MULTIPLIER_ROUNDING" DEFAULT_VALUE="str(NO)" >
+			<FORCE_VALUE TO="str(VARIABLE)" WHEN="is_used(mult_round)" />
+			<FORCE_VALUE TO="str(NO)" WHEN="!mfam_family_stratixii || m_titan_dsp_block || m_stratixv_dsp_block" />
+			<VALUE_RULE>
+				((MULTIPLIER_ROUNDING == "VARIABLE") and is_used(mult_round)) || (MULTIPLIER_ROUNDING != "VARIABLE")
+			</VALUE_RULE>
+			<VALUE_RULE>
+				((MULTIPLIER_ROUNDING == "VARIABLE") and is_used(mult_round)) || (!is_used(mult_round))
+			</VALUE_RULE>
+		</PARAMETER>
+		<PARAMETER NAME="ACCUMULATOR_ROUNDING" DEFAULT_VALUE="str(NO)" >
+			<FORCE_VALUE TO="str(VARIABLE)" WHEN="is_used(accum_round)" />
+			<FORCE_VALUE TO="str(NO)" WHEN="!mfam_family_stratixii || m_titan_dsp_block || m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="MULTIPLIER_SATURATION" DEFAULT_VALUE="str(NO)" >
+			<FORCE_VALUE TO="str(VARIABLE)" WHEN="is_used(mult_saturation)" />
+			<FORCE_VALUE TO="str(NO)" WHEN="!mfam_family_stratixii || m_titan_dsp_block || m_stratixv_dsp_block" />
+			<VALUE_RULE>
+				((MULTIPLIER_SATURATION == "VARIABLE") and is_used(mult_saturation)) || (MULTIPLIER_SATURATION != "VARIABLE")
+			</VALUE_RULE>
+			<VALUE_RULE>
+				((MULTIPLIER_SATURATION == "VARIABLE") and is_used(mult_saturation)) || (!is_used(mult_saturation))
+			</VALUE_RULE>
+		</PARAMETER>
+		<PARAMETER NAME="ACCUMULATOR_SATURATION" DEFAULT_VALUE="str(NO)" >
+			<FORCE_VALUE TO="str(VARIABLE)" WHEN="is_used(accum_saturation)" />
+			<FORCE_VALUE TO="str(NO)" WHEN="!mfam_family_stratixii || m_titan_dsp_block || m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="PORT_MULT_IS_SATURATED" DEFAULT_VALUE="str(UNUSED)" >
+			<FORCE_VALUE TO="str(USED)" WHEN="is_used(mult_is_saturated)" ELSE="UNUSED" />
+		</PARAMETER>
+		<PARAMETER NAME="PORT_ACCUM_IS_SATURATED" DEFAULT_VALUE="str(UNUSED)" >
+			<FORCE_VALUE TO="str(USED)" WHEN="is_used(accum_is_saturated)" ELSE="UNUSED" />
+		</PARAMETER>
+
+
+		<PARAMETER NAME="MULT_ROUND_REG" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="!is_used(mult_round)" />
+		</PARAMETER>
+		<PARAMETER NAME="MULT_ROUND_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_VALUE TO="str(ACLR0)" WHEN="!is_used(mult_round) || MULT_ROUND_REG == UNREGISTERED" />
+		</PARAMETER>
+		<PARAMETER NAME="MULT_SATURATION_REG" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="!is_used(mult_saturation)" />
+		</PARAMETER>
+		<PARAMETER NAME="MULT_SATURATION_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_VALUE TO="str(ACLR0)" WHEN="!is_used(mult_saturation) || MULT_SATURATION_REG == UNREGISTERED" />
+		</PARAMETER>
+
+		<PARAMETER NAME="ACCUM_ROUND_REG" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|INPUT_REG_A|INPUT_REG_B" WHEN="m_titan_dsp_block" />
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="!is_used(accum_round)" />
+		</PARAMETER>
+		<PARAMETER NAME="ACCUM_ROUND_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="m_titan_dsp_block and is_used(accum_round) and ACCUM_ROUND_REG != UNREGISTERED" />
+			<FORCE_VALUE TO="str(ACLR0)" WHEN="!is_used(accum_round) || ACCUM_ROUND_REG == UNREGISTERED" />
+		</PARAMETER>
+		<PARAMETER NAME="ACCUM_ROUND_PIPELINE_REG" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|MULTIPLIER_REG" WHEN="m_titan_dsp_block" />
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="!is_used(accum_round)" />
+		</PARAMETER>
+		<PARAMETER NAME="ACCUM_ROUND_PIPELINE_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_VALUE TO="MULTIPLIER_ACLR" WHEN="m_titan_dsp_block and is_used(accum_round) and ACCUM_ROUND_PIPELINE_REG != UNREGISTERED" />
+			<FORCE_VALUE TO="str(ACLR0)" WHEN="!is_used(accum_round) || ACCUM_ROUND_PIPELINE_REG == UNREGISTERED" />
+		</PARAMETER>
+		<PARAMETER NAME="ACCUM_SATURATION_REG" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|INPUT_REG_A|INPUT_REG_B" WHEN="m_titan_dsp_block" />
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="!is_used(accum_saturation)" />
+		</PARAMETER>
+		<PARAMETER NAME="ACCUM_SATURATION_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="m_titan_dsp_block and is_used(accum_saturation) and ACCUM_SATURATION_REG != UNREGISTERED" />
+			<FORCE_VALUE TO="str(ACLR0)" WHEN="!is_used(accum_saturation) || ACCUM_SATURATION_REG == UNREGISTERED" />
+		</PARAMETER>
+		<PARAMETER NAME="ACCUM_SATURATION_PIPELINE_REG" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|MULTIPLIER_REG" WHEN="m_titan_dsp_block" />
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="!is_used(accum_saturation)" />
+		</PARAMETER>
+		<PARAMETER NAME="ACCUM_SATURATION_PIPELINE_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="MULTIPLIER_ACLR" WHEN="m_titan_dsp_block and is_used(accum_saturation) and ACCUM_SATURATION_PIPELINE_REG != UNREGISTERED" />
+			<FORCE_VALUE TO="str(ACLR0)" WHEN="!is_used(accum_saturation) || ACCUM_SATURATION_PIPELINE_REG == UNREGISTERED" />
+		</PARAMETER>
+
+		<PARAMETER NAME="ACCUM_SLOAD_UPPER_DATA_REG" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|str(CLOCK0)" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="!is_used(accum_sload_upper_data) || m_titan_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="ACCUM_SLOAD_UPPER_DATA_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="mfam_family_cycloneii" />
+			<FORCE_VALUE TO="str(ACLR0)" WHEN="!is_used(accum_sload_upper_data) || ACCUM_SLOAD_UPPER_DATA_REG == UNREGISTERED" />
+		</PARAMETER>
+		<PARAMETER NAME="ACCUM_SLOAD_UPPER_DATA_PIPELINE_REG" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|str(CLOCK0)" WHEN="m_cycloneii_dsp_block" />
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="!is_used(accum_sload_upper_data)" />
+		</PARAMETER>
+		<PARAMETER NAME="ACCUM_SLOAD_UPPER_DATA_PIPELINE_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_VALUE TO="INPUT_ACLR_A" WHEN="mfam_family_cycloneii " />
+			<FORCE_VALUE TO="str(ACLR0)" WHEN="!is_used(accum_sload_upper_data) || ACCUM_SLOAD_UPPER_DATA_PIPELINE_REG == UNREGISTERED" />
+		</PARAMETER>
+
+		<PARAMETER NAME="WIDTH_UPPER_DATA" DEFAULT_VALUE="1" >
+			<FORCE_RANGE MAX="m_asud_max_width" MIN="1" WHEN="is_used(accum_sload_upper_data) and mfam_family_stratixii" />
+			<FORCE_RANGE MAX="WIDTH_RESULT" MIN="1" WHEN="is_used(accum_sload_upper_data) and mfam_family_cycloneii" />
+		</PARAMETER>
+
+
+		<PARAMETER NAME="PORT_SIGNA" TYPE="STRING" DEFAULT_VALUE="str(PORT_CONNECTIVITY)" >
+			<FORCE_VALUE TO="str(PORT_USED)" WHEN="is_used(signa)" />
+			<FORCE_VALUE TO="str(PORT_UNUSED)" WHEN="!is_used(signa)" />
+		</PARAMETER>
+
+		<PARAMETER NAME="PORT_SIGNB" TYPE="STRING" DEFAULT_VALUE="str(PORT_CONNECTIVITY)" >
+			<FORCE_VALUE TO="str(PORT_USED)" WHEN="is_used(signb)" />
+			<FORCE_VALUE TO="str(PORT_UNUSED)" WHEN="!is_used(signb)" />
+		</PARAMETER>
+		<PARAMETER NAME="PORT_ADDNSUB" TYPE="STRING" DEFAULT_VALUE="str(PORT_CONNECTIVITY)" >
+			<FORCE_VALUE TO="str(PORT_USED)" WHEN="is_used(addnsub)" ELSE="str(PORT_UNUSED)" />
+		</PARAMETER>
+		<PARAMETER NAME="LOADCONST_VALUE" VALUE="0-64" DEFAULT_VALUE="64" />
+		<PARAMETER NAME="WIDTH_C" VALUE="2-22" DEFAULT_VALUE="22" />
+		<PARAMETER NAME="PREADDER_MODE" DEFAULT_VALUE="str(SIMPLE)" >
+			<FORCE_VALUE TO="str(SIMPLE)" WHEN="!m_stratixv_dsp_block" />
+			<FORCE_RANGE TO="str(SIMPLE)|str(INPUT)|str(CONSTANT)|str(COEF)|str(SQUARE)" WHEN="m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="PREADDER_DIRECTION_0" DEFAULT_VALUE="str(ADD)" >
+			<FORCE_VALUE TO="str(ADD)" WHEN="m_unsigned_out and m_stratixv_dsp_block and PREADDER_MODE != SIMPLE" />
+		</PARAMETER>
+		<PARAMETER NAME="PREADDER_DIRECTION_1" DEFAULT_VALUE="str(ADD)" >
+			<FORCE_VALUE TO="PREADDER_DIRECTION_0" />
+		</PARAMETER>
+		<PARAMETER NAME="PREADDER_DIRECTION_2" DEFAULT_VALUE="str(ADD)" >
+			<FORCE_VALUE TO="PREADDER_DIRECTION_0" />
+		</PARAMETER>
+		<PARAMETER NAME="PREADDER_DIRECTION_3" DEFAULT_VALUE="str(ADD)" >
+			<FORCE_VALUE TO="PREADDER_DIRECTION_0" />
+		</PARAMETER>
+		<PARAMETER NAME="SYSTOLIC_DELAY1" DEFAULT_VALUE="str(UNREGISTERED)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|OUTPUT_REG" WHEN="m_stratixv_dsp_block" />
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="(NUMBER_OF_MULTIPLIERS == 1) || (NUMBER_OF_MULTIPLIERS == 3)" />
+		</PARAMETER>
+		<PARAMETER NAME="SYSTOLIC_DELAY3" DEFAULT_VALUE="str(UNREGISTERED)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|OUTPUT_REG" WHEN="m_stratixv_dsp_block" />
+			<FORCE_VALUE TO="str(UNREGISTERED)" WHEN="(NUMBER_OF_MULTIPLIERS == 1) || (NUMBER_OF_MULTIPLIERS == 3)" />
+		</PARAMETER>
+		<PARAMETER NAME="SYSTOLIC_ACLR1" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="OUTPUT_ACLR" WHEN="m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="SYSTOLIC_ACLR3" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="OUTPUT_ACLR" WHEN="m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="INPUT_REGISTER_C0" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="INPUT_REG_A" WHEN="m_stratixv_dsp_block" />
+			<FORCE_VALUE TO="UNREGISTERED" WHEN="PREADDER_MODE != INPUT and !m_stratixv_dsp_block"/>
+		</PARAMETER>
+		<PARAMETER NAME="INPUT_ACLR_C0" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="INPUT_ACLR_A" WHEN="m_stratixv_dsp_block" />
+			<FORCE_VALUE TO="UNUSED" WHEN="INPUT_REGISTER_C0 == UNREGISTERED"/>
+		</PARAMETER>
+		<PARAMETER NAME="INPUT_REGISTER_C1" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="INPUT_REGISTER_C0" WHEN="m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="INPUT_ACLR_C1" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="INPUT_ACLR_A" WHEN="m_stratixv_dsp_block" />
+			<FORCE_VALUE TO="UNUSED" WHEN="INPUT_REGISTER_C1 == UNREGISTERED"/>
+		</PARAMETER>
+		<PARAMETER NAME="INPUT_REGISTER_C2" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="INPUT_REGISTER_C0" WHEN="m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="INPUT_ACLR_C2" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="INPUT_ACLR_A" WHEN="m_stratixv_dsp_block" />
+			<FORCE_VALUE TO="UNUSED" WHEN="INPUT_REGISTER_C2 == UNREGISTERED"/>
+		</PARAMETER>
+		<PARAMETER NAME="INPUT_REGISTER_C3" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="INPUT_REGISTER_C0" WHEN="m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="INPUT_ACLR_C3" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="INPUT_ACLR_A" WHEN="m_stratixv_dsp_block" />
+			<FORCE_VALUE TO="UNUSED" WHEN="INPUT_REGISTER_C3 == UNREGISTERED"/>
+		</PARAMETER>
+		<PARAMETER NAME="COEFSEL0_REGISTER" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="str(UNREGISTERED)|INPUT_REG_A" WHEN="m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="COEFSEL0_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="INPUT_ACLR_A" WHEN="m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="COEFSEL1_REGISTER" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="COEFSEL0_REGISTER" WHEN="m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="COEFSEL1_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="COEFSEL0_ACLR" WHEN="m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="COEFSEL2_REGISTER" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="COEFSEL1_REGISTER" WHEN="m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="COEFSEL2_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="COEFSEL0_ACLR" WHEN="m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="COEFSEL3_REGISTER" DEFAULT_VALUE="str(CLOCK0)" >
+			<FORCE_RANGE TO="COEFSEL1_REGISTER" WHEN="m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="COEFSEL3_ACLR" DEFAULT_VALUE="str(ACLR0)" >
+			<FORCE_RANGE TO="COEFSEL0_ACLR" WHEN="m_stratixv_dsp_block" />
+		</PARAMETER>
+		<PARAMETER NAME="WIDTH_COEF" DEFAULT_VALUE="18" VALUE="1-27" />
+		<PARAMETER NAME="COEF0_0" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF0_1" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF0_2" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF0_3" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF0_4" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF0_5" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF0_6" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF0_7" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF1_0" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF1_1" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF1_2" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF1_3" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF1_4" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF1_5" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF1_6" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF1_7" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF2_0" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF2_1" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF2_2" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF2_3" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF2_4" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF2_5" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF2_6" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF2_7" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF3_0" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF3_1" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF3_2" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF3_3" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF3_4" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF3_5" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF3_6" DEFAULT_VALUE="0" VALUE="0-134217727" />
+		<PARAMETER NAME="COEF3_7" DEFAULT_VALUE="0" VALUE="0-134217727" />
+
+	</PARAMETER_RULES>
+	<PORT_RULES>
+		<PORT NAME="dataa" USAGE="USED" />
+		<PORT NAME="datab" USAGE="USED" />
+		<PORT NAME="datac" USAGE="VARIABLE" >
+			<STATE TO="USED" WHEN="(PREADDER_MODE == INPUT) and (m_preadder_input_capable) and m_stratixv_dsp_block" />
+			<STATE TO="UNUSED" WHEN="!m_stratixv_dsp_block || PREADDER_MODE != INPUT" />
+		</PORT>
+		<PORT NAME="result" USAGE="USED" />
+		<PORT NAME="scanina" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="INPUT_SOURCE_A != SCANA" />
+			<STATE TO="USED" WHEN="INPUT_SOURCE_A == SCANA" />
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+		<PORT NAME="scaninb" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="INPUT_SOURCE_B != SCANB" />
+			<STATE TO="USED" WHEN="INPUT_SOURCE_B == SCANB" />
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+		<PORT NAME="scanouta" USAGE="UNUSED" >
+			<STATE TO="UNUSED" WHEN="m_no_scanout" />
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+		<PORT NAME="scanoutb" USAGE="UNUSED" >
+			<STATE TO="UNUSED" WHEN="m_no_scanout" />
+			<STATE TO="UNUSED" WHEN="(INPUT_SOURCE_A == str(SCANA) || is_used(scanouta)) and m_titan_dsp_block" />
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+		<PORT NAME="sourcea" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="INPUT_SOURCE_A != VARIABLE" />
+			<STATE TO="USED" WHEN="INPUT_SOURCE_A == VARIABLE" />
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+		<PORT NAME="sourceb" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="INPUT_SOURCE_B != VARIABLE" />
+			<STATE TO="USED" WHEN="INPUT_SOURCE_B == VARIABLE" />
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+		<PORT NAME="overflow" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+			<STATE TO="UNUSED" >
+				<WHEN> (is_used(signa) || is_used(signb)) and (m_clock_count gt 1) and (!m_stratix_mac_only) </WHEN>
+			</STATE>
+			<STATE TO="UNUSED" >
+				<WHEN> (USE_WIZARD == "ON") and (m_base_stratixii_features) </WHEN>
+			</STATE>
+			<STATE TO="UNUSED" >
+				<WHEN> (WIDTH_RESULT lt (WIDTH_A + WIDTH_B + 1)) </WHEN>
+			</STATE>
+		</PORT>
+		<PORT NAME="CLOCK0" USAGE="VARIABLE" >
+			<STATE TO="USED" WHEN="m_clock0_used" />
+			<STATE TO="UNUSED" WHEN="!m_clock0_used" />
+		</PORT>
+		<PORT NAME="CLOCK1" USAGE="VARIABLE" >
+			<STATE TO="USED" WHEN="m_clock1_used" />
+			<STATE TO="UNUSED" WHEN="!m_clock1_used" />
+		</PORT>
+		<PORT NAME="CLOCK2" USAGE="VARIABLE" >
+			<STATE TO="USED" WHEN="m_clock2_used" />
+			<STATE TO="UNUSED" WHEN="!m_clock2_used" />
+		</PORT>
+		<PORT NAME="CLOCK3" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+			<STATE TO="USED" WHEN="m_clock3_used" />
+			<STATE TO="UNUSED" WHEN="!m_clock3_used" />
+		</PORT>
+
+		<PORT NAME="ena0" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!is_used(CLOCK0)" />
+		</PORT>
+		<PORT NAME="ena1" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!is_used(CLOCK1)" />
+			<STATE TO="USED" WHEN="(USE_WIZARD == ON) and is_used(CLOCK1) and is_used(ena0)" />
+			<STATE TO="UNUSED" WHEN="(USE_WIZARD == ON) and is_used(CLOCK1) and !is_used(ena0) and is_used(CLOCK0)" />
+		</PORT>
+		<PORT NAME="ena2" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!is_used(CLOCK2)" />
+			<STATE TO="USED" WHEN="(USE_WIZARD == ON) and is_used(CLOCK2) and (is_used(ena0) || is_used(ena1))" />
+			<STATE TO="UNUSED" WHEN="(USE_WIZARD == ON) and is_used(CLOCK2) and ((!is_used(ena0) and is_used(CLOCK0)) || (!is_used(ena1) and is_used(CLOCK1)))" />
+		</PORT>
+		<PORT NAME="ena3" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!is_used(CLOCK3)" />
+			<STATE TO="USED" WHEN="(USE_WIZARD == ON) and is_used(CLOCK3) and (is_used(ena0) || is_used(ena1) || is_used(ena2))" />
+			<STATE TO="UNUSED" WHEN="(USE_WIZARD == ON) and is_used(CLOCK3) and ((!is_used(ena0) and is_used(CLOCK0)) || (!is_used(ena1) and is_used(CLOCK1)) || (!is_used(ena2) and is_used(CLOCK2)))" />
+		</PORT>
+
+		<PORT NAME="ACLR0" USAGE="VARIABLE" >
+			<STATE TO="USED" WHEN="m_aclr0_used" />
+			<STATE TO="UNUSED" WHEN="!m_aclr0_used" />
+		</PORT>
+		<PORT NAME="ACLR1" USAGE="VARIABLE" >
+			<STATE TO="USED" WHEN="m_aclr1_used" />
+			<STATE TO="UNUSED" WHEN="!m_aclr1_used" />
+		</PORT>
+		<PORT NAME="ACLR2" USAGE="VARIABLE" >
+			<STATE TO="USED" WHEN="m_aclr2_used" />
+			<STATE TO="UNUSED" WHEN="!m_aclr2_used" />
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+		<PORT NAME="ACLR3" USAGE="VARIABLE" >
+			<STATE TO="USED" WHEN="m_aclr3_used" />
+			<STATE TO="UNUSED" WHEN="!m_aclr3_used" />
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+		<PORT NAME="signa" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="m_base_stratixii_features and (USE_WIZARD == ON)" />
+		</PORT>
+		<PORT NAME="signb" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="m_base_stratixii_features and (USE_WIZARD == ON)" />
+		</PORT>
+
+		<PORT NAME="accum_sload" USAGE="VARIABLE" />
+
+		<PORT NAME="accum_sload_upper_data" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="(!mfam_family_stratixii and !mfam_family_cycloneii ) || !is_used(accum_sload)" />
+			<!-- <STATE TO="UNUSED" WHEN="is_used(scanouta) || is_used(scanoutb) || is_used(scanina) || is_used(scaninb)" /> -->
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+		<PORT NAME="mult_round" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!mfam_family_stratixii" />
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+		<PORT NAME="mult_saturation" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!mfam_family_stratixii" />
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+		<PORT NAME="accum_round" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!mfam_family_stratixii" />
+			<STATE TO="UNUSED" WHEN="mfam_family_stratixiii and DEDICATED_MULTIPLIER_CIRCUITRY == yes" />
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+		<PORT NAME="accum_saturation" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!mfam_family_stratixii" />
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+
+		<PORT NAME="mult_is_saturated" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!mfam_family_stratixii || (!is_used(mult_saturation) and (MULTIPLIER_SATURATION != YES) and (MULTIPLIER_SATURATION != VARIABLE )) " />
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+
+		<PORT NAME="accum_is_saturated" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!mfam_family_stratixii || (!is_used(accum_saturation) and (ACCUMULATOR_SATURATION != YES) and (ACCUMULATOR_SATURATION != VARIABLE))" />
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+
+		<PORT NAME="addnsub" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block " />
+			<STATE TO="UNUSED" WHEN="NUMBER_OF_MULTIPLIERS == 1" />
+			<STATE TO="UNUSED" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+		
+		<PORT NAME="coefsel0" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!m_stratixv_dsp_block and COEFSEL0_REGISTER == UNREGISTERED" />
+			<STATE TO="USED" WHEN="m_stratixv_dsp_block and COEFSEL0_REGISTER != UNREGISTERED" />
+		</PORT>
+		<PORT NAME="coefsel1" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!m_stratixv_dsp_block" />
+			<STATE TO="coefsel0" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+		<PORT NAME="coefsel2" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!m_stratixv_dsp_block" />
+			<STATE TO="coefsel0" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+		<PORT NAME="coefsel3" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!m_stratixv_dsp_block" />
+			<STATE TO="coefsel0" WHEN="m_stratixv_dsp_block" />
+		</PORT>
+		<PORT NAME="datac" USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!mfam_family_stratixv and INPUT_REGISTER_C0 == UNREGISTERED" />
+			<STATE TO="USED" WHEN="m_stratixv_dsp_block and INPUT_REGISTER_C0 != UNREGISTERED" />
+		</PORT>
+
+	</PORT_RULES>
+</ROOT>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_soc_interface_fpga2soc">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_soc_interface_fpga2soc" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="fpga2socaxiarvalid" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiawvalid" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxirlast" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxirvalid" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socbvalid" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2soceventi" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socwready" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socarusers" TYPE="INPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socawusers" TYPE="INPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiar" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiarburst" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiarcache" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiarid" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiarlen" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiarlock" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiarprot" TYPE="INPUT" WIDTH="3" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiarsize" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiaw" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiawburst" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiawcache" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiawid" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiawlen" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiawlock" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiawprot" TYPE="INPUT" WIDTH="3" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiawsize" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxirdata" TYPE="INPUT" WIDTH="128" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxirid" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxirresp" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socbid" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socbresp" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socportsizeconfig" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiarready" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxiawready" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socaxirready" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socbready" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socevento" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socstandbywfi0" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socwlast" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socwvalid" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socstandbywfe" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socstandbywfi" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socwdata" TYPE="OUTPUT" WIDTH="128" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socwid" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socwstrb" TYPE="OUTPUT" WIDTH="16" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

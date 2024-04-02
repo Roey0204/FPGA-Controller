@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<ROOT >
+	<INCLUDE FILE="alt4gxb_macros.xml" /> <!-- all macros -->
+	<INCLUDE FILE="alt4gxb_rbc_rules.xml" /> <!-- all RBC rules & macros -->
+	<INCLUDE FILE="alt4gxb_manual_rules.xml" />	<!-- manual rules -->
+	<INCLUDE FILE="alt4gxb_port_rules.xml" />	<!-- port rules -->
+	<!-- this file contains wizard only parameters -->
+  <PARAMETER_RULES>
+    <PARAMETER NAME="WIZ_PROTOCOL"  TYPE="STRING" CNX_TYPE="PRIVATE" >
+      <FORCE_RANGE TO="Basic|'Basic (PMA Direct)'|'Deterministic Latency'|GIGE|'(OIF) CEI Phy Interface'|'PCI Express (PIPE)'|SDI|'Serial RapidIO'|'SONET/SDH'|XAUI" />      
+      <FORCE_RANGE TO="Basic|'Deterministic Latency'|GIGE|'PCI Express (PIPE)'|SDI|'Serial RapidIO'|'SONET/SDH'|XAUI" WHEN="mfam_family_arriaii || mfam_family_arriaiigz" />
+      <FORCE_RANGE TO="GIGE|'PCI Express (PIPE)'" WHEN="mfam_family_cycloneiiigl" />
+    </PARAMETER>
+    <PARAMETER NAME="Wiz_Subprotocol" TYPE="STRING" CNX_TYPE="PRIVATE" >
+      <FORCE_RANGE TO="OC12|OC48|OC96" WHEN="m_sonet" />
+      <FORCE_RANGE TO="OC12|OC48" WHEN="m_sonet and mfam_family_arriaii" />
+      <FORCE_RANGE TO="'Gen 1-x1'|'Gen 1-x4'|'Gen 1-x8'|'Gen 2-x1'|'Gen 2-x4'|'Gen 2-x8'" WHEN="m_pcie" />
+      <FORCE_RANGE TO="'Gen 1-x1'|'Gen 1-x4'|'Gen 1-x8'" WHEN="m_pcie and mfam_family_arriaii" />
+      <FORCE_RANGE TO="'Gen 1-x1'|'Gen 1-x4'|'Gen 1-x8'|'Gen 2-x1'|'Gen 2-x4'" WHEN="m_pcie and mfam_family_arriaiigz" />
+      <FORCE_RANGE TO="'Gen 1-x1'|'Gen 1-x4'" WHEN="m_pcie and mfam_family_cycloneiiigl" />
+      <FORCE_RANGE TO="None" WHEN="m_srio" />
+      <FORCE_RANGE TO="None" WHEN="m_cei" />
+      <FORCE_RANGE TO="3G|HD" WHEN="m_sdi" />
+      <FORCE_RANGE TO="None" WHEN="m_gige" />
+      <FORCE_RANGE TO="None" WHEN="m_xaui" />
+      <FORCE_RANGE TO="X1|X4" WHEN="m_cpri" />
+      <FORCE_RANGE TO="None|XN" WHEN="m_basic_pma_direct" />
+      <FORCE_RANGE TO="None|X4|X8|BIST|PRBS" WHEN="m_basic" />
+    </PARAMETER>
+    <PARAMETER NAME="WIZ_DPRIO_PROTOCOL"  TYPE="STRING" CNX_TYPE="PRIVATE" >
+      <FORCE_RANGE TO="Basic|GIGE|'(OIF) CEI Phy Interface'|'PCI Express (PIPE)'|SDI|'Serial RapidIO'|'SONET/SDH'|XAUI" />
+      <FORCE_RANGE TO="Basic|GIGE|'(OIF) CEI Phy Interface'|SDI|'Serial RapidIO'|'SONET/SDH'|XAUI" WHEN="m_gt_device"/>
+      <FORCE_RANGE TO="Basic|GIGE|'PCI Express (PIPE)'|SDI|'Serial RapidIO'|'SONET/SDH'|XAUI" WHEN="mfam_family_arriaii" />
+      <FORCE_RANGE TO="'Basic (PMA Direct)'" WHEN="m_basic_pma_direct" />
+    </PARAMETER>
+    <PARAMETER NAME="WIZ_PLL1_PROTOCOL" TYPE="STRING" CNX_TYPE="PRIVATE" >
+      <FORCE_RANGE TO="Basic|GIGE|'(OIF) CEI Phy Interface'|'PCI Express (PIPE)'|SDI|'Serial RapidIO'|'SONET/SDH'|XAUI" />
+      <FORCE_RANGE TO="Basic|GIGE|'(OIF) CEI Phy Interface'|SDI|'Serial RapidIO'|'SONET/SDH'|XAUI" WHEN="m_gt_device"/>
+      <FORCE_RANGE TO="Basic|GIGE|'PCI Express (PIPE)'|SDI|'Serial RapidIO'|'SONET/SDH'|XAUI" WHEN="mfam_family_arriaii" />
+      <FORCE_RANGE TO="'Basic (PMA Direct)'" WHEN="m_basic_pma_direct" />
+    </PARAMETER>
+    <PARAMETER NAME="WIZ_PLL2_PROTOCOL" TYPE="STRING" CNX_TYPE="PRIVATE" >
+      <FORCE_RANGE TO="Basic|GIGE|'(OIF) CEI Phy Interface'|'PCI Express (PIPE)'|SDI|'Serial RapidIO'|'SONET/SDH'|XAUI" />
+      <FORCE_RANGE TO="Basic|GIGE|'(OIF) CEI Phy Interface'|SDI|'Serial RapidIO'|'SONET/SDH'|XAUI" WHEN="m_gt_device"/>
+      <FORCE_RANGE TO="Basic|GIGE|'PCI Express (PIPE)'|SDI|'Serial RapidIO'|'SONET/SDH'|XAUI" WHEN="mfam_family_arriaii" />
+      <FORCE_RANGE TO="'Basic (PMA Direct)'" WHEN="m_basic_pma_direct" />
+    </PARAMETER>
+    <PARAMETER NAME="WIZ_PLL3_PROTOCOL" TYPE="STRING" CNX_TYPE="PRIVATE" >
+      <FORCE_RANGE TO="Basic|GIGE|'(OIF) CEI Phy Interface'|'PCI Express (PIPE)'|SDI|'Serial RapidIO'|'SONET/SDH'|XAUI" />
+      <FORCE_RANGE TO="Basic|GIGE|'(OIF) CEI Phy Interface'|SDI|'Serial RapidIO'|'SONET/SDH'|XAUI" WHEN="m_gt_device"/>
+      <FORCE_RANGE TO="Basic|GIGE|'PCI Express (PIPE)'|SDI|'Serial RapidIO'|'SONET/SDH'|XAUI" WHEN="mfam_family_arriaii" />
+      <FORCE_RANGE TO="'Basic (PMA Direct)'" WHEN="m_basic_pma_direct" />
+    </PARAMETER>
+    <PARAMETER NAME="Wiz_DPRIO_Subprotocol" TYPE="STRING" CNX_TYPE="PRIVATE" >
+      <FORCE_RANGE TO="OC12|OC48|OC96" WHEN="m_sonet(WIZ_DPRIO_PROTOCOL)" />
+      <FORCE_RANGE TO="OC12|OC48" WHEN="m_sonet(WIZ_DPRIO_PROTOCOL) and mfam_family_arriaii" />
+      <FORCE_RANGE TO="'Gen 1'|'Gen 2'" WHEN="m_pcie(WIZ_DPRIO_PROTOCOL)" />
+      <FORCE_RANGE TO="'Gen 1'" WHEN="m_pcie(WIZ_DPRIO_PROTOCOL) and mfam_family_arriaii" />
+      <FORCE_RANGE TO="3G|HD" WHEN="m_sdi(WIZ_DPRIO_PROTOCOL)" />
+      <FORCE_RANGE TO="None" WHEN="m_srio(WIZ_DPRIO_PROTOCOL) || m_cei(WIZ_DPRIO_PROTOCOL) || m_gige(WIZ_DPRIO_PROTOCOL) || m_xaui(WIZ_DPRIO_PROTOCOL) || m_basic(WIZ_DPRIO_PROTOCOL)" />
+    </PARAMETER>
+    <PARAMETER NAME="Wiz_PLL1_Subprotocol" TYPE="STRING" CNX_TYPE="PRIVATE" >
+      <FORCE_VALUE TO="None" />
+      <FORCE_RANGE TO="OC12|OC48|OC96" WHEN="m_sonet(WIZ_PLL1_PROTOCOL)" />
+      <FORCE_RANGE TO="OC12|OC48" WHEN="m_sonet(WIZ_PLL1_PROTOCOL) and mfam_family_arriaii" />
+      <FORCE_RANGE TO="'Gen 1'|'Gen 2'" WHEN="m_pcie(WIZ_PLL1_PROTOCOL)" />
+      <FORCE_RANGE TO="'Gen 1'" WHEN="m_pcie(WIZ_PLL1_PROTOCOL) and mfam_family_arriaii" />
+      <FORCE_RANGE TO="3G|HD" WHEN="m_sdi(WIZ_PLL1_PROTOCOL)" />
+    </PARAMETER>
+    <PARAMETER NAME="Wiz_PLL2_Subprotocol" TYPE="STRING" CNX_TYPE="PRIVATE" >
+      <FORCE_VALUE TO="None" />
+      <FORCE_RANGE TO="OC12|OC48|OC96" WHEN="m_sonet(WIZ_PLL2_PROTOCOL)" />
+      <FORCE_RANGE TO="OC12|OC48" WHEN="m_sonet(WIZ_PLL2_PROTOCOL) and mfam_family_arriaii" />
+      <FORCE_RANGE TO="'Gen 1'|'Gen 2'" WHEN="m_pcie(WIZ_PLL2_PROTOCOL)" />
+      <FORCE_RANGE TO="'Gen 1'" WHEN="m_pcie(WIZ_PLL2_PROTOCOL) and mfam_family_arriaii" />
+      <FORCE_RANGE TO="3G|HD" WHEN="m_sdi(WIZ_PLL2_PROTOCOL)" />
+    </PARAMETER>
+    <PARAMETER NAME="Wiz_PLL3_Subprotocol" TYPE="STRING" CNX_TYPE="PRIVATE" >
+      <FORCE_VALUE TO="None" />
+      <FORCE_RANGE TO="OC12|OC48|OC96" WHEN="m_sonet(WIZ_PLL3_PROTOCOL)" />
+      <FORCE_RANGE TO="OC12|OC48" WHEN="m_sonet(WIZ_PLL3_PROTOCOL) and mfam_family_arriaii" />
+      <FORCE_RANGE TO="'Gen 1'|'Gen 2'" WHEN="m_pcie(WIZ_PLL3_PROTOCOL)" />
+      <FORCE_RANGE TO="'Gen 1'" WHEN="m_pcie(WIZ_PLL3_PROTOCOL) and mfam_family_arriaii" />
+      <FORCE_RANGE TO="3G|HD" WHEN="m_sdi(WIZ_PLL3_PROTOCOL)" />
+    </PARAMETER>
+
+    <PARAMETER NAME="dprio_modes" TYPE="STRING" VALUE="none|pma_electricals|alt_pll|channel_interface|channel_internals|pll_reconfig|multi_pll" CNX_TYPE="PRIVATE" >
+      <!-- to do add multi_pll as a valid value -->
+      <FORCE_RANGE TO="none|pma_electricals|alt_pll|channel_interface|channel_internals|pll_reconfig" WHEN="mfam_family_arriaii" />
+      <FORCE_RANGE TO="none|pma_electricals|alt_pll|pll_reconfig|channel_interface|channel_internals" WHEN="(m_pciex4 || m_pciex8 || m_xaui || m_basic_x4 || m_basic_x8 || m_cpri_x4)" />
+      <FORCE_RANGE TO="none|pma_electricals|alt_pll|pll_reconfig|channel_interface|channel_internals" WHEN="(m_pciex4 || m_pciex8 || m_xaui || m_basic_x4 || m_basic_x8 || m_cpri_x4) and mfam_family_arriaii" />
+      <FORCE_RANGE TO="none|pma_electricals|multi_pll|channel_interface|channel_internals" WHEN="(ENABLE_LC_TX_PLL == true) and !(m_pciex4 || m_pciex8 || m_xaui || m_basic_x4 || m_basic_x8 || m_cpri_x4)" />
+      <FORCE_RANGE TO="none|pma_electricals" WHEN="(m_cei and USE_GLOBAL_CLK_DIVIDER == true) || ((ENABLE_LC_TX_PLL == true) and (m_pciex4 || m_pciex8 || m_xaui || m_basic_x4 || m_basic_x8 || m_cpri_x4))" />
+      <FORCE_VALUE TO="none" WHEN="mfam_family_cycloneiiigl" />
+    </PARAMETER>
+    <PARAMETER NAME="WIZ_BASE_DATA_RATE_ENABLE" TYPE="STRING" CNX_TYPE="PRIVATE" >
+    </PARAMETER>
+    <PARAMETER NAME="WIZ_DATA_RATE" TYPE="STRING" CNX_TYPE="PRIVATE" >
+      <FORCE_VALUE REGEXP_SOURCE="m_rx_wiz_data_rate" REGEXP_PATTERN="([0-9.]+) Mbps" REGEXP_SUBSTITUTION="$1"  WHEN="m_rx_only" />
+      <FORCE_VALUE REGEXP_SOURCE="m_tx_wiz_data_rate" REGEXP_PATTERN="([0-9.]+) Mbps" REGEXP_SUBSTITUTION="$1" WHEN="m_tx_only" />
+      <FORCE_VALUE REGEXP_SOURCE="m_rx_wiz_data_rate intersection m_tx_wiz_data_rate" REGEXP_PATTERN="([0-9.]+) Mbps" REGEXP_SUBSTITUTION="$1" WHEN="m_duplex" />
+      <FORCE_VALUE TO="'2967.0'|'2970.0'" IF="m_sdi_3g" />
+      <FORCE_VALUE TO="'1483.5'|'1485.0'" IF="m_sdi_hd" />
+      <FORCE_RANGE MIN="'3135'" MAX="'6375'" IF="m_cei" />
+      <FORCE_RANGE TO="'1250.0'|'3125.0'" IF="m_gige" />
+      <FORCE_VALUE TO="'1250.0'|'2500.0'|'3125.0'" IF="m_srio" />
+      <FORCE_VALUE TO="2500" IF="mfam_family_cycloneiiigl and m_pcie" />
+      <FORCE_VALUE TO="1250" IF="mfam_family_cycloneiiigl and m_gige" />
+    </PARAMETER>
+    <PARAMETER NAME="WIZ_DPRIO_DATA_RATE" TYPE="STRING" CNX_TYPE="PRIVATE" >
+      <FORCE_VALUE REGEXP_SOURCE="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, TGX_HSSI_CONFIG, TGX_HSSI_CLOCK_DIVIDER_EFFECTIVE_DATA_RATE, m_device_part, UNUSED, 0, reconfig_protocol, reconfig_protocol, UNUSED, UNUSED, UNUSED, CMU, UNUSED, reconfig_input_clock_frequency, 0, UNUSED, UNUSED, UNUSED, UNUSED, gxb_analog_power)" REGEXP_PATTERN="([0-9.]+) Mbps" REGEXP_SUBSTITUTION="$1" />
+      <FORCE_VALUE TO="'622.08'" IF="m_sonet12(WIZ_DPRIO_PROTOCOL, WIZ_DPRIO_SUBPROTOCOL) || m_sonet(WIZ_DPRIO_PROTOCOL)" />
+      <FORCE_VALUE TO="'2488.32'" IF="m_sonet48(WIZ_DPRIO_PROTOCOL, WIZ_DPRIO_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'4976.64'" IF="m_sonet96(WIZ_DPRIO_PROTOCOL, WIZ_DPRIO_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'1250'|'3125'" IF="m_gige(WIZ_DPRIO_PROTOCOL)" />
+      <FORCE_RANGE MIN="'3125'" MAX="'3750'" IF="m_xaui(WIZ_DPRIO_PROTOCOL)" />
+      <FORCE_VALUE TO="'2500'" IF="m_pcie(WIZ_DPRIO_PROTOCOL) || m_pcie_gen1(WIZ_DPRIO_PROTOCOL, WIZ_DPRIO_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'5000'" IF="m_pcie_gen2(WIZ_DPRIO_PROTOCOL, WIZ_DPRIO_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'2967'|'2970'" IF="m_sdi(WIZ_DPRIO_PROTOCOL)" />
+      <FORCE_VALUE TO="'2967'|'2970'" IF="m_sdi_3g(WIZ_DPRIO_PROTOCOL, WIZ_DPRIO_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'1483.5'|'1485'" IF="m_sdi_hd(WIZ_DPRIO_PROTOCOL, WIZ_DPRIO_SUBPROTOCOL)" />
+      <FORCE_RANGE MIN="'3135'" MAX="'6375'" IF="m_cei(WIZ_DPRIO_PROTOCOL)" />
+      <FORCE_VALUE TO="'1250'|'2500'|'3125'" IF="m_srio(WIZ_DPRIO_PROTOCOL)" />
+    </PARAMETER>
+    <PARAMETER NAME="WIZ_PLL1_DATA_RATE" TYPE="STRING" CNX_TYPE="PRIVATE">
+      <FORCE_VALUE REGEXP_SOURCE="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, TGX_HSSI_CONFIG, TGX_HSSI_CLOCK_DIVIDER_EFFECTIVE_DATA_RATE, m_device_part, UNUSED, 0, protocol, protocol, m_protocol1, m_protocol2, m_protocol3, CMU, UNUSED, tx_pll1_input_clock_frequency, 0, UNUSED, UNUSED, UNUSED, UNUSED, gxb_analog_power)" REGEXP_PATTERN="([0-9.]+) Mbps" REGEXP_SUBSTITUTION="$1" />
+      <FORCE_VALUE TO="'622.08'" IF="m_sonet12(WIZ_PLL1_PROTOCOL, WIZ_PLL1_SUBPROTOCOL) || m_sonet(WIZ_PLL1_PROTOCOL)" />
+      <FORCE_VALUE TO="'2488.32'" IF="m_sonet48(WIZ_PLL1_PROTOCOL, WIZ_PLL1_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'4976.64'" IF="m_sonet96(WIZ_PLL1_PROTOCOL, WIZ_PLL1_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'1250'|'3125'" IF="m_gige(WIZ_PLL1_PROTOCOL)" />
+      <FORCE_RANGE MIN="'3125'" MAX="'3750'" IF="m_xaui(WIZ_PLL1_PROTOCOL)" />
+      <FORCE_VALUE TO="'2500'" IF="m_pcie(WIZ_PLL1_PROTOCOL) || m_pcie_gen1(WIZ_PLL1_PROTOCOL, WIZ_PLL1_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'5000'" IF="m_pcie_gen2(WIZ_PLL1_PROTOCOL, WIZ_PLL1_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'2967'|'2970'" IF="m_sdi(WIZ_PLL1_PROTOCOL)" />
+      <FORCE_VALUE TO="'2967'|'2970'" IF="m_sdi_3g(WIZ_PLL1_PROTOCOL, WIZ_PLL1_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'1483.5'|'1485'" IF="m_sdi_hd(WIZ_PLL1_PROTOCOL, WIZ_PLL1_SUBPROTOCOL)" />
+      <FORCE_RANGE MIN="'3135'" MAX="'6375'" IF="m_cei(WIZ_PLL1_PROTOCOL)" />
+      <FORCE_VALUE TO="'1250'|'2500'|'3125'" IF="m_srio(WIZ_PLL1_PROTOCOL)" />
+    </PARAMETER>
+    <PARAMETER NAME="WIZ_PLL2_DATA_RATE" TYPE="STRING" CNX_TYPE="PRIVATE">
+      <FORCE_VALUE REGEXP_SOURCE="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, TGX_HSSI_CONFIG, TGX_HSSI_CLOCK_DIVIDER_EFFECTIVE_DATA_RATE, m_device_part, UNUSED, 0, protocol, protocol, m_protocol1, m_protocol2, m_protocol3, CMU, UNUSED, tx_PLL2_input_clock_frequency, 0, UNUSED, UNUSED, UNUSED, UNUSED, gxb_analog_power)" REGEXP_PATTERN="([0-9.]+) Mbps" REGEXP_SUBSTITUTION="$1" />
+      <FORCE_VALUE TO="'622.08'" IF="m_sonet12(WIZ_PLL2_PROTOCOL, WIZ_PLL2_SUBPROTOCOL) || m_sonet(WIZ_PLL2_PROTOCOL)" />
+      <FORCE_VALUE TO="'2488.32'" IF="m_sonet48(WIZ_PLL2_PROTOCOL, WIZ_PLL2_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'4976.64'" IF="m_sonet96(WIZ_PLL2_PROTOCOL, WIZ_PLL2_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'1250'|'3125'" IF="m_gige(WIZ_PLL2_PROTOCOL)" />
+      <FORCE_RANGE MIN="'3125'" MAX="'3750'" IF="m_xaui(WIZ_PLL2_PROTOCOL)" />
+      <FORCE_VALUE TO="'2500'" IF="m_pcie(WIZ_PLL2_PROTOCOL) || m_pcie_gen1(WIZ_PLL2_PROTOCOL, WIZ_PLL2_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'5000'" IF="m_pcie_gen2(WIZ_PLL2_PROTOCOL, WIZ_PLL2_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'2967'|'2970'" IF="m_sdi(WIZ_PLL2_PROTOCOL)" />
+      <FORCE_VALUE TO="'2967'|'2970'" IF="m_sdi_3g(WIZ_PLL2_PROTOCOL, WIZ_PLL2_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'1483.5'|'1485'" IF="m_sdi_hd(WIZ_PLL2_PROTOCOL, WIZ_PLL2_SUBPROTOCOL)" />
+      <FORCE_RANGE MIN="'3135'" MAX="'6375'" IF="m_cei(WIZ_PLL2_PROTOCOL)" />
+      <FORCE_VALUE TO="'1250'|'2500'|'3125'" IF="m_srio(WIZ_PLL2_PROTOCOL)" />
+    </PARAMETER>
+    <PARAMETER NAME="WIZ_PLL3_DATA_RATE" TYPE="STRING" CNX_TYPE="PRIVATE">
+      <FORCE_VALUE REGEXP_SOURCE="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, TGX_HSSI_CONFIG, TGX_HSSI_CLOCK_DIVIDER_EFFECTIVE_DATA_RATE, m_device_part, UNUSED, 0, protocol, protocol, m_protocol1, m_protocol2, m_protocol3, CMU, UNUSED, tx_PLL3_input_clock_frequency, 0, UNUSED, UNUSED, UNUSED, UNUSED, gxb_analog_power)" REGEXP_PATTERN="([0-9.]+) Mbps" REGEXP_SUBSTITUTION="$1" />
+      <FORCE_VALUE TO="'622.08'" IF="m_sonet12(WIZ_PLL3_PROTOCOL, WIZ_PLL3_SUBPROTOCOL) || m_sonet(WIZ_PLL3_PROTOCOL)" />
+      <FORCE_VALUE TO="'2488.32'" IF="m_sonet48(WIZ_PLL3_PROTOCOL, WIZ_PLL3_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'4976.64'" IF="m_sonet96(WIZ_PLL3_PROTOCOL, WIZ_PLL3_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'1250'|'3125'" IF="m_gige(WIZ_PLL3_PROTOCOL)" />
+      <FORCE_RANGE MIN="'3125'" MAX="'3750'" IF="m_xaui(WIZ_PLL3_PROTOCOL)" />
+      <FORCE_VALUE TO="'2500'" IF="m_pcie(WIZ_PLL3_PROTOCOL) || m_pcie_gen1(WIZ_PLL3_PROTOCOL, WIZ_PLL3_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'5000'" IF="m_pcie_gen2(WIZ_PLL3_PROTOCOL, WIZ_PLL3_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'2967'|'2970'" IF="m_sdi(WIZ_PLL3_PROTOCOL)" />
+      <FORCE_VALUE TO="'2967'|'2970'" IF="m_sdi_3g(WIZ_PLL3_PROTOCOL, WIZ_PLL3_SUBPROTOCOL)" />
+      <FORCE_VALUE TO="'1483.5'|'1485'" IF="m_sdi_hd(WIZ_PLL3_PROTOCOL, WIZ_PLL3_SUBPROTOCOL)" />
+      <FORCE_RANGE MIN="'3135'" MAX="'6375'" IF="m_cei(WIZ_PLL3_PROTOCOL)" />
+      <FORCE_VALUE TO="'1250'|'2500'|'3125'" IF="m_srio(WIZ_PLL3_PROTOCOL)" />
+    </PARAMETER>
+    <PARAMETER NAME="tx_pll1_base_data_rate" TYPE="STRING" />
+    <PARAMETER NAME="tx_pll2_base_data_rate" TYPE="STRING" />
+    <PARAMETER NAME="tx_pll3_base_data_rate" TYPE="STRING" />
+    <PARAMETER NAME="tx_pll1_protocol" TYPE="STRING" />
+    <PARAMETER NAME="tx_pll2_protocol" TYPE="STRING" />
+    <PARAMETER NAME="tx_pll3_protocol" TYPE="STRING" />
+    <PARAMETER NAME="WIZ_BASE_DATA_RATE" TYPE="STRING" CNX_TYPE="PRIVATE" />
+  </PARAMETER_RULES>
+
+</ROOT>

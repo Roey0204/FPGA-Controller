@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<VHDL_LIBRARY NAME="altera_mf.altera_mf_components" />
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="flash_data_width" TYPE="INTEGER" DEFAULT_VALUE="16" />
+		<PARAMETER NAME="dclk_create_delay" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="flash_burst_extra_cycle" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="safe_mode_retry" TYPE="INTEGER" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="us_unit_counter" TYPE="INTEGER" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="burst_mode_numonyx" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="burst_mode" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="clk_divisor" TYPE="INTEGER" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="addr_width" TYPE="INTEGER" DEFAULT_VALUE="20" />
+		<PARAMETER NAME="tristate_checkbox" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="safe_mode_revert_addr" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="flash_static_wait_width" TYPE="INTEGER" DEFAULT_VALUE="15" />
+		<PARAMETER NAME="page_mode" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="flash_ecc_checkbox" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="features_pgm" TYPE="INTEGER" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="BURST_MODE_LATENCY_COUNT" TYPE="INTEGER" DEFAULT_VALUE="4" />
+		<PARAMETER NAME="page_clk_divisor" TYPE="INTEGER" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="safe_mode_halt" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="flash_nreset_counter" TYPE="INTEGER" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="normal_mode" TYPE="INTEGER" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="safe_mode_revert" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="fifo_size" TYPE="INTEGER" DEFAULT_VALUE="16" />
+		<PARAMETER NAME="nrb_addr" TYPE="INTEGER" DEFAULT_VALUE="65667072" />
+		<PARAMETER NAME="nand_size" TYPE="INTEGER" DEFAULT_VALUE="67108864" />
+		<PARAMETER NAME="dclk_divisor" TYPE="INTEGER" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="rsu_watchdog_counter" TYPE="INTEGER" DEFAULT_VALUE="100000000" />
+		<PARAMETER NAME="flash_nreset_checkbox" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="features_cfg" TYPE="INTEGER" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="burst_mode_intel" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="extra_addr_byte" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="qspi_data_delay" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="pfl_rsu_watchdog_enabled" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="option_bits_start_address" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="qflash_fast_speed" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="enhanced_flash_programming" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="qspi_data_delay_count" TYPE="INTEGER" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="conf_wait_timer_width" TYPE="INTEGER" DEFAULT_VALUE="16" />
+		<PARAMETER NAME="n_flash" TYPE="INTEGER" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="disable_crc_checkbox" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="burst_mode_spansion" TYPE="INTEGER" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="conf_data_width" TYPE="INTEGER" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="nflash_mfc" TYPE="STRING" VALUE="NUMONYX" DEFAULT_VALUE_INDEX="0" />
+		<PARAMETER NAME="flash_type" TYPE="STRING" VALUE="CFI_FLASH" DEFAULT_VALUE_INDEX="0" />
+		<PARAMETER NAME="auto_restart" TYPE="STRING" VALUE="OFF" DEFAULT_VALUE_INDEX="0" />
+		<PARAMETER NAME="qflash_mfc" TYPE="STRING" VALUE="ALTERA" DEFAULT_VALUE_INDEX="0" />
+		<PARAMETER NAME="decompressor_mode" TYPE="STRING" VALUE="NONE" DEFAULT_VALUE_INDEX="0" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="altparallel_flash_loader" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="fpga_nstatus" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pfl_clk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pfl_reset_watchdog" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="fpga_conf_done" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pfl_flash_access_granted" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pfl_nreconfigure" TYPE="INPUT" DEFAULT_VALUE="1" />
+		<PORT NAME="flash_rdy" TYPE="INPUT" DEFAULT_VALUE="1" />
+		<PORT NAME="pfl_nreset" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="fpga_pgm" TYPE="INPUT" WIDTH="3" DEFAULT_VALUE="0" />
+		<PORT NAME="flash_nce" TYPE="OUTPUT" WIDTH="n_flash" />
+		<PORT NAME="fpga_data" TYPE="OUTPUT" WIDTH="conf_data_width" />
+		<PORT NAME="fpga_dclk" TYPE="OUTPUT" />
+		<PORT NAME="flash_ale" TYPE="OUTPUT" />
+		<PORT NAME="fpga_nconfig" TYPE="OUTPUT" />
+		<PORT NAME="flash_nadv" TYPE="OUTPUT" />
+		<PORT NAME="flash_clk" TYPE="OUTPUT" />
+		<PORT NAME="flash_sck" TYPE="OUTPUT" WIDTH="n_flash" />
+		<PORT NAME="flash_noe" TYPE="OUTPUT" />
+		<PORT NAME="flash_nwe" TYPE="OUTPUT" />
+		<PORT NAME="pfl_watchdog_error" TYPE="OUTPUT" />
+		<PORT NAME="flash_addr" TYPE="OUTPUT" WIDTH="addr_width" />
+		<PORT NAME="pfl_flash_access_request" TYPE="OUTPUT" />
+		<PORT NAME="flash_nreset" TYPE="OUTPUT" />
+		<PORT NAME="flash_cle" TYPE="OUTPUT" />
+		<PORT NAME="flash_ncs" TYPE="OUTPUT" WIDTH="n_flash" />
+		<PORT NAME="flash_io1" TYPE="BIDIR" WIDTH="n_flash" />
+		<PORT NAME="flash_io" TYPE="BIDIR" WIDTH="8" />
+		<PORT NAME="flash_io0" TYPE="BIDIR" WIDTH="n_flash" />
+		<PORT NAME="flash_io2" TYPE="BIDIR" WIDTH="n_flash" />
+		<PORT NAME="flash_io3" TYPE="BIDIR" WIDTH="n_flash" />
+		<PORT NAME="flash_data" TYPE="BIDIR" WIDTH="flash_data_width" />
+	</PORTS>
+</ROOT>

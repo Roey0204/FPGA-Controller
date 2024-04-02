@@ -1,0 +1,21 @@
+module timer(
+input clk,
+output tick,
+output led
+);
+
+always@(posedge clk)
+
+if(cnt==59999)
+begin
+cnt=0;
+tick =~tick;
+//on<=1;
+end
+else
+begin
+//on<=1;
+cnt=cnt+1;
+end
+assign tick = led;
+endmodule

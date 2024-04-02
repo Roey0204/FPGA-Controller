@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="enable_dpa" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="lose_lock_on_one_change" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="reset_fifo_at_first_lock" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="x_on_bitslip" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="align_to_rising_edge_only" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true" />
+		<PARAMETER NAME="dpa_debug" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_soft_cdr" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_dpa_initial_phase_selection" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_dpa_align_to_rising_edge_only" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="is_negative_ppm_drift" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="dpa_clock_output_phase_shift" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="dpa_initial_phase_value" TYPE="Integer" VALUE="0..7" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="net_ppm_variation" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="rx_input_path_delay_engineering_bits" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="invert_clock" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="use_falling_clock_edge" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_dpaclk_to_lvdsout" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="tx_output_path_delay_engineering_bits" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="serdes_dpa_mode" TYPE="String" VALUE="transmitter|receiver|transceiver" DEFAULT_VALUE="transmitter" />
+		<PARAMETER NAME="bypass_dpa_logic" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true" />
+		<PARAMETER NAME="rx_fclk_delay_engineering_bits" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="rx_loaden_delay_engineering_bits" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="tx_loaden_delay_engineering_bits" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="tx_fclk_delay_engineering_bits" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="enable_serial_input_loopback" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_serial_fdbk_loopback" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_post_cdr_serial_loopback" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="dpa_test_select_mode" TYPE="String" VALUE=" rx_local_loaden |rx_non_dpa_fclk|tx_local_fclk|tx_local_loaden|bslipmax" DEFAULT_VALUE="bslipmax" />
+		<PARAMETER NAME="enable_divfwdclk_test_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_dpa_rx_data_wrap_back" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="tx_data_width" TYPE="Integer" VALUE="3..10" DEFAULT_VALUE="10" />
+		<PARAMETER NAME="rx_data_width" TYPE="Integer" VALUE="3..10" DEFAULT_VALUE="10" />
+		<PARAMETER NAME="dpa_config" TYPE="Integer" VALUE="0..2" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_serdes_dpa" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="corein" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dpahold" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dparst" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dpaswitch" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="fiforst" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ioout" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxfclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxloaden" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txfclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txloaden" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ulvdsout" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="lvdsin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="serialfbk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="postdpaserialdatain" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="serialdatain" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txdpaclkin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txdata" TYPE="INPUT" WIDTH="7" DEFAULT_VALUE="0" />
+		<PORT NAME="dpaclkin" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="bslipmax" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="divfwdclk" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="lock" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxlocalfclk" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxlocallden" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txlocalfclk" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txlocallden" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="lvdsout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ulvdsin" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dpaclkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="serialfdbkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="postdpaserialdataout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="serialdataout" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+		<PORT NAME="rxdata" TYPE="OUTPUT" WIDTH="10" DEFAULT_VALUE="0" />
+		<PORT NAME="observableout" TYPE="OUTPUT" WIDTH="3" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE" />
+	</PORTS>
+</ROOT>

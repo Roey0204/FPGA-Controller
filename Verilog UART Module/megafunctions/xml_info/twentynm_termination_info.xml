@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_termination">
+	<PARAMETERS>
+		<PARAMETER NAME="a_oct_cal_mode" TYPE="String" VALUE="a_oct_cal_mode_disable|a_oct_cal_mode_enable" DEFAULT_VALUE="a_oct_cal_mode_disable"/>
+		<PARAMETER NAME="a_oct_cal_x2" TYPE="String" VALUE="a_oct_cal_x2_en|a_oct_cal_x2_dis" DEFAULT_VALUE="a_oct_cal_x2_dis"/>
+		<PARAMETER NAME="a_oct_cal_ddr4" TYPE="String" VALUE="a_oct_cal_ddr4_en|a_oct_cal_ddr4_dis" DEFAULT_VALUE="a_oct_cal_ddr4_dis"/>
+		<PARAMETER NAME="a_oct_user_oct" TYPE="String" VALUE="a_oct_user_oct_off|a_oct_user_oct_on" DEFAULT_VALUE="a_oct_user_oct_off"/>
+		<PARAMETER NAME="a_oct_pwrdn" TYPE="String" VALUE="a_oct_pwrdn_on|a_oct_pwrdn_off" DEFAULT_VALUE="a_oct_pwrdn_on"/>
+		<PARAMETER NAME="a_oct_calclr" TYPE="String" VALUE="a_oct_calclr_off|a_oct_calclr_on" DEFAULT_VALUE="a_oct_calclr_off"/>
+		<PARAMETER NAME="a_oct_rshft_rup" TYPE="String" VALUE="a_oct_rshft_rup_enable|a_oct_rshft_rup_disable" DEFAULT_VALUE="a_oct_rshft_rup_enable"/>
+		<PARAMETER NAME="a_oct_rshft_rdn" TYPE="String" VALUE="a_oct_rshft_rdn_enable|a_oct_rshft_rdn_disable" DEFAULT_VALUE="a_oct_rshft_rdn_enable"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_termination" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clkenusr" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clkusr" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="enserusr" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="nclrusr" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="oct_scanclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="oct_scanen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="oct_scanin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rzqin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ser_data_ca_from_core" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ser_data_dq_from_core" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="other_enser" TYPE="INPUT" WIDTH="11" DEFAULT_VALUE="0"/>
+		<PORT NAME="clkusr_dft_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="compout_rdn" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="compout_rup" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="enserout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="oct_scanout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ser_data_ca_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ser_data_ca_to_core" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ser_data_dq_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ser_data_dq_to_core" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="data_width" TYPE="Integer" VALUE="3..10" DEFAULT_VALUE="10" />
+		<PARAMETER NAME="bypass_serializer" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="invert_clock" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="use_falling_clock_edge" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_dpaclk_to_lvdsout" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="tx_output_path_delay_engineering_bits" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="is_used_as_outclk" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_clock_pin_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="stratixv_lvds_tx" />
+		<PARAMETER NAME="use_post_dpa_serial_data_input" TYPE="STRING" VALUE="false" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="use_serial_data_input" TYPE="STRING" VALUE="false" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clock0" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enable0" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="serialdatain" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="postdpaserialdatain" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dpaclkin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="datain" TYPE="INPUT" WIDTH="10" DEFAULT_VALUE="0" />
+		<PORT NAME="dataout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="serialfdbkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="observableout" TYPE="OUTPUT" WIDTH="3" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE" />
+		<PORT NAME="devclrn" TYPE="INPUT" DEFAULT_VALUE="1" CONTEXT="SIM_ONLY" />
+		<PORT NAME="devpor" TYPE="INPUT" DEFAULT_VALUE="1" CONTEXT="SIM_ONLY" />
+	</PORTS>
+</ROOT>

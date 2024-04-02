@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_hps_interface_dbg_apb">
+	<PARAMETERS>
+		<PARAMETER NAME="dummy_param" TYPE="Integer" DEFAULT_VALUE="256"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_hps_interface_dbg_apb" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="p_slv_err" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="p_ready" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="p_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="p_clk_en" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dbg_apb_disable" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="p_rdata" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="p_addr_31" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="p_write" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="p_sel" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="p_enable" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="p_reset_n" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="p_addr" TYPE="OUTPUT" WIDTH="18" DEFAULT_VALUE="0"/>
+		<PORT NAME="p_wdata" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

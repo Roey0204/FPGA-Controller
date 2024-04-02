@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_lvds_clock_tree">
+	<PARAMETERS>
+		<PARAMETER NAME="clock_export_compatible" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_lvds_clock_tree" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="loaden_in" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="lvdsfclk_in" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="loaden_bot_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="loaden_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="loaden_top_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="lvdsfclk_bot_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="lvdsfclk_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="lvdsfclk_top_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

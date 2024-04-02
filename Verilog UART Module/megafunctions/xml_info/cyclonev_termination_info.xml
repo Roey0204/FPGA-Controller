@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="a_oct_cal_mode" TYPE="String" VALUE="a_oct_cal_mode_none|a_oct_cal_mode_rs_30v|a_oct_cal_mode_rs_25v|a_oct_cal_mode_rs_18v|a_oct_cal_mode_rs_15v|a_oct_cal_mode_rs_12v" DEFAULT_VALUE="a_oct_cal_mode_none" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="a_oct_clkenusr_inv" TYPE="String" VALUE="a_oct_clkenusr_inv_off|a_oct_clkenusr_inv_on" DEFAULT_VALUE="a_oct_clkenusr_inv_off" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="a_oct_enserusr_inv" TYPE="String" VALUE="a_oct_enserusr_inv_off|a_oct_enserusr_inv_on" DEFAULT_VALUE="a_oct_enserusr_inv_off" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="a_oct_nclrusr_inv" TYPE="String" VALUE="a_oct_nclrusr_inv_off|a_oct_nclrusr_inv_on" DEFAULT_VALUE="a_oct_nclrusr_inv_off" />
+		<PARAMETER NAME="a_oct_scanen_inv" TYPE="String" VALUE="a_oct_scanen_inv_off|a_oct_scanen_inv_on" DEFAULT_VALUE="a_oct_scanen_inv_off" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="a_oct_user_oct" TYPE="String" VALUE="a_oct_user_oct_off|a_oct_user_oct_on" DEFAULT_VALUE="a_oct_user_oct_off" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="a_oct_pwrdn" TYPE="String" VALUE="true|false" DEFAULT_VALUE="true" />
+		<PARAMETER NAME="a_oct_intosc" TYPE="String" VALUE="a_oct_intosc_none|a_oct_intosc_2" DEFAULT_VALUE="a_oct_intosc_none" />
+		<PARAMETER NAME="a_oct_vrefl" TYPE="String" VALUE="a_oct_vrefl_m|a_oct_vrefl_l|a_oct_vrefl_h" DEFAULT_VALUE="a_oct_vrefl_m" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="a_oct_vrefh" TYPE="String" VALUE="a_oct_vrefh_m|a_oct_vrefh_l|a_oct_vrefh_h" DEFAULT_VALUE="a_oct_vrefh_m" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="a_oct_test_0" TYPE="String" VALUE="a_oct_test_0_off|a_oct_test_0_on" DEFAULT_VALUE="a_oct_test_0_off" />
+		<PARAMETER NAME="a_oct_test_1" TYPE="String" VALUE="a_oct_test_1_off|a_oct_test_1_on" DEFAULT_VALUE="a_oct_test_1_off" />
+		<PARAMETER NAME="a_oct_test_4" TYPE="String" VALUE="a_oct_test_4_off|a_oct_test_4_on" DEFAULT_VALUE="a_oct_test_4_off" />
+		<PARAMETER NAME="a_oct_test_5" TYPE="String" VALUE="a_oct_test_5_off|a_oct_test_5_on" DEFAULT_VALUE="a_oct_test_5_off" />
+		<PARAMETER NAME="a_oct_rsmult" TYPE="String" VALUE="a_oct_rsmult_1|a_oct_rsmult_2|a_oct_rsmult_3|a_oct_rsmult_4|a_oct_rsmult_5|a_oct_rsmult_6|a_oct_rsmult_7|a_oct_rsmult_10|a_oct_rsmult_off" DEFAULT_VALUE="a_oct_rsmult_1" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="a_oct_rsadjust" TYPE="String" VALUE="a_oct_rsadjust_none|a_oct_rsadjust_10|a_oct_rsadjust_6p5|a_oct_rsadjust_3|a_oct_rsadjust_n3|a_oct_rsadjust_n6|a_oct_rsadjust_n9|a_oct_rsadjust_n12" DEFAULT_VALUE="a_oct_rsadjust_none" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="a_oct_rtmult" TYPE="String" VALUE="a_oct_rtmult_1|a_oct_rtmult_2|a_oct_rtmult_3|a_oct_rtmult_4|a_oct_rtmult_5|a_oct_rtmult_6|a_oct_rtmult_off" DEFAULT_VALUE="a_oct_rtmult_1" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="a_oct_rtadjust" TYPE="String" VALUE="a_oct_rtadjust_none|a_oct_rtadjust_1p5v|a_oct_rtadjust_1p8v|a_oct_rtadjust_2p5v" DEFAULT_VALUE="a_oct_rtadjust_none" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="a_oct_calclr" TYPE="String" VALUE="a_oct_calclr_off|a_oct_calclr_on" DEFAULT_VALUE="a_oct_calclr_off" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="a_oct_rshft_rup" TYPE="String" VALUE="a_oct_rshft_rup_enable|a_oct_rshft_rup_disable" DEFAULT_VALUE="a_oct_rshft_rup_enable" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="a_oct_rshft_rdn" TYPE="String" VALUE="a_oct_rshft_rdn_enable|a_oct_rshft_rdn_disable" DEFAULT_VALUE="a_oct_rshft_rdn_enable" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_termination" />
+		<PARAMETER NAME="a_oct_test_3" TYPE="STRING" VALUE="a_oct_test_3_off" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="a_oct_clkdiv" TYPE="STRING" VALUE="a_oct_clkdiv_20" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="a_oct_usermode" TYPE="STRING" VALUE="false" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="a_oct_vref" TYPE="STRING" VALUE="a_oct_vref_rupm_rdnm" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="a_oct_pllbiasen" TYPE="STRING" VALUE="a_oct_pllbiasen_low" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="a_oct_test_2" TYPE="STRING" VALUE="a_oct_test_2_off" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clkenusr" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clkusr" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enserusr" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="nclrusr" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rzqin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="scanclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="scanen" TYPE="INPUT" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+		<PORT NAME="scanin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="serdatafromcore" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="serdatain" TYPE="INPUT" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+		<PORT NAME="otherenser" TYPE="INPUT" WIDTH="10" DEFAULT_VALUE="0" />
+		<PORT NAME="clkusrdftout" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+		<PORT NAME="compoutrdn" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="compoutrup" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enserout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="scanout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="serdataout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="serdatatocore" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

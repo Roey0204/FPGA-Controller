@@ -1,0 +1,27 @@
+[I/O]
+ALT_ADV_SEU_DETECTION= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/alt_adv_seu_detection/lib/alt_adv_seu_detection.jar" -wizard_name:ALT_ADV_SEU_DETECTION %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALT_ADV_SEU_DETECTION</WIZARD_TITLE>
+<XML_CNX_ENABLED/>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<VISIBILITY FOR_CREATE="OFF"/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE | Stratix III | Stratix IV | Stratix V | Arria II GZ | Arria V | Cyclone V" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Advanced SEU Detection megafunction</TOOLTIP>
+<VERILOG_FULLY_CONNECTED_NETLIST/>
+<QIP_FILE_ENABLED/>
+<SIMLIB_GEN SUPPORTED="STD_NO_SIMLIB_MSG"/>
+<SYNTH_NETLIST_GEN SUPPORTED="OFF"/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<!--<MENU_ITEM TYPE="IUG">
+		<LABEL>Alt_adv_seu_detection Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_alt_adv_seu_detection.pdf</TARGET>
+	</MENU_ITEM>-->
+</MENU>
+</HELP>
+</INFO>

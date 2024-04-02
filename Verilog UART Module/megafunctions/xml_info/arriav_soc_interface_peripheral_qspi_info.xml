@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_soc_interface_peripheral_qspi">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_soc_interface_peripheral_qspi" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="adqin" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="cs" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="sclkout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="adqout" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_ddio_in">
+	<PARAMETERS>
+		<PARAMETER NAME="async_mode" TYPE="String" VALUE="clear|preset|none" DEFAULT_VALUE="none"/>
+		<PARAMETER NAME="sync_mode" TYPE="String" VALUE="clear|preset|none" DEFAULT_VALUE="none"/>
+		<PARAMETER NAME="use_clkn" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="power_up" TYPE="String" VALUE="low|high" DEFAULT_VALUE="low"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_ddio_in" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="datain" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clkn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ena" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="areset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="sreset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="regoutlo" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="regouthi" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dfflo" TYPE="OUTPUT" CONTEXT="OBSERVABLE" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

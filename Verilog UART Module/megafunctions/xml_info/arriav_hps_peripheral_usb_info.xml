@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_hps_peripheral_usb">
+	<PARAMETERS>
+		<PARAMETER NAME="dummy_param" TYPE="Integer" DEFAULT_VALUE="256"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_hps_peripheral_usb" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="usb_ulpi_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="usb_ulpi_dir" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="usb_ulpi_nxt" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="usb_ulpi_data_i" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="usb_ulpi_stp" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="usb_ulpi_data_o" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="usb_ulpi_data_oe" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

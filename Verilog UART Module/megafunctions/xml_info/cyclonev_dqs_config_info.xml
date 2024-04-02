@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_dqs_config" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="datain" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ena" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="update" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="postamblephaseinvert" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dqshalfratebypass" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+		<PORT NAME="enadqsenablephasetransferreg" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dataout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="postamblephasesetting" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="dqsbusoutdelaysetting" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0" />
+		<PORT NAME="octdelaysetting" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+		<PORT NAME="dqsenablegatingdelaysetting" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+		<PORT NAME="dqsenableungatingdelaysetting" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+		<PORT NAME="dqsenabledelaysetting" TYPE="OUTPUT" WIDTH="3" CONTEXT="SIM_ONLY" />
+		<PORT NAME="octdelaysetting1" TYPE="OUTPUT" WIDTH="4" CONTEXT="SIM_ONLY" />
+		<PORT NAME="dqoutputphaseinvert" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="enaoutputcycledelaysetting" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="enainputphasetransferreg" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="postamblezerophaseinvert" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="dqsoutputphaseinvert" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="dqsinputphasesetting" TYPE="OUTPUT" WIDTH="3" CONTEXT="SIM_ONLY" />
+		<PORT NAME="enaoutputphasetransferreg" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="addrphasesetting" TYPE="OUTPUT" WIDTH="2" CONTEXT="SIM_ONLY" />
+		<PORT NAME="ck2xoutputphaseinvert" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="dqs2xoutputphaseinvert" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="enaoctphasetransferreg" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="dqsoutputphasesetting" TYPE="OUTPUT" WIDTH="2" CONTEXT="SIM_ONLY" />
+		<PORT NAME="resyncinputphasesetting" TYPE="OUTPUT" WIDTH="2" CONTEXT="SIM_ONLY" />
+		<PORT NAME="dqoutputzerophaseinvert" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="dqoutputphasesetting" TYPE="OUTPUT" WIDTH="2" CONTEXT="SIM_ONLY" />
+		<PORT NAME="resyncinputphaseinvert" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="resyncinputzerophaseinvert" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="dqsoutputzerophaseinvert" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="ck2xoutputphasesetting" TYPE="OUTPUT" WIDTH="2" CONTEXT="SIM_ONLY" />
+		<PORT NAME="dqs2xoutputphasesetting" TYPE="OUTPUT" WIDTH="2" CONTEXT="SIM_ONLY" />
+		<PORT NAME="enainputcycledelaysetting" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="dividerphaseinvert" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="addrphaseinvert" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="dq2xoutputphasesetting" TYPE="OUTPUT" WIDTH="2" CONTEXT="SIM_ONLY" />
+		<PORT NAME="enaoctcycledelaysetting" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="octdelaysetting2" TYPE="OUTPUT" WIDTH="3" CONTEXT="SIM_ONLY" />
+		<PORT NAME="dq2xoutputphaseinvert" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+	</PORTS>
+</ROOT>

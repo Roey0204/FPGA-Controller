@@ -1,0 +1,1795 @@
+[Arithmetic]
+ALTFP_MULT="%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altfp_mult/lib/altfp_mult.jar" -wizard_name:ALTFP_MULT %f -debug:3
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTFP_MULT</WIZARD_TITLE>
+<XML_CNX_ENABLED/>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<VISIBILITY FOR_CREATE="ON"/>
+<LICENSE_CHECK VALUE="ON"/>
+<TOOLTIP>Floating point multiplier megafunction</TOOLTIP>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="-family_max|-family_flex6000|-family_flex8000|-family_flex10k|-family_flex10ke|-family_maxii" AUTO_DEVICE_COMBOBOX="ON"/>
+<VERILOG_FULLY_CONNECTED_NETLIST/>
+<RESOURCE_INFO_ENABLED/>
+<QIP_FILE_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Floating Point Megafunctions User Guides</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altfp_mfug.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ALTMEMMULT=mega_altmemmultq %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTMEMMULT</WIZARD_TITLE>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_stratix_style_ram" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Memory-based constant coefficient multiplier megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Implementing Multipliers in FPGA Devices</LABEL>
+		<TARGET>http://www.altera.com/literature/an/an306.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>altmemmult Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_lpm_alt_mfug.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ALTFP_ADD_SUB=mega_altfp_add_subq %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTFP_ADD_SUB</WIZARD_TITLE>
+<TOOLTIP>Floating point adder/subtractor megafunction</TOOLTIP>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="-family_max|-family_flex6000|-family_flex10ke|-family_maxii" AUTO_DEVICE_COMBOBOX="ON"/>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Floating Point Megafunctions User Guides</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altfp_mfug.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+
+ALTFP_DIV=mega_altfp_divq -tALTFP_DIV %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTFP_DIV</WIZARD_TITLE>
+<TOOLTIP>Floating point divide megafunction</TOOLTIP>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="-family_max|-family_flex6000|-family_flex8000|-family_flex10k|-family_flex10ke|-family_maxii" AUTO_DEVICE_COMBOBOX="ON"/>
+<QIP_FILE_ENABLED/>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Floating Point Megafunctions User Guides</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altfp_mfug.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ALTFP_COMPARE=mega_altfp_compareq -tALTFP_COMPARE %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTFP_COMPARE</WIZARD_TITLE>
+<TOOLTIP>Floating point comparator megafunction</TOOLTIP>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="-family_max|-family_maxii" AUTO_DEVICE_COMBOBOX="ON"/>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Floating Point Megafunctions User Guides</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altfp_mfug.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ALTFP_SQRT=mega_altfp_sqrtq -tALTFP_SQRT %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTFP_SQRT</WIZARD_TITLE>
+<TOOLTIP>Floating point square root megafunction</TOOLTIP>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="-family_max|-family_maxii" AUTO_DEVICE_COMBOBOX="ON"/>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Floating Point Megafunctions User Guides</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altfp_mfug.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ALTMULT_COMPLEX=mega_altmult_addq -tALTMULT_COMPLEX %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTMULT_COMPLEX</WIZARD_TITLE>
+<MF>ALTMULT_COMPLEX</MF>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_base_stratix|family_base_stratixii|family_base_stratixiii|family_base_cycloneii|family_base_cycloneiii" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Complex multiplier megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<VERILOG_FULLY_CONNECTED_NETLIST/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Altmult_complex Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altmult_complex.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ALTMULT_ACCUM (MAC)=mega_altmult_addq -tALTMULT_ACCUM %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTMULT_ACCUM</WIZARD_TITLE>
+<ALIAS>ALTMULT_ACCUM</ALIAS><ALIAS>Multiply-Accumulate (MAC)</ALIAS>
+<MF>ALTMULT_ACCUM</MF>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="-family_max|-family_flex6000" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Multiply-accumulate megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<VERILOG_FULLY_CONNECTED_NETLIST/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Introduction to Stratix(GX) DSP Blocks</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx/ch_6_vol_2.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Implementing High-Speed DSP Functions</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx/ch_7_vol_2.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Introduction to Stratix II DSP Blocks</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2/stx2_sii52006.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>DSP Blocks in Stratix III Devices</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx3/stx3_siii51005.pdf	</TARGET>
+	</MENU_ITEM>	
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Embedded Multipliers in Cyclone II</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc2/cyc2_cii51012.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ALTMULT_ADD=mega_altmult_addq %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTMULT_ADD</WIZARD_TITLE>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="-family_max|-family_flex6000" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Multiply-add megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<VERILOG_FULLY_CONNECTED_NETLIST/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>altmult_add Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altmult_add.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Introduction to Stratix(GX) DSP Blocks</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx/ch_6_vol_2.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Implementing High-Speed DSP Functions</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx/ch_7_vol_2.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Introduction to Stratix II DSP Blocks</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2/stx2_sii52006.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>DSP Blocks in Stratix III Devices</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx3/stx3_siii51005.pdf	</TARGET>
+	</MENU_ITEM>	
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Embedded Multipliers in Cyclone II</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc2/cyc2_cii51012.pdf</TARGET>
+	</MENU_ITEM>
+
+</MENU>
+</HELP>
+</INFO>
+
+ALTECC=mega_alteccq -tEN %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTECC</WIZARD_TITLE>
+<TOOLTIP>ECC Encoder/Decoder megafunction</TOOLTIP>
+<MF>ALTECC_ENCODER -tEN, ALTECC_DECODER -tDE</MF>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<DEVICE_FAMILY AUTO_DEVICE_COMBOBOX="ON"/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>altecc Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_lpm_alt_mfug.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+PARALLEL_ADD=mega_parallel_addq %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>PARALLEL_ADD</WIZARD_TITLE>
+<TOOLTIP>Parallel-add megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<VHDL_NO_COMPONENT_DECLARATION/>
+<DEVICE_FAMILY AUTO_DEVICE_COMBOBOX="ON"/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>parallel_add Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_lpm_alt_mfug.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+
+[I/O]
+ALTLVDS_RX= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altlvds_rx/lib/altlvds_rx.jar" -wizard_name:ALTLVDS_RX %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTLVDS_RX</WIZARD_TITLE>
+<VISIBILITY FOR_CREATE="ON"/>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_serdes_block|family_has_flexible_lvds" AUTO_DEVICE_COMBOBOX="ON"/>
+<MF>ALTLVDS_RX -tRX</MF>
+<TOOLTIP>LVDS megafunction -- implements a deserialization receiver</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<PINPLAN SUPPORTED="ON"/>
+<RESOURCE_INFO_ENABLED/>
+<CBX_MODULE_PREFIX_ENABLED />
+<VERILOG_FULLY_CONNECTED_NETLIST/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<XML_CNX_ENABLED/>
+
+<HELP BUTTON="ON" MENU="ON" >
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>altlvds Megafunction User Guide</LABEL>
+		<TARGET>www.altera.com/literature/ug/ug_altlvds.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2/stx2_sii52005.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXII_WEB_MENU_LABEL</LABEL>
+		<TARGET>Using High-Speed Differential I/O Interfaces with DPA</TARGET>
+	</MENU_ITEM>
+	
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXIII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx3/stx3_siii51009.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXIII_WEB_MENU_LABEL</LABEL>
+		<TARGET>High-Speed Differential I/O Interfaces with DPA in Stratix III Devices</TARGET>
+	</MENU_ITEM>
+	
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXIIGX_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2gx/stxiigx_sii52005.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXIIGX_WEB_MENU_LABEL</LABEL>
+		<TARGET>Using High-Speed Differential I/O Interfaces in Stratix II GX devices</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>APEXII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/an/an166.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>APEXII_WEB_MENU_LABEL</LABEL>
+		<TARGET>Using High-Speed IO standards</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>APEX_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/an/an120.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>APEX_WEB_MENU_LABEL</LABEL>
+		<TARGET>Using LVDS in Apex families</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIX_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx/ch_5_vol_2.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIX_WEB_MENU_LABEL</LABEL>
+		<TARGET>Using High-Speed Differential I/O Interfaces</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXGX_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/an/an236.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXGX_WEB_MENU_LABEL</LABEL>
+		<TARGET>Using Source-Synchronous Signaling with DPA</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>CYCLONE_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc/cyc_c51009.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>CYCLONE_WEB_MENU_LINK</LABEL>
+		<TARGET>High Speed Differential Signaling</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>CYCLONEII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc2/cyc2_cii51010.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>CYCLONEII_WEB_MENU_LINK</LABEL>
+		<TARGET>Selectable I/O Standards</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+
+ALTLVDS_TX= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altlvds_tx/lib/altlvds_tx.jar" -wizard_name:ALTLVDS_TX %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTLVDS_TX</WIZARD_TITLE>
+<VISIBILITY FOR_CREATE="ON"/>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_serdes_block|family_has_flexible_lvds" AUTO_DEVICE_COMBOBOX="ON"/>
+<MF>ALTLVDS_TX -tTX </MF>
+<TOOLTIP>LVDS megafunction -- implements a serialization transmitter</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<PINPLAN SUPPORTED="ON"/>
+<RESOURCE_INFO_ENABLED/>
+<CBX_MODULE_PREFIX_ENABLED />
+<VERILOG_FULLY_CONNECTED_NETLIST/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<XML_CNX_ENABLED/>
+
+<HELP BUTTON="ON" MENU="ON" >
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>altlvds Megafunction User Guide</LABEL>
+		<TARGET>www.altera.com/literature/ug/ug_altlvds.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2/stx2_sii52005.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXII_WEB_MENU_LABEL</LABEL>
+		<TARGET>Using High-Speed Differential I/O Interfaces with DPA</TARGET>
+	</MENU_ITEM>
+	
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXIII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx3/stx3_siii51009.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXIII_WEB_MENU_LABEL</LABEL>
+		<TARGET>High-Speed Differential I/O Interfaces with DPA in Stratix III Devices</TARGET>
+	</MENU_ITEM>
+	
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXIIGX_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2gx/stxiigx_sii52005.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXIIGX_WEB_MENU_LABEL</LABEL>
+		<TARGET>Using High-Speed Differential I/O Interfaces in Stratix II GX devices</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>APEXII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/an/an166.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>APEXII_WEB_MENU_LABEL</LABEL>
+		<TARGET>Using High-Speed IO standards</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>APEX_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/an/an120.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>APEX_WEB_MENU_LABEL</LABEL>
+		<TARGET>Using LVDS in Apex families</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIX_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx/ch_5_vol_2.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIX_WEB_MENU_LABEL</LABEL>
+		<TARGET>Using High-Speed Differential I/O Interfaces</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXGX_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/an/an236.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXGX_WEB_MENU_LABEL</LABEL>
+		<TARGET>Using Source-Synchronous Signaling with DPA</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>CYCLONE_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc/cyc_c51009.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>CYCLONE_WEB_MENU_LINK</LABEL>
+		<TARGET>High Speed Differential Signaling</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>CYCLONEII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc2/cyc2_cii51010.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>CYCLONEII_WEB_MENU_LINK</LABEL>
+		<TARGET>Selectable I/O Standards</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+
+ALTREMOTE_UPDATE=mega_altremote_updateq %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTREMOTE_UPDATE</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_rublock" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Remote update megafunction -- allows for real-time reconfiguration of the device</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>altremote_update Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altremote.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Remote System Configuration with Stratix (GX)</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx/ch_15_vol_2.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Remote System Upgrades with Stratix II</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2/stx2_sii52008.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Remote System Upgrades with Stratix III</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx3/stx3_siii51012.pdf</TARGET>
+	</MENU_ITEM>	
+</MENU>
+</HELP>
+</INFO>
+
+
+
+ALTIOBUF=mega_altiobufq -tIN %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTIOBUF</WIZARD_TITLE>
+<TOOLTIP>I/O buffer megafunction</TOOLTIP>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_base_stratixiii|family_base_cycloneiii" AUTO_DEVICE_COMBOBOX="ON"/>
+<MF>ALTIOBUF_IN -tIN, ALTIOBUF_OUT -tOUT, ALTIOBUF_BIDIR -tBIDIR</MF>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Altiobuf Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altiobuf.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ALTDDIO_IN= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altddio_in/lib/altddio_in.jar" -wizard_name:ALTDDIO_IN %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTDDIO_IN</WIZARD_TITLE>
+<XML_CNX_ENABLED/>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<VISIBILITY FOR_CREATE="ON"/>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_ddio" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Double Data Rate (DDR) input megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<PINPLAN SUPPORTED="ON"/>
+<VHDL_NO_COMPONENT_DECLARATION/>
+<VERILOG_FULLY_CONNECTED_NETLIST/>
+<RESOURCE_INFO_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Altera Double Data Rate Megafunctions User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altddio.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ALTDDIO_OUT= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altddio_out/lib/altddio_out.jar" -wizard_name:ALTDDIO_OUT %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTDDIO_OUT</WIZARD_TITLE>
+<XML_CNX_ENABLED/>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<VISIBILITY FOR_CREATE="ON"/>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_ddio" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Double Data Rate (DDR) output megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<PINPLAN SUPPORTED="ON"/>
+<VHDL_NO_COMPONENT_DECLARATION/>
+<VERILOG_FULLY_CONNECTED_NETLIST/>
+<RESOURCE_INFO_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Altera Double Data Rate Megafunctions User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altddio.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ALTDDIO_BIDIR="%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altddio_bidir/lib/altddio_bidir.jar" -wizard_name:ALTDDIO_BIDIR %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTDDIO_BIDIR</WIZARD_TITLE>
+<XML_CNX_ENABLED/>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<VISIBILITY FOR_CREATE="ON"/>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_ddio" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Double Data Rate (DDR) bidirectional megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<PINPLAN SUPPORTED="ON"/>
+<VHDL_NO_COMPONENT_DECLARATION/>
+<VERILOG_FULLY_CONNECTED_NETLIST/>
+<RESOURCE_INFO_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Altera Double Data Rate Megafunctions User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altddio.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ALTDQ="%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altdq/lib/altdq.jar" -wizard_name:ALTDQ %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTDQ</WIZARD_TITLE>
+<XML_CNX_ENABLED/>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<VISIBILITY FOR_CREATE="ON"/>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_ddio" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>DQ megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<PINPLAN SUPPORTED="ON"/>
+<RESOURCE_INFO_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>altdq and altdqs Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altdq_dqs.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ALT2GXB_RECONFIG=mega_alt2gxb_reconfigq %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALT2GXB_RECONFIG</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_stratixiigx" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Alt2gxb reconfiguration megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>alt2gxb_reconfig Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2gx/stxiigx_sii52006.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ALT2GXB=mega_altgxbq %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALT2GXB</WIZARD_TITLE>
+<SIMLIB_GEN SUPPORTED="ON"/>
+<LICENSE_CHECK VALUE="ON"/>
+<ILDCNXO VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_stratixiigx" AUTO_DEVICE_COMBOBOX="ON"/>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<SIMLIB_GEN SUPPORTED="ON"/>
+<PINPLAN SUPPORTED="ON"/>
+<LANGUAGES AHDL="OFF"/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXIIGX_UG_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2gx/stxiigx_sii5v2_01.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXIIGX_UG_LABEL</LABEL>
+		<TARGET>Stratix II GX Transceiver User Guide</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXIIGX_MF_UG_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2gx/stxiigx_sii52003.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXIIGX_MF_UG_LABEL</LABEL>
+		<TARGET>alt2gxb Megafunction User Guide</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>ARRIAGX_UG_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/agx/agx_5v2_01.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>ARRIAGX_UG_LABEL</LABEL>
+		<TARGET>Arria GX Transceiver User Guide</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>ARRIAGX_MF_UG_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/agx/agx_52003.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>ARRIAGX_MF_UG_LABEL</LABEL>
+		<TARGET>alt2gxb Megafunction User Guide</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ALTGX=mega_altgxbq %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTGX</WIZARD_TITLE>
+<SIMLIB_GEN SUPPORTED="ON"/>
+<LICENSE_CHECK VALUE="ON"/>
+<ILDCNXO VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_stratixiigx|family_STRATIXIV||family_CYCLONEIVGX" AUTO_DEVICE_COMBOBOX="ON"/>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<CBX_MODULE_PREFIX_ENABLED/>
+<SIMLIB_GEN SUPPORTED="ON"/>
+<PINPLAN SUPPORTED="ON"/>
+<LANGUAGES AHDL="OFF"/>
+<MF>ALT4GXB</MF>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXIIGX_UG_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2gx/stxiigx_sii5v2_01.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXIIGX_UG_LABEL</LABEL>
+		<TARGET>Stratix II GX Transceiver User Guide</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXIIGX_MF_UG_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2gx/stxiigx_sii52003.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXIIGX_MF_UG_LABEL</LABEL>
+		<TARGET>alt2gxb Megafunction User Guide</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>ARRIAGX_UG_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/agx/agx_5v2_01.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>ARRIAGX_UG_LABEL</LABEL>
+		<TARGET>Arria GX Transceiver User Guide</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>ARRIAGX_MF_UG_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/agx/agx_52003.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>ARRIAGX_MF_UG_LABEL</LABEL>
+		<TARGET>alt2gxb Megafunction User Guide</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXIV_MF_UG_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stratix-iv/stx4_siv53001.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXIV_MF_UG_LABEL</LABEL>
+		<TARGET>ALTGX Transceiver Setup Guide</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXIV_UG_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stratix-iv/stx4_5v2_01.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXIV_UG_LABEL</LABEL>
+		<TARGET>Stratix IV Transceiver User Guide</TARGET>
+	</MENU_ITEM>
+	
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>ARRIAIIGX_UG_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/arria-ii-gx/aiigx_5v2_01.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>ARRIAIIGX_UG_LABEL</LABEL>
+		<TARGET>Arria II Transceiver User Guide</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>CYCLONEIVGX_UG_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyclone-iv/cyiv-5v2-01.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>CYCLONEIVGX_UG_LABEL</LABEL>
+		<TARGET>Cyclone IV Transceiver User Guide</TARGET>
+	</MENU_ITEM>
+	
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXIV_CONF_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stratix-iv/stx4_5v3_01.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXIV_CONF_LABEL</LABEL>
+		<TARGET>Stratix IV Transceiver Configuration Guide</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXIVGT_UG_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stratix-iv/stx4_5v2_02.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXIVGT_UG_LABEL</LABEL>
+		<TARGET>Stratix IV GT Transceiver User Guide</TARGET>
+	</MENU_ITEM>
+
+</MENU>
+</HELP>
+</INFO>
+
+
+ALTGX_RECONFIG=mega_alt2gxb_reconfigq %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTGX_RECONFIG</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_gxb_reconfig_in_wizard" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>ALTGX reconfiguration megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<MF>ALT2GXB_RECONFIG</MF>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>alt2gxb_reconfig Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2gx/stxiigx_sii52006.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+
+ALTDQS=mega_altdqsq %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTDQS</WIZARD_TITLE>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_base_stratix|family_base_stratixii|family_base_cycloneii|family_base_cycloneiii" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>DQ Strobe megafunction -- generates a DLL (Stratix-families) and associated DQS pins required to interface to DDR SDRAM or FCRAM</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<PINPLAN SUPPORTED="ON"/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>altdq and altdqs Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altdq_dqs.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+
+ALTCLKCTRL=mega_altclkbufq %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTCLKCTRL</WIZARD_TITLE>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_stratixii|family_cycloneii" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>altclkctrl megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>altclkctrl Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altclkctrl.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ALTPLL=mega_altpllq -wizard_name:ALTPLL %f %s
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTPLL</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_altpll" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Phase-locked loop (PLL) megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<VERILOG_FULLY_CONNECTED_NETLIST/>
+<PINPLAN SUPPORTED="ON"/>
+<CBX_MODULE_PREFIX_ENABLED />
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>altpll Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altpll.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>General-Purpose PLLs in Stratix (GX) Devices</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx/ch_1_vol_2.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>PLLs in Stratix II Devices</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2/stx2_sii52001.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Clock Networks and PLLs in Stratix III Devices</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx3/stx3_siii51006.pdf	</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>PLLs in Cyclone II Devices</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc2/cyc2_cii51007.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+
+ALTPLL_RECONFIG=mega_altpll_reconfigq %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTPLL_RECONFIG</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_base_stratix|family_stratixii|family_has_stratixiii_style_pll" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Phase-locked loop (PLL) reconfiguration megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>altpll_reconfig Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_altpll_reconfig.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Implementing PLL Reconfiguration in Stratix and Stratix GX Devices</LABEL>
+		<TARGET>http://www.altera.com/literature/an/an282.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Implementing PLL Reconfiguration in Stratix II Devices</LABEL>
+		<TARGET>http://www.altera.com/literature/an/an367.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ALTOCT=mega_alt_octq %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALT_OCT</WIZARD_TITLE>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_base_stratixiii" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>On-Chip Termination megafunction</TOOLTIP>
+<RESOURCE_INFO_ENABLED/>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<MF>ALT_OCT,ALT_OCT_POWER -tALT_OCT_POWER,ALT_OCT_AII</MF>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>alt_oct Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ALT_OCT.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+[Gates]
+LPM_CLSHIFT= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/lpm_clshift/lib/lpm_clshift.jar" -wizard_name:LPM_CLSHIFT %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>LPM_CLSHIFT</WIZARD_TITLE>
+<XML_CNX_ENABLED/>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<VISIBILITY FOR_CREATE="ON"/>
+<LICENSE_CHECK VALUE="ON"/>
+<TOOLTIP>Combinatorial logic shifter or barrel shifter megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="ALL" AUTO_DEVICE_COMBOBOX="ON"/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON"/>
+</INFO>
+
+[Memory Compiler]
+FIFO partitioner=mega_csmq -caption_text:"FIFO partitioner" -tFIFO_ONLY %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<SIMLIB_GEN SUPPORTED="STD_NO_SIMLIB_MSG"/>
+<SYNTH_NETLIST_GEN SUPPORTED="OFF"/>
+<WIZARD_TITLE>FIFO PARTITIONER</WIZARD_TITLE>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_base_stratix|family_base_stratixii|-family_arriagx_strict" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>FIFO partitioner (altcsmem) megafunction -- maps multiple FIFOs into a single M-RAM</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>FIFO Partitioner Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_fifo_partitioner.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+[JTAG-accessible Extensions]
+In-System Sources and Probes = mega_altsource_probeq %f
+<INFO>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<MWII_INFO SUPPORTED="ON"/>
+<WIZARD_TITLE>In-System Sources and Probes</WIZARD_TITLE>
+<SYNTH_NETLIST_GEN SUPPORTED="OFF"/>
+<SIMLIB_GEN SUPPORTED="STD_NO_SIMLIB_MSG"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_jtag_accessible_extensions" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>In-System Sources and Probes megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>In-System Sources and Probes Megafunction User Guide</LABEL>
+		<TARGET>http://www/literature/hb/qts/qts_qii53021.pdf</TARGET>
+	</MENU_ITEM>
+
+</MENU>
+</HELP>
+<MF>ALTSOURCE_PROBE</MF>
+</INFO>
+
+[JTAG-accessible Extensions]
+Parallel Flash Loader = mega_altparallel_flash_loaderq %f
+<INFO>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<MWII_INFO SUPPORTED="ON"/>
+<SIMLIB_GEN SUPPORTED="STD_NO_SIMLIB_MSG"/>
+<WIZARD_TITLE>Parallel Flash Loader</WIZARD_TITLE>
+<SYNTH_NETLIST_GEN SUPPORTED="OFF"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_jtag_accessible_extensions" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Parallel Flash Loader megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<MF>ALTPARALLEL_FLASH_LOADER</MF>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Using the Parallel Flash Loader With the Quartus II Software</LABEL>
+		<TARGET>http://www.altera.com/literature/an/an386.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+Serial Flash Loader = mega_altserial_flash_loaderq %f
+<INFO>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<MWII_INFO SUPPORTED="ON"/>
+<SYNTH_NETLIST_GEN SUPPORTED="OFF"/>
+<SIMLIB_GEN SUPPORTED="STD_NO_SIMLIB_MSG"/>
+<WIZARD_TITLE>Serial Flash Loader</WIZARD_TITLE>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_asmi" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Serial Flash Loader megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<MF>ALTSERIAL_FLASH_LOADER</MF>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Using the Serial Flash Loader With the Quartus II Software</LABEL>
+		<TARGET>http://www.altera.com/literature/an/an370.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+[JTAG-accessible Extensions]
+Virtual JTAG = mega_altsld_virtual_jtagq %f
+<INFO>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<MWII_INFO SUPPORTED="ON"/>
+<WIZARD_TITLE>Virtual JTAG</WIZARD_TITLE>
+<SYNTH_NETLIST_GEN SUPPORTED="OFF"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_jtag_accessible_extensions" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Virtual JTAG megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Virtual JTAG Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_virtualjtag.pdf</TARGET>
+	</MENU_ITEM>
+
+</MENU>
+</HELP>
+<MF>SLD_VIRTUAL_JTAG</MF>
+</INFO>
+
+Fault Injection = mega_alt_fault_injection %f
+<INFO>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<MWII_INFO SUPPORTED="ON"/>
+<SYNTH_NETLIST_GEN SUPPORTED="OFF"/>
+<SIMLIB_GEN SUPPORTED="STD_NO_SIMLIB_MSG"/>
+<WIZARD_TITLE>Fault Injection</WIZARD_TITLE>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_stratixv|family_arriav|family_cyclonev" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Fault Injection megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<MF>ALT_FAULT_INJECTION</MF>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Using the Fault Injection With the Quartus II Software</LABEL>
+		<TARGET></TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+[Memory Compiler]
+FIFO= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/scfifo/lib/scfifo.jar" -wizard_name:SCFIFO %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>FIFO</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Single-clock or dual-clock FIFO megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<XML_CNX_ENABLED/>
+<VERILOG_FULLY_CONNECTED_NETLIST/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Single and Dual-Clock FIFO Megafunctions User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_fifo.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+RAM: 1-PORT= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altsyncram/lib/altsyncram.jar" -wizard_name:ALTSYNCRAM -wizard_option:"RAM: 1-PORT" %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>RAM</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Single-port RAM megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<VERILOG_FULLY_CONNECTED_NETLIST/>
+<XML_CNX_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<QIP_FILE_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>RAM Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_ram.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIX_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx/ch_3_vol_2.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIX_WEB_MENU_LABEL</LABEL>
+		<TARGET>TriMatrix Memory Blocks in Stratix (GX)</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>CYCLONEII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc2/cyc2_cii51008.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>CYCLONEII_WEB_MENU_LABEL</LABEL>
+		<TARGET>Cyclone II Memory Blocks</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>CYCLONE_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc/cyc_c51007.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>CYCLONE_WEB_MENU_LABEL</LABEL>
+		<TARGET>Memory Implementations Using Cyclone Memory Blocks</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2/stx2_sii52002.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXII_WEB_MENU_LABEL</LABEL>
+		<TARGET>TriMatrix Memory Blocks in Stratix II</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXIII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx3/stx3_siii51004.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXIII_WEB_MENU_LABEL</LABEL>
+		<TARGET>TriMatrix Embedded Memory Blocks in Stratix III</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>APEX_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/an/an179.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>APEX_WEB_MENU_LABEL</LABEL>
+		<TARGET>Designing with ESBs</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+RAM: 2-PORT= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altsyncram/lib/altsyncram.jar" -wizard_name:ALTSYNCRAM -wizard_option:"RAM: 2-PORT" %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>RAM: 2-PORT</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Dual-port RAM megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<VERILOG_FULLY_CONNECTED_NETLIST/>
+<RESOURCE_INFO_ENABLED/>
+<QIP_FILE_ENABLED/>
+<XML_CNX_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>RAM Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_ram.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIX_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx/ch_3_vol_2.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIX_WEB_MENU_LABEL</LABEL>
+		<TARGET>TriMatrix Memory Blocks in Stratix (GX)</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>CYCLONEII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc2/cyc2_cii51008.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>CYCLONEII_WEB_MENU_LABEL</LABEL>
+		<TARGET>Cyclone II Memory Blocks</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>CYCLONE_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc/cyc_c51007.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>CYCLONE_WEB_MENU_LABEL</LABEL>
+		<TARGET>Memory Implementations Using Cyclone Memory Blocks</TARGET>
+	</MENU_ITEM>
+
+		<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2/stx2_sii52002.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXII_WEB_MENU_LABEL</LABEL>
+		<TARGET>TriMatrix Memory Blocks in Stratix II</TARGET>
+	</MENU_ITEM>
+	
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXIII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx3/stx3_siii51004.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXIII_WEB_MENU_LABEL</LABEL>
+		<TARGET>TriMatrix Embedded Memory Blocks in Stratix III</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>APEX_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/an/an179.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>APEX_WEB_MENU_LABEL</LABEL>
+		<TARGET>Designing with ESBs</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+RAM: 3-PORT= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altsyncram/lib/altsyncram.jar" -wizard_name:ALTSYNCRAM -wizard_option:"RAM: 3-PORT" %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>RAM: 3-PORT</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Triple-port RAM megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<XML_CNX_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>RAM Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_ram.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ROM: 1-PORT= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altsyncram/lib/altsyncram.jar" -wizard_name:ALTSYNCRAM -wizard_option:"ROM: 1-PORT" %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ROM: 1-PORT</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_eab" AUTO_DEVICE_COMBOBOX="ON"/>
+<ALIAS>ROM</ALIAS>
+<TOOLTIP>Single-port ROM megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<VERILOG_FULLY_CONNECTED_NETLIST/>
+<RESOURCE_INFO_ENABLED/>
+<XML_CNX_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON"  MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIX_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx/ch_3_vol_2.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIX_WEB_MENU_LABEL</LABEL>
+		<TARGET>TriMatrix Memory Blocks in Stratix (GX)</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>CYCLONEII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc2/cyc2_cii51008.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>CYCLONEII_WEB_MENU_LABEL</LABEL>
+		<TARGET>Cyclone II Memory Blocks</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>CYCLONE_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc/cyc_c51007.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>CYCLONE_WEB_MENU_LABEL</LABEL>
+		<TARGET>Memory Implementations Using Cyclone Memory Blocks</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2/stx2_sii52002.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXII_WEB_MENU_LABEL</LABEL>
+		<TARGET>TriMatrix Memory Blocks in Stratix II</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXIII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx3/stx3_siii51004.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXIII_WEB_MENU_LABEL</LABEL>
+		<TARGET>TriMatrix Embedded Memory Blocks in Stratix III</TARGET>
+	</MENU_ITEM>
+	
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>APEX_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/an/an179.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>APEX_WEB_MENU_LABEL</LABEL>
+		<TARGET>Designing with ESBs</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+ROM: 2-PORT= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altsyncram/lib/altsyncram.jar" -wizard_name:ALTSYNCRAM -wizard_option:"ROM: 2-PORT" %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ROM: 2-PORT</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_stratix_style_ram|family_uses_altqpram" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>Dual-port ROM megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<XML_CNX_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON"  MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIX_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx/ch_3_vol_2.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIX_WEB_MENU_LABEL</LABEL>
+		<TARGET>TriMatrix Memory Blocks in Stratix (GX)</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>CYCLONEII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc2/cyc2_cii51008.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>CYCLONEII_WEB_MENU_LABEL</LABEL>
+		<TARGET>Cyclone II Memory Blocks</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>CYCLONE_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc/cyc_c51007.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>CYCLONE_WEB_MENU_LABEL</LABEL>
+		<TARGET>Memory Implementations Using Cyclone Memory Blocks</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2/stx2_sii52002.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXII_WEB_MENU_LABEL</LABEL>
+		<TARGET>TriMatrix Memory Blocks in Stratix II</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>STRATIXIII_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx3/stx3_siii51004.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>STRATIXIII_WEB_MENU_LABEL</LABEL>
+		<TARGET>TriMatrix Embedded Memory Blocks in Stratix III</TARGET>
+	</MENU_ITEM>
+	
+	<MENU_ITEM TYPE="IUG_ALIAS">
+		<LABEL>APEX_WEB_LINK</LABEL>
+		<TARGET>http://www.altera.com/literature/an/an179.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="ALIAS">
+		<LABEL>APEX_WEB_MENU_LABEL</LABEL>
+		<TARGET>Designing with ESBs</TARGET>
+	</MENU_ITEM>
+
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>ROM Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_memrom.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+[Storage]
+ALTSYNCRAM= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altsyncram/lib/altsyncram.jar" -wizard_name:ALTSYNCRAM -wizard_option:"ALTSYNCRAM" %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTSYNCRAM</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_stratix_style_ram" AUTO_DEVICE_COMBOBOX="ON"/>
+<VISIBILITY FOR_CREATE="OFF"/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Memory Implementations Using Cyclone Memory Blocks</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc/cyc_c51007.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Cyclone II Memory Blocks</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/cyc2/cyc2_cii51008.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>TriMatrix Memory Blocks in Stratix (GX)</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx/ch_3_vol_2.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>TriMatrix Memory Blocks in Stratix II</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/stx2/stx2_sii52002.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+<TOOLTIP>True dual-port and single-port synchronous RAM megafunction</TOOLTIP>
+<VERILOG_FULLY_CONNECTED_NETLIST/>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<XML_CNX_ENABLED/>
+</INFO>
+
+[I/O]
+ALTASMI_PARALLEL= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altasmi_parallel/lib/altasmi_parallel.jar" -wizard_name:ALTASMI_PARALLEL %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTASMI_PARALLEL</WIZARD_TITLE>
+<SIMLIB_GEN SUPPORTED="STD_NO_SIMLIB_MSG"/>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_asmi"  AUTO_DEVICE_COMBOBOX="ON" />
+<TOOLTIP>Parallel interface for access to EPCS memory</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<XML_CNX_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Configuration Handbook</LABEL>
+		<TARGET> http://www.altera.com/literature/hb/cfg/cyc_c51014.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>altasmi_parallel Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/mfug_asmi.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+[Memory Compiler]
+ALTUFM_I2C= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altufm_i2c/lib/altufm_i2c.jar" -wizard_name:ALTUFM_I2C %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTUFM_I2C</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON"
+ SUPPORTED="NONE|family_maxii" AUTO_DEVICE_COMBOBOX="ON" />
+<TOOLTIP>I2C Interface User Flash Memory</TOOLTIP>
+<MF>ALTUFM_I2C -tI2C</MF>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<XML_CNX_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Flash Memory Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_alt_ufm.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Using User flash memory in MAX II</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/max2/max2_mii51010.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+[Memory Compiler]
+ALTUFM_NONE= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altufm_none/lib/altufm_none.jar" -wizard_name:ALTUFM_NONE %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTUFM_NONE</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON"
+ SUPPORTED="NONE|family_maxii" AUTO_DEVICE_COMBOBOX="ON" />
+<TOOLTIP>User Flash Memory</TOOLTIP>
+<MF>ALTUFM_NONE -tNONE</MF>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<XML_CNX_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Flash Memory Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_alt_ufm.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Using User flash memory in MAX II</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/max2/max2_mii51010.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+[I/O]
+MAX II oscillator= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altufm_osc/lib/altufm_osc.jar" -wizard_name:ALTUFM_OSC %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>MAX II Oscillator</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON"
+ SUPPORTED="NONE|family_maxii" AUTO_DEVICE_COMBOBOX="ON" />
+<TOOLTIP>OSC Interface User Flash Memory</TOOLTIP>
+<MF>ALTUFM_OSC -tOSC</MF>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<XML_CNX_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<RESOURCE_INFO_ENABLED/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Flash Memory Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_alt_ufm.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Using User flash memory in MAX II</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/max2/max2_mii51010.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+[Memory Compiler]
+ALTUFM_PARALLEL= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altufm_parallel/lib/altufm_parallel.jar" -wizard_name:ALTUFM_PARALLEL %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTUFM_PARALLEL</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON"
+ SUPPORTED="NONE|family_maxii" AUTO_DEVICE_COMBOBOX="ON" />
+<TOOLTIP>Parallel Interface User Flash Memory</TOOLTIP>
+<MF>ALTUFM_PARALLEL -tPARALLEL</MF>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<XML_CNX_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Flash Memory Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_alt_ufm.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Using User flash memory in MAX II</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/max2/max2_mii51010.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+[Memory Compiler]
+ALTUFM_SPI= "%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altufm_spi/lib/altufm_spi.jar" -wizard_name:ALTUFM_SPI %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>ALTUFM_SPI</WIZARD_TITLE>
+<LICENSE_CHECK VALUE="ON"/>
+<DEVICE_FAMILY SUPPORT_CHECK="ON"
+ SUPPORTED="NONE|family_maxii" AUTO_DEVICE_COMBOBOX="ON" />
+<TOOLTIP>SPI Interface User Flash Memory</TOOLTIP>
+<MF>ALTUFM_SPI -tSPI</MF>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<XML_CNX_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON" MENU="ON">
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Flash Memory Megafunction User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_alt_ufm.pdf</TARGET>
+	</MENU_ITEM>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Using User flash memory in MAX II</LABEL>
+		<TARGET>http://www.altera.com/literature/hb/max2/max2_mii51010.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+
+[Memory Compiler]
+Shift register (RAM-based)="%t" "%q/common/ip/altera/common/lib/megawizard.pl" --classpath:"%q/common/ip/altera/altshift_taps/lib/altshift_taps.jar" -wizard_name:ALTSHIFT_TAPS %f
+<INFO>
+<MWII_INFO SUPPORTED="ON"/>
+<NAV SUPPORTED="ON"/>
+<LAF SUPPORTED="ON"/>
+<WIZARD_TITLE>Shift Register (RAM-based)</WIZARD_TITLE>
+<DEVICE_FAMILY SUPPORT_CHECK="ON" SUPPORTED="NONE|family_has_eab" AUTO_DEVICE_COMBOBOX="ON"/>
+<TOOLTIP>RAM-based shift register with taps megafunction</TOOLTIP>
+<SUMMARY_PAGE CNX_INFO="ON"/>
+<QIP_FILE_ENABLED/>
+<XML_CNX_ENABLED/>
+<RESOURCE_INFO_ENABLED/>
+<CORE_INFO TYPE="MEGAFUNCTION"/>
+<HELP BUTTON="ON" MENU="ON" >
+<MENU>
+	<MENU_ITEM TYPE="IUG">
+		<LABEL>Shift Register (RAM-Based) User Guide</LABEL>
+		<TARGET>http://www.altera.com/literature/ug/ug_shift_register_ram_based.pdf</TARGET>
+	</MENU_ITEM>
+</MENU>
+</HELP>
+</INFO>
+

@@ -1,0 +1,340 @@
+------------------------------------------------------------------
+-- altmult_accum parameterized megafunction
+-- Generated with 'clearbox' loader - do not edit
+------------------------------------------------------------------
+
+
+-- Copyright (C) 1991-2013 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+--  Version 13.0 Build 156 04/24/2013
+
+OPTIONS NAME_SUBSTITUTION = ON;
+
+OPTIONS TREAT_DEFAULT_VALUE_AS_UNUSED = ON;
+
+PARAMETERS
+(
+	ACCUM_DIRECTION = "ADD",
+	ACCUM_ROUND_ACLR = "ACLR0",
+	ACCUM_ROUND_PIPELINE_ACLR = "ACLR0",
+	ACCUM_ROUND_PIPELINE_REG = "CLOCK0",
+	ACCUM_ROUND_REG = "CLOCK0",
+	ACCUM_SATURATION_ACLR = "ACLR0",
+	ACCUM_SATURATION_PIPELINE_ACLR = "ACLR0",
+	ACCUM_SATURATION_PIPELINE_REG = "CLOCK0",
+	ACCUM_SATURATION_REG = "CLOCK0",
+	ACCUM_SLOAD_ACLR = "ACLR0",
+	ACCUM_SLOAD_PIPELINE_ACLR = "ACLR0",
+	ACCUM_SLOAD_PIPELINE_REG = "CLOCK0",
+	ACCUM_SLOAD_REG = "CLOCK0",
+	ACCUM_SLOAD_UPPER_DATA_ACLR = "ACLR0",
+	ACCUM_SLOAD_UPPER_DATA_PIPELINE_ACLR = "ACLR0",
+	ACCUM_SLOAD_UPPER_DATA_PIPELINE_REG = "CLOCK0",
+	ACCUM_SLOAD_UPPER_DATA_REG = "CLOCK0",
+	ACCUMULATOR_ROUNDING = "NO",
+	ACCUMULATOR_SATURATION = "NO",
+	ADDNSUB_ACLR = "ACLR0",
+	ADDNSUB_PIPELINE_ACLR = "ACLR0",
+	ADDNSUB_PIPELINE_REG = "CLOCK0",
+	ADDNSUB_REG = "CLOCK0",
+	COEF0_0 = 0,
+	COEF0_1 = 0,
+	COEF0_2 = 0,
+	COEF0_3 = 0,
+	COEF0_4 = 0,
+	COEF0_5 = 0,
+	COEF0_6 = 0,
+	COEF0_7 = 0,
+	COEF1_0 = 0,
+	COEF1_1 = 0,
+	COEF1_2 = 0,
+	COEF1_3 = 0,
+	COEF1_4 = 0,
+	COEF1_5 = 0,
+	COEF1_6 = 0,
+	COEF1_7 = 0,
+	COEF2_0 = 0,
+	COEF2_1 = 0,
+	COEF2_2 = 0,
+	COEF2_3 = 0,
+	COEF2_4 = 0,
+	COEF2_5 = 0,
+	COEF2_6 = 0,
+	COEF2_7 = 0,
+	COEF3_0 = 0,
+	COEF3_1 = 0,
+	COEF3_2 = 0,
+	COEF3_3 = 0,
+	COEF3_4 = 0,
+	COEF3_5 = 0,
+	COEF3_6 = 0,
+	COEF3_7 = 0,
+	COEFSEL0_ACLR = "ACLR0",
+	COEFSEL0_REGISTER = "CLOCK0",
+	COEFSEL1_ACLR = "ACLR0",
+	COEFSEL1_REGISTER = "CLOCK0",
+	COEFSEL2_ACLR = "ACLR0",
+	COEFSEL2_REGISTER = "CLOCK0",
+	COEFSEL3_ACLR = "ACLR0",
+	COEFSEL3_REGISTER = "CLOCK0",
+	DEDICATED_MULTIPLIER_CIRCUITRY = "AUTO",
+	DOUBLE_ACCUM = "NO",
+	DSP_BLOCK_BALANCING = "Auto",
+	EXTRA_ACCUMULATOR_LATENCY = 0,
+	EXTRA_MULTIPLIER_LATENCY = 0,
+	INPUT_ACLR_A = "ACLR0",
+	INPUT_ACLR_B = "ACLR0",
+	INPUT_ACLR_C0 = "ACLR0",
+	INPUT_ACLR_C1 = "ACLR0",
+	INPUT_ACLR_C2 = "ACLR0",
+	INPUT_ACLR_C3 = "ACLR0",
+	INPUT_REG_A = "CLOCK0",
+	INPUT_REG_B = "CLOCK0",
+	INPUT_REGISTER_C0 = "CLOCK0",
+	INPUT_REGISTER_C1 = "CLOCK0",
+	INPUT_REGISTER_C2 = "CLOCK0",
+	INPUT_REGISTER_C3 = "CLOCK0",
+	INPUT_SOURCE_A = "DATAA",
+	INPUT_SOURCE_B = "DATAB",
+	LOADCONST_CONTROL_ACLR = "ACLR0",
+	LOADCONST_CONTROL_REGISTER = "CLOCK0",
+	LOADCONST_VALUE = 64,
+	MULT_ROUND_ACLR = "ACLR0",
+	MULT_ROUND_REG = "CLOCK0",
+	MULT_SATURATION_ACLR = "ACLR0",
+	MULT_SATURATION_REG = "CLOCK0",
+	MULTIPLIER1_DIRECTION = "ADD",
+	MULTIPLIER3_DIRECTION = "ADD",
+	MULTIPLIER_ACLR = "ACLR0",
+	MULTIPLIER_REG = "CLOCK0",
+	MULTIPLIER_ROUNDING = "NO",
+	MULTIPLIER_SATURATION = "NO",
+	NUMBER_OF_MULTIPLIERS = 1,
+	OUTPUT_ACLR = "ACLR0",
+	OUTPUT_REG = "CLOCK0",
+	PORT_ACCUM_IS_SATURATED = "UNUSED",
+	PORT_ADDNSUB = "PORT_CONNECTIVITY",
+	PORT_MULT_IS_SATURATED = "UNUSED",
+	PORT_SIGNA = "PORT_CONNECTIVITY",
+	PORT_SIGNB = "PORT_CONNECTIVITY",
+	PREADDER_DIRECTION_0 = "ADD",
+	PREADDER_DIRECTION_1 = "ADD",
+	PREADDER_DIRECTION_2 = "ADD",
+	PREADDER_DIRECTION_3 = "ADD",
+	PREADDER_MODE = "SIMPLE",
+	REPRESENTATION_A = "UNSIGNED",
+	REPRESENTATION_B = "UNSIGNED",
+	SIGN_ACLR_A = "ACLR0",
+	SIGN_ACLR_B = "ACLR0",
+	SIGN_PIPELINE_ACLR_A = "ACLR0",
+	SIGN_PIPELINE_ACLR_B = "ACLR0",
+	SIGN_PIPELINE_REG_A = "CLOCK0",
+	SIGN_PIPELINE_REG_B = "CLOCK0",
+	SIGN_REG_A = "CLOCK0",
+	SIGN_REG_B = "CLOCK0",
+	SYSTOLIC_ACLR1 = "ACLR0",
+	SYSTOLIC_ACLR3 = "ACLR0",
+	SYSTOLIC_DELAY1 = "UNREGISTERED",
+	SYSTOLIC_DELAY3 = "UNREGISTERED",
+	WIDTH_A,
+	WIDTH_B,
+	WIDTH_C = 22,
+	WIDTH_COEF = 18,
+	WIDTH_RESULT,
+	WIDTH_UPPER_DATA = 1,
+	CBXI_PARAMETER = "NOTHING"
+);
+FUNCTION @CBXI_PARAMETER (accum_round, accum_saturation, accum_sload, accum_sload_upper_data[WIDTH_UPPER_DATA-1..0], aclr0, aclr1, aclr2, aclr3, addnsub, clock0, clock1, clock2, clock3, coefsel0[2..0], coefsel1[2..0], coefsel2[2..0], coefsel3[2..0], dataa[WIDTH_A-1..0], datab[WIDTH_B-1..0], datac[WIDTH_C-1..0], ena0, ena1, ena2, ena3, mult_round, mult_saturation, scanina[WIDTH_A-1..0], scaninb[WIDTH_B-1..0], signa, signb, sourcea, sourceb)
+RETURNS (accum_is_saturated, mult_is_saturated, overflow, result[WIDTH_RESULT-1..0], scanouta[WIDTH_A-1..0], scanoutb[WIDTH_B-1..0]);
+
+
+SUBDESIGN altmult_accum
+(
+	accum_is_saturated		:	OUTPUT;
+	accum_round		:	INPUT = GND;
+	accum_saturation		:	INPUT = GND;
+	accum_sload		:	INPUT = GND;
+	accum_sload_upper_data[WIDTH_UPPER_DATA-1..0]		:	INPUT = GND;
+	aclr0		:	INPUT = GND;
+	aclr1		:	INPUT = GND;
+	aclr2		:	INPUT = GND;
+	aclr3		:	INPUT = GND;
+	addnsub		:	INPUT = VCC;
+	clock0		:	INPUT = VCC;
+	clock1		:	INPUT = VCC;
+	clock2		:	INPUT = VCC;
+	clock3		:	INPUT = VCC;
+	coefsel0[2..0]		:	INPUT;
+	coefsel1[2..0]		:	INPUT;
+	coefsel2[2..0]		:	INPUT;
+	coefsel3[2..0]		:	INPUT;
+	dataa[WIDTH_A-1..0]		:	INPUT = GND;
+	datab[WIDTH_B-1..0]		:	INPUT = GND;
+	datac[WIDTH_C-1..0]		:	INPUT;
+	ena0		:	INPUT = VCC;
+	ena1		:	INPUT = VCC;
+	ena2		:	INPUT = VCC;
+	ena3		:	INPUT = VCC;
+	mult_is_saturated		:	OUTPUT;
+	mult_round		:	INPUT = GND;
+	mult_saturation		:	INPUT = GND;
+	overflow		:	OUTPUT;
+	result[WIDTH_RESULT-1..0]		:	OUTPUT;
+	scanina[WIDTH_A-1..0]		:	INPUT = GND;
+	scaninb[WIDTH_B-1..0]		:	INPUT = GND;
+	scanouta[WIDTH_A-1..0]		:	OUTPUT;
+	scanoutb[WIDTH_B-1..0]		:	OUTPUT;
+	signa		:	INPUT = GND;
+	signb		:	INPUT = GND;
+	sourcea		:	INPUT = GND;
+	sourceb		:	INPUT = GND;
+)
+VARIABLE
+	IF CBXI_PARAMETER != "NOTHING" GENERATE
+		auto_generated : @CBXI_PARAMETER WITH ( CBXI_PARAMETER = "NOTHING" );
+	END GENERATE;
+BEGIN
+	ASSERT (CBXI_PARAMETER != "NOTHING")
+	REPORT "Valid clear box generator not found or Errors encountered during clear box generation"
+	SEVERITY ERROR;
+	IF (CBXI_PARAMETER != "NOTHING") GENERATE
+		IF USED(accum_is_saturated) GENERATE
+			accum_is_saturated = auto_generated.accum_is_saturated;
+		ELSE GENERATE
+			accum_is_saturated = GND;
+		END GENERATE;
+		IF USED(accum_round) GENERATE
+			auto_generated.accum_round = accum_round;
+		END GENERATE;
+		IF USED(accum_saturation) GENERATE
+			auto_generated.accum_saturation = accum_saturation;
+		END GENERATE;
+		IF USED(accum_sload) GENERATE
+			auto_generated.accum_sload = accum_sload;
+		END GENERATE;
+		IF USED(accum_sload_upper_data) GENERATE
+			auto_generated.accum_sload_upper_data[] = accum_sload_upper_data[];
+		END GENERATE;
+		IF USED(aclr0) GENERATE
+			auto_generated.aclr0 = aclr0;
+		END GENERATE;
+		IF USED(aclr1) GENERATE
+			auto_generated.aclr1 = aclr1;
+		END GENERATE;
+		IF USED(aclr2) GENERATE
+			auto_generated.aclr2 = aclr2;
+		END GENERATE;
+		IF USED(aclr3) GENERATE
+			auto_generated.aclr3 = aclr3;
+		END GENERATE;
+		IF USED(addnsub) GENERATE
+			auto_generated.addnsub = addnsub;
+		END GENERATE;
+		IF USED(clock0) GENERATE
+			auto_generated.clock0 = clock0;
+		END GENERATE;
+		IF USED(clock1) GENERATE
+			auto_generated.clock1 = clock1;
+		END GENERATE;
+		IF USED(clock2) GENERATE
+			auto_generated.clock2 = clock2;
+		END GENERATE;
+		IF USED(clock3) GENERATE
+			auto_generated.clock3 = clock3;
+		END GENERATE;
+		IF USED(coefsel0) GENERATE
+			auto_generated.coefsel0[] = coefsel0[];
+		END GENERATE;
+		IF USED(coefsel1) GENERATE
+			auto_generated.coefsel1[] = coefsel1[];
+		END GENERATE;
+		IF USED(coefsel2) GENERATE
+			auto_generated.coefsel2[] = coefsel2[];
+		END GENERATE;
+		IF USED(coefsel3) GENERATE
+			auto_generated.coefsel3[] = coefsel3[];
+		END GENERATE;
+		IF USED(dataa) GENERATE
+			auto_generated.dataa[] = dataa[];
+		END GENERATE;
+		IF USED(datab) GENERATE
+			auto_generated.datab[] = datab[];
+		END GENERATE;
+		IF USED(datac) GENERATE
+			auto_generated.datac[] = datac[];
+		END GENERATE;
+		IF USED(ena0) GENERATE
+			auto_generated.ena0 = ena0;
+		END GENERATE;
+		IF USED(ena1) GENERATE
+			auto_generated.ena1 = ena1;
+		END GENERATE;
+		IF USED(ena2) GENERATE
+			auto_generated.ena2 = ena2;
+		END GENERATE;
+		IF USED(ena3) GENERATE
+			auto_generated.ena3 = ena3;
+		END GENERATE;
+		IF USED(mult_is_saturated) GENERATE
+			mult_is_saturated = auto_generated.mult_is_saturated;
+		ELSE GENERATE
+			mult_is_saturated = GND;
+		END GENERATE;
+		IF USED(mult_round) GENERATE
+			auto_generated.mult_round = mult_round;
+		END GENERATE;
+		IF USED(mult_saturation) GENERATE
+			auto_generated.mult_saturation = mult_saturation;
+		END GENERATE;
+		IF USED(overflow) GENERATE
+			overflow = auto_generated.overflow;
+		ELSE GENERATE
+			overflow = GND;
+		END GENERATE;
+		IF USED(result) GENERATE
+			result[] = auto_generated.result[];
+		ELSE GENERATE
+			result[] = GND;
+		END GENERATE;
+		IF USED(scanina) GENERATE
+			auto_generated.scanina[] = scanina[];
+		END GENERATE;
+		IF USED(scaninb) GENERATE
+			auto_generated.scaninb[] = scaninb[];
+		END GENERATE;
+		IF USED(scanouta) GENERATE
+			scanouta[] = auto_generated.scanouta[];
+		ELSE GENERATE
+			scanouta[] = GND;
+		END GENERATE;
+		IF USED(scanoutb) GENERATE
+			scanoutb[] = auto_generated.scanoutb[];
+		ELSE GENERATE
+			scanoutb[] = GND;
+		END GENERATE;
+		IF USED(signa) GENERATE
+			auto_generated.signa = signa;
+		END GENERATE;
+		IF USED(signb) GENERATE
+			auto_generated.signb = signb;
+		END GENERATE;
+		IF USED(sourcea) GENERATE
+			auto_generated.sourcea = sourcea;
+		END GENERATE;
+		IF USED(sourceb) GENERATE
+			auto_generated.sourceb = sourceb;
+		END GENERATE;
+	END GENERATE;
+END;

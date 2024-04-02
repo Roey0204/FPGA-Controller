@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="use_phasectrlin" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true" />
+		<PARAMETER NAME="phase_setting" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="invert_phase" TYPE="String" VALUE="false|true|dynamic" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="physical_clock_source" TYPE="String" VALUE="auto|add_cmd|dqs|dqs_0p|dq|dq_0p|resync|resync_0p|pst|pst_0p|dqs_2x|dq_2x|ck_2x|hr" DEFAULT_VALUE="auto" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriavgz_clk_phase_select" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="phaseinvertctrl" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="powerdown" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clkin" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="phasectrlin" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="clkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

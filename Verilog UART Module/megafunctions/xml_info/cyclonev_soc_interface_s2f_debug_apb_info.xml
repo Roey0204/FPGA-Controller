@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_soc_interface_s2f_debug_apb">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_soc_interface_s2f_debug_apb" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="s2fpclkdbg" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2fpreadydbg" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2fpseldbg" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2fprdata" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2fpaddr31" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2fpclkendbg" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2fpenabledbg" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2fpwritedbg" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2fpaddr" TYPE="OUTPUT" WIDTH="10" DEFAULT_VALUE="0"/>
+		<PORT NAME="s2fpwdata" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

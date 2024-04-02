@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_io_12_lane">
+	<PARAMETERS>
+		<PARAMETER NAME="mode_rate_out" TYPE="String" VALUE="out_rate_full|out_rate_1_2|out_rate_1_4" DEFAULT_VALUE="out_rate_full"/>
+		<PARAMETER NAME="mode_rate_in" TYPE="String" VALUE="in_rate_full|in_rate_1_2|in_rate_1_4" DEFAULT_VALUE="in_rate_1_4"/>
+		<PARAMETER NAME="read_latency" TYPE="Vector" WIDTH="8" DEFAULT_VALUE="00000000"/>
+		<PARAMETER NAME="write_latency" TYPE="Vector" WIDTH="10" DEFAULT_VALUE="0000000000"/>
+		<PARAMETER NAME="phy_clk_phs_freq" TYPE="Integer" VALUE="500..1600" DEFAULT_VALUE="1000"/>
+		<PARAMETER NAME="pin_0_mode_ddr" TYPE="String" VALUE="mode_sdr|mode_ddr" DEFAULT_VALUE="mode_ddr"/>
+		<PARAMETER NAME="pin_0_alignment_mode" TYPE="String" VALUE="data|clock|strobe" DEFAULT_VALUE="data"/>
+		<PARAMETER NAME="pin_1_mode_ddr" TYPE="String" VALUE="mode_sdr|mode_ddr" DEFAULT_VALUE="mode_ddr"/>
+		<PARAMETER NAME="pin_1_alignment_mode" TYPE="String" VALUE="data|clock|strobe" DEFAULT_VALUE="data"/>
+		<PARAMETER NAME="pin_2_mode_ddr" TYPE="String" VALUE="mode_sdr|mode_ddr" DEFAULT_VALUE="mode_ddr"/>
+		<PARAMETER NAME="pin_2_alignment_mode" TYPE="String" VALUE="data|clock|strobe" DEFAULT_VALUE="data"/>
+		<PARAMETER NAME="pin_3_mode_ddr" TYPE="String" VALUE="mode_sdr|mode_ddr" DEFAULT_VALUE="mode_ddr"/>
+		<PARAMETER NAME="pin_3_alignment_mode" TYPE="String" VALUE="data|clock|strobe" DEFAULT_VALUE="data"/>
+		<PARAMETER NAME="pin_4_mode_ddr" TYPE="String" VALUE="mode_sdr|mode_ddr" DEFAULT_VALUE="mode_ddr"/>
+		<PARAMETER NAME="pin_4_alignment_mode" TYPE="String" VALUE="data|clock|strobe" DEFAULT_VALUE="data"/>
+		<PARAMETER NAME="pin_5_mode_ddr" TYPE="String" VALUE="mode_sdr|mode_ddr" DEFAULT_VALUE="mode_ddr"/>
+		<PARAMETER NAME="pin_5_alignment_mode" TYPE="String" VALUE="data|clock|strobe" DEFAULT_VALUE="data"/>
+		<PARAMETER NAME="pin_6_mode_ddr" TYPE="String" VALUE="mode_sdr|mode_ddr" DEFAULT_VALUE="mode_ddr"/>
+		<PARAMETER NAME="pin_6_alignment_mode" TYPE="String" VALUE="data|clock|strobe" DEFAULT_VALUE="data"/>
+		<PARAMETER NAME="pin_7_mode_ddr" TYPE="String" VALUE="mode_sdr|mode_ddr" DEFAULT_VALUE="mode_ddr"/>
+		<PARAMETER NAME="pin_7_alignment_mode" TYPE="String" VALUE="data|clock|strobe" DEFAULT_VALUE="data"/>
+		<PARAMETER NAME="pin_8_mode_ddr" TYPE="String" VALUE="mode_sdr|mode_ddr" DEFAULT_VALUE="mode_ddr"/>
+		<PARAMETER NAME="pin_8_alignment_mode" TYPE="String" VALUE="data|clock|strobe" DEFAULT_VALUE="data"/>
+		<PARAMETER NAME="pin_9_mode_ddr" TYPE="String" VALUE="mode_sdr|mode_ddr" DEFAULT_VALUE="mode_ddr"/>
+		<PARAMETER NAME="pin_9_alignment_mode" TYPE="String" VALUE="data|clock|strobe" DEFAULT_VALUE="data"/>
+		<PARAMETER NAME="pin_10_mode_ddr" TYPE="String" VALUE="mode_sdr|mode_ddr" DEFAULT_VALUE="mode_ddr"/>
+		<PARAMETER NAME="pin_10_alignment_mode" TYPE="String" VALUE="data|clock|strobe" DEFAULT_VALUE="data"/>
+		<PARAMETER NAME="pin_11_mode_ddr" TYPE="String" VALUE="mode_sdr|mode_ddr" DEFAULT_VALUE="mode_ddr"/>
+		<PARAMETER NAME="pin_11_alignment_mode" TYPE="String" VALUE="data|clock|strobe" DEFAULT_VALUE="data"/>
+		<PARAMETER NAME="db_dbi_sel" TYPE="String" VALUE="dbi_dq0|dbi_dq1|dbi_dq2|dbi_dq3|dbi_dq4|dbi_dq5|dbi_dq6|dbi_dq7|dbi_dq8|dbi_dq9|dbi_dq10|dbi_dq11" DEFAULT_VALUE="dbi_dq0"/>
+		<PARAMETER NAME="db_dbi_en" TYPE="String" VALUE="dbi_disable|dbi_enable" DEFAULT_VALUE="dbi_disable"/>
+		<PARAMETER NAME="db_crc_dq0" TYPE="String" VALUE="crc_dq0_pin0|crc_dq0_pin1|crc_dq0_pin2|crc_dq0_pin3|crc_dq0_pin4|crc_dq0_pin5|crc_dq0_pin6|crc_dq0_pin7|crc_dq0_pin8|crc_dq0_pin9|crc_dq0_pin10|crc_dq0_pin11" DEFAULT_VALUE="crc_dq0_pin0"/>
+		<PARAMETER NAME="db_crc_dq1" TYPE="String" VALUE="crc_dq1_pin0|crc_dq1_pin1|crc_dq1_pin2|crc_dq1_pin3|crc_dq1_pin4|crc_dq1_pin5|crc_dq1_pin6|crc_dq1_pin7|crc_dq1_pin8|crc_dq1_pin9|crc_dq1_pin10|crc_dq1_pin11" DEFAULT_VALUE="crc_dq1_pin0"/>
+		<PARAMETER NAME="db_crc_dq2" TYPE="String" VALUE="crc_dq2_pin0|crc_dq2_pin1|crc_dq2_pin2|crc_dq2_pin3|crc_dq2_pin4|crc_dq2_pin5|crc_dq2_pin6|crc_dq2_pin7|crc_dq2_pin8|crc_dq2_pin9|crc_dq2_pin10|crc_dq2_pin11" DEFAULT_VALUE="crc_dq2_pin0"/>
+		<PARAMETER NAME="db_crc_dq3" TYPE="String" VALUE="crc_dq3_pin0|crc_dq3_pin1|crc_dq3_pin2|crc_dq3_pin3|crc_dq3_pin4|crc_dq3_pin5|crc_dq3_pin6|crc_dq3_pin7|crc_dq3_pin8|crc_dq3_pin9|crc_dq3_pin10|crc_dq3_pin11" DEFAULT_VALUE="crc_dq3_pin0"/>
+		<PARAMETER NAME="db_crc_dq4" TYPE="String" VALUE="crc_dq4_pin0|crc_dq4_pin1|crc_dq4_pin2|crc_dq4_pin3|crc_dq4_pin4|crc_dq4_pin5|crc_dq4_pin6|crc_dq4_pin7|crc_dq4_pin8|crc_dq4_pin9|crc_dq4_pin10|crc_dq4_pin11" DEFAULT_VALUE="crc_dq4_pin0"/>
+		<PARAMETER NAME="db_crc_dq5" TYPE="String" VALUE="crc_dq5_pin0|crc_dq5_pin1|crc_dq5_pin2|crc_dq5_pin3|crc_dq5_pin4|crc_dq5_pin5|crc_dq5_pin6|crc_dq5_pin7|crc_dq5_pin8|crc_dq5_pin9|crc_dq5_pin10|crc_dq5_pin11" DEFAULT_VALUE="crc_dq5_pin0"/>
+		<PARAMETER NAME="db_crc_dq6" TYPE="String" VALUE="crc_dq6_pin0|crc_dq6_pin1|crc_dq6_pin2|crc_dq6_pin3|crc_dq6_pin4|crc_dq6_pin5|crc_dq6_pin6|crc_dq6_pin7|crc_dq6_pin8|crc_dq6_pin9|crc_dq6_pin10|crc_dq6_pin11" DEFAULT_VALUE="crc_dq6_pin0"/>
+		<PARAMETER NAME="db_crc_dq7" TYPE="String" VALUE="crc_dq7_pin0|crc_dq7_pin1|crc_dq7_pin2|crc_dq7_pin3|crc_dq7_pin4|crc_dq7_pin5|crc_dq7_pin6|crc_dq7_pin7|crc_dq7_pin8|crc_dq7_pin9|crc_dq7_pin10|crc_dq7_pin11" DEFAULT_VALUE="crc_dq7_pin0"/>
+		<PARAMETER NAME="db_crc_dq8" TYPE="String" VALUE="crc_dq8_pin0|crc_dq8_pin1|crc_dq8_pin2|crc_dq8_pin3|crc_dq8_pin4|crc_dq8_pin5|crc_dq8_pin6|crc_dq8_pin7|crc_dq8_pin8|crc_dq8_pin9|crc_dq8_pin10|crc_dq8_pin11" DEFAULT_VALUE="crc_dq8_pin0"/>
+		<PARAMETER NAME="db_crc_x4_or_x8_or_x9" TYPE="String" VALUE="x4_mode|x8_mode|x9_mode|reserved" DEFAULT_VALUE="x8_mode"/>
+		<PARAMETER NAME="db_crc_en" TYPE="String" VALUE="crc_disable|crc_en" DEFAULT_VALUE="crc_disable"/>
+		<PARAMETER NAME="avl_base_addr" TYPE="Vector" WIDTH="9" DEFAULT_VALUE="000000000"/>
+		<PARAMETER NAME="avl_bc_id_ena" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="avl_ena" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_0_wr_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_0_oe_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_0_mode" TYPE="String" VALUE="dq_mode|dq_wdb_mode|dm_mode|dm_wdb_mode|dqs_mode|dqs_wdb_mode|ac_hmc|ac_core" DEFAULT_VALUE="dq_mode"/>
+		<PARAMETER NAME="db_pin_0_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="db_pin_1_wr_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_1_oe_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_1_mode" TYPE="String" VALUE="dq_mode|dq_wdb_mode|dm_mode|dm_wdb_mode|dqs_mode|dqs_wdb_mode|ac_hmc|ac_core" DEFAULT_VALUE="dq_mode"/>
+		<PARAMETER NAME="db_pin_1_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="db_pin_2_wr_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_2_oe_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_2_mode" TYPE="String" VALUE="dq_mode|dq_wdb_mode|dm_mode|dm_wdb_mode|dqs_mode|dqs_wdb_mode|ac_hmc|ac_core" DEFAULT_VALUE="dq_mode"/>
+		<PARAMETER NAME="db_pin_2_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="db_pin_3_wr_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_3_oe_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_3_mode" TYPE="String" VALUE="dq_mode|dq_wdb_mode|dm_mode|dm_wdb_mode|dqs_mode|dqs_wdb_mode|ac_hmc|ac_core" DEFAULT_VALUE="dq_mode"/>
+		<PARAMETER NAME="db_pin_3_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="db_pin_4_wr_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_4_oe_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_4_mode" TYPE="String" VALUE="dq_mode|dq_wdb_mode|dm_mode|dm_wdb_mode|dqs_mode|dqs_wdb_mode|ac_hmc|ac_core" DEFAULT_VALUE="dq_mode"/>
+		<PARAMETER NAME="db_pin_4_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="db_pin_5_wr_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_5_oe_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_5_mode" TYPE="String" VALUE="dq_mode|dq_wdb_mode|dm_mode|dm_wdb_mode|dqs_mode|dqs_wdb_mode|ac_hmc|ac_core" DEFAULT_VALUE="dq_mode"/>
+		<PARAMETER NAME="db_pin_5_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="db_pin_6_wr_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_6_oe_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_6_mode" TYPE="String" VALUE="dq_mode|dq_wdb_mode|dm_mode|dm_wdb_mode|dqs_mode|dqs_wdb_mode|ac_hmc|ac_core" DEFAULT_VALUE="dq_mode"/>
+		<PARAMETER NAME="db_pin_6_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="db_pin_7_wr_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_7_oe_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_7_mode" TYPE="String" VALUE="dq_mode|dq_wdb_mode|dm_mode|dm_wdb_mode|dqs_mode|dqs_wdb_mode|ac_hmc|ac_core" DEFAULT_VALUE="dq_mode"/>
+		<PARAMETER NAME="db_pin_7_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="db_pin_8_wr_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_8_oe_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_8_mode" TYPE="String" VALUE="dq_mode|dq_wdb_mode|dm_mode|dm_wdb_mode|dqs_mode|dqs_wdb_mode|ac_hmc|ac_core" DEFAULT_VALUE="dq_mode"/>
+		<PARAMETER NAME="db_pin_8_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="db_pin_9_wr_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_9_oe_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_9_mode" TYPE="String" VALUE="dq_mode|dq_wdb_mode|dm_mode|dm_wdb_mode|dqs_mode|dqs_wdb_mode|ac_hmc|ac_core" DEFAULT_VALUE="dq_mode"/>
+		<PARAMETER NAME="db_pin_9_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="db_pin_10_wr_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_10_oe_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_10_mode" TYPE="String" VALUE="dq_mode|dq_wdb_mode|dm_mode|dm_wdb_mode|dqs_mode|dqs_wdb_mode|ac_hmc|ac_core" DEFAULT_VALUE="dq_mode"/>
+		<PARAMETER NAME="db_pin_10_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="db_pin_11_wr_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_11_oe_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="db_pin_11_mode" TYPE="String" VALUE="dq_mode|dq_wdb_mode|dm_mode|dm_wdb_mode|dqs_mode|dqs_wdb_mode|ac_hmc|ac_core" DEFAULT_VALUE="dq_mode"/>
+		<PARAMETER NAME="db_pin_11_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="vref_mode" TYPE="String" VALUE="vref_ext|vref_int_cal_range1|vref_int_cal_range2|vref_int_no_cal" DEFAULT_VALUE="vref_ext"/>
+		<PARAMETER NAME="vref_no_cal_val" TYPE="String" VALUE="vccn_0_45|vccn_0_5|vccn_0_55|vccn_0_65|vccn_0_7|vccn_0_75" DEFAULT_VALUE="vccn_0_45"/>
+		<PARAMETER NAME="dqs_lgc_pst_ddr4_preamble_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="dqs_lgc_pst_en_shrink" TYPE="Vector" WIDTH="2" DEFAULT_VALUE="00"/>
+		<PARAMETER NAME="dqs_lgc_phase_shift" TYPE="Vector" WIDTH="12" DEFAULT_VALUE="000000000000"/>
+		<PARAMETER NAME="dqs_lgc_burst_length" TYPE="String" VALUE="burst_length_10|burst_length_8|burst_length_4|burst_length_2" DEFAULT_VALUE="burst_length_2"/>
+		<PARAMETER NAME="dqs_lgc_count_threshold" TYPE="Vector" WIDTH="7" DEFAULT_VALUE="0000000"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_io_12_lane" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="avl_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="avl_read" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="avl_write" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfg_dbc_ctrl_sel" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfg_dbc_dualport_en" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfg_dbc_in_protocol" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfg_enable_ecc" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfg_output_regd" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfg_reorder_data" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_mask_entry0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_mask_entry1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_rb_wrptr_vld0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_rb_wrptr_vld1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_seq_en0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_seq_en1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_wb_rdptr_vld0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_wb_rdptr_vld1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_wrdata_vld0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_wrdata_vld1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dqs_in_a" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dqs_in_b" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="phy_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="reset_n" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ac_hmc" TYPE="INPUT" WIDTH="96" DEFAULT_VALUE="0"/>
+		<PORT NAME="avl_address" TYPE="INPUT" WIDTH="20" DEFAULT_VALUE="0"/>
+		<PORT NAME="avl_writedata" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfg_cmd_rate" TYPE="INPUT" WIDTH="3" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfg_dbc_pipe_lat" TYPE="INPUT" WIDTH="3" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_mrnk_read0" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_mrnk_read1" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_rb_rdptr0" TYPE="INPUT" WIDTH="12" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_rb_rdptr1" TYPE="INPUT" WIDTH="12" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_rb_rdptr_vld0" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_rb_rdptr_vld1" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_rb_wrptr0" TYPE="INPUT" WIDTH="6" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_rb_wrptr1" TYPE="INPUT" WIDTH="6" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_rdata_en_full0" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_rdata_en_full1" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_wb_rdptr0" TYPE="INPUT" WIDTH="6" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctl2dbc_wb_rdptr1" TYPE="INPUT" WIDTH="6" DEFAULT_VALUE="0"/>
+		<PORT NAME="data_from_core" TYPE="INPUT" WIDTH="96" DEFAULT_VALUE="0"/>
+		<PORT NAME="data_in" TYPE="INPUT" WIDTH="12" DEFAULT_VALUE="0"/>
+		<PORT NAME="dll_value" TYPE="INPUT" WIDTH="9" DEFAULT_VALUE="0"/>
+		<PORT NAME="dqs_burst_core" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="mrnk_read_core" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="mrnk_write_core" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="oeb_from_core" TYPE="INPUT" WIDTH="48" DEFAULT_VALUE="0"/>
+		<PORT NAME="phy_clk_phs" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="rdata_en_full_core" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="wdata_valid_core" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="avl_base_hit" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dbc2ctl_rb_retire_ptr_vld" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dbc2ctl_wb_retire_ptr_vld" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dbc2db_wb_wrptr_vld" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="avl_readdata" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="data_oe" TYPE="OUTPUT" WIDTH="12" DEFAULT_VALUE="0"/>
+		<PORT NAME="data_out" TYPE="OUTPUT" WIDTH="12" DEFAULT_VALUE="0"/>
+		<PORT NAME="data_to_core" TYPE="OUTPUT" WIDTH="96" DEFAULT_VALUE="0"/>
+		<PORT NAME="dbc2ctl_rb_retire_ptr" TYPE="OUTPUT" WIDTH="6" DEFAULT_VALUE="0"/>
+		<PORT NAME="dbc2ctl_wb_retire_ptr" TYPE="OUTPUT" WIDTH="6" DEFAULT_VALUE="0"/>
+		<PORT NAME="dbc2db_wb_wrptr" TYPE="OUTPUT" WIDTH="6" DEFAULT_VALUE="0"/>
+		<PORT NAME="rdata_valid_core" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

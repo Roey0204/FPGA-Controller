@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="output_clock_frequency" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="phase_shift" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="duty_cycle" TYPE="Integer" VALUE="1..99" DEFAULT_VALUE="50" />
+		<PARAMETER NAME="c_cnt_coarse_dly" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="c_cnt_fine_dly" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="c_cnt_in_src" TYPE="String" VALUE="ph_mux_clk|cscd_clk|test_clk0|test_clk1" DEFAULT_VALUE="test_clk0" />
+		<PARAMETER NAME="c_cnt_ph_mux_prst" TYPE="Integer" VALUE="0..7" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="c_cnt_prst" TYPE="Integer" VALUE="1..256" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="cnt_fpll_src" TYPE="String" VALUE="fpll_0|fpll_1" DEFAULT_VALUE="fpll_0" />
+		<PARAMETER NAME="dprio0_cnt_bypass_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="dprio0_cnt_hi_div" TYPE="Integer" VALUE="1..256" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="dprio0_cnt_lo_div" TYPE="Integer" VALUE="1..256" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="dprio0_cnt_odd_div_even_duty_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="dprio1_cnt_bypass_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="dprio1_cnt_hi_div" TYPE="Integer" VALUE="1..256" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="dprio1_cnt_lo_div" TYPE="Integer" VALUE="1..256" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="dprio1_cnt_odd_div_even_duty_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriavgz_pll_output_counter" />
+		<PARAMETER NAME="output_counter_index" TYPE="INTEGER" VALUE="1" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="fractional_pll_index" TYPE="INTEGER" VALUE="1" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="cascadein" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="nen0" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="nen1" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="shift0" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="shift1" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="shiftdone0i" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="shiftdone1i" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="shiften" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="tclk0" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="tclk1" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="up0" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="up1" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="vco0ph" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="vco1ph" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="cascadeout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="divclk" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="shiftdone0o" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="shiftdone1o" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

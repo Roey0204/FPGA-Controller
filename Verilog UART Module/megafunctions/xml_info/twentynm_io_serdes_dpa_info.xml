@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_io_serdes_dpa">
+	<PARAMETERS>
+		<PARAMETER NAME="mode" TYPE="String" VALUE="tx_mode|dpa_mode_fifo|off_mode|dpa_mode_cdr|non_dpa_mode" DEFAULT_VALUE="off_mode"/>
+		<PARAMETER NAME="align_to_rising_edge_only" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="bitslip_rollover" TYPE="Integer" VALUE="0..11" DEFAULT_VALUE="10"/>
+		<PARAMETER NAME="data_width" TYPE="Integer" VALUE="3..10" DEFAULT_VALUE="10"/>
+		<PARAMETER NAME="lose_lock_on_one_change" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="reset_fifo_at_first_lock" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="enable_clock_pin_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="loopback_mode" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="net_ppm_variation" TYPE="Integer" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="is_negative_ppm_drift" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_io_serdes_dpa" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="bitslipcntl" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="bitslipreset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dpafiforeset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dpahold" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dpareset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dpaswitch" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fclkcorein" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="loaden" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="loadencorein" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="loopbackin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="lvdsin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="pclkcorein" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="pclkioin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dpaclk" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="txdata" TYPE="INPUT" WIDTH="10" DEFAULT_VALUE="0"/>
+		<PORT NAME="bitslipmax" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dpalock" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="loopbackout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="lvdsout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="pclk" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rxdata" TYPE="OUTPUT" WIDTH="10" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

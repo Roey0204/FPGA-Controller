@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_hps_interface_peripheral_i2c">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_hps_interface_peripheral_i2c" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="scl" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="sda" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="out_clk" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="out_data" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

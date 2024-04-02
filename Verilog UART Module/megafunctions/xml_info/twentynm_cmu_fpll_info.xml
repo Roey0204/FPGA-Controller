@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_cmu_fpll">
+	<PARAMETERS>
+		<PARAMETER NAME="pll_cal_status" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="pll_calibration" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_cmu_rstn_value" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="pll_lpf_rstn_value" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="pll_ppm_clk0_src" TYPE="String" VALUE="ppm_clk0_vss|ppm_clk0_refclk|ppm_clk0_n_cnt|ppm_clk0_fbclk|ppm_clk0_c0_cnt|ppm_clk0_c1_cnt|ppm_clk0_c2_cnt|ppm_clk0_c3_cnt" DEFAULT_VALUE="ppm_clk0_vss"/>
+		<PARAMETER NAME="pll_ppm_clk1_src" TYPE="String" VALUE="ppm_clk1_vss|ppm_clk1_refclk|ppm_clk1_n_cnt|ppm_clk1_fbclk|ppm_clk1_c0_cnt|ppm_clk1_c1_cnt|ppm_clk1_c2_cnt|ppm_clk1_c3_cnt" DEFAULT_VALUE="ppm_clk1_vss"/>
+		<PARAMETER NAME="pll_rstn_override" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_op_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_proc_mode" TYPE="String" VALUE="pcie1_2" DEFAULT_VALUE="pcie1_2"/>
+		<PARAMETER NAME="pll_refclk" TYPE="String" VALUE="freq_100|freq_125" DEFAULT_VALUE="freq_100"/>
+		<PARAMETER NAME="pll_c_counter_0" TYPE="Integer" VALUE="0..511" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pll_c_counter_0_in_src" TYPE="String" VALUE="m_cnt_in_src_ph_mux_clk|m_cnt_in_src_cscd_clk|m_cnt_in_src_test_clk" DEFAULT_VALUE="m_cnt_in_src_test_clk"/>
+		<PARAMETER NAME="pll_c_counter_0_ph_mux_prst" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="pll_c_counter_0_prst" TYPE="Integer" VALUE="0..255" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pll_c_counter_0_ph_mux_tclk" TYPE="String" VALUE="phmux_vco_phase|phmux_tclk" DEFAULT_VALUE="phmux_vco_phase"/>
+		<PARAMETER NAME="pll_c_counter_0_coarse_dly" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="pll_c_counter_0_fine_dly" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="pll_c_counter_1" TYPE="Integer" VALUE="0..511" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pll_c_counter_1_in_src" TYPE="String" VALUE="m_cnt_in_src_ph_mux_clk|m_cnt_in_src_cscd_clk|m_cnt_in_src_test_clk" DEFAULT_VALUE="m_cnt_in_src_test_clk"/>
+		<PARAMETER NAME="pll_c_counter_1_ph_mux_prst" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="pll_c_counter_1_prst" TYPE="Integer" VALUE="0..255" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pll_c_counter_1_ph_mux_tclk" TYPE="String" VALUE="phmux_vco_phase|phmux_tclk" DEFAULT_VALUE="phmux_vco_phase"/>
+		<PARAMETER NAME="pll_c_counter_1_coarse_dly" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="pll_c_counter_1_fine_dly" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="pll_c_counter_2" TYPE="Integer" VALUE="0..511" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pll_c_counter_2_in_src" TYPE="String" VALUE="m_cnt_in_src_ph_mux_clk|m_cnt_in_src_cscd_clk|m_cnt_in_src_test_clk" DEFAULT_VALUE="m_cnt_in_src_test_clk"/>
+		<PARAMETER NAME="pll_c_counter_2_ph_mux_prst" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="pll_c_counter_2_prst" TYPE="Integer" VALUE="0..255" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pll_c_counter_2_ph_mux_tclk" TYPE="String" VALUE="phmux_vco_phase|phmux_tclk" DEFAULT_VALUE="phmux_vco_phase"/>
+		<PARAMETER NAME="pll_c_counter_2_coarse_dly" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="pll_c_counter_2_fine_dly" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="pll_c_counter_3" TYPE="Integer" VALUE="0..511" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pll_c_counter_3_in_src" TYPE="String" VALUE="m_cnt_in_src_ph_mux_clk|m_cnt_in_src_cscd_clk|m_cnt_in_src_test_clk" DEFAULT_VALUE="m_cnt_in_src_test_clk"/>
+		<PARAMETER NAME="pll_c_counter_3_ph_mux_prst" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="pll_c_counter_3_prst" TYPE="Integer" VALUE="0..255" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pll_c_counter_3_ph_mux_tclk" TYPE="String" VALUE="phmux_vco_phase|phmux_tclk" DEFAULT_VALUE="phmux_vco_phase"/>
+		<PARAMETER NAME="pll_c_counter_3_coarse_dly" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="pll_c_counter_3_fine_dly" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="pll_atb" TYPE="String" VALUE="atb_selectdisable|atb_select0|atb_select1|atb_select2|atb_select3|atb_select4|atb_select5|atb_select6|atb_select7|atb_select8|atb_select9|atb_select10|atb_select11|atb_select12|atb_select13|atb_select14|atb_select15|atb_select16|atb_select17|atb_select18|atb_select19|atb_select20|atb_select21|atb_select22|atb_select23|atb_select24|atb_select25|atb_select26|atb_select27|atb_select28|atb_select29|atb_select30" DEFAULT_VALUE="atb_selectdisable"/>
+		<PARAMETER NAME="pll_cp_compensation" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="pll_cp_current_setting" TYPE="String" VALUE="cp_current_setting0|cp_current_setting1|cp_current_setting2|cp_current_setting3|cp_current_setting4|cp_current_setting5|cp_current_setting6|cp_current_setting7|cp_current_setting8|cp_current_setting9|cp_current_setting10|cp_current_setting11" DEFAULT_VALUE="cp_current_setting0"/>
+		<PARAMETER NAME="pll_cp_testmode" TYPE="String" VALUE="cp_normal|cp_test_up|cp_test_dn|cp_tristate" DEFAULT_VALUE="cp_normal"/>
+		<PARAMETER NAME="pll_cp_lf_3rd_pole_freq" TYPE="String" VALUE="lf_3rd_pole_setting0|lf_3rd_pole_setting1|lf_3rd_pole_setting2|lf_3rd_pole_setting3" DEFAULT_VALUE="lf_3rd_pole_setting0"/>
+		<PARAMETER NAME="pll_cp_lf_4th_pole_freq" TYPE="String" VALUE="lf_4th_pole_setting0|lf_4th_pole_setting1|lf_4th_pole_setting2|lf_4th_pole_setting3" DEFAULT_VALUE="lf_4th_pole_setting0"/>
+		<PARAMETER NAME="pll_cp_lf_order" TYPE="String" VALUE="lf_2nd_order|lf_3rd_order|lf_4th_order" DEFAULT_VALUE="lf_2nd_order"/>
+		<PARAMETER NAME="pll_lf_resistance" TYPE="String" VALUE="lf_res_setting0|lf_res_setting1|lf_res_setting2|lf_res_setting3" DEFAULT_VALUE="lf_res_setting0"/>
+		<PARAMETER NAME="pll_lf_ripplecap" TYPE="String" VALUE="lf_no_ripple|lf_ripple_enabled" DEFAULT_VALUE="lf_ripple_enabled"/>
+		<PARAMETER NAME="pll_cmp_buf_dly" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="pll_fbclk_mux_1" TYPE="String" VALUE="pll_fbclk_mux_1_glb|pll_fbclk_mux_1_zbd|pll_fbclk_mux_1_lvds|pll_fbclk_mux_1_fbclk_pll" DEFAULT_VALUE="pll_fbclk_mux_1_glb"/>
+		<PARAMETER NAME="pll_fbclk_mux_2" TYPE="String" VALUE="pll_fbclk_mux_2_fb_1|pll_fbclk_mux_2_m_cnt" DEFAULT_VALUE="pll_fbclk_mux_2_fb_1"/>
+		<PARAMETER NAME="pll_iqclk_mux_sel" TYPE="String" VALUE="iqtxrxclk0|iqtxrxclk1|iqtxrxclk2|iqtxrxclk3|iqtxrxclk4|iqtxrxclk5|power_down" DEFAULT_VALUE="power_down"/>
+		<PARAMETER NAME="pll_dsm_mode" TYPE="String" VALUE="dsm_mode_integer|dsm_mode_phase" DEFAULT_VALUE="dsm_mode_integer"/>
+		<PARAMETER NAME="pll_dsm_out_sel" TYPE="String" VALUE="pll_dsm_disable|pll_dsm_1st_order|pll_dsm_2nd_order|pll_dsm_3rd_order" DEFAULT_VALUE="pll_dsm_disable"/>
+		<PARAMETER NAME="pll_dsm_ecn_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_dsm_ecn_test_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_dsm_fractional_division" TYPE="Integer" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pll_dsm_fractional_value_ready" TYPE="String" VALUE="pll_k_not_ready|pll_k_ready" DEFAULT_VALUE="pll_k_ready"/>
+		<PARAMETER NAME="pll_l_counter_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_l_counter" TYPE="Integer" VALUE="1|2|4|8" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pll_l_counter_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="pll_lock_fltr_cfg" TYPE="Integer" VALUE="0..4095" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pll_lock_fltr_test" TYPE="String" VALUE="pll_lock_fltr_nrm|pll_lock_fltr_test" DEFAULT_VALUE="pll_lock_fltr_nrm"/>
+		<PARAMETER NAME="pll_unlock_fltr_cfg" TYPE="Integer" VALUE="0..7" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="pll_m_counter" TYPE="Integer" VALUE="0..511" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pll_m_counter_in_src" TYPE="String" VALUE="m_cnt_in_src_ph_mux_clk|m_cnt_in_src_cscd_clk|m_cnt_in_src_test_clk" DEFAULT_VALUE="m_cnt_in_src_test_clk"/>
+		<PARAMETER NAME="pll_m_counter_ph_mux_prst" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="pll_m_counter_prst" TYPE="Integer" VALUE="0..255" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pll_m_counter_ph_mux_tclk" TYPE="String" VALUE="phmux_vco_phase|phmux_tclk" DEFAULT_VALUE="phmux_vco_phase"/>
+		<PARAMETER NAME="pll_m_counter_coarse_dly" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="pll_m_counter_fine_dly" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="pll_n_counter" TYPE="Integer" VALUE="0..31" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pll_n_counter_coarse_dly" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="pll_n_counter_fine_dly" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="pll_overrange_level" TYPE="String" VALUE="level0|level1|level2|level3" DEFAULT_VALUE="level0"/>
+		<PARAMETER NAME="pll_ref_buf_dly" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="pll_tclk_mux_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_tclk_sel" TYPE="String" VALUE="pll_tclk_n_src|pll_tclk_m_src" DEFAULT_VALUE="pll_tclk_m_src"/>
+		<PARAMETER NAME="pll_underrange_level" TYPE="String" VALUE="level0|level1|level2|level3" DEFAULT_VALUE="level0"/>
+		<PARAMETER NAME="pll_vco_freq_band" TYPE="String" VALUE="pll_freq_band0|pll_freq_band1|pll_freq_band2|pll_freq_band3|pll_freq_band4|pll_freq_band5|pll_freq_band6|pll_freq_band7" DEFAULT_VALUE="pll_freq_band0"/>
+		<PARAMETER NAME="pll_vco_ph0_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_vco_ph0_value" TYPE="String" VALUE="pll_vco_ph0_vss|pll_vco_ph0_vcc" DEFAULT_VALUE="pll_vco_ph0_vss"/>
+		<PARAMETER NAME="pll_vco_ph1_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_vco_ph1_value" TYPE="String" VALUE="pll_vco_ph1_vss|pll_vco_ph1_vcc" DEFAULT_VALUE="pll_vco_ph1_vss"/>
+		<PARAMETER NAME="pll_vco_ph2_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_vco_ph2_value" TYPE="String" VALUE="pll_vco_ph2_vss|pll_vco_ph2_vcc" DEFAULT_VALUE="pll_vco_ph2_vss"/>
+		<PARAMETER NAME="pll_vco_ph3_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_vco_ph3_value" TYPE="String" VALUE="pll_vco_ph3_vss|pll_vco_ph3_vcc" DEFAULT_VALUE="pll_vco_ph3_vss"/>
+		<PARAMETER NAME="pll_vreg0_output" TYPE="String" VALUE="vccdreg_nominal|vccdreg_pos_setting0|vccdreg_pos_setting1|vccdreg_pos_setting2|vccdreg_pos_setting3|vccdreg_pos_setting4|vccdreg_pos_setting5|vccdreg_pos_setting6|vccdreg_pos_setting7|vccdreg_pos_setting8|vccdreg_pos_setting9|vccdreg_pos_setting10|vccdreg_pos_setting11|vccdreg_pos_setting12|vccdreg_pos_setting13|vccdreg_pos_setting14|vccdreg_pos_setting15|reserved1|reserved2|vccdreg_neg_setting0|vccdreg_neg_setting1|vccdreg_neg_setting2|vccdreg_neg_setting3|reserved3|reserved4|reserved5|reserved6|reserved7|reserved8|reserved9|reserved10|reserved11" DEFAULT_VALUE="vccdreg_nominal"/>
+		<PARAMETER NAME="pll_vreg1_output" TYPE="String" VALUE="vccdreg_nominal|vccdreg_pos_setting0|vccdreg_pos_setting1|vccdreg_pos_setting2|vccdreg_pos_setting3|vccdreg_pos_setting4|vccdreg_pos_setting5|vccdreg_pos_setting6|vccdreg_pos_setting7|vccdreg_pos_setting8|vccdreg_pos_setting9|vccdreg_pos_setting10|vccdreg_pos_setting11|vccdreg_pos_setting12|vccdreg_pos_setting13|vccdreg_pos_setting14|vccdreg_pos_setting15|reserved1|reserved2|vccdreg_neg_setting0|vccdreg_neg_setting1|vccdreg_neg_setting2|vccdreg_neg_setting3|reserved3|reserved4|reserved5|reserved6|reserved7|reserved8|reserved9|reserved10|reserved11" DEFAULT_VALUE="vccdreg_nominal"/>
+		<PARAMETER NAME="pll_nreset_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_ctrl_override_setting" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="pll_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_self_reset" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_test_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_ctrl_plniotri_override" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="pll_vccr_pd_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="silicon_rev" TYPE="String" VALUE="reve|es" DEFAULT_VALUE="reve"/>
+		<PARAMETER NAME="use_default_base_address" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true"/>
+		<PARAMETER NAME="user_base_address" TYPE="Integer" VALUE="0..2047" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="reference_clock_frequency" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="vco_frequency" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="prot_mode" TYPE="String" VALUE="basic|pcie_gen1|pcie_gen2|pcie_gen3|gige|cei|sonet_oc48|sonet_oc12|cpri" DEFAULT_VALUE="basic"/>
+		<PARAMETER NAME="speed_grade" TYPE="String" VALUE="2|3|4" DEFAULT_VALUE="2"/>
+		<PARAMETER NAME="bw_sel" TYPE="String" VALUE="auto|low|medium|high" DEFAULT_VALUE="auto"/>
+		<PARAMETER NAME="cgb_div" TYPE="Integer" VALUE="1|2|4|8" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="is_cascaded_pll" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="compensation_mode" TYPE="String" VALUE="direct|normal|fpll_bonding|iqtxrxclk|zdb" DEFAULT_VALUE="direct"/>
+		<PARAMETER NAME="hssi_output_clock_frequency" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="output_clock_frequency_0" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="phase_shift_0" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="duty_cycle_0" TYPE="Integer" VALUE="1..99" DEFAULT_VALUE="50"/>
+		<PARAMETER NAME="output_clock_frequency_1" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="phase_shift_1" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="duty_cycle_1" TYPE="Integer" VALUE="1..99" DEFAULT_VALUE="50"/>
+		<PARAMETER NAME="output_clock_frequency_2" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="phase_shift_2" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="duty_cycle_2" TYPE="Integer" VALUE="1..99" DEFAULT_VALUE="50"/>
+		<PARAMETER NAME="output_clock_frequency_3" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="phase_shift_3" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="duty_cycle_3" TYPE="Integer" VALUE="1..99" DEFAULT_VALUE="50"/>
+		<PARAMETER NAME="pma_width" TYPE="Integer" VALUE="8|10|16|20|32|40|64" DEFAULT_VALUE="8"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_cmu_fpll" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="avmmclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="avmmread" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="avmmrstn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="avmmwrite" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="csr_bufin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="csr_clk" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="csr_en" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="csr_in" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="csr_test_mode" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="dps_rst_n" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="extswitch_buf" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fbclk_in" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mdio_dis" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="nfrzdrv" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="nrpi_freeze" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="pfden" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="phase_en" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="pma_atpg_los_en_n" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="pma_csr_test_dis" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="refclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rst_n" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="scan_mode_n" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="scan_shift_n" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="up_dn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="avmmaddress" TYPE="INPUT" WIDTH="9" DEFAULT_VALUE="0"/>
+		<PORT NAME="avmmwritedata" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="cnt_sel" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpll_ppm_clk" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="iqtxrxclk" TYPE="INPUT" WIDTH="6" DEFAULT_VALUE="0"/>
+		<PORT NAME="num_phase_shifts" TYPE="INPUT" WIDTH="3" DEFAULT_VALUE="0"/>
+		<PORT NAME="block_select" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clk0" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clk180" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clklow" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="csr_bufout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="csr_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fbclk_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fref" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="hclk_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iqtxrxclk_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="lock" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="overrange" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="phase_done" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="pll_cascade_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="underrange" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="avmmreaddata" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="outclk" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="ppm_clk" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

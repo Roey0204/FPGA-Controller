@@ -1,0 +1,433 @@
+<?xml version="1.0"?>
+<ROOT >
+  <HIDDEN_PARAMETERS>
+    <PARAMETER NAME="m_tx_pcs_pma_data_rate" >
+      <FORCE_VALUE REGEXP_SOURCE="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, STINGRAY_HSSI_TX_PCS_PMA_EFFECTIVE_DATARATE, m_device_part, protocol, m_deser_factor, tx_use_double_data_mode, m_hip_enable)" REGEXP_PATTERN="([0-9.]+) Mbps" REGEXP_SUBSTITUTION="$1" />
+    </PARAMETER>
+    <PARAMETER NAME="m_rx_pcs_pma_data_rate" >
+      <FORCE_VALUE REGEXP_SOURCE="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, STINGRAY_HSSI_RX_PCS_PMA_EFFECTIVE_DATARATE, m_device_part, protocol, m_deser_factor, rx_use_double_data_mode, m_hip_enable)" REGEXP_PATTERN="([0-9.]+) Mbps" REGEXP_SUBSTITUTION="$1" />
+    </PARAMETER>
+  </HIDDEN_PARAMETERS>
+  <MACROS>
+    <MACRO NAME="m_device_part" >
+      <DEFINITION>
+        db_rbc_tcl$get_typical_device_part(INTENDED_DEVICE_FAMILY, INTENDED_DEVICE_SPEED_GRADE, INTENDED_DEVICE_VARIANT, "PRODUCTION")
+      </DEFINITION>
+    </MACRO>
+<!-- Added For PLL computation (Basic Mode) -->  
+    <MACRO NAME="m_rx_only" DEFINITION="(operation_mode == RX)" />
+    <MACRO NAME="m_tx_only" DEFINITION="(operation_mode == TX)" />
+    <MACRO NAME="m_duplex" DEFINITION="(operation_mode == DUPLEX)" />
+    <MACRO NAME="m_chn_width" DEFINITION="m_tx_only ? tx_channel_width : rx_channel_width" />
+    <MACRO NAME="m_8b_10b_mode" DEFINITION="m_tx_only ? tx_8b_10b_mode : rx_8b_10b_mode" />
+    <MACRO NAME="m_no_8b10b" DEFINITION="m_rx_only ? (rx_8b_10b_mode == none) : (tx_8b_10b_mode == none)" /> 
+    <MACRO NAME="chn_width_10_multiple" DEFINITION="m_tx_only ? ((tx_channel_width % 10) == 0) : ((rx_channel_width % 10) == 0)" />
+    <MACRO NAME="m_int_ser_factor" DEFINITION="((m_chn_width == 8 || m_chn_width == 16 || m_chn_width == 32) and (m_8b_10b_mode == none)) ? 8 : 10" />
+    <MACRO NAME="m_deser_factor" DEFINITION="m_int_ser_factor" />
+    <MACRO NAME="m_wiz_data_rate">
+      <DEFINITION>
+        qcl_pllc_pll_mwiz$get_data_rate_for_inclk_freq(INTENDED_DEVICE_FAMILY, MPLL, input_clock_frequency, operation_mode, intended_device_speed_grade, protocol)
+      </DEFINITION>
+    </MACRO> 
+    <MACRO NAME="m_wiz_inclk_freq">
+      <DEFINITION>
+              (Wiz_Protocol == XAUI)? 156.25 : qcl_pllc_pll_mwiz$get_inclk_freq_list_for_data_rate(INTENDED_DEVICE_FAMILY, MPLL, effective_data_rate, operation_mode, m_deser_factor, intended_device_speed_grade, protocol)
+      </DEFINITION>
+    </MACRO>
+
+    <MACRO NAME="m_low_latency_mode" DEFINITION="m_basic and (m_tx_only ? (tx_datapath_low_latency_mode == true) : (rx_datapath_low_latency_mode == true))" />        
+    <MACRO NAME="m_bist"  ARGUMENTS="Wiz_Protocol, Wiz_Subprotocol" DEFINITION="m_basic(Wiz_Protocol) and (Wiz_Subprotocol == BIST)" />
+    <MACRO NAME="m_prbs"  ARGUMENTS="Wiz_Protocol, Wiz_Subprotocol" DEFINITION="m_basic(Wiz_Protocol) and (Wiz_Subprotocol == PRBS)" />      
+    <MACRO NAME="m_basic_x4"  ARGUMENTS="Wiz_Protocol, Wiz_Subprotocol" DEFINITION="m_basic(Wiz_Protocol) and (Wiz_Subprotocol == X4)" />
+    <MACRO NAME="m_basic_x2"  ARGUMENTS="Wiz_Protocol, Wiz_Subprotocol" DEFINITION="m_basic(Wiz_Protocol) and (Wiz_Subprotocol == X2)" />
+    <MACRO NAME="m_basic_none"  ARGUMENTS="Wiz_Protocol, Wiz_Subprotocol" DEFINITION="m_basic(Wiz_Protocol) and (Wiz_Subprotocol == None)" />    
+    <MACRO NAME="m_pcie" ARGUMENTS="Wiz_Protocol" DEFINITION="Wiz_Protocol == 'PCI Express (PIPE)'" />
+    <MACRO NAME="m_pcie_sp_x4" ARGUMENTS="Wiz_Subprotocol" DEFINITION="(Wiz_Subprotocol == 'Gen 1-x4') || (Wiz_Subprotocol == 'Gen 2-x4')" />
+    <MACRO NAME="m_pcie_sp_x2" ARGUMENTS="Wiz_Subprotocol" DEFINITION="(Wiz_Subprotocol == 'Gen 1-x2')" />
+    <MACRO NAME="m_pciex4" ARGUMENTS="Wiz_Protocol, Wiz_Subprotocol" DEFINITION="m_pcie(Wiz_Protocol) and m_pcie_sp_x4(Wiz_Subprotocol)" />
+    <MACRO NAME="m_pciex2" ARGUMENTS="Wiz_Protocol, Wiz_Subprotocol" DEFINITION="m_pcie(Wiz_Protocol) and m_pcie_sp_x2(Wiz_Subprotocol)" />
+    <MACRO NAME="m_basic"  ARGUMENTS="Wiz_Protocol" DEFINITION="Wiz_Protocol == Basic" />
+    <MACRO NAME="m_srio"  ARGUMENTS="Wiz_Protocol" DEFINITION="Wiz_Protocol == 'Serial RapidIO'" />
+    <MACRO NAME="m_xaui"  ARGUMENTS="Wiz_Protocol" DEFINITION="Wiz_Protocol == XAUI" />
+    <MACRO NAME="m_gige"  ARGUMENTS="Wiz_Protocol" DEFINITION="Wiz_Protocol == GIGE" />
+    <MACRO NAME="m_basic_like" DEFINITION="m_basic || m_srio || m_sdi" />
+    <MACRO NAME="m_cpri"  ARGUMENTS="Wiz_Protocol" DEFINITION="Wiz_Protocol == 'Deterministic Latency'" />
+    <MACRO NAME="m_cpri_x4"  ARGUMENTS="Wiz_Protocol, Wiz_Subprotocol" DEFINITION="(Wiz_Protocol == 'Deterministic Latency') and (Wiz_Subprotocol == X4)" />
+    <MACRO NAME="m_sdi"  ARGUMENTS="Wiz_Protocol" DEFINITION="Wiz_Protocol == SDI" />
+    <MACRO NAME="m_sdi_3g"  ARGUMENTS="Wiz_Protocol, Wiz_Subprotocol" DEFINITION="(Wiz_Subprotocol == 3G) and m_sdi(Wiz_Protocol)" />
+    <MACRO NAME="m_sdi_hd"  ARGUMENTS="Wiz_Protocol, Wiz_Subprotocol" DEFINITION="(Wiz_Subprotocol == HD) and m_sdi(Wiz_Protocol)" />    
+	<!-- DPRIO section -->
+    <MACRO NAME="DPRIO_PMA_MASK" DEFINITION="1" />
+    <MACRO NAME="DPRIO_CHN_INTERNALS_MASK" DEFINITION="2" />
+    <MACRO NAME="DPRIO_CHN_INTERFACE_MASK" DEFINITION="4" />
+    <MACRO NAME="DPRIO_CMU_PLL_RECONFIG_MASK" DEFINITION="16" />
+    <!-- DPRIO port rules -->
+      <MACRO NAME="m_is_dprio_used" DEFINITION="m_is_dprio_pma || m_is_dprio_chn_internals || m_is_dprio_chn_interface || m_is_dprio_rx_buf_cal" />
+      <MACRO NAME="m_is_dprio_pma" ARGUMENTS="reconfig_dprio_mode" DEFINITION="(reconfig_dprio_mode and DPRIO_PMA_MASK) == DPRIO_PMA_MASK and !(rx_dprio_mode == pma_electricals || tx_dprio_mode == pma_electricals)" />
+      <MACRO NAME="m_is_dprio_chn_internals" ARGUMENTS="reconfig_dprio_mode" DEFINITION="(reconfig_dprio_mode and DPRIO_CHN_INTERNALS_MASK) == DPRIO_CHN_INTERNALS_MASK and !(rx_dprio_mode == pma_electricals || tx_dprio_mode == pma_electricals)" />
+      <MACRO NAME="m_is_dprio_chn_interface" ARGUMENTS="reconfig_dprio_mode" DEFINITION="(reconfig_dprio_mode and DPRIO_CHN_INTERFACE_MASK) == DPRIO_CHN_INTERFACE_MASK and !(rx_dprio_mode == pma_electricals || tx_dprio_mode == pma_electricals)" />
+      <MACRO NAME="m_is_dprio_rx_buf_cal" DEFINITION="mfam_family_tgx and !m_tx_only" />
+      <MACRO NAME="m_is_dprio_cmu_pll_reconfig" ARGUMENTS="reconfig_dprio_mode" DEFINITION="((reconfig_dprio_mode and DPRIO_CMU_PLL_RECONFIG_MASK) == DPRIO_CMU_PLL_RECONFIG_MASK) and m_is_dprio_chn_internals and !(rx_dprio_mode == pma_electricals || tx_dprio_mode == pma_electricals)" />
+      <MACRO NAME="m_is_dprio_cmu_pll_reconfig_allowed" DEFINITION="m_is_dprio_chn_internals and !m_channel_bonded" />
+    <MACRO NAME="m_hip_enable" DEFINITION="used(hip_enable) ? hip_enable : false" />
+    <MACRO NAME="m_wys_tx_termination" DEFINITION="transmitter_termination" >
+      <FORCE_VALUE REGEXP_SOURCE="transmitter_termination" REGEXP_PATTERN="oct_([0-9]+)_ohms" REGEXP_SUBSTITUTION="OCT $1 Ohms" />
+    </MACRO>
+    <MACRO NAME="m_bist_prbs_run_length" >
+      <DEFINITION>
+        m_deser_factor == 8 ? 4 :
+        (m_deser_factor == 10 ? 5 : 5)
+      </DEFINITION>
+    </MACRO>
+    <MACRO NAME="m_prbs_auto_align" >
+      <DEFINITION>
+        ((rx_channel_width == 8) and ((rx_self_test_mode == prbs7) || (rx_self_test_mode == prbs8) || (rx_self_test_mode == prbs23))) ||
+        ((rx_channel_width == 10) and (rx_self_test_mode == prbs10))
+      </DEFINITION>
+    </MACRO>
+    <MACRO NAME="m_prbs_bitslip" >
+      <DEFINITION>
+        ((rx_channel_width == 8) and (rx_self_test_mode == 'high frequency')) ||
+        ((rx_channel_width == 10) and ((rx_self_test_mode == 'high frequency') || (rx_self_test_mode == 'low frequency')))
+     </DEFINITION>
+    </MACRO>    
+    <MACRO NAME="m_cpri_run_length" >
+      <DEFINITION>
+        (m_deser_factor == 10) ? 160 : 640
+      </DEFINITION>
+    </MACRO>    
+    <MACRO NAME="m_preemp_tap_rule1" >
+      <DEFINITION>
+        db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, CHECK_TX_PMA_PREEMP_POSTTAP1_SETTINGS_RULE_1, INTENDED_DEVICE_FAMILY, m_wys_tx_termination, vod_ctrl_setting)
+      </DEFINITION>
+    </MACRO>
+    <MACRO NAME="m_preemp_tap_rule2" >
+      <DEFINITION>
+        db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, CHECK_TX_PMA_PREEMP_POSTTAP1_SETTINGS_RULE_2, INTENDED_DEVICE_FAMILY, m_wys_tx_termination, vod_ctrl_setting)
+      </DEFINITION>
+    </MACRO>
+    <MACRO NAME="m_preemp_tap_rule3" >
+      <DEFINITION>
+        db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, CHECK_TX_PMA_PREEMP_POSTTAP1_SETTINGS_RULE_3, INTENDED_DEVICE_FAMILY, m_wys_tx_termination, vod_ctrl_setting)
+      </DEFINITION>
+    </MACRO>
+  </MACROS>
+  
+  <PARAMETER_RULES>
+    <PARAMETER NAME="WIZ_PROTOCOL"  TYPE="STRING" CNX_TYPE="PRIVATE" >
+      <FORCE_RANGE TO="Basic|'PCI Express (PIPE)'|GIGE|'Serial RapidIO'|XAUI|'Deterministic Latency'|SDI" />
+    </PARAMETER>
+    <PARAMETER NAME="Wiz_Subprotocol" TYPE="STRING" CNX_TYPE="PRIVATE" >
+      <FORCE_RANGE TO="None|X2|X4|BIST|PRBS" WHEN="m_basic" />
+      <FORCE_RANGE TO="X4" WHEN="m_xaui" />
+      <FORCE_RANGE TO="'Gen 1-x1'|'Gen 1-x2'|'Gen 1-x4'" WHEN="m_pcie" />
+      <FORCE_RANGE TO="None" WHEN="m_gige || m_srio" />
+      <FORCE_RANGE TO="X1|X4" WHEN="m_cpri" />
+      <FORCE_RANGE TO="3G|HD" WHEN="m_sdi" />
+    </PARAMETER>
+    <PARAMETER NAME="WIZ_BASE_DATA_RATE_ENABLE" TYPE="STRING" CNX_TYPE="PRIVATE" >
+      <FORCE_VALUE TO="false" />
+    </PARAMETER>
+    <PARAMETER NAME="WIZ_DATA_RATE" TYPE="STRING" CNX_TYPE="PRIVATE" >
+      <FORCE_VALUE REGEXP_SOURCE="m_wiz_data_rate" REGEXP_PATTERN="([0-9.]+) Mbps" REGEXP_SUBSTITUTION="$1" />
+      <FORCE_VALUE TO="'1250.0'|'2500.0'|'3125.0'" IF="m_srio" />
+      <FORCE_VALUE TO="'2967.0'|'2970.0'" IF="m_sdi_3g" />
+      <FORCE_VALUE TO="'1483.5'|'1485.0'" IF="m_sdi_hd" />      
+    </PARAMETER>           
+    <PARAMETER NAME="number_of_channels" TYPE="INTEGER" >
+      <FORCE_RANGE MIN="1" MAX="8"  />
+      <FORCE_VALUE TO="4|8" WHEN="m_pciex4 || m_xaui" />
+      <FORCE_VALUE TO="2|4" WHEN="m_pciex2" />
+      <FORCE_VALUE TO="1|2" WHEN="m_cpri" />
+      <FORCE_VALUE TO="1|2|3|4" WHEN="m_cpri_x4" />
+    </PARAMETER>
+    <PARAMETER NAME="rx_channel_width" TYPE="INTEGER" >
+		<FORCE_VALUE TO="8" WHEN="m_pcie and (m_hip_enable == true)" />		
+		<FORCE_VALUE TO="16" WHEN="m_pcie and (m_hip_enable == false)" />	    
+		<FORCE_VALUE TO="8" WHEN="m_gige" />
+		<FORCE_RANGE TO="8|10|16|20" WHEN="m_basic || m_cpri" />
+		<FORCE_VALUE TO="16" WHEN="m_srio" />
+		<FORCE_VALUE TO="16" WHEN="m_bist || m_xaui" />
+		<FORCE_RANGE TO="8|10" WHEN="m_prbs" />
+		<FORCE_VALUE TO="20" WHEN="m_sdi_3g" />
+		<FORCE_RANGE TO="10|20" WHEN="m_sdi_hd" />
+    </PARAMETER>
+    <PARAMETER NAME="tx_channel_width" TYPE="INTEGER" >
+      <FORCE_VALUE TO="8" WHEN="m_pcie and (m_hip_enable == true)" />		
+		<FORCE_VALUE TO="16" WHEN="m_pcie and (m_hip_enable == false)" />	    
+		<FORCE_VALUE TO="8" WHEN="m_gige" />
+		<FORCE_RANGE TO="8|10|16|20" WHEN="m_basic || m_cpri" />
+		<FORCE_VALUE TO="16" WHEN="m_srio" />
+		<FORCE_VALUE TO="16" WHEN="m_bist || m_xaui" />
+		<FORCE_RANGE TO="8|10" WHEN="m_prbs" />
+		<FORCE_VALUE TO="20" WHEN="m_sdi_3g" />
+		<FORCE_RANGE TO="10|20" WHEN="m_sdi_hd" />
+    </PARAMETER>
+    <PARAMETER NAME="pll_multiply_by" TYPE="STRING" >
+      <FORCE_VALUE TO="qcl_pllc_pll_mwiz$get_mpll_param(multiply_by, effective_data_rate, input_clock_frequency, base_data_rate)" />
+    </PARAMETER>
+    <PARAMETER NAME="pll_divide_by" TYPE="STRING" >
+      <FORCE_VALUE TO="qcl_pllc_pll_mwiz$get_mpll_param(divide_by, effective_data_rate, input_clock_frequency, base_data_rate)" />
+    </PARAMETER>
+    <PARAMETER NAME="iqtxrxclk_allowed" TYPE="STRING" >
+     <FORCE_VALUE TO="qcl_pllc_pll_mwiz$is_iqtxrxclk_compensation_supported(INTENDED_DEVICE_FAMILY, MPLL, effective_data_rate, input_clock_frequency, tx_use_double_data_mode, m_deser_factor, intended_device_speed_grade, protocol)" />
+    </PARAMETER>
+    <PARAMETER NAME="rx_datapath_low_latency_mode" >
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, RX_PCS_DATAPATH_LOW_LATENCY_MODE, protocol)" />
+    </PARAMETER>
+    <PARAMETER NAME="tx_datapath_low_latency_mode" >
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, TX_PCS_DATAPATH_LOW_LATENCY_MODE, protocol)" />
+    </PARAMETER>    
+    <PARAMETER NAME="rx_enable_self_test_mode" >
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, RX_PCS_ENABLE_SELF_TEST_MODE, protocol)" /> 
+    </PARAMETER>    
+    <PARAMETER NAME="rx_8b_10b_mode" >
+      <FORCE_RANGE TO="none" />
+      <FORCE_RANGE TO="none|normal" WHEN="(m_basic) and !chn_width_10_multiple" />
+      <FORCE_RANGE TO="normal" WHEN="m_pcie || m_gige || m_bist || m_srio || m_xaui || (m_cpri and (m_chn_width == 8 || m_chn_width == 16))" />
+      <FORCE_VALUE TO="none" WHEN="m_low_latency_mode || m_prbs || m_sdi" /> 
+    </PARAMETER>
+    <PARAMETER NAME="rx_byte_order_pld_ctrl_enable" TYPE="STRING" VALUE="true|false" />
+    <PARAMETER NAME="tx_8b_10b_mode" >
+      <FORCE_RANGE TO="none" />
+      <FORCE_RANGE TO="none|normal" WHEN="(m_basic) and !chn_width_10_multiple" />
+      <FORCE_RANGE TO="normal" WHEN="m_pcie || m_gige || m_bist || m_srio || m_xaui || (m_cpri and (m_chn_width == 8 || m_chn_width == 16))" />
+      <FORCE_VALUE TO="none" WHEN="m_low_latency_mode || m_prbs || m_sdi" />
+    </PARAMETER>  
+    <PARAMETER NAME="operation_mode" TYPE="STRING" >
+      <FORCE_RANGE TO="RX|TX|DUPLEX" />
+      <FORCE_RANGE TO="TX|DUPLEX" WHEN="m_gige || m_basic_x4 || m_cpri_x4" />
+      <FORCE_VALUE TO="DUPLEX" WHEN="m_pcie || m_bist || m_prbs || m_xaui" />
+    </PARAMETER>
+    <PARAMETER NAME="rx_self_test_mode" >
+      <FORCE_VALUE TO="incremental" WHEN="m_bist" />
+      <FORCE_RANGE TO="prbs7|prbs8|prbs23|'high frequency'" WHEN="m_prbs and (rx_channel_width == 8)" />
+      <FORCE_RANGE TO="prbs10|'high frequency'|'low frequency'" WHEN="m_prbs and (rx_channel_width == 10)" />
+    </PARAMETER>    
+    <PARAMETER NAME="RECONFIG_BASE_DATA_RATE" TYPE="STRING" VALUE="UNUSED" DEFAULT_VALUE_INDEX="0" />
+	<PARAMETER NAME="RECONFIG_CALIBRATION" TYPE="STRING" VALUE="true|false" DEFAULT_VALUE_INDEX="1" />
+	<PARAMETER NAME="RECONFIG_DPRIO_MODE" TYPE="INTEGER" DEFAULT_VALUE="0" />
+	<PARAMETER NAME="RECONFIG_FROMGXB_PORT_WIDTH" TYPE="INTEGER" DEFAULT_VALUE="1" />
+	<PARAMETER NAME="RECONFIG_PROTOCOL" TYPE="STRING" VALUE="basic|cei|cpri|srio|sdi_hd|sdi_3g|ht_3_0|ht_1_0|sonet_oc96|sonet_oc48|sonet_oc12|pcie2|pcie|xaui|gige" DEFAULT_VALUE_INDEX="0" />
+	<PARAMETER NAME="RECONFIG_TOGXB_PORT_WIDTH" TYPE="INTEGER" DEFAULT_VALUE="3" /> 
+	<PARAMETER NAME="reconfig_protocol" >
+        <FORCE_VALUE TO="basic" IF="m_basic_none(wiz_dprio_protocol,wiz_dprio_subprotocol) || m_basic_x4(wiz_dprio_protocol,wiz_dprio_subprotocol) || m_basic_x8(wiz_dprio_protocol,wiz_dprio_subprotocol)" />
+        <FORCE_VALUE TO="cei" IF="m_cei(wiz_dprio_protocol)" />
+        <FORCE_VALUE TO="cpri" IF="m_cpri(wiz_dprio_protocol)" />
+        <FORCE_VALUE TO="srio" IF="m_srio(wiz_dprio_protocol)" />
+        <FORCE_VALUE TO="sdi_hd" IF="m_sdi_hd(wiz_dprio_protocol,wiz_dprio_subprotocol)" />
+        <FORCE_VALUE TO="sdi_3g" IF="m_sdi_3g(wiz_dprio_protocol,wiz_dprio_subprotocol)" />
+        <FORCE_VALUE TO="sonet_oc96" IF="m_sonet96(wiz_dprio_protocol,wiz_dprio_subprotocol)" />
+        <FORCE_VALUE TO="sonet_oc48" IF="m_sonet48(wiz_dprio_protocol,wiz_dprio_subprotocol)" />
+        <FORCE_VALUE TO="sonet_oc12" IF="m_sonet12(wiz_dprio_protocol,wiz_dprio_subprotocol)" />
+        <FORCE_VALUE TO="pcie2" IF="m_pcie_gen2(wiz_dprio_protocol,wiz_dprio_subprotocol)" />
+        <FORCE_VALUE TO="pcie" IF="m_pcie_gen1(wiz_dprio_protocol,wiz_dprio_subprotocol)" />
+        <FORCE_VALUE TO="xaui" IF="m_xaui(wiz_dprio_protocol)" />
+        <FORCE_VALUE TO="gige" IF="m_gige(wiz_dprio_protocol)" />
+    </PARAMETER>
+    <PARAMETER NAME="tx_common_mode" TYPE="STRING" >
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, CHECK_TX_PMA_COMMON_MODE, protocol)" /> 
+    </PARAMETER>
+    <PARAMETER NAME="loopback_mode" TYPE="STRING" >
+      <FORCE_VALUE TO="none|slb|postcdr_rslb|precdr_rslb" WHEN="m_gige" />
+      <FORCE_VALUE TO="none|postcdr_rslb|precdr_rslb" WHEN="m_pcie" />
+      <FORCE_VALUE TO="none|slb" WHEN="m_prbs || m_xaui" />
+      <FORCE_VALUE TO="none" WHEN="m_bist" />      
+    </PARAMETER>
+    <PARAMETER NAME="rx_channel_bonding" TYPE="STRING" >
+      <FORCE_VALUE TO="indv" WHEN="m_basic_x4 || m_basic_x2" />
+      <FORCE_VALUE TO="x4" WHEN="m_pciex4 || m_xaui" />
+      <FORCE_VALUE TO="x2" WHEN="m_pciex2" />
+    </PARAMETER>
+    <PARAMETER NAME="tx_channel_bonding" TYPE="STRING" >
+      <FORCE_VALUE TO="x4" WHEN="m_pciex4 || m_basic_x4 || m_xaui || m_cpri_x4" />
+      <FORCE_VALUE TO="x2" WHEN="m_pciex2 || m_basic_x2" />
+    </PARAMETER>
+    <PARAMETER NAME="rx_align_pattern_length" TYPE="INTEGER">
+      <FORCE_VALUE TO="16" WHEN="m_basic and (m_deser_factor == 8)" />
+      <FORCE_RANGE TO="7|10" WHEN="m_basic and (m_deser_factor == 10)" />
+      <FORCE_RANGE TO="7|10" WHEN="m_sdi || m_gige || m_xaui" />
+      <FORCE_RANGE TO="10" WHEN="m_bist || m_srio || (m_cpri and (m_deser_factor == 10))" />
+      <FORCE_VALUE TO="16" WHEN="m_prbs and (rx_channel_width == 8)" />
+      <FORCE_VALUE TO="10" WHEN="m_prbs and (rx_channel_width == 10)" />
+      <FORCE_VALUE TO="7" WHEN="m_prbs and ((rx_self_test_mode == 'high frequency') || (rx_self_test_mode == 'low frequency'))" />      
+    </PARAMETER>
+    <PARAMETER NAME="rx_align_loss_sync_error_num">
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, RX_PCS_NUM_ALIGN_LOSS_SYNC_ERROR, protocol)" /> 
+    </PARAMETER>
+    <PARAMETER NAME="rx_num_align_cons_good_data">
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, RX_PCS_NUM_ALIGN_CONS_GOOD_DATA, protocol)" /> 
+    </PARAMETER>
+    <PARAMETER NAME="rx_num_align_cons_pat">
+      <FORCE_RANGE TO="1..256" />
+      <FORCE_VALUE TO="127" WHEN="m_srio" />
+      <FORCE_VALUE TO="1" WHEN="m_bist || m_prbs" />
+    </PARAMETER>    
+    <PARAMETER NAME="rx_run_length_enable" TYPE="STRING" >
+      <FORCE_RANGE TO="false|true" />
+    </PARAMETER>
+    <PARAMETER NAME="rx_run_length">
+      <FORCE_RANGE TO="4|5|8|10|12|15|16|20|24|25|28|30|32|35|36|40|44|45|48|50|52|55|56|60|64|65|68|70|72|75|76|80|84|85|88|90|92|95|96|100|104|105|108|110|112|115|116|120|124|125|128|136|144|152|160|168|170|176|180|184|190|192|200|208|210|216|220|224|230|232|240|248|250|256|260|264|270|272|280|288|290|296|300|304|310|312|320|328|330|336|340|344|350|352|360|368|370|376|380|384|390|392|400|408|410|416|420|424|430|432|440|448|450|456|460|464|470|472|480|488|490|496|500|504|510|512|520|530|540|550|560|570|580|590|600|610|620|630|640" WHEN="(rx_run_length_enable == true)" />
+      <FORCE_RANGE TO="4|8|12|16|20|24|28|32|36|40|44|48|52|56|60|64|68|72|76|80|84|88|92|96|100|104|108|112|116|120|124|128" WHEN="(m_deser_factor == 8) and (rx_run_length_enable == true)" />
+      <FORCE_RANGE TO="5|10|15|20|25|30|35|40|45|50|55|60|65|70|75|80|85|90|95|100|105|110|115|120|125|130|135|140|145|150|155|160" WHEN="(m_deser_factor == 10) and (rx_run_length_enable == true)" />
+      <FORCE_VALUE TO="m_bist_prbs_run_length" WHEN="(rx_run_length_enable == true) and (m_bist || m_prbs)" />
+      <FORCE_VALUE TO="m_cpri_run_length" WHEN="(rx_run_length_enable == true) and m_cpri" />
+    </PARAMETER> 
+    <PARAMETER NAME="rx_rate_match_back_to_back" TYPE="STRING" >
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, RX_PCS_RATE_MATCH_BACK_TO_BACK, protocol)" />
+    </PARAMETER>
+    <PARAMETER NAME="rx_force_signal_detect" TYPE="STRING" >
+      <FORCE_VALUE TO="true" />
+      <FORCE_VALUE TO="false" WHEN="m_pcie" />
+    </PARAMETER>
+    <PARAMETER NAME="rx_signal_detect_threshold" TYPE="INTEGER">
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, CHECK_RX_PMA_SIGNAL_DETECT_HYSTERESIS, rx_force_signal_detect, protocol)" />
+      <FORCE_VALUE TO="4" WHEN="m_pcie" />
+      <FORCE_VALUE TO="4|8" WHEN="m_basic && is_used(rx_signaldetect)" />
+      <FORCE_VALUE TO="8" WHEN="!m_pcie && !is_used(rx_signaldetect)" />
+    </PARAMETER>
+    <PARAMETER NAME="rx_signal_detect_valid_threshold" TYPE="INTEGER">
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, CHECK_RX_PMA_SIGNAL_DETECT_HYSTERESIS_VALID_THRESHOLD, rx_force_signal_detect, protocol)" />
+    </PARAMETER>
+    <PARAMETER NAME="rx_signal_detect_loss_threshold" TYPE="INTEGER">
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, CHECK_RX_PMA_SIGNAL_DETECT_LOSS_THRESHOLD, rx_force_signal_detect, protocol)" />
+      <FORCE_VALUE TO="3" WHEN="m_pcie" />
+      <FORCE_VALUE TO="9" WHEN="(m_basic && is_used(rx_signaldetect) && !m_bist && !m_prbs) || m_bist" />
+      <FORCE_VALUE TO="1" WHEN="(!m_pcie && !is_used(rx_signaldetect) && !m_bist && !m_prbs) || m_prbs" />
+    </PARAMETER>
+    <PARAMETER NAME="rx_align_pattern" TYPE="STRING" >
+      <FORCE_VALUE TO="'0101111100'" WHEN="m_srio" />
+      <FORCE_VALUE TO="'1111100'" WHEN="(rx_align_pattern_length == 7) and m_gige" />
+      <FORCE_VALUE TO="'0101111100'" WHEN="((rx_align_pattern_length == 10) and m_gige) || m_bist || m_xaui" />
+      <FORCE_VALUE TO="'0011000001000000'" WHEN="m_prbs and (rx_channel_width != 20) and (rx_self_test_mode == prbs7)" />
+      <FORCE_VALUE TO="'1111111101011010'" WHEN="m_prbs and (rx_self_test_mode == prbs8)" />
+      <FORCE_VALUE TO="'1111111111'" WHEN="m_prbs and (rx_self_test_mode == prbs10)" />
+      <FORCE_VALUE TO="'1111111111111111'" WHEN="m_prbs and (rx_channel_width != 20 and rx_channel_width != 16) and (rx_self_test_mode == prbs23)" />
+      <FORCE_VALUE TO="'0000000'" WHEN="m_prbs and ((rx_self_test_mode == 'high frequency') || (rx_self_test_mode == 'low frequency'))" />      
+    </PARAMETER>
+    <PARAMETER NAME="rx_rate_match_fifo_mode" >
+      <FORCE_VALUE TO="normal" WHEN="m_gige || m_pcie || m_xaui"/> <!-- normal for both GIGE and PCIE -->
+      <FORCE_RANGE TO="none" WHEN="m_basic" />
+      <FORCE_RANGE TO="none|normal" WHEN="m_basic_like and (rx_use_align_state_machine == true and !m_no_8b10b)" />
+      <FORCE_RANGE TO="none" WHEN="m_low_latency_mode || (m_rx_only) || m_bist || m_cpri || m_sdi" />      
+    </PARAMETER>
+    <PARAMETER NAME="rx_use_align_state_machine" >
+       <FORCE_RANGE TO="true|false" />
+       <FORCE_VALUE TO="false" WHEN="(m_basic and (rx_channel_width == 8 || rx_channel_width == 16) and (rx_8b_10b_mode == none))" />
+       <FORCE_VALUE TO="true" WHEN="m_bist || m_srio" />			
+       <FORCE_RANGE TO="false" WHEN="m_low_latency_mode || m_prbs || m_cpri || m_sdi" /> 
+    </PARAMETER>   
+    <PARAMETER NAME="rx_byte_ordering_mode" TYPE="STRING" >
+       <FORCE_RANGE TO="none" />
+       <FORCE_RANGE TO="8|none" IF="(m_basic_like and m_deser_factor == 8) and (rx_bitslip_enable == false) and (rx_use_double_data_mode == true)" />
+       <FORCE_RANGE TO="9|none" IF="(m_basic_like and m_deser_factor == 10) and (rx_rate_match_fifo_mode == none) and (rx_8b_10b_mode == normal) and (rx_use_align_state_machine == true) and (rx_use_double_data_mode == true)" />
+       <FORCE_RANGE TO="9" IF="m_bist" />
+       <FORCE_RANGE TO="none" WHEN="m_low_latency_mode || m_prbs || || m_srio || m_cpri || m_sdi" />	
+    </PARAMETER> 
+    <PARAMETER NAME="rx_bitslip_enable" >
+      <FORCE_RANGE TO="true|false" />
+      <FORCE_VALUE TO="false" WHEN="m_gige || m_pcie || m_srio || m_xaui" />
+      <FORCE_VALUE TO="true" WHEN="m_prbs_bitslip || m_sdi" />
+      <FORCE_RANGE TO="false" WHEN="m_low_latency_mode || m_bist || m_prbs_auto_align" />
+    </PARAMETER>  
+    <PARAMETER NAME="tx_bitslip_enable" >
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, TX_PCS_BITSLIP_ENABLE, protocol)" />       
+    </PARAMETER>     
+    <PARAMETER NAME="rx_rate_match_pattern1" TYPE="STRING" >
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, RX_PCS_RATE_MATCH_PATTERN1, protocol)" />
+    </PARAMETER>
+    <PARAMETER NAME="rx_rate_match_pattern2" TYPE="STRING" >
+       <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, RX_PCS_RATE_MATCH_PATTERN2, protocol)" />
+    </PARAMETER>
+    <PARAMETER NAME="rx_phfiforegmode" TYPE="STRING" VALUE="true|false" >
+      <FORCE_VALUE TO="false" />
+      <FORCE_VALUE TO="true" WHEN="m_cpri" />
+    </PARAMETER>
+    <PARAMETER NAME="tx_phfiforegmode" TYPE="STRING" VALUE="true|false" >
+      <FORCE_VALUE TO="false" />
+      <FORCE_VALUE TO="true|false" WHEN="(m_cpri) and !m_rx_only" />
+    </PARAMETER>    
+    <PARAMETER NAME="protocol" TYPE="STRING" >
+      <FORCE_VALUE TO="basic" IF="m_basic_none || m_basic_x2 || m_basic_x4 " />
+      <FORCE_VALUE TO="srio" IF="m_srio" />
+      <FORCE_VALUE TO="bist" IF="m_bist" />
+      <FORCE_VALUE TO="prbs" IF="m_prbs" />      
+      <FORCE_VALUE TO="pcie" IF="m_pcie" />
+      <FORCE_VALUE TO="gige" IF="m_gige" />
+      <FORCE_VALUE TO="xaui" IF="m_xaui" />
+      <FORCE_VALUE TO="cpri" IF="m_cpri" />
+      <FORCE_VALUE TO="sdi_hd" IF="m_sdi_hd" />
+      <FORCE_VALUE TO="sdi_3g" IF="m_sdi_3g" />      
+    </PARAMETER>
+    <PARAMETER NAME="input_clock_frequency" TYPE="STRING" >
+      <FORCE_VALUE REGEXP_SOURCE="m_wiz_inclk_freq" REGEXP_PATTERN="([0-9.]+) MHz" REGEXP_SUBSTITUTION="$1" />
+      <FORCE_VALUE TO="'100.0 MHz'|'125.0 MHz'" IF="m_pcie" />
+      <FORCE_VALUE TO="'62.5 MHz'|'125.0 MHz'" IF="m_gige" />
+      <!--<FORCE_RANGE TO="'148.35 MHz'|'296.7 MHz'" IF="m_sdi" />
+      <FORCE_RANGE TO="'148.35 MHz'|'296.7 MHz'" IF="m_sdi_3g and (m_data_rate == 2967)" />
+      <FORCE_RANGE TO="'148.5 MHz'|'297.0 MHz'" IF="m_sdi_3g and (m_data_rate == 2970)" />
+      <FORCE_RANGE TO="'74.175 MHz'|'148.35 MHz'" IF="m_sdi_hd and (m_data_rate == 1483)" />
+      <FORCE_RANGE TO="'74.25 MHz'|'148.5 MHz'" IF="m_sdi_hd and (m_data_rate == 1485)"/>-->      
+    </PARAMETER>
+    <PARAMETER NAME="base_data_rate" TYPE="STRING" >
+      <FORCE_VALUE TO="effective_data_rate" />
+    </PARAMETER>
+    <PARAMETER NAME="intended_device_speed_grade" TYPE="STRING" >
+     <FORCE_VALUE TO="6|7" IF="m_sdi" />
+      <FORCE_VALUE TO="db_rbc_tcl$get_device_speed_grades(INTENDED_DEVICE_FAMILY, intended_device_variant)"  IF="!m_sdi" />
+    </PARAMETER>
+    <PARAMETER NAME="intended_device_variant" TYPE="STRING" VALUE="Any">
+      <FORCE_VALUE TO="db_rbc_tcl$get_device_variants(INTENDED_DEVICE_FAMILY)" />
+    </PARAMETER>
+    <!-- PMA controls -->
+    <PARAMETER NAME="equalizer_dcgain_setting" TYPE="INTEGER">
+      <FORCE_RANGE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, CHECK_RX_PMA_EQ_DC_GAIN, intended_device_family) div 3" />
+    </PARAMETER>
+    <PARAMETER NAME="equalization_setting" TYPE="INTEGER">
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, CHECK_RX_PMA_EQ_SETTING, intended_device_family)" />
+    </PARAMETER>
+    <!--<PARAMETER NAME="receiver_termination" TYPE="STRING" >
+      <FORCE_VALUE REGEXP_SOURCE="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, CHECK_RX_PMA_TERMINATION_SETTING, intended_device_family, protocol)" REGEXP_PATTERN="OCT ([0-9]+) Ohms" REGEXP_SUBSTITUTION="OCT_$1_Ohms"  />
+    </PARAMETER>
+    <PARAMETER NAME="transmitter_termination" TYPE="STRING" >
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, CHECK_TX_PMA_TERMINATION_SETTING, intended_device_family, protocol, tx_use_external_termination)"  REGEXP_PATTERN="OCT ([0-9]+) Ohms" REGEXP_SUBSTITUTION="OCT_$1_Ohms" />
+    </PARAMETER>-->
+    <PARAMETER NAME="rx_common_mode" TYPE="STRING" >
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, CHECK_RX_PMA_COMMON_MODE, protocol)" /> 
+    </PARAMETER>
+    <PARAMETER NAME="vod_ctrl_setting" TYPE="INTEGER">
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, CHECK_TX_PMA_VOD_SELECTION, intended_device_family, m_wys_tx_termination)"  />
+    </PARAMETER>
+    <PARAMETER NAME="preemphasis_ctrl_1stposttap_setting" TYPE="INTEGER">
+      <FORCE_VALUE TO="m_preemp_tap_rule1 intersection m_preemp_tap_rule2 intersection m_preemp_tap_rule3" />
+    </PARAMETER>
+    <PARAMETER NAME="pll_bandwidth_type" TYPE="STRING" >
+      <FORCE_VALUE TO="Auto|High|Medium|Low" />
+    </PARAMETER>
+    <PARAMETER NAME="rx_ppmselect" >
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, CHECK_RX_PMA_PPMSELECT)" />
+    </PARAMETER>
+    <PARAMETER NAME="TX_SLEW_RATE" >
+        <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, CHECK_TX_PMA_SLEW_RATE, protocol)" />
+    </PARAMETER>
+    <PARAMETER NAME="tx_enable_bit_reversal">
+		<FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, TX_PCS_ENABLE_BIT_REVERSAL, protocol)" />
+	</PARAMETER>
+		<PARAMETER NAME="rx_enable_bit_reversal">
+		<FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, RX_PCS_ENABLE_BIT_REVERSAL, protocol,rx_8b_10b_mode)" />
+		</PARAMETER>
+    <PARAMETER NAME="rx_deskew_pattern" TYPE="STRING" >
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, RX_PCS_DESKEW_PATTERN, protocol)" /> 
+    </PARAMETER>
+      <PARAMETER NAME="dprio_modes" TYPE="STRING" VALUE="none|pma_electricals|channel_interface|channel_internals|pll_reconfig" CNX_TYPE="PRIVATE" >
+      <!-- to do add multi_pll as a valid value -->
+      <FORCE_RANGE TO="none|pma_electricals|channel_interface|channel_internals|pll_reconfig" WHEN="(m_pciex4 || m_pciex8 || m_xaui || m_basic_x4 || m_basic_x8 || m_cpri_x4)" />
+    </PARAMETER>
+	  <PARAMETER NAME="rx_loop_1_digital_filter" TYPE="INTEGER">
+      <FORCE_VALUE TO="db_rbc_tcl$rbc_tcl_mega_rules_validator_interface(advanced_hssi_legality, STINGRAY_HSSI_CONFIG, CHECK_RX_PMA_LOOP_1_DIGITAL_FILTER, protocol, rx_enable_second_order_loop )"  />
+    </PARAMETER>
+      
+
+  </PARAMETER_RULES>
+
+</ROOT>

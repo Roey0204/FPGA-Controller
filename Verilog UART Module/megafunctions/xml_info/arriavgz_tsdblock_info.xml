@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="clock_divider_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="sim_tsdcalo" TYPE="Integer" VALUE="-128..127" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="clock_divider_value" TYPE="Integer" VALUE="40|80" DEFAULT_VALUE="40" />
+		<PARAMETER NAME="tsdblock_mode" TYPE="String" VALUE="test_input|core_sense|corner_sense" DEFAULT_VALUE="corner_sense" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="use_dft_compout" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="poi_cal_temperature" TYPE="Integer" VALUE="25|85" DEFAULT_VALUE="85" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriavgz_tsdblock" />
+		<PARAMETER NAME="lpm_hint" TYPE="STRING" VALUE="unused" DEFAULT_VALUE_INDEX="0" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ce" TYPE="INPUT" DEFAULT_VALUE="1" />
+		<PORT NAME="clr" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="fdbkctrlfromcore" TYPE="INPUT" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+		<PORT NAME="compouttest" TYPE="INPUT" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+		<PORT NAME="testin" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+		<PORT NAME="tsdcaldone" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="tsdcalo" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="tsdcompout" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+		<PORT NAME="offsetout" TYPE="OUTPUT" WIDTH="6" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+	</PORTS>
+</ROOT>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_soc_interface_dma">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_soc_interface_dma" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="drlast" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="drready" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="drvalid" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="drtype" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="davalid" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="datype" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="dqs_input_frequency" TYPE="String" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="dqs_ctrl_latches_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="sim_buffer_intrinsic_delay" TYPE="Integer" DEFAULT_VALUE="175" />
+		<PARAMETER NAME="sim_buffer_delay_increment" TYPE="Integer" DEFAULT_VALUE="10" />
+		<PARAMETER NAME="dqs_delay_chain_test_mode" TYPE="String" VALUE="off|grounddqs|dynamic" DEFAULT_VALUE="off" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="dqs_phase_shift" TYPE="Integer" VALUE="0..36000" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="dqs_delay_chain_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_dqs_delay_chain" />
+		<PARAMETER NAME="phase_setting" TYPE="INTEGER" VALUE="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="dqs_offsetctrl_enable" TYPE="STRING" VALUE="false" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="use_alternate_input_for_first_stage_delayctrl" TYPE="STRING" VALUE="false" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="use_phasectrlin" TYPE="STRING" VALUE="false" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="test_enable" TYPE="STRING" VALUE="false" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="use_alternate_input_for_multi_stage_delayctrl" TYPE="STRING" VALUE="false" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="dqsin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dqsenable" TYPE="INPUT" DEFAULT_VALUE="1" />
+		<PORT NAME="dqsdisablen" TYPE="INPUT" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+		<PORT NAME="dqsupdateen" TYPE="INPUT" DEFAULT_VALUE="0" SIM_DEFAULT_VALUE="1" />
+		<PORT NAME="delayctrlin" TYPE="INPUT" WIDTH="7" DEFAULT_VALUE="0" />
+		<PORT NAME="testin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dqsbusout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dffin" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE" />
+		<PORT NAME="offsetctrlin" TYPE="INPUT" WIDTH="7" DEFAULT_VALUE="0" CONTEXT="SIM_ONLY" />
+		<PORT NAME="phasectrlin" TYPE="INPUT" WIDTH="3" DEFAULT_VALUE="0" CONTEXT="SIM_ONLY" />
+	</PORTS>
+</ROOT>

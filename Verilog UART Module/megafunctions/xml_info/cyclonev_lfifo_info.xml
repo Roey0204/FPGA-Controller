@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_lfifo">
+	<PARAMETERS>
+		<PARAMETER NAME="oct_lfifo_enable" TYPE="Integer" DEFAULT_VALUE="-1"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_lfifo" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="rdataen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rdataenfull" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rstn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rdlatency" TYPE="INPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="rdatavalid" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rden" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="octlfifo" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

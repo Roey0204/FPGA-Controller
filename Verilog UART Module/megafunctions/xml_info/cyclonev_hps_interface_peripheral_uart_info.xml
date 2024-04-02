@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_hps_interface_peripheral_uart">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_hps_interface_peripheral_uart" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="cts" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dcd" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dsr" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ri" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rxd" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dtr" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="out1_n" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="out2_n" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rts" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="txd" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

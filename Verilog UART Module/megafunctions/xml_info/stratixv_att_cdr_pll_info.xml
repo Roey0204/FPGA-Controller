@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="stratixv_att_cdr_pll">
+	<PARAMETERS>
+		<PARAMETER NAME="reference_clock_frequeny" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="output_clock_frequency" TYPE="String" DEFAULT_VALUE="0 ps"/>
+		<PARAMETER NAME="powerdown" TYPE="String" VALUE="normal_cdr_on|power_down_cdr" DEFAULT_VALUE="normal_cdr_on"/>
+		<PARAMETER NAME="clk_sel" TYPE="String" VALUE="pcs0|pcs1|iqclk2|iqclk3|iqclk4|rx_div2|rx|iqclk5|iqclk6|iqclk7|gpll_clk" DEFAULT_VALUE="pcs0"/>
+		<PARAMETER NAME="ref_clk_div" TYPE="Integer" VALUE="1|2|4|8" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="m_counter" TYPE="Integer" VALUE="1|4|5|8|10|12|16|20|25" DEFAULT_VALUE="20"/>
+		<PARAMETER NAME="pfd_l_counter" TYPE="Integer" VALUE="1|2|4|8" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pd_l_counter" TYPE="Integer" VALUE="1|2|4|8" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="fb_sel" TYPE="String" VALUE="vcoclk|pldclk|iqtxrxclk" DEFAULT_VALUE="vcoclk"/>
+		<PARAMETER NAME="clklow_fref_to_ppm_div_sel" TYPE="Integer" VALUE="1|2|4|8" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="ripple_cap_ctrl" TYPE="String" VALUE="none|plus_2pf|reserved_10|reserved_11" DEFAULT_VALUE="none"/>
+		<PARAMETER NAME="rxpll_pfd_bw_ctrl" TYPE="Integer" VALUE="1600|3200|6400|9600" DEFAULT_VALUE="3200"/>
+		<PARAMETER NAME="rxpll_pd_bw_ctrl" TYPE="Integer" VALUE="600|300|240|170" DEFAULT_VALUE="300"/>
+		<PARAMETER NAME="charge_pump_current_test" TYPE="String" VALUE="enable_ch_pump_curr_test_up|enable_ch_pump_curr_test_down|disable_ch_pump_curr_test" DEFAULT_VALUE="disable_ch_pump_curr_test"/>
+		<PARAMETER NAME="pfd_charge_pump_current_ctrl" TYPE="Integer" VALUE="5|10|20|30|40|80|160|240" DEFAULT_VALUE="10"/>
+		<PARAMETER NAME="pd_charge_pump_current_ctrl" TYPE="Integer" VALUE="5|10|20|30|40" DEFAULT_VALUE="5"/>
+		<PARAMETER NAME="regulator_volt_inc" TYPE="String" VALUE="0|5|10|15|20|25|30" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="replica_bias_ctrl" TYPE="String" VALUE="enable_replica_bias_ctrl|disable_replica_bias_ctrl" DEFAULT_VALUE="disable_replica_bias_ctrl"/>
+		<PARAMETER NAME="bbpd_salatch_offset_ctrl_clk0" TYPE="String" VALUE="offset_0mv|offset_delta1_left|offset_delta2_left|offset_delta3_left|offset_delta4_left|offset_delta5_left|offset_delta6_left|offset_delta7_left|offset_delta1_right|offset_delta2_right|offset_delta3_right|offset_delta4_right|offset_delta5_right|offset_delta6_right|offset_delta7_right" DEFAULT_VALUE="offset_0mv"/>
+		<PARAMETER NAME="bbpd_salatch_offset_ctrl_clk90" TYPE="String" VALUE="offset_0mv|offset_delta1_left|offset_delta2_left|offset_delta3_left|offset_delta4_left|offset_delta5_left|offset_delta6_left|offset_delta7_left|offset_delta1_right|offset_delta2_right|offset_delta3_right|offset_delta4_right|offset_delta5_right|offset_delta6_right|offset_delta7_right" DEFAULT_VALUE="offset_0mv"/>
+		<PARAMETER NAME="bbpd_salatch_offset_ctrl_clk180" TYPE="String" VALUE="offset_0mv|offset_delta1_left|offset_delta2_left|offset_delta3_left|offset_delta4_left|offset_delta5_left|offset_delta6_left|offset_delta7_left|offset_delta1_right|offset_delta2_right|offset_delta3_right|offset_delta4_right|offset_delta5_right|offset_delta6_right|offset_delta7_right" DEFAULT_VALUE="offset_0mv"/>
+		<PARAMETER NAME="bbpd_salatch_offset_ctrl_clk270" TYPE="String" VALUE="offset_0mv|offset_delta1_left|offset_delta2_left|offset_delta3_left|offset_delta4_left|offset_delta5_left|offset_delta6_left|offset_delta7_left|offset_delta1_right|offset_delta2_right|offset_delta3_right|offset_delta4_right|offset_delta5_right|offset_delta6_right|offset_delta7_right" DEFAULT_VALUE="offset_0mv"/>
+		<PARAMETER NAME="bbpd_salatch_sel" TYPE="String" VALUE="sa_clk0|sa_clk90|sa_clk180|sa_clk270|normal" DEFAULT_VALUE="normal"/>
+		<PARAMETER NAME="l_counter_buffer" TYPE="String" VALUE="enable_l_count_buff|disable_l_count_buff" DEFAULT_VALUE="enable_l_count_buff"/>
+		<PARAMETER NAME="ignore_phslock" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="bypass_cp_rgla" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="clk_mon_jitter" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="sd_sel" TYPE="String" VALUE="sd_analog|sd_digital" DEFAULT_VALUE="sd_analog"/>
+		<PARAMETER NAME="fast_lock_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="stratixv_att_cdr_pll" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clkout" TYPE="INPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_hps_peripheral_qspi">
+	<PARAMETERS>
+		<PARAMETER NAME="dummy_param" TYPE="Integer" DEFAULT_VALUE="256"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_hps_peripheral_qspi" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="qspi_mi0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="qspi_mi1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="qspi_mi2" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="qspi_mi3" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="qspi_sclk" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="qspi_mo0" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="qspi_mo1" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="qspi_mo2" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="qspi_mo3" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="qspi_mo_en_n" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="qspi_ss_n" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

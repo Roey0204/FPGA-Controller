@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_hps_interface_mpu_event_standby">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_hps_interface_mpu_event_standby" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="eventi" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="evento" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="standbywfe" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="standbywfi" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

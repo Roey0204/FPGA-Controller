@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_hmc">
+	<PARAMETERS>
+		<PARAMETER NAME="mmr_cfg_mem_bl" TYPE="String" VALUE="mp_bl_2|mp_bl_4|mp_bl_8|mp_bl_16" DEFAULT_VALUE="mp_bl_8"/>
+		<PARAMETER NAME="ctrl_width" TYPE="String" VALUE="data_width_16_bit|data_width_32_bit|data_width_64_bit" DEFAULT_VALUE="data_width_64_bit"/>
+		<PARAMETER NAME="port0_width" TYPE="String" VALUE="port_128_bit|port_256_bit|port_32_bit|port_64_bit" DEFAULT_VALUE="port_64_bit"/>
+		<PARAMETER NAME="port1_width" TYPE="String" VALUE="port_128_bit|port_256_bit|port_32_bit|port_64_bit" DEFAULT_VALUE="port_64_bit"/>
+		<PARAMETER NAME="port2_width" TYPE="String" VALUE="port_128_bit|port_256_bit|port_32_bit|port_64_bit" DEFAULT_VALUE="port_64_bit"/>
+		<PARAMETER NAME="port3_width" TYPE="String" VALUE="port_128_bit|port_256_bit|port_32_bit|port_64_bit" DEFAULT_VALUE="port_64_bit"/>
+		<PARAMETER NAME="port4_width" TYPE="String" VALUE="port_128_bit|port_256_bit|port_32_bit|port_64_bit" DEFAULT_VALUE="port_64_bit"/>
+		<PARAMETER NAME="port5_width" TYPE="String" VALUE="port_128_bit|port_256_bit|port_32_bit|port_64_bit" DEFAULT_VALUE="port_64_bit"/>
+		<PARAMETER NAME="user_ecc_en" TYPE="String" VALUE="enable|disable" DEFAULT_VALUE="disable"/>
+		<PARAMETER NAME="cport0_type" TYPE="String" VALUE="bi_direction|disable|read|write" DEFAULT_VALUE="disable"/>
+		<PARAMETER NAME="cport1_type" TYPE="String" VALUE="bi_direction|disable|read|write" DEFAULT_VALUE="disable"/>
+		<PARAMETER NAME="cport2_type" TYPE="String" VALUE="bi_direction|disable|read|write" DEFAULT_VALUE="disable"/>
+		<PARAMETER NAME="cport3_type" TYPE="String" VALUE="bi_direction|disable|read|write" DEFAULT_VALUE="disable"/>
+		<PARAMETER NAME="cport4_type" TYPE="String" VALUE="bi_direction|disable|read|write" DEFAULT_VALUE="disable"/>
+		<PARAMETER NAME="cport5_type" TYPE="String" VALUE="bi_direction|disable|read|write" DEFAULT_VALUE="disable"/>
+		<PARAMETER NAME="cport0_wfifo_map" TYPE="String" VALUE="fifo_0|fifo_1|fifo_2|fifo_3" DEFAULT_VALUE="fifo_0"/>
+		<PARAMETER NAME="cport1_wfifo_map" TYPE="String" VALUE="fifo_0|fifo_1|fifo_2|fifo_3" DEFAULT_VALUE="fifo_0"/>
+		<PARAMETER NAME="cport2_wfifo_map" TYPE="String" VALUE="fifo_0|fifo_1|fifo_2|fifo_3" DEFAULT_VALUE="fifo_0"/>
+		<PARAMETER NAME="cport3_wfifo_map" TYPE="String" VALUE="fifo_0|fifo_1|fifo_2|fifo_3" DEFAULT_VALUE="fifo_0"/>
+		<PARAMETER NAME="cport4_wfifo_map" TYPE="String" VALUE="fifo_0|fifo_1|fifo_2|fifo_3" DEFAULT_VALUE="fifo_0"/>
+		<PARAMETER NAME="cport5_wfifo_map" TYPE="String" VALUE="fifo_0|fifo_1|fifo_2|fifo_3" DEFAULT_VALUE="fifo_0"/>
+		<PARAMETER NAME="cport0_rfifo_map" TYPE="String" VALUE="fifo_0|fifo_1|fifo_2|fifo_3" DEFAULT_VALUE="fifo_0"/>
+		<PARAMETER NAME="cport1_rfifo_map" TYPE="String" VALUE="fifo_0|fifo_1|fifo_2|fifo_3" DEFAULT_VALUE="fifo_0"/>
+		<PARAMETER NAME="cport2_rfifo_map" TYPE="String" VALUE="fifo_0|fifo_1|fifo_2|fifo_3" DEFAULT_VALUE="fifo_0"/>
+		<PARAMETER NAME="cport3_rfifo_map" TYPE="String" VALUE="fifo_0|fifo_1|fifo_2|fifo_3" DEFAULT_VALUE="fifo_0"/>
+		<PARAMETER NAME="cport4_rfifo_map" TYPE="String" VALUE="fifo_0|fifo_1|fifo_2|fifo_3" DEFAULT_VALUE="fifo_0"/>
+		<PARAMETER NAME="cport5_rfifo_map" TYPE="String" VALUE="fifo_0|fifo_1|fifo_2|fifo_3" DEFAULT_VALUE="fifo_0"/>
+		<PARAMETER NAME="rfifo0_cport_map" TYPE="String" VALUE="cmd_port_0|cmd_port_1|cmd_port_2|cmd_port_3|cmd_port_4|cmd_port_5" DEFAULT_VALUE="cmd_port_0"/>
+		<PARAMETER NAME="rfifo1_cport_map" TYPE="String" VALUE="cmd_port_0|cmd_port_1|cmd_port_2|cmd_port_3|cmd_port_4|cmd_port_5" DEFAULT_VALUE="cmd_port_0"/>
+		<PARAMETER NAME="rfifo2_cport_map" TYPE="String" VALUE="cmd_port_0|cmd_port_1|cmd_port_2|cmd_port_3|cmd_port_4|cmd_port_5" DEFAULT_VALUE="cmd_port_0"/>
+		<PARAMETER NAME="rfifo3_cport_map" TYPE="String" VALUE="cmd_port_0|cmd_port_1|cmd_port_2|cmd_port_3|cmd_port_4|cmd_port_5" DEFAULT_VALUE="cmd_port_0"/>
+		<PARAMETER NAME="wfifo0_cport_map" TYPE="String" VALUE="cmd_port_0|cmd_port_1|cmd_port_2|cmd_port_3|cmd_port_4|cmd_port_5" DEFAULT_VALUE="cmd_port_0"/>
+		<PARAMETER NAME="wfifo1_cport_map" TYPE="String" VALUE="cmd_port_0|cmd_port_1|cmd_port_2|cmd_port_3|cmd_port_4|cmd_port_5" DEFAULT_VALUE="cmd_port_0"/>
+		<PARAMETER NAME="wfifo2_cport_map" TYPE="String" VALUE="cmd_port_0|cmd_port_1|cmd_port_2|cmd_port_3|cmd_port_4|cmd_port_5" DEFAULT_VALUE="cmd_port_0"/>
+		<PARAMETER NAME="wfifo3_cport_map" TYPE="String" VALUE="cmd_port_0|cmd_port_1|cmd_port_2|cmd_port_3|cmd_port_4|cmd_port_5" DEFAULT_VALUE="cmd_port_0"/>
+		<PARAMETER NAME="cport0_rdy_almost_full" TYPE="String" VALUE="not_almost_full|not_full" DEFAULT_VALUE="not_full"/>
+		<PARAMETER NAME="cport1_rdy_almost_full" TYPE="String" VALUE="not_almost_full|not_full" DEFAULT_VALUE="not_full"/>
+		<PARAMETER NAME="cport2_rdy_almost_full" TYPE="String" VALUE="not_almost_full|not_full" DEFAULT_VALUE="not_full"/>
+		<PARAMETER NAME="cport3_rdy_almost_full" TYPE="String" VALUE="not_almost_full|not_full" DEFAULT_VALUE="not_full"/>
+		<PARAMETER NAME="cport4_rdy_almost_full" TYPE="String" VALUE="not_almost_full|not_full" DEFAULT_VALUE="not_full"/>
+		<PARAMETER NAME="cport5_rdy_almost_full" TYPE="String" VALUE="not_almost_full|not_full" DEFAULT_VALUE="not_full"/>
+		<PARAMETER NAME="wfifo0_rdy_almost_full" TYPE="String" VALUE="not_almost_full|not_full" DEFAULT_VALUE="not_full"/>
+		<PARAMETER NAME="wfifo1_rdy_almost_full" TYPE="String" VALUE="not_almost_full|not_full" DEFAULT_VALUE="not_full"/>
+		<PARAMETER NAME="wfifo2_rdy_almost_full" TYPE="String" VALUE="not_almost_full|not_full" DEFAULT_VALUE="not_full"/>
+		<PARAMETER NAME="wfifo3_rdy_almost_full" TYPE="String" VALUE="not_almost_full|not_full" DEFAULT_VALUE="not_full"/>
+		<PARAMETER NAME="use_almost_empty_0" TYPE="String" VALUE="almost_empty|empty" DEFAULT_VALUE="empty"/>
+		<PARAMETER NAME="use_almost_empty_1" TYPE="String" VALUE="almost_empty|empty" DEFAULT_VALUE="empty"/>
+		<PARAMETER NAME="use_almost_empty_2" TYPE="String" VALUE="almost_empty|empty" DEFAULT_VALUE="empty"/>
+		<PARAMETER NAME="use_almost_empty_3" TYPE="String" VALUE="almost_empty|empty" DEFAULT_VALUE="empty"/>
+		<PARAMETER NAME="single_ready_0" TYPE="String" VALUE="concatenate_rdy|separate_rdy" DEFAULT_VALUE="concatenate_rdy"/>
+		<PARAMETER NAME="single_ready_1" TYPE="String" VALUE="concatenate_rdy|separate_rdy" DEFAULT_VALUE="concatenate_rdy"/>
+		<PARAMETER NAME="single_ready_2" TYPE="String" VALUE="concatenate_rdy|separate_rdy" DEFAULT_VALUE="concatenate_rdy"/>
+		<PARAMETER NAME="single_ready_3" TYPE="String" VALUE="concatenate_rdy|separate_rdy" DEFAULT_VALUE="concatenate_rdy"/>
+		<PARAMETER NAME="sync_mode_0" TYPE="String" VALUE="asynchronous|synchronous" DEFAULT_VALUE="asynchronous"/>
+		<PARAMETER NAME="sync_mode_1" TYPE="String" VALUE="asynchronous|synchronous" DEFAULT_VALUE="asynchronous"/>
+		<PARAMETER NAME="sync_mode_2" TYPE="String" VALUE="asynchronous|synchronous" DEFAULT_VALUE="asynchronous"/>
+		<PARAMETER NAME="sync_mode_3" TYPE="String" VALUE="asynchronous|synchronous" DEFAULT_VALUE="asynchronous"/>
+		<PARAMETER NAME="sync_mode_4" TYPE="String" VALUE="asynchronous|synchronous" DEFAULT_VALUE="asynchronous"/>
+		<PARAMETER NAME="sync_mode_5" TYPE="String" VALUE="asynchronous|synchronous" DEFAULT_VALUE="asynchronous"/>
+		<PARAMETER NAME="inc_sync" TYPE="String" VALUE="fifo_set_2|fifo_set_3" DEFAULT_VALUE="fifo_set_2"/>
+		<PARAMETER NAME="test_mode" TYPE="String" VALUE="normal_mode|test_mode" DEFAULT_VALUE="normal_mode"/>
+		<PARAMETER NAME="rcfg_user_priority_0" TYPE="String" VALUE="priority_0|priority_1|priority_2|priority_3|priority_4|priority_5|priority_6|priority_7" DEFAULT_VALUE="priority_0"/>
+		<PARAMETER NAME="rcfg_user_priority_1" TYPE="String" VALUE="priority_0|priority_1|priority_2|priority_3|priority_4|priority_5|priority_6|priority_7" DEFAULT_VALUE="priority_0"/>
+		<PARAMETER NAME="rcfg_user_priority_2" TYPE="String" VALUE="priority_0|priority_1|priority_2|priority_3|priority_4|priority_5|priority_6|priority_7" DEFAULT_VALUE="priority_0"/>
+		<PARAMETER NAME="rcfg_user_priority_3" TYPE="String" VALUE="priority_0|priority_1|priority_2|priority_3|priority_4|priority_5|priority_6|priority_7" DEFAULT_VALUE="priority_0"/>
+		<PARAMETER NAME="rcfg_user_priority_4" TYPE="String" VALUE="priority_0|priority_1|priority_2|priority_3|priority_4|priority_5|priority_6|priority_7" DEFAULT_VALUE="priority_0"/>
+		<PARAMETER NAME="rcfg_user_priority_5" TYPE="String" VALUE="priority_0|priority_1|priority_2|priority_3|priority_4|priority_5|priority_6|priority_7" DEFAULT_VALUE="priority_0"/>
+		<PARAMETER NAME="rcfg_static_weight_0" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="rcfg_static_weight_1" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="rcfg_static_weight_2" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="rcfg_static_weight_3" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="rcfg_static_weight_4" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="rcfg_static_weight_5" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="rcfg_sum_wt_priority_0" TYPE="Integer" VALUE="0..186" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="rcfg_sum_wt_priority_1" TYPE="Integer" VALUE="0..186" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="rcfg_sum_wt_priority_2" TYPE="Integer" VALUE="0..186" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="rcfg_sum_wt_priority_3" TYPE="Integer" VALUE="0..186" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="rcfg_sum_wt_priority_4" TYPE="Integer" VALUE="0..186" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="rcfg_sum_wt_priority_5" TYPE="Integer" VALUE="0..186" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="rcfg_sum_wt_priority_6" TYPE="Integer" VALUE="0..186" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="rcfg_sum_wt_priority_7" TYPE="Integer" VALUE="0..186" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="thld_jar1_0" TYPE="String" VALUE="threshold_1|threshold_10|threshold_11|threshold_12|threshold_13|threshold_14|threshold_15|threshold_16|threshold_17|threshold_18|threshold_19|threshold_2|threshold_20|threshold_21|threshold_22|threshold_23|threshold_24|threshold_25|threshold_26|threshold_27|threshold_28|threshold_29|threshold_3|threshold_30|threshold_31|threshold_32|threshold_33|threshold_34|threshold_35|threshold_36|threshold_37|threshold_38|threshold_39|threshold_4|threshold_40|threshold_41|threshold_42|threshold_43|threshold_44|threshold_45|threshold_46|threshold_47|threshold_48|threshold_49|threshold_5|threshold_50|threshold_51|threshold_52|threshold_53|threshold_54|threshold_55|threshold_56|threshold_57|threshold_58|threshold_59|threshold_6|threshold_60|threshold_61|threshold_62|threshold_63|threshold_7|threshold_8|threshold_9" DEFAULT_VALUE="threshold_32"/>
+		<PARAMETER NAME="thld_jar1_1" TYPE="String" VALUE="threshold_1|threshold_10|threshold_11|threshold_12|threshold_13|threshold_14|threshold_15|threshold_16|threshold_17|threshold_18|threshold_19|threshold_2|threshold_20|threshold_21|threshold_22|threshold_23|threshold_24|threshold_25|threshold_26|threshold_27|threshold_28|threshold_29|threshold_3|threshold_30|threshold_31|threshold_32|threshold_33|threshold_34|threshold_35|threshold_36|threshold_37|threshold_38|threshold_39|threshold_4|threshold_40|threshold_41|threshold_42|threshold_43|threshold_44|threshold_45|threshold_46|threshold_47|threshold_48|threshold_49|threshold_5|threshold_50|threshold_51|threshold_52|threshold_53|threshold_54|threshold_55|threshold_56|threshold_57|threshold_58|threshold_59|threshold_6|threshold_60|threshold_61|threshold_62|threshold_63|threshold_7|threshold_8|threshold_9" DEFAULT_VALUE="threshold_32"/>
+		<PARAMETER NAME="thld_jar1_2" TYPE="String" VALUE="threshold_1|threshold_10|threshold_11|threshold_12|threshold_13|threshold_14|threshold_15|threshold_16|threshold_17|threshold_18|threshold_19|threshold_2|threshold_20|threshold_21|threshold_22|threshold_23|threshold_24|threshold_25|threshold_26|threshold_27|threshold_28|threshold_29|threshold_3|threshold_30|threshold_31|threshold_32|threshold_33|threshold_34|threshold_35|threshold_36|threshold_37|threshold_38|threshold_39|threshold_4|threshold_40|threshold_41|threshold_42|threshold_43|threshold_44|threshold_45|threshold_46|threshold_47|threshold_48|threshold_49|threshold_5|threshold_50|threshold_51|threshold_52|threshold_53|threshold_54|threshold_55|threshold_56|threshold_57|threshold_58|threshold_59|threshold_6|threshold_60|threshold_61|threshold_62|threshold_63|threshold_7|threshold_8|threshold_9" DEFAULT_VALUE="threshold_32"/>
+		<PARAMETER NAME="thld_jar1_3" TYPE="String" VALUE="threshold_1|threshold_10|threshold_11|threshold_12|threshold_13|threshold_14|threshold_15|threshold_16|threshold_17|threshold_18|threshold_19|threshold_2|threshold_20|threshold_21|threshold_22|threshold_23|threshold_24|threshold_25|threshold_26|threshold_27|threshold_28|threshold_29|threshold_3|threshold_30|threshold_31|threshold_32|threshold_33|threshold_34|threshold_35|threshold_36|threshold_37|threshold_38|threshold_39|threshold_4|threshold_40|threshold_41|threshold_42|threshold_43|threshold_44|threshold_45|threshold_46|threshold_47|threshold_48|threshold_49|threshold_5|threshold_50|threshold_51|threshold_52|threshold_53|threshold_54|threshold_55|threshold_56|threshold_57|threshold_58|threshold_59|threshold_6|threshold_60|threshold_61|threshold_62|threshold_63|threshold_7|threshold_8|threshold_9" DEFAULT_VALUE="threshold_32"/>
+		<PARAMETER NAME="thld_jar1_4" TYPE="String" VALUE="threshold_1|threshold_10|threshold_11|threshold_12|threshold_13|threshold_14|threshold_15|threshold_16|threshold_17|threshold_18|threshold_19|threshold_2|threshold_20|threshold_21|threshold_22|threshold_23|threshold_24|threshold_25|threshold_26|threshold_27|threshold_28|threshold_29|threshold_3|threshold_30|threshold_31|threshold_32|threshold_33|threshold_34|threshold_35|threshold_36|threshold_37|threshold_38|threshold_39|threshold_4|threshold_40|threshold_41|threshold_42|threshold_43|threshold_44|threshold_45|threshold_46|threshold_47|threshold_48|threshold_49|threshold_5|threshold_50|threshold_51|threshold_52|threshold_53|threshold_54|threshold_55|threshold_56|threshold_57|threshold_58|threshold_59|threshold_6|threshold_60|threshold_61|threshold_62|threshold_63|threshold_7|threshold_8|threshold_9" DEFAULT_VALUE="threshold_32"/>
+		<PARAMETER NAME="thld_jar1_5" TYPE="String" VALUE="threshold_1|threshold_10|threshold_11|threshold_12|threshold_13|threshold_14|threshold_15|threshold_16|threshold_17|threshold_18|threshold_19|threshold_2|threshold_20|threshold_21|threshold_22|threshold_23|threshold_24|threshold_25|threshold_26|threshold_27|threshold_28|threshold_29|threshold_3|threshold_30|threshold_31|threshold_32|threshold_33|threshold_34|threshold_35|threshold_36|threshold_37|threshold_38|threshold_39|threshold_4|threshold_40|threshold_41|threshold_42|threshold_43|threshold_44|threshold_45|threshold_46|threshold_47|threshold_48|threshold_49|threshold_5|threshold_50|threshold_51|threshold_52|threshold_53|threshold_54|threshold_55|threshold_56|threshold_57|threshold_58|threshold_59|threshold_6|threshold_60|threshold_61|threshold_62|threshold_63|threshold_7|threshold_8|threshold_9" DEFAULT_VALUE="threshold_32"/>
+		<PARAMETER NAME="thld_jar2_0" TYPE="String" VALUE="threshold_1|threshold_10|threshold_11|threshold_12|threshold_13|threshold_14|threshold_15|threshold_16|threshold_17|threshold_18|threshold_19|threshold_2|threshold_20|threshold_21|threshold_22|threshold_23|threshold_24|threshold_25|threshold_26|threshold_27|threshold_28|threshold_29|threshold_3|threshold_30|threshold_31|threshold_32|threshold_33|threshold_34|threshold_35|threshold_36|threshold_37|threshold_38|threshold_39|threshold_4|threshold_40|threshold_41|threshold_42|threshold_43|threshold_44|threshold_45|threshold_46|threshold_47|threshold_48|threshold_49|threshold_5|threshold_50|threshold_51|threshold_52|threshold_53|threshold_54|threshold_55|threshold_56|threshold_57|threshold_58|threshold_59|threshold_6|threshold_60|threshold_61|threshold_62|threshold_63|threshold_7|threshold_8|threshold_9" DEFAULT_VALUE="threshold_16"/>
+		<PARAMETER NAME="thld_jar2_1" TYPE="String" VALUE="threshold_1|threshold_10|threshold_11|threshold_12|threshold_13|threshold_14|threshold_15|threshold_16|threshold_17|threshold_18|threshold_19|threshold_2|threshold_20|threshold_21|threshold_22|threshold_23|threshold_24|threshold_25|threshold_26|threshold_27|threshold_28|threshold_29|threshold_3|threshold_30|threshold_31|threshold_32|threshold_33|threshold_34|threshold_35|threshold_36|threshold_37|threshold_38|threshold_39|threshold_4|threshold_40|threshold_41|threshold_42|threshold_43|threshold_44|threshold_45|threshold_46|threshold_47|threshold_48|threshold_49|threshold_5|threshold_50|threshold_51|threshold_52|threshold_53|threshold_54|threshold_55|threshold_56|threshold_57|threshold_58|threshold_59|threshold_6|threshold_60|threshold_61|threshold_62|threshold_63|threshold_7|threshold_8|threshold_9" DEFAULT_VALUE="threshold_16"/>
+		<PARAMETER NAME="thld_jar2_2" TYPE="String" VALUE="threshold_1|threshold_10|threshold_11|threshold_12|threshold_13|threshold_14|threshold_15|threshold_16|threshold_17|threshold_18|threshold_19|threshold_2|threshold_20|threshold_21|threshold_22|threshold_23|threshold_24|threshold_25|threshold_26|threshold_27|threshold_28|threshold_29|threshold_3|threshold_30|threshold_31|threshold_32|threshold_33|threshold_34|threshold_35|threshold_36|threshold_37|threshold_38|threshold_39|threshold_4|threshold_40|threshold_41|threshold_42|threshold_43|threshold_44|threshold_45|threshold_46|threshold_47|threshold_48|threshold_49|threshold_5|threshold_50|threshold_51|threshold_52|threshold_53|threshold_54|threshold_55|threshold_56|threshold_57|threshold_58|threshold_59|threshold_6|threshold_60|threshold_61|threshold_62|threshold_63|threshold_7|threshold_8|threshold_9" DEFAULT_VALUE="threshold_16"/>
+		<PARAMETER NAME="thld_jar2_3" TYPE="String" VALUE="threshold_1|threshold_10|threshold_11|threshold_12|threshold_13|threshold_14|threshold_15|threshold_16|threshold_17|threshold_18|threshold_19|threshold_2|threshold_20|threshold_21|threshold_22|threshold_23|threshold_24|threshold_25|threshold_26|threshold_27|threshold_28|threshold_29|threshold_3|threshold_30|threshold_31|threshold_32|threshold_33|threshold_34|threshold_35|threshold_36|threshold_37|threshold_38|threshold_39|threshold_4|threshold_40|threshold_41|threshold_42|threshold_43|threshold_44|threshold_45|threshold_46|threshold_47|threshold_48|threshold_49|threshold_5|threshold_50|threshold_51|threshold_52|threshold_53|threshold_54|threshold_55|threshold_56|threshold_57|threshold_58|threshold_59|threshold_6|threshold_60|threshold_61|threshold_62|threshold_63|threshold_7|threshold_8|threshold_9" DEFAULT_VALUE="threshold_16"/>
+		<PARAMETER NAME="thld_jar2_4" TYPE="String" VALUE="threshold_1|threshold_10|threshold_11|threshold_12|threshold_13|threshold_14|threshold_15|threshold_16|threshold_17|threshold_18|threshold_19|threshold_2|threshold_20|threshold_21|threshold_22|threshold_23|threshold_24|threshold_25|threshold_26|threshold_27|threshold_28|threshold_29|threshold_3|threshold_30|threshold_31|threshold_32|threshold_33|threshold_34|threshold_35|threshold_36|threshold_37|threshold_38|threshold_39|threshold_4|threshold_40|threshold_41|threshold_42|threshold_43|threshold_44|threshold_45|threshold_46|threshold_47|threshold_48|threshold_49|threshold_5|threshold_50|threshold_51|threshold_52|threshold_53|threshold_54|threshold_55|threshold_56|threshold_57|threshold_58|threshold_59|threshold_6|threshold_60|threshold_61|threshold_62|threshold_63|threshold_7|threshold_8|threshold_9" DEFAULT_VALUE="threshold_16"/>
+		<PARAMETER NAME="thld_jar2_5" TYPE="String" VALUE="threshold_1|threshold_10|threshold_11|threshold_12|threshold_13|threshold_14|threshold_15|threshold_16|threshold_17|threshold_18|threshold_19|threshold_2|threshold_20|threshold_21|threshold_22|threshold_23|threshold_24|threshold_25|threshold_26|threshold_27|threshold_28|threshold_29|threshold_3|threshold_30|threshold_31|threshold_32|threshold_33|threshold_34|threshold_35|threshold_36|threshold_37|threshold_38|threshold_39|threshold_4|threshold_40|threshold_41|threshold_42|threshold_43|threshold_44|threshold_45|threshold_46|threshold_47|threshold_48|threshold_49|threshold_5|threshold_50|threshold_51|threshold_52|threshold_53|threshold_54|threshold_55|threshold_56|threshold_57|threshold_58|threshold_59|threshold_6|threshold_60|threshold_61|threshold_62|threshold_63|threshold_7|threshold_8|threshold_9" DEFAULT_VALUE="threshold_16"/>
+		<PARAMETER NAME="cyc_to_rld_jars_0" TYPE="Integer" VALUE="0..255" DEFAULT_VALUE="128"/>
+		<PARAMETER NAME="cyc_to_rld_jars_1" TYPE="Integer" VALUE="0..255" DEFAULT_VALUE="128"/>
+		<PARAMETER NAME="cyc_to_rld_jars_2" TYPE="Integer" VALUE="0..255" DEFAULT_VALUE="128"/>
+		<PARAMETER NAME="cyc_to_rld_jars_3" TYPE="Integer" VALUE="0..255" DEFAULT_VALUE="128"/>
+		<PARAMETER NAME="cyc_to_rld_jars_4" TYPE="Integer" VALUE="0..255" DEFAULT_VALUE="128"/>
+		<PARAMETER NAME="cyc_to_rld_jars_5" TYPE="Integer" VALUE="0..255" DEFAULT_VALUE="128"/>
+		<PARAMETER NAME="cfg_type" TYPE="String" VALUE="ddr|ddr2|ddr3|lpddr2" DEFAULT_VALUE="ddr3"/>
+		<PARAMETER NAME="cfg_interface_width" TYPE="String" VALUE="dwidth_8|dwidth_16|dwidth_24|dwidth_40|dwidth_32" DEFAULT_VALUE="dwidth_32"/>
+		<PARAMETER NAME="cfg_burst_length" TYPE="String" VALUE="bl_2|bl_4|bl_8|bl_16" DEFAULT_VALUE="bl_8"/>
+		<PARAMETER NAME="mem_if_dqs_width" TYPE="String" VALUE="dqs_width_1|dqs_width_2|dqs_width_3|dqs_width_4|dqs_width_5" DEFAULT_VALUE="dqs_width_4"/>
+		<PARAMETER NAME="output_regd" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="reorder_data" TYPE="String" VALUE="no_data_reordering|data_reordering" DEFAULT_VALUE="data_reordering"/>
+		<PARAMETER NAME="cfg_starve_limit" TYPE="String" VALUE="starve_limit_1|starve_limit_2|starve_limit_3|starve_limit_4|starve_limit_5|starve_limit_6|starve_limit_7|starve_limit_8|starve_limit_9|starve_limit_10|starve_limit_11|starve_limit_12|starve_limit_13|starve_limit_14|starve_limit_15|starve_limit_16|starve_limit_17|starve_limit_18|starve_limit_19|starve_limit_20|starve_limit_21|starve_limit_22|starve_limit_23|starve_limit_24|starve_limit_25|starve_limit_26|starve_limit_27|starve_limit_28|starve_limit_29|starve_limit_30|starve_limit_31|starve_limit_32|starve_limit_33|starve_limit_34|starve_limit_35|starve_limit_36|starve_limit_37|starve_limit_38|starve_limit_39|starve_limit_40|starve_limit_41|starve_limit_42|starve_limit_43|starve_limit_44|starve_limit_45|starve_limit_46|starve_limit_47|starve_limit_48|starve_limit_49|starve_limit_50|starve_limit_51|starve_limit_52|starve_limit_53|starve_limit_54|starve_limit_55|starve_limit_56|starve_limit_57|starve_limit_58|starve_limit_59|starve_limit_60|starve_limit_61|starve_limit_62|starve_limit_63" DEFAULT_VALUE="starve_limit_32"/>
+		<PARAMETER NAME="ctl_addr_order" TYPE="String" VALUE="chip_row_bank_col|chip_bank_row_col|row_chip_bank_col" DEFAULT_VALUE="chip_bank_row_col"/>
+		<PARAMETER NAME="mem_if_coladdr_width" TYPE="String" VALUE="addr_width_8|addr_width_9|addr_width_10|addr_width_11|addr_width_12" DEFAULT_VALUE="addr_width_12"/>
+		<PARAMETER NAME="mem_if_rowaddr_width" TYPE="String" VALUE="addr_width_13|addr_width_14|addr_width_15|addr_width_16|addr_width_12" DEFAULT_VALUE="addr_width_16"/>
+		<PARAMETER NAME="mem_if_bankaddr_width" TYPE="String" VALUE="addr_width_2|addr_width_3" DEFAULT_VALUE="addr_width_3"/>
+		<PARAMETER NAME="local_if_cs_width" TYPE="String" VALUE="addr_width_0|addr_width_1|addr_width_4|addr_width_2|addr_width_3" DEFAULT_VALUE="addr_width_2"/>
+		<PARAMETER NAME="mem_if_tcwl" TYPE="String" VALUE="tcwl_0|tcwl_2|tcwl_3|tcwl_4|tcwl_5|tcwl_6|tcwl_7|tcwl_8" DEFAULT_VALUE="tcwl_5"/>
+		<PARAMETER NAME="mem_if_al" TYPE="String" VALUE="al_0|al_1|al_2|al_3|al_4|al_5|al_6|al_7|al_8|al_9|al_10" DEFAULT_VALUE="al_0"/>
+		<PARAMETER NAME="mem_if_tcl" TYPE="String" VALUE="tcl_3|tcl_4|tcl_5|tcl_6|tcl_7|tcl_8|tcl_9|tcl_10|tcl_11" DEFAULT_VALUE="tcl_6"/>
+		<PARAMETER NAME="mem_if_trrd" TYPE="String" VALUE="trrd_1|trrd_2|trrd_3|trrd_4|trrd_5|trrd_6" DEFAULT_VALUE="trrd_4"/>
+		<PARAMETER NAME="mem_if_tfaw" TYPE="String" VALUE="tfaw_0|tfaw_1|tfaw_2|tfaw_3|tfaw_4|tfaw_5|tfaw_6|tfaw_7|tfaw_8|tfaw_9|tfaw_10|tfaw_11|tfaw_12|tfaw_13|tfaw_14|tfaw_15|tfaw_16|tfaw_17|tfaw_18|tfaw_19|tfaw_20|tfaw_21|tfaw_22|tfaw_23|tfaw_24|tfaw_25|tfaw_26|tfaw_27|tfaw_28|tfaw_29|tfaw_30|tfaw_31|tfaw_32" DEFAULT_VALUE="tfaw_16"/>
+		<PARAMETER NAME="mem_if_trfc" TYPE="Integer" VALUE="0..255" DEFAULT_VALUE="34"/>
+		<PARAMETER NAME="mem_if_trefi" TYPE="Integer" VALUE="0..8191" DEFAULT_VALUE="3120"/>
+		<PARAMETER NAME="mem_if_trcd" TYPE="String" VALUE="trcd_0|trcd_1|trcd_2|trcd_3|trcd_4|trcd_5|trcd_6|trcd_7|trcd_8|trcd_9|trcd_10|trcd_11" DEFAULT_VALUE="trcd_6"/>
+		<PARAMETER NAME="mem_if_trp" TYPE="String" VALUE="trp_2|trp_3|trp_4|trp_5|trp_6|trp_7|trp_8|trp_9" DEFAULT_VALUE="trp_6"/>
+		<PARAMETER NAME="mem_if_twr" TYPE="String" VALUE="twr_2|twr_3|twr_4|twr_5|twr_6|twr_7|twr_8|twr_9|twr_10|twr_11|twr_12" DEFAULT_VALUE="twr_6"/>
+		<PARAMETER NAME="mem_if_twtr" TYPE="String" VALUE="twtr_0|twtr_1|twtr_2|twtr_3|twtr_4|twtr_5|twtr_6" DEFAULT_VALUE="twtr_4"/>
+		<PARAMETER NAME="mem_if_trtp" TYPE="String" VALUE="trtp_0|trtp_1|trtp_2|trtp_3|trtp_4|trtp_5|trtp_6|trtp_7|trtp_8" DEFAULT_VALUE="trtp_4"/>
+		<PARAMETER NAME="mem_if_tras" TYPE="String" VALUE="tras_0|tras_1|tras_2|tras_3|tras_4|tras_5|tras_6|tras_7|tras_8|tras_9|tras_10|tras_11|tras_12|tras_13|tras_14|tras_15|tras_16|tras_17|tras_18|tras_19|tras_20|tras_21|tras_22|tras_23|tras_24|tras_25|tras_26|tras_27|tras_28|tras_29" DEFAULT_VALUE="tras_16"/>
+		<PARAMETER NAME="mem_if_trc" TYPE="String" VALUE="trc_0|trc_1|trc_2|trc_3|trc_4|trc_5|trc_6|trc_7|trc_8|trc_9|trc_10|trc_11|trc_12|trc_13|trc_14|trc_15|trc_16|trc_17|trc_18|trc_19|trc_20|trc_21|trc_22|trc_23|trc_24|trc_25|trc_26|trc_27|trc_28|trc_29|trc_30|trc_31|trc_32|trc_33|trc_34|trc_35|trc_36|trc_37|trc_38|trc_39|trc_40" DEFAULT_VALUE="trc_22"/>
+		<PARAMETER NAME="mem_if_tccd" TYPE="String" VALUE="tccd_0|tccd_1|tccd_2|tccd_3|tccd_4" DEFAULT_VALUE="tccd_4"/>
+		<PARAMETER NAME="mem_auto_pd_cycles" TYPE="Integer" VALUE="0..65535" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="cfg_self_rfsh_exit_cycles" TYPE="String" VALUE="ddr2_self_rfsh_exit_cycles|ddr3_self_rfsh_exit_cycles" DEFAULT_VALUE="ddr3_self_rfsh_exit_cycles"/>
+		<PARAMETER NAME="pdn_exit_cycles" TYPE="String" VALUE="fast_exit|slow_exit" DEFAULT_VALUE="slow_exit"/>
+		<PARAMETER NAME="mem_if_tmrd" TYPE="String" VALUE="ddr2_tmrd|ddr3_tmrd" DEFAULT_VALUE="ddr3_tmrd"/>
+		<PARAMETER NAME="ctl_ecc_enabled" TYPE="String" VALUE="ctl_ecc_disabled|ctl_ecc_enabled" DEFAULT_VALUE="ctl_ecc_disabled"/>
+		<PARAMETER NAME="ctl_ecc_rmw_enabled" TYPE="String" VALUE="ctl_ecc_rmw_disabled|ctl_ecc_rmw_enabled" DEFAULT_VALUE="ctl_ecc_rmw_disabled"/>
+		<PARAMETER NAME="enable_ecc_code_overwrites" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="enable_no_dm" TYPE="String" VALUE="disabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="gen_sbe" TYPE="String" VALUE="gen_sbe_disabled|gen_sbe_enabled" DEFAULT_VALUE="gen_sbe_disabled"/>
+		<PARAMETER NAME="gen_dbe" TYPE="String" VALUE="gen_dbe_disabled|gen_dbe_enabled" DEFAULT_VALUE="gen_dbe_disabled"/>
+		<PARAMETER NAME="enable_intr" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="mask_sbe_intr" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="mask_dbe_intr" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="mask_corr_dropped_intr" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="clr_intr" TYPE="String" VALUE="clr_intr|no_clr_intr" DEFAULT_VALUE="no_clr_intr"/>
+		<PARAMETER NAME="ctl_usr_refresh" TYPE="String" VALUE="ctl_usr_refresh_enabled|ctl_usr_refresh_disabled" DEFAULT_VALUE="ctl_usr_refresh_disabled"/>
+		<PARAMETER NAME="ctl_regdimm_enabled" TYPE="String" VALUE="regdimm_disabled|regdimm_enabled" DEFAULT_VALUE="regdimm_disabled"/>
+		<PARAMETER NAME="write_odt_chip" TYPE="String" VALUE="odt_disabled|write_chip0_odt0_chip1|write_chip0_odt1_chip1|write_chip0_odt01_chip1|write_chip0_chip1_odt0|write_chip0_odt0_chip1_odt0|write_chip0_odt1_chip1_odt0|write_chip0_odt01_chip1_odt0|write_chip0_chip1_odt1|write_chip0_odt0_chip1_odt1|write_chip0_odt1_chip1_odt1|write_chip0_odt01_chip1_odt1|write_chip0_chip1_odt01|write_chip0_odt0_chip1_odt01|write_chip0_odt1_chip1_odt01|write_chip0_odt01_chip1_odt01" DEFAULT_VALUE="odt_disabled"/>
+		<PARAMETER NAME="read_odt_chip" TYPE="String" VALUE="odt_disabled|read_chip0_odt0_chip1|read_chip0_odt1_chip1|read_chip0_odt01_chip1|read_chip0_chip1_odt0|read_chip0_odt0_chip1_odt0|read_chip0_odt1_chip1_odt0|read_chip0_odt01_chip1_odt0|read_chip0_chip1_odt1|read_chip0_odt0_chip1_odt1|read_chip0_odt1_chip1_odt1|read_chip0_odt01_chip1_odt1|read_chip0_chip1_odt01|read_chip0_odt0_chip1_odt01|read_chip0_odt1_chip1_odt01|read_chip0_odt01_chip1_odt01" DEFAULT_VALUE="odt_disabled"/>
+		<PARAMETER NAME="extra_ctl_clk_act_to_rdwr" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_act_to_pch" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_act_to_act" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_rd_to_rd" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_rd_to_rd_diff_chip" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_rd_to_wr" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_rd_to_wr_bc" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_rd_to_wr_diff_chip" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_rd_to_pch" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_rd_ap_to_valid" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_wr_to_wr" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_wr_to_wr_diff_chip" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_wr_to_rd" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_wr_to_rd_bc" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_wr_to_rd_diff_chip" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_wr_to_pch" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_wr_ap_to_valid" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_pch_to_valid" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_pch_all_to_valid" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_act_to_act_diff_bank" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_four_act_to_act" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_arf_to_valid" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_pdn_to_valid" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_srf_to_valid" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_srf_to_zq_cal" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_arf_period" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="extra_ctl_clk_pdn_period" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="enable_fast_exit_ppd" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="enable_dqs_tracking" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="rd_dwidth_0" TYPE="String" VALUE="dwidth_0|dwidth_32|dwidth_64|dwidth_128|dwidth_256" DEFAULT_VALUE="dwidth_0"/>
+		<PARAMETER NAME="rd_dwidth_1" TYPE="String" VALUE="dwidth_0|dwidth_32|dwidth_64|dwidth_128|dwidth_256" DEFAULT_VALUE="dwidth_0"/>
+		<PARAMETER NAME="rd_dwidth_2" TYPE="String" VALUE="dwidth_0|dwidth_32|dwidth_64|dwidth_128|dwidth_256" DEFAULT_VALUE="dwidth_0"/>
+		<PARAMETER NAME="rd_dwidth_3" TYPE="String" VALUE="dwidth_0|dwidth_32|dwidth_64|dwidth_128|dwidth_256" DEFAULT_VALUE="dwidth_0"/>
+		<PARAMETER NAME="rd_dwidth_4" TYPE="String" VALUE="dwidth_0|dwidth_32|dwidth_64|dwidth_128|dwidth_256" DEFAULT_VALUE="dwidth_0"/>
+		<PARAMETER NAME="rd_dwidth_5" TYPE="String" VALUE="dwidth_0|dwidth_32|dwidth_64|dwidth_128|dwidth_256" DEFAULT_VALUE="dwidth_0"/>
+		<PARAMETER NAME="wr_dwidth_0" TYPE="String" VALUE="dwidth_0|dwidth_32|dwidth_64|dwidth_128|dwidth_256" DEFAULT_VALUE="dwidth_0"/>
+		<PARAMETER NAME="wr_dwidth_1" TYPE="String" VALUE="dwidth_0|dwidth_32|dwidth_64|dwidth_128|dwidth_256" DEFAULT_VALUE="dwidth_0"/>
+		<PARAMETER NAME="wr_dwidth_2" TYPE="String" VALUE="dwidth_0|dwidth_32|dwidth_64|dwidth_128|dwidth_256" DEFAULT_VALUE="dwidth_0"/>
+		<PARAMETER NAME="wr_dwidth_3" TYPE="String" VALUE="dwidth_0|dwidth_32|dwidth_64|dwidth_128|dwidth_256" DEFAULT_VALUE="dwidth_0"/>
+		<PARAMETER NAME="wr_dwidth_4" TYPE="String" VALUE="dwidth_0|dwidth_32|dwidth_64|dwidth_128|dwidth_256" DEFAULT_VALUE="dwidth_0"/>
+		<PARAMETER NAME="wr_dwidth_5" TYPE="String" VALUE="dwidth_0|dwidth_32|dwidth_64|dwidth_128|dwidth_256" DEFAULT_VALUE="dwidth_0"/>
+		<PARAMETER NAME="rd_port_info_0" TYPE="String" VALUE="use_0_1_2_3|use_0_1|use_2_3|use_0|use_1|use_2|use_3|use_no" DEFAULT_VALUE="use_no"/>
+		<PARAMETER NAME="rd_port_info_1" TYPE="String" VALUE="use_0_1_2_3|use_0_1|use_2_3|use_0|use_1|use_2|use_3|use_no" DEFAULT_VALUE="use_no"/>
+		<PARAMETER NAME="rd_port_info_2" TYPE="String" VALUE="use_0_1_2_3|use_0_1|use_2_3|use_0|use_1|use_2|use_3|use_no" DEFAULT_VALUE="use_no"/>
+		<PARAMETER NAME="rd_port_info_3" TYPE="String" VALUE="use_0_1_2_3|use_0_1|use_2_3|use_0|use_1|use_2|use_3|use_no" DEFAULT_VALUE="use_no"/>
+		<PARAMETER NAME="rd_port_info_4" TYPE="String" VALUE="use_0_1_2_3|use_0_1|use_2_3|use_0|use_1|use_2|use_3|use_no" DEFAULT_VALUE="use_no"/>
+		<PARAMETER NAME="rd_port_info_5" TYPE="String" VALUE="use_0_1_2_3|use_0_1|use_2_3|use_0|use_1|use_2|use_3|use_no" DEFAULT_VALUE="use_no"/>
+		<PARAMETER NAME="wr_port_info_0" TYPE="String" VALUE="use_0_1_2_3|use_0_1|use_2_3|use_0|use_1|use_2|use_3|use_no" DEFAULT_VALUE="use_no"/>
+		<PARAMETER NAME="wr_port_info_1" TYPE="String" VALUE="use_0_1_2_3|use_0_1|use_2_3|use_0|use_1|use_2|use_3|use_no" DEFAULT_VALUE="use_no"/>
+		<PARAMETER NAME="wr_port_info_2" TYPE="String" VALUE="use_0_1_2_3|use_0_1|use_2_3|use_0|use_1|use_2|use_3|use_no" DEFAULT_VALUE="use_no"/>
+		<PARAMETER NAME="wr_port_info_3" TYPE="String" VALUE="use_0_1_2_3|use_0_1|use_2_3|use_0|use_1|use_2|use_3|use_no" DEFAULT_VALUE="use_no"/>
+		<PARAMETER NAME="wr_port_info_4" TYPE="String" VALUE="use_0_1_2_3|use_0_1|use_2_3|use_0|use_1|use_2|use_3|use_no" DEFAULT_VALUE="use_no"/>
+		<PARAMETER NAME="wr_port_info_5" TYPE="String" VALUE="use_0_1_2_3|use_0_1|use_2_3|use_0|use_1|use_2|use_3|use_no" DEFAULT_VALUE="use_no"/>
+		<PARAMETER NAME="rd_fifo_in_use_0" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="rd_fifo_in_use_1" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="rd_fifo_in_use_2" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="rd_fifo_in_use_3" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="wr_fifo_in_use_0" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="wr_fifo_in_use_1" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="wr_fifo_in_use_2" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="wr_fifo_in_use_3" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="cmd_port_in_use_0" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="cmd_port_in_use_1" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="cmd_port_in_use_2" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="cmd_port_in_use_3" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="cmd_port_in_use_4" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="cmd_port_in_use_5" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="user_priority_0" TYPE="String" VALUE="priority_0|priority_1|priority_2|priority_3|priority_4|priority_5|priority_6|priority_7" DEFAULT_VALUE="priority_0"/>
+		<PARAMETER NAME="user_priority_1" TYPE="String" VALUE="priority_0|priority_1|priority_2|priority_3|priority_4|priority_5|priority_6|priority_7" DEFAULT_VALUE="priority_0"/>
+		<PARAMETER NAME="user_priority_2" TYPE="String" VALUE="priority_0|priority_1|priority_2|priority_3|priority_4|priority_5|priority_6|priority_7" DEFAULT_VALUE="priority_0"/>
+		<PARAMETER NAME="user_priority_3" TYPE="String" VALUE="priority_0|priority_1|priority_2|priority_3|priority_4|priority_5|priority_6|priority_7" DEFAULT_VALUE="priority_0"/>
+		<PARAMETER NAME="user_priority_4" TYPE="String" VALUE="priority_0|priority_1|priority_2|priority_3|priority_4|priority_5|priority_6|priority_7" DEFAULT_VALUE="priority_0"/>
+		<PARAMETER NAME="user_priority_5" TYPE="String" VALUE="priority_0|priority_1|priority_2|priority_3|priority_4|priority_5|priority_6|priority_7" DEFAULT_VALUE="priority_0"/>
+		<PARAMETER NAME="static_weight_0" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="static_weight_1" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="static_weight_2" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="static_weight_3" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="static_weight_4" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="static_weight_5" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_0_0" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_0_1" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_0_2" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_0_3" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_0_4" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_0_5" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_1_0" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_1_1" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_1_2" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_1_3" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_1_4" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_1_5" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_2_0" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_2_1" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_2_2" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_2_3" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_2_4" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_2_5" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_3_0" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_3_1" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_3_2" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_3_3" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_3_4" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_3_5" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_4_0" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_4_1" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_4_2" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_4_3" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_4_4" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_4_5" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_5_0" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_5_1" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_5_2" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_5_3" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_5_4" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_5_5" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_6_0" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_6_1" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_6_2" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_6_3" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_6_4" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_6_5" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_7_0" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_7_1" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_7_2" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_7_3" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_7_4" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="priority_7_5" TYPE="String" VALUE="weight_0|weight_1|weight_2|weight_3|weight_4|weight_5|weight_6|weight_7|weight_8|weight_9|weight_10|weight_11|weight_12|weight_13|weight_14|weight_15|weight_16|weight_17|weight_18|weight_19|weight_20|weight_21|weight_22|weight_23|weight_24|weight_25|weight_26|weight_27|weight_28|weight_29|weight_30|weight_31" DEFAULT_VALUE="weight_0"/>
+		<PARAMETER NAME="sum_wt_priority_0" TYPE="Integer" VALUE="0..186" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="sum_wt_priority_1" TYPE="Integer" VALUE="0..186" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="sum_wt_priority_2" TYPE="Integer" VALUE="0..186" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="sum_wt_priority_3" TYPE="Integer" VALUE="0..186" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="sum_wt_priority_4" TYPE="Integer" VALUE="0..186" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="sum_wt_priority_5" TYPE="Integer" VALUE="0..186" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="sum_wt_priority_6" TYPE="Integer" VALUE="0..186" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="sum_wt_priority_7" TYPE="Integer" VALUE="0..186" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="mem_if_memtype" TYPE="String" VALUE="ddr_sdram|ddr2_sdram|ddr3_sdram|lpddr2_sdram" DEFAULT_VALUE="ddr3_sdram"/>
+		<PARAMETER NAME="mem_if_cs_width" TYPE="String" VALUE="mem_if_cs_width_1|mem_if_cs_width_2|mem_if_cs_width_4|mem_if_cs_width_8" DEFAULT_VALUE="mem_if_cs_width_1"/>
+		<PARAMETER NAME="mem_if_dwidth" TYPE="String" VALUE="mem_if_dwidth_8|mem_if_dwidth_16|mem_if_dwidth_24|mem_if_dwidth_32|mem_if_dwidth_40" DEFAULT_VALUE="mem_if_dwidth_8"/>
+		<PARAMETER NAME="mem_if_dq_per_chip" TYPE="String" VALUE="mem_if_dq_per_chip_4|mem_if_dq_per_chip_8|mem_if_dq_per_chip_16" DEFAULT_VALUE="mem_if_dq_per_chip_8"/>
+		<PARAMETER NAME="mem_if_speedbin" TYPE="String" VALUE="ddr_400_3_3_3|ddr2_400_3_3_3|ddr2_400_4_4_4|ddr2_533_3_3_3|ddr2_533_4_4_4|ddr2_667_4_4_4|ddr2_667_5_5_5|ddr2_800_4_4_4|ddr2_800_5_5_5|ddr2_800_6_6_6|ddr3_800_5_5_5|ddr3_800_6_6_6|ddr3_1066_6_6_6|ddr3_1066_7_7_7|ddr3_1066_8_8_8|ddr3_1333_7_7_7|ddr3_1333_8_8_8|ddr3_1333_9_9_9|ddr3_1333_10_10_10|ddr3_1600_8_8_8|ddr3_1600_9_9_9|ddr3_1600_10_10_10|ddr3_1600_11_11_11" DEFAULT_VALUE="ddr3_1066_6_6_6"/>
+		<PARAMETER NAME="mem_if_cs_per_rank" TYPE="String" VALUE="mem_if_cs_per_rank_1|mem_if_cs_per_rank_2" DEFAULT_VALUE="mem_if_cs_per_rank_1"/>
+		<PARAMETER NAME="mem_if_burstlength" TYPE="String" VALUE="mem_if_burstlength_2|mem_if_burstlength_4|mem_if_burstlength_8|mem_if_burstlength_16" DEFAULT_VALUE="mem_if_burstlength_8"/>
+		<PARAMETER NAME="ecc_dq_width" TYPE="String" VALUE="ecc_dq_width_0|ecc_dq_width_8" DEFAULT_VALUE="ecc_dq_width_0"/>
+		<PARAMETER NAME="enable_bonding_0" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="enable_bonding_1" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="enable_bonding_2" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="enable_bonding_3" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="enable_bonding_4" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="enable_bonding_5" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="auto_pch_enable_0" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="auto_pch_enable_1" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="auto_pch_enable_2" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="auto_pch_enable_3" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="auto_pch_enable_4" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="auto_pch_enable_5" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="enable_atpg" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="enable_pipelineglobal" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="enable_bonding_wrapback" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="cal_req" TYPE="String" VALUE="disabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="attr_static_config_valid" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="attr_debug_select_byte" TYPE="Vector" WIDTH="32" DEFAULT_VALUE="00000000000000000000000000000000"/>
+		<PARAMETER NAME="attr_counter_zero_reset" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="attr_counter_one_reset" TYPE="String" VALUE="disabled|enabled" DEFAULT_VALUE="disabled"/>
+		<PARAMETER NAME="attr_counter_zero_mask" TYPE="Vector" WIDTH="64" DEFAULT_VALUE="0000000000000000000000000000000000000000000000000000000000000000"/>
+		<PARAMETER NAME="attr_counter_one_mask" TYPE="Vector" WIDTH="64" DEFAULT_VALUE="0000000000000000000000000000000000000000000000000000000000000000"/>
+		<PARAMETER NAME="attr_counter_zero_match" TYPE="Vector" WIDTH="64" DEFAULT_VALUE="0000000000000000000000000000000000000000000000000000000000000000"/>
+		<PARAMETER NAME="attr_counter_one_match" TYPE="Vector" WIDTH="64" DEFAULT_VALUE="0000000000000000000000000000000000000000000000000000000000000000"/>
+		<PARAMETER NAME="disable_merging" TYPE="String" VALUE="merging_enabled|merging_disabled" DEFAULT_VALUE="merging_enabled"/>
+		<PARAMETER NAME="delay_bonding" TYPE="String" VALUE="bonding_latency_0|bonding_latency_1|bonding_latency_2|bonding_latency_3" DEFAULT_VALUE="bonding_latency_0"/>
+		<PARAMETER NAME="dfx_bypass_enable" TYPE="String" VALUE="dfx_bypass_enabled|dfx_bypass_disabled" DEFAULT_VALUE="dfx_bypass_disabled"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_hmc" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="afirdatavalid" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="csrclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="csrdin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="csren" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctlcalfail" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctlcalsuccess" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctlclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctlresetn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="globalresetn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstcmdresetn0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstcmdresetn1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstcmdresetn2" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstcmdresetn3" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstcmdresetn4" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstcmdresetn5" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstrdclk0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstrdclk1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstrdclk2" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstrdclk3" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstrdready0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstrdready1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstrdready2" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstrdready3" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstrdresetn0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstrdresetn1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstrdresetn2" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstrdresetn3" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrackready0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrackready1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrackready2" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrackready3" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrackready4" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrackready5" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrclk0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrclk1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrclk2" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrclk3" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrresetn0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrresetn1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrresetn2" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrresetn3" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="localdeeppowerdnreq" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="localrefreshreq" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="localselfrfshreq" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mmrbe" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mmrburstbegin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mmrclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mmrreadreq" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mmrresetn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mmrwritereq" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="portclk0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="portclk1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="portclk2" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="portclk3" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="portclk4" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="portclk5" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="scanenable" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="scbe" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="scburstbegin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="scclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="screadreq" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="scresetn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="scwritereq" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="afirdata" TYPE="INPUT" WIDTH="80" DEFAULT_VALUE="0"/>
+		<PORT NAME="afiseqbusy" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="afiwlat" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="bondingin1" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="bondingin2" TYPE="INPUT" WIDTH="6" DEFAULT_VALUE="0"/>
+		<PORT NAME="bondingin3" TYPE="INPUT" WIDTH="6" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstcmddata0" TYPE="INPUT" WIDTH="42" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstcmddata1" TYPE="INPUT" WIDTH="42" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstcmddata2" TYPE="INPUT" WIDTH="42" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstcmddata3" TYPE="INPUT" WIDTH="42" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstcmddata4" TYPE="INPUT" WIDTH="42" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstcmddata5" TYPE="INPUT" WIDTH="42" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrdata0" TYPE="INPUT" WIDTH="90" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrdata1" TYPE="INPUT" WIDTH="90" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrdata2" TYPE="INPUT" WIDTH="90" DEFAULT_VALUE="0"/>
+		<PORT NAME="iavstwrdata3" TYPE="INPUT" WIDTH="90" DEFAULT_VALUE="0"/>
+		<PORT NAME="localdeeppowerdnchip" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="localrefreshchip" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="localselfrfshchip" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="mmraddr" TYPE="INPUT" WIDTH="10" DEFAULT_VALUE="0"/>
+		<PORT NAME="mmrburstcount" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="mmrwdata" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="scaddr" TYPE="INPUT" WIDTH="10" DEFAULT_VALUE="0"/>
+		<PORT NAME="scburstcount" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="scwdata" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="aficasn" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="afirasn" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="afirstn" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="afiwen" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="csrdout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctlcalreq" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="localdeeppowerdnack" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="localinitdone" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="localpowerdownack" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="localrefreshack" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="localselfrfshack" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mmrrdatavalid" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mmrwaitrequest" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="oammready0" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="oammready1" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="oammready2" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="oammready3" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="oammready4" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="oammready5" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ordavstvalid0" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ordavstvalid1" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ordavstvalid2" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ordavstvalid3" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="owrackavstdata0" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="owrackavstdata1" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="owrackavstdata2" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="owrackavstdata3" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="owrackavstdata4" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="owrackavstdata5" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="owrackavstvalid0" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="owrackavstvalid1" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="owrackavstvalid2" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="owrackavstvalid3" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="owrackavstvalid4" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="owrackavstvalid5" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="scrdatavalid" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="scwaitrequest" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="afiaddr" TYPE="OUTPUT" WIDTH="20" DEFAULT_VALUE="0"/>
+		<PORT NAME="afiba" TYPE="OUTPUT" WIDTH="3" DEFAULT_VALUE="0"/>
+		<PORT NAME="aficke" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="aficsn" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="afictllongidle" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="afictlrefreshdone" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="afidm" TYPE="OUTPUT" WIDTH="10" DEFAULT_VALUE="0"/>
+		<PORT NAME="afidqsburst" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="afiodt" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="afirdataen" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="afirdataenfull" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="afiwdata" TYPE="OUTPUT" WIDTH="80" DEFAULT_VALUE="0"/>
+		<PORT NAME="afiwdatavalid" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="bondingout1" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="bondingout2" TYPE="OUTPUT" WIDTH="6" DEFAULT_VALUE="0"/>
+		<PORT NAME="bondingout3" TYPE="OUTPUT" WIDTH="6" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfgaddlat" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfgbankaddrwidth" TYPE="OUTPUT" WIDTH="3" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfgcaswrlat" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfgcoladdrwidth" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfgcsaddrwidth" TYPE="OUTPUT" WIDTH="3" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfgdevicewidth" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfginterfacewidth" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfgrowaddrwidth" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfgtcl" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfgtmrd" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfgtrefi" TYPE="OUTPUT" WIDTH="13" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfgtrfc" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfgtwr" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctlcalbytelaneseln" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="ctlmemclkdisable" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="dramconfig" TYPE="OUTPUT" WIDTH="21" DEFAULT_VALUE="0"/>
+		<PORT NAME="mmrrdata" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="ordavstdata0" TYPE="OUTPUT" WIDTH="80" DEFAULT_VALUE="0"/>
+		<PORT NAME="ordavstdata1" TYPE="OUTPUT" WIDTH="80" DEFAULT_VALUE="0"/>
+		<PORT NAME="ordavstdata2" TYPE="OUTPUT" WIDTH="80" DEFAULT_VALUE="0"/>
+		<PORT NAME="ordavstdata3" TYPE="OUTPUT" WIDTH="80" DEFAULT_VALUE="0"/>
+		<PORT NAME="scrdata" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

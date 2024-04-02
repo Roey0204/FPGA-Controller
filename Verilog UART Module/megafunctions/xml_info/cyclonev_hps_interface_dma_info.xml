@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_hps_interface_dma">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_hps_interface_dma" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="channel0_req" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel0_single" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel1_req" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel1_single" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel2_req" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel2_single" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel3_req" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel3_single" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel4_req" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel4_single" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel5_req" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel5_single" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel6_req" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel6_single" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel7_req" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel7_single" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel0_xx_ack" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel1_xx_ack" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel2_xx_ack" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel3_xx_ack" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel4_xx_ack" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel5_xx_ack" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel6_xx_ack" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="channel7_xx_ack" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_soc_interface_soc2fpga">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_soc_interface_soc2fpga" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="soc2fpgaaxiarready" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiawready" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxirlast" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxirvalid" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgabvalid" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgawready" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="fpga2socportsizeconfig" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxirdata" TYPE="INPUT" WIDTH="128" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxirid" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxirresp" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgabid" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgabresp" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgawidth" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiarvalid" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiawvalid" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxirready" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgabready" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgawlast" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgawvalid" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiar" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiarburst" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiarcache" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiarid" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiarlen" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiarlock" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiarprot" TYPE="OUTPUT" WIDTH="3" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiarsize" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiaw" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiawburst" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiawcache" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiawid" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiawlen" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiawlock" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiawprot" TYPE="OUTPUT" WIDTH="3" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgaaxiawsize" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgawdata" TYPE="OUTPUT" WIDTH="128" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgawid" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="soc2fpgawstrb" TYPE="OUTPUT" WIDTH="16" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

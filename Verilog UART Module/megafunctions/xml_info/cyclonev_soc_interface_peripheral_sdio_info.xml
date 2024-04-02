@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_soc_interface_peripheral_sdio">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_soc_interface_peripheral_sdio" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="carddetectn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cardwriteprt" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ccmdin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cdatain" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="cardpoweren" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cclkout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ccmdodpullupenn" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ccmdout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ccmdouten" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cardvolta" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="cardvoltb" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="cdataout" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="cdataouten" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

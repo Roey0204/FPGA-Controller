@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="pll_dll_src" TYPE="String" VALUE="c_0_cnt|c_1_cnt|c_2_cnt|c_3_cnt|c_4_cnt|c_5_cnt|c_6_cnt|c_7_cnt|c_8_cnt|c_9_cnt|c_10_cnt|c_11_cnt|c_12_cnt|c_13_cnt|c_14_cnt|c_15_cnt|c_16_cnt|c_17_cnt|clkin_0|clkin_1|clkin_2|clkin_3|vss" DEFAULT_VALUE="vss" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_pll_dll_output" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="cclk" TYPE="INPUT" WIDTH="18" DEFAULT_VALUE="0" />
+		<PORT NAME="clkin" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="clkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

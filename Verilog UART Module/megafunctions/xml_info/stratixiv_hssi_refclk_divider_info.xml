@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="enable_divider" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="divider_number" TYPE="Integer" VALUE="0|1" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="refclk_coupling_termination" TYPE="String" VALUE="DC Coupling External Termination|DC coupling 100 ohm OCT|AC Coupling 100 Ohm OCT|unused" DEFAULT_VALUE="AC Coupling 100 Ohm OCT" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="stratixiv_hssi_refclk_divider" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="inclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dprioin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dpriodisable" TYPE="INPUT" DEFAULT_VALUE="1" />
+		<PORT NAME="clkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dprioout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

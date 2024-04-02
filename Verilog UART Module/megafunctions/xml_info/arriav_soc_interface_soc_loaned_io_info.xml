@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_soc_interface_soc_loaned_io">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_soc_interface_soc_loaned_io" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="loanf2s" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="loantri" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="fakedout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="loans2f" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

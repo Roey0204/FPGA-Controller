@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_io_aux">
+	<PARAMETERS>
+		<PARAMETER NAME="sys_clk_source" TYPE="String" VALUE="int_osc_clk|clock_user|pll_clk|core_clk" DEFAULT_VALUE="int_osc_clk"/>
+		<PARAMETER NAME="sys_clk_div" TYPE="String" VALUE="nios_divide_by_1|nios_divide_by_2|nios_divide_by_4|nios_divide_by_6" DEFAULT_VALUE="nios_divide_by_2"/>
+		<PARAMETER NAME="cal_clk_div" TYPE="String" VALUE="cal_divide_by_2|cal_divide_by_4|cal_divide_by_6|cal_divide_by_8|cal_divide_by_10|cal_divide_by_12|cal_divide_by_16|cal_divide_by_20" DEFAULT_VALUE="cal_divide_by_6"/>
+		<PARAMETER NAME="debug_mode" TYPE="String" VALUE="mode_normal|mode_debug" DEFAULT_VALUE="mode_normal"/>
+		<PARAMETER NAME="engineering_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="contents" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="tile0_contents" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="tile1_contents" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="tile2_contents" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="tile3_contents" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="tile4_contents" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="tile5_contents" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="tile6_contents" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="tile7_contents" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="tile8_contents" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="tile9_contents" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="tile10_contents" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="tile11_contents" TYPE="String" DEFAULT_VALUE="UNUSED"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_io_aux" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="core_avl_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="core_nios_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="core_prog_done" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="debug_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mcu_en" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mode" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soft_nios_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soft_nios_read" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soft_nios_write" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="system_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="uc_read_data_valid" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="usrmode" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="vji_cdr_to_the_hard_nios" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="vji_rti_to_the_hard_nios" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="vji_sdr_to_the_hard_nios" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="vji_tck_to_the_hard_nios" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="vji_tdi_to_the_hard_nios" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="vji_udr_to_the_hard_nios" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="vji_uir_to_the_hard_nios" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="debug_select" TYPE="INPUT" WIDTH="16" DEFAULT_VALUE="0"/>
+		<PORT NAME="soft_nios_addr" TYPE="INPUT" WIDTH="19" DEFAULT_VALUE="0"/>
+		<PORT NAME="soft_nios_ctl_sig_bidir_in" TYPE="INPUT" WIDTH="9" DEFAULT_VALUE="0"/>
+		<PORT NAME="soft_nios_write_data" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="soft_ram_read_data" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="uc_read_data" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="vji_ir_in_to_the_hard_nios" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="soft_ram_read" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soft_ram_rst_n" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="soft_ram_write" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="uc_av_bus_clk" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="uc_read" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="uc_write" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="vji_ir_out_from_the_hard_nios" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="vji_tdo_from_the_hard_nios" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="debug_out" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="soft_nios_ctl_sig_bidir_out" TYPE="OUTPUT" WIDTH="9" DEFAULT_VALUE="0"/>
+		<PORT NAME="soft_nios_read_data" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="soft_ram_addr" TYPE="OUTPUT" WIDTH="19" DEFAULT_VALUE="0"/>
+		<PORT NAME="soft_ram_ctl_sig" TYPE="OUTPUT" WIDTH="9" DEFAULT_VALUE="0"/>
+		<PORT NAME="soft_ram_write_data" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="uc_address" TYPE="OUTPUT" WIDTH="19" DEFAULT_VALUE="0"/>
+		<PORT NAME="uc_write_data" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

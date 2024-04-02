@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_oscillator">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_oscillator" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="oscena" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clkout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clkout1" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="observableoutputport" TYPE="OUTPUT" CONTEXT="OBSERVABLE" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

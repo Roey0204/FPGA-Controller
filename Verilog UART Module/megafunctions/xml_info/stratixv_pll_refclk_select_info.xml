@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="pll_auto_clk_sw_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_clk_loss_edge" TYPE="String" VALUE="both_edges|rising_edge" DEFAULT_VALUE="both_edges" />
+		<PARAMETER NAME="pll_clk_loss_sw_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_clk_sw_dly" TYPE="Integer" VALUE="0..7" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="pll_clkin_0_src" TYPE="String" VALUE="core_ref_clk|adj_pll_clk|ref_clk0|ref_clk1|clk_0|clk_1|clk_2|clk_3|vss|cmu_iqclk|iqtxrxclk|fpll|pll_iqclk" DEFAULT_VALUE="ref_clk0" />
+		<PARAMETER NAME="pll_clkin_1_src" TYPE="String" VALUE="core_ref_clk|adj_pll_clk|ref_clk0|ref_clk1|clk_0|clk_1|clk_2|clk_3|vss|cmu_iqclk|iqtxrxclk|fpll|pll_iqclk" DEFAULT_VALUE="ref_clk1" />
+		<PARAMETER NAME="pll_manu_clk_sw_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_sw_refclk_src" TYPE="String" VALUE="clk_0|clk_1" DEFAULT_VALUE="clk_0" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="stratixv_pll_refclk_select" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="adjpllin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="cclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="coreclkin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="extswitch" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="iqtxrxclkin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="plliqclkin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxiqclkin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clkin" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="refiqclk" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="clk0bad" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clk1bad" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="extswitchbuf" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pllclksel" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

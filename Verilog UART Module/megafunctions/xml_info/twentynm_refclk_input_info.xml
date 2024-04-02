@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_refclk_input">
+	<PARAMETERS>
+		<PARAMETER NAME="ref_clk_mode" TYPE="String" VALUE="current_clk_pin0" DEFAULT_VALUE="current_clk_pin0"/>
+		<PARAMETER NAME="pllin_msel" TYPE="String" VALUE="refclk0_ftop|refclk0_withdly|refclk0|refclk0_frbom" DEFAULT_VALUE="refclk0_ftop"/>
+		<PARAMETER NAME="refclk0in_msel" TYPE="String" VALUE="refclk1_0|clk_pin_0|ground_0" DEFAULT_VALUE="refclk1_0"/>
+		<PARAMETER NAME="refclk1in_msel" TYPE="String" VALUE="refclk2_1|refclk3_1|ground_1" DEFAULT_VALUE="refclk2_1"/>
+		<PARAMETER NAME="refclk2in_msel" TYPE="String" VALUE="pll_output_2|clk_pin_2|ground_2" DEFAULT_VALUE="pll_output_2"/>
+		<PARAMETER NAME="refclk3in_msel" TYPE="String" VALUE="pll_output_3|clk_pin_3|ground_3" DEFAULT_VALUE="pll_output_3"/>
+		<PARAMETER NAME="refclk1_muxin_en" TYPE="String" VALUE="disable_muxin_1|enable_muxin_1" DEFAULT_VALUE="disable_muxin_1"/>
+		<PARAMETER NAME="refclk2_muxin_en" TYPE="String" VALUE="disable_muxin_2|enable_muxin_2" DEFAULT_VALUE="disable_muxin_2"/>
+		<PARAMETER NAME="refclk3_muxin_en" TYPE="String" VALUE="disable_muxin_3|enable_muxin_3" DEFAULT_VALUE="disable_muxin_3"/>
+		<PARAMETER NAME="refclk1_tp_upen" TYPE="String" VALUE="disable_tp_up_1|enable_tp_up_1" DEFAULT_VALUE="disable_tp_up_1"/>
+		<PARAMETER NAME="refclk1_tp_dwnen" TYPE="String" VALUE="disable_tp_dn_1|enable_tp_dn_1" DEFAULT_VALUE="disable_tp_dn_1"/>
+		<PARAMETER NAME="refclk1_btm_upen" TYPE="String" VALUE="disable_bt_up_1|enable_bt_up_1" DEFAULT_VALUE="disable_bt_up_1"/>
+		<PARAMETER NAME="refclk1_btm_dwnen" TYPE="String" VALUE="disable_bt_dn_1|enable_bt_dn_1" DEFAULT_VALUE="disable_bt_dn_1"/>
+		<PARAMETER NAME="refclk2_tp_upen" TYPE="String" VALUE="disable_tp_up_2|enable_tp_up_2" DEFAULT_VALUE="disable_tp_up_2"/>
+		<PARAMETER NAME="refclk2_tp_dwnen" TYPE="String" VALUE="disable_tp_dn_2|enable_tp_dn_2" DEFAULT_VALUE="disable_tp_dn_2"/>
+		<PARAMETER NAME="refclk2_btm_upen" TYPE="String" VALUE="disable_bt_up_2|enable_bt_up_2" DEFAULT_VALUE="disable_bt_up_2"/>
+		<PARAMETER NAME="refclk2_btm_dwnen" TYPE="String" VALUE="disable_bt_dn_2|enable_bt_dn_2" DEFAULT_VALUE="disable_bt_dn_2"/>
+		<PARAMETER NAME="refclk3_tp_upen" TYPE="String" VALUE="disable_tp_up_3|enable_tp_up_3" DEFAULT_VALUE="disable_tp_up_3"/>
+		<PARAMETER NAME="refclk3_tp_dwnen" TYPE="String" VALUE="disable_tp_dn_3|enable_tp_dn_3" DEFAULT_VALUE="disable_tp_dn_3"/>
+		<PARAMETER NAME="refclk3_btm_upen" TYPE="String" VALUE="disable_bt_up_3|enable_bt_up_3" DEFAULT_VALUE="disable_bt_up_3"/>
+		<PARAMETER NAME="refclk3_btm_dwnen" TYPE="String" VALUE="disable_bt_dn_3|enable_bt_dn_3" DEFAULT_VALUE="disable_bt_dn_3"/>
+		<PARAMETER NAME="ref2to3_en" TYPE="String" VALUE="disable_2to3|enable_2to3" DEFAULT_VALUE="disable_2to3"/>
+		<PARAMETER NAME="ref3to2_en" TYPE="String" VALUE="disable_3to2|enable_3to2" DEFAULT_VALUE="disable_3to2"/>
+		<PARAMETER NAME="clkpin2_select" TYPE="String" VALUE="select_clkpin_0|select_clkpin_1|select_clkpin_2|select_clkpin_3" DEFAULT_VALUE="select_clkpin_0"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_refclk_input" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="pll_cascade_in" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="down_in" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="ref_clk_in" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="up_in" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="clk_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="down_out" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="up_out" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

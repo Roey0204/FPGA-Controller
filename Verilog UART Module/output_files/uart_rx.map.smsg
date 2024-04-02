@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at Clock_2_Hz.v(9): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at Clock_1_Hz.v(9): always construct contains both blocking and non-blocking assignments

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="delay_dqs_enable_by_half_cycle" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="bypass_output_register" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="add_phase_transfer_reg" TYPE="String" VALUE="false|true|dynamic" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="use_enable_tracking" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="use_on_die_variation_tracking" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="use_pvt_compensation" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="int_delay_chain_setting" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="ext_delay_chain_setting" TYPE="Integer" VALUE="0..2" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="sim_dqsenablein_pre_delay" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriavgz_dqs_enable_ctrl" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="dqsenablein" TYPE="INPUT" DEFAULT_VALUE="0" SIM_DEFAULT_VALUE="1" />
+		<PORT NAME="zerophaseclk" TYPE="INPUT" DEFAULT_VALUE="0" SIM_DEFAULT_VALUE="1" />
+		<PORT NAME="enaphasetransferreg" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="levelingclk" TYPE="INPUT" DEFAULT_VALUE="0" SIM_DEFAULT_VALUE="1" />
+		<PORT NAME="enatrackingreset" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="coredqsenabledelayctrlin" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="coredqsdisablendelayctrlin" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="dqsenableout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enatrackingevent" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enatrackingupdwn" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="nextphasealign" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="prevphasealign" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="prevphasevalid" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rankclkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="prevphasedelaysetting" TYPE="OUTPUT" WIDTH="6" DEFAULT_VALUE="0" />
+		<PORT NAME="coredqsenabledelayctrlout" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="coredqsdisablendelayctrlout" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="dffin" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE" />
+		<PORT NAME="dffphasetransfer" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE" />
+		<PORT NAME="dffextenddqsenable" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE" />
+	</PORTS>
+</ROOT>

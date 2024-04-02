@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_clkselect">
+	<PARAMETERS>
+		<PARAMETER NAME="test_cff" TYPE="String" VALUE="low|high" DEFAULT_VALUE="low"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_clkselect" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="inclk" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="clkselect" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="outclk" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

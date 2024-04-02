@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="portaddr" TYPE="Integer" VALUE="1..32" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="devaddr" TYPE="Integer" VALUE="1..32" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="dprio_config_mode" TYPE="Vector" DEFAULT_VALUE="000000" WIDTH="6" />
+		<PARAMETER NAME="in_xaui_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="use_deskew_fifo" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="auto_spd_phystatus_notify_count" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="rx0_use_double_data_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="tx0_use_double_data_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rx0_reset_clock_output_during_digital_reset" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="tx0_reset_clock_output_during_digital_reset" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rx0_recovered_clk_mux_select" TYPE="String" VALUE="recovered clock|local reference clock|digital reference clock" DEFAULT_VALUE="recovered clock" />
+		<PARAMETER NAME="rx0_clk1_mux_select" TYPE="String" VALUE="recovered clock|local reference clock|digital reference clock|master clock" DEFAULT_VALUE="recovered clock" />
+		<PARAMETER NAME="rx0_clk2_mux_select" TYPE="String" VALUE="recovered clock|local reference clock|digital reference clock" DEFAULT_VALUE="recovered clock" />
+		<PARAMETER NAME="rx0_rd_clk_mux_select" TYPE="String" VALUE="core clock|int clock" DEFAULT_VALUE="int clock" />
+		<PARAMETER NAME="tx0_wr_clk_mux_select" TYPE="String" VALUE="int_clk|core_clk" DEFAULT_VALUE="int_clk" />
+		<PARAMETER NAME="tx0_rd_clk_mux_select" TYPE="String" VALUE="local|central" DEFAULT_VALUE="local" />
+		<PARAMETER NAME="rx0_ph_fifo_reg_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rx0_ph_fifo_reset_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="tx0_ph_fifo_reset_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rx0_ph_fifo_user_ctrl_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="tx0_ph_fifo_user_ctrl_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rx0_channel_bonding" TYPE="String" VALUE="none|x2|x4" DEFAULT_VALUE="none" />
+		<PARAMETER NAME="tx0_channel_bonding" TYPE="String" VALUE="none|x2|x4" DEFAULT_VALUE="none" />
+		<PARAMETER NAME="tx0_clk_pd_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rx0_clk_pd_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="use_coreclk_out_post_divider" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="coreclk_out_gated_by_quad_reset" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="select_refclk_dig" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="auto_spd_deassert_ph_fifo_rst_count" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="tx_xaui_sm_backward_compatible_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rx_xaui_sm_backward_compatible_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="rx0_logical_to_physical_mapping" TYPE="Integer" VALUE="0..5" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="rx1_logical_to_physical_mapping" TYPE="Integer" VALUE="0..5" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="rx2_logical_to_physical_mapping" TYPE="Integer" VALUE="0..5" DEFAULT_VALUE="2" />
+		<PARAMETER NAME="rx3_logical_to_physical_mapping" TYPE="Integer" VALUE="0..5" DEFAULT_VALUE="3" />
+		<PARAMETER NAME="tx0_logical_to_physical_mapping" TYPE="Integer" VALUE="0..5" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="tx1_logical_to_physical_mapping" TYPE="Integer" VALUE="0..5" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="tx2_logical_to_physical_mapping" TYPE="Integer" VALUE="0..5" DEFAULT_VALUE="2" />
+		<PARAMETER NAME="tx3_logical_to_physical_mapping" TYPE="Integer" VALUE="0..5" DEFAULT_VALUE="3" />
+		<PARAMETER NAME="sim_dump_dprio_internal_reg_at_time" TYPE="INTEGER" VALUE="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="rx_logical_to_physical_mapping" TYPE="INTEGER" VALUE="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="pll_logical_to_physical_mapping" TYPE="INTEGER" VALUE="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="tx_logical_to_physical_mapping" TYPE="INTEGER" VALUE="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="sim_dump_filename" TYPE="STRING" VALUE="sim_dprio_dump.txt" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="pipe_auto_speed_nego_enable" TYPE="STRING" VALUE="false" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cycloneiv_hssi_cmu" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="recovclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="refclkdig" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="quadreset" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txphfiforeset" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txcoreclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txphfifowrenable" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txphfiforddisable" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxphfiforeset" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxcoreclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxphfifowrdisable" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxphfifordenable" TYPE="INPUT" DEFAULT_VALUE="1" SIM_DEFAULT_VALUE="0" />
+		<PORT NAME="scanmode" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="scanclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="scanshift" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pmacramtest" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="nonuserfromcal" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dpclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dprioin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dprioload" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dpriodisable" TYPE="INPUT" DEFAULT_VALUE="1" />
+		<PORT NAME="rdenablesync" TYPE="INPUT" DEFAULT_VALUE="1" SIM_DEFAULT_VALUE="0" />
+		<PORT NAME="adet" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="syncstatus" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="rdalign" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="rxdigitalreset" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="txdigitalreset" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="rxanalogreset" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="rxpowerdown" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="testin" TYPE="INPUT" WIDTH="2000" DEFAULT_VALUE="0" />
+		<PORT NAME="fixedclk" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="rxpmadprioin" TYPE="INPUT" WIDTH="1200" DEFAULT_VALUE="0" />
+		<PORT NAME="rxpcsdprioin" TYPE="INPUT" WIDTH="1600" DEFAULT_VALUE="0" />
+		<PORT NAME="txpmadprioin" TYPE="INPUT" WIDTH="1200" DEFAULT_VALUE="0" />
+		<PORT NAME="txpcsdprioin" TYPE="INPUT" WIDTH="600" DEFAULT_VALUE="0" />
+		<PORT NAME="txdatain" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0" />
+		<PORT NAME="txctrl" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="rxctrl" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="rxdatain" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0" />
+		<PORT NAME="rxrunningdisp" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="rxdatavalid" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="refclkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="coreclkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="quadresetout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txphfifox4wrenableout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txphfifox4rdenableout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txphfifox4byteselout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txphfifox4rdclkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxphfifox4wrenableout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxphfifox4rdenableout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxphfifox4byteselout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxphfifox4wrclkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dprioout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dpriooe" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dpriodisableout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="alignstatus" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enabledeskew" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="fiforesetrd" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxdigitalresetout" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="txdigitalresetout" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="rxanalogresetout" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="txanalogresetout" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="rxibpowerdown" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="txobpowerdown" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="rxcrupowerdown" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="txdetectrxpowerdown" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="txdividerpowerdown" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="digitaltestout" TYPE="OUTPUT" WIDTH="10" DEFAULT_VALUE="0" />
+		<PORT NAME="testout" TYPE="OUTPUT" WIDTH="2400" DEFAULT_VALUE="0" />
+		<PORT NAME="rxpmadprioout" TYPE="OUTPUT" WIDTH="1200" DEFAULT_VALUE="0" />
+		<PORT NAME="rxpcsdprioout" TYPE="OUTPUT" WIDTH="1600" DEFAULT_VALUE="0" />
+		<PORT NAME="txpmadprioout" TYPE="OUTPUT" WIDTH="1200" DEFAULT_VALUE="0" />
+		<PORT NAME="txpcsdprioout" TYPE="OUTPUT" WIDTH="600" DEFAULT_VALUE="0" />
+		<PORT NAME="txctrlout" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="rxdataout" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0" />
+		<PORT NAME="rxctrlout" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="txdataout" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0" />
+		<PORT NAME="observabledprioin" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observabledpriodisable" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observabledprioload" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablerxdigitalreset" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablerxanalogreset" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablerxpowerdown" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observabletxdigitalreset" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observabledprioreset" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+	</PORTS>
+</ROOT>

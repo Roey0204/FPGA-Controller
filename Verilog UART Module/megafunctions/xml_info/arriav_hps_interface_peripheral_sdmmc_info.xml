@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_hps_interface_peripheral_sdmmc">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_hps_interface_peripheral_sdmmc" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="card_intn_i" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cdn_i" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clk_in" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cmd_i" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="wp_i" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="data_i" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="cclk_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cmd_en" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cmd_o" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="pwr_ena_o" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rstn_o" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="vs_o" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="data_en" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="data_o" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

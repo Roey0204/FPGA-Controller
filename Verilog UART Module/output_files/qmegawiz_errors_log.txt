@@ -1,0 +1,31 @@
+
+
+D:/Desktop/FYP2/06_uart_rx_4ce17/src/uart_buf.v
+
+Jul 19 11AM:25:32>: Megafunction FIFO is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+D:/Desktop/FYP2/06_uart_rx_4ce17/src/uart_buf.v
+
+Jul 19 11AM:25:34>: Megafunction FIFO is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+D:/Desktop/FYP2/06_uart_rx_4ce17/src/uart_buf.v
+
+Jul 19 11AM:33:23>: Megafunction FIFO is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+D:/Desktop/FYP2/06_uart_rx_4ce17/src/uart_buf.v
+
+Jul 23 03PM:48:26>: Megafunction FIFO is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+D:/Desktop/FYP2/06_uart_rx_4ce17/src/uart_buf.v
+
+Jul 23 03PM:48:30>: Megafunction FIFO is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+D:/Desktop/FYP2/06_uart_rx_4ce17/src/uart_buf.v
+
+Sep 15 12AM:38:57>: Megafunction FIFO is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted

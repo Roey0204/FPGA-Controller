@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<ROOT>
+	<INCLUDE FILE="mfam_family_macros.xml" />
+	<MACROS>
+		<MACRO NAME="m_inclk_used" >
+			<DEFINITION>
+				(LPM_INDATA == str(REGISTERED)) ||
+				(LPM_ADDRESS_CONTROL == str(REGISTERED))			
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_outclk_used" >
+			<DEFINITION>
+				(LPM_OUTDATA == str(REGISTERED))
+			</DEFINITION>
+		</MACRO>
+	</MACROS>
+	<PARAMETER_RULES>
+		<PARAMETER NAME="ENABLE_RUNTIME_MOD" >
+			<FORCE_VALUE TO="NO" WHEN="mfam_family_is_hardcopy and m_rom" />
+		</PARAMETER>
+		<PARAMETER NAME="LPM_NUMWORDS" >
+			<FORCE_RANGE MAX="(2 exp LPM_WIDTHAD)" MIN="(2 exp (LPM_WIDTHAD - 1)) + 1" />
+		</PARAMETER>
+		<PARAMETER NAME="LPM_ADDRESS_CONTROL" >
+			<FORCE_VALUE TO="LPM_INDATA" />
+		</PARAMETER>
+	</PARAMETER_RULES>
+	<PORT_RULES>
+		<PORT NAME="we" USAGE="USED" />
+		<PORT NAME="inclock"  USAGE="VARIABLE" >
+			<STATE TO="USED" WHEN="m_inclk_used" ELSE="UNUSED" />		
+		</PORT>
+		<PORT NAME="outclock"  USAGE="VARIABLE" >
+			<STATE TO="USED" WHEN="m_outclk_used" ELSE="UNUSED" />		
+		</PORT>
+		<PORT NAME="address"  USAGE="USED" >
+			<FORCE_RANGE MAX="LPM_WIDTHAD - 1" MIN="0" />
+		</PORT>
+		<PORT NAME="data" USAGE="USED" />
+		<PORT NAME="q" USAGE="USED" />
+	</PORT_RULES>
+</ROOT>

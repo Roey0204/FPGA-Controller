@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_hps_interface_peripheral_usb">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_hps_interface_peripheral_usb" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dir" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="nxt" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="datain" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="stp" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="data_out_en" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="dataout" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

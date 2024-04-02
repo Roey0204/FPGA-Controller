@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="pr_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="pr_write_dl_lv_drbce_cnt" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="user_pr_write_dl_lv_drbce_cnt_val" TYPE="Integer" VALUE="0..63" DEFAULT_VALUE="7" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="pr_write_drbce_dl_hv_cnt" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="user_pr_write_drbce_dl_hv_cnt_val" TYPE="Integer" VALUE="0..127" DEFAULT_VALUE="16" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="pr_write_dl_hv_wb_cnt" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="user_pr_write_dl_hv_wb_cnt_val" TYPE="Integer" VALUE="0..127" DEFAULT_VALUE="7" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="pr_write_wb_adden_cnt" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="user_pr_write_wb_adden_cnt_val" TYPE="Integer" VALUE="0..63" DEFAULT_VALUE="13" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="pr_write_adden_low_cnt" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="user_pr_write_adden_low_cnt_val" TYPE="Integer" VALUE="0..31" DEFAULT_VALUE="13" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="pr_write_dl_hv_low_cnt" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="user_pr_write_dl_hv_low_cnt_val" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="7" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="pr_read_pre_prechg_cnt" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="user_pr_read_pre_prechg_cnt_val" TYPE="Integer" VALUE="0..31" DEFAULT_VALUE="13" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="en_pr_decrypt" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="en_pr_decomp" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="pr_read_prechg_dl_cnt" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="user_pr_read_prechg_dl_cnt_val" TYPE="Integer" VALUE="0..127" DEFAULT_VALUE="22" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="pr_read_prechg_adden_cnt" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="user_pr_read_prechg_adden_cnt_val" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="7" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="pr_read_adden_cnt" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="user_pr_read_adden_cnt_val" TYPE="Integer" VALUE="0..511" DEFAULT_VALUE="44" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="pr_read_adden_low_cnt" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="user_pr_read_adden_low_cnt_val" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="7" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="pr_write_adden_cnt" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="user_pr_write_adden_cnt_val" TYPE="Integer" VALUE="0..255" DEFAULT_VALUE="19" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_prblock" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="corectl" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="prrequest" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="data" TYPE="INPUT" WIDTH="16" DEFAULT_VALUE="0" />
+		<PORT NAME="externalrequest" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="error" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ready" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="done" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

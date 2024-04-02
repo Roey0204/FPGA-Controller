@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_hps_interface_peripheral_nand">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_hps_interface_peripheral_nand" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="adq_in" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="rdy_busy" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="adq_oe" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ale" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cle" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rebar" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="webar" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="wpbar" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="adq_out" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="cebar" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

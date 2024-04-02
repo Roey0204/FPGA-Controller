@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_lcell_comb">
+	<PARAMETERS>
+		<PARAMETER NAME="extended_lut" TYPE="String" VALUE="off|on" DEFAULT_VALUE="off"/>
+		<PARAMETER NAME="shared_arith" TYPE="String" VALUE="off|on" DEFAULT_VALUE="off"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_lcell_comb" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="dataa" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="datab" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="datac" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="datad" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="datae" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dataf" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="datag" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="propagatein" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="sharein" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="combout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="sumout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="propagateout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="shareout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

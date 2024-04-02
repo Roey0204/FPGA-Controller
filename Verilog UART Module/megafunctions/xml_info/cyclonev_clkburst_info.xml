@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_clkburst">
+	<PARAMETERS>
+		<PARAMETER NAME="burstcnt_ctrl" TYPE="String" VALUE="static_setting|core_ctrl" DEFAULT_VALUE="static_setting"/>
+		<PARAMETER NAME="static_burstcnt" TYPE="String" VALUE="cnt0|cnt1|cnt2|cnt3|cnt4|cnt5|cnt6|cnt7" DEFAULT_VALUE="cnt0"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_clkburst" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="ena" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="inclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="burstcnt" TYPE="INPUT" WIDTH="3" DEFAULT_VALUE="0"/>
+		<PORT NAME="enaout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

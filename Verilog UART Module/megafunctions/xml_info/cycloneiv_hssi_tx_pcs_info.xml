@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="dprio_config_mode" TYPE="Vector" DEFAULT_VALUE="000000" WIDTH="6" />
+		<PARAMETER NAME="datapath_protocol" TYPE="String" VALUE="basic|pipe|xaui" DEFAULT_VALUE="basic" />
+		<PARAMETER NAME="protocol_hint" TYPE="String" VALUE="gige|pcie|basic|bist|prbs|cpri|xaui|srio|sdi_3g|sdi_hd" DEFAULT_VALUE="basic" />
+		<PARAMETER NAME="channel_bonding" TYPE="String" VALUE="none|x2|x4" DEFAULT_VALUE="none" />
+		<PARAMETER NAME="channel_width" TYPE="Integer" VALUE="8|10|16|20" DEFAULT_VALUE="8" />
+		<PARAMETER NAME="channel_number" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="logical_channel_address" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="use_double_data_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="datapath_low_latency_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="refclk_select" TYPE="String" VALUE="local|central" DEFAULT_VALUE="local" />
+		<PARAMETER NAME="wr_clk_mux_select" TYPE="String" VALUE="int_clk|core_clk" DEFAULT_VALUE="int_clk" />
+		<PARAMETER NAME="reset_clock_output_during_digital_reset" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enc_8b_10b_mode" TYPE="String" VALUE="none|normal" DEFAULT_VALUE="none" />
+		<PARAMETER NAME="enc_8b_10b_compatibility_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="disparity_mode" TYPE="String" VALUE="none|legacy|new" DEFAULT_VALUE="none" />
+		<PARAMETER NAME="allow_polarity_inversion" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_bit_reversal" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_idle_selection" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="force_kchar" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="force_echar" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="disable_ph_low_latency_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_phfifo_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="ph_fifo_user_ctrl_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="ph_fifo_reset_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="ph_fifo_reg_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="bitslip_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="hip_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="elec_idle_delay" TYPE="Integer" VALUE="3..10" DEFAULT_VALUE="3" />
+		<PARAMETER NAME="pipe_voltage_swing_control" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_reverse_parallel_loopback" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_self_test_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="self_test_mode" TYPE="String" VALUE="prbs7|prbs8|prbs10|prbs23|low frequency|mixed frequency|high frequency|incremental|cjpat|crpat" DEFAULT_VALUE="crpat" />
+		<PARAMETER NAME="prbs_cid_pattern" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="prbs_cid_pattern_length" TYPE="Integer" VALUE="0..255" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="core_clock_0ppm" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="migrated_from_prev_family" TYPE="STRING" VALUE="false" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cycloneiv_hssi_tx_pcs" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="quadreset" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="digitalreset" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="coreclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="refclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="localrefclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfiforeset" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfiforddisable" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifowrenable" TYPE="INPUT" DEFAULT_VALUE="1" />
+		<PORT NAME="invpol" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="detectrxloop" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pipestatetransdone" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pipetxswing" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dpriodisable" TYPE="INPUT" DEFAULT_VALUE="1" />
+		<PORT NAME="forceelecidle" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="hipdetectrxloop" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="hipforceelecidle" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifox4wrenable" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifox4rdenable" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifox4rdclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifox4bytesel" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enrevparallellpbk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="prbscidenable" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="xgmctrl" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="datain" TYPE="INPUT" WIDTH="20" DEFAULT_VALUE="0" />
+		<PORT NAME="datainfull" TYPE="INPUT" WIDTH="22" DEFAULT_VALUE="0" />
+		<PORT NAME="ctrlenable" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="forcedisp" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="dispval" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="bitslipboundaryselect" TYPE="INPUT" WIDTH="5" DEFAULT_VALUE="0" />
+		<PORT NAME="powerdn" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="dprioin" TYPE="INPUT" WIDTH="150" DEFAULT_VALUE="0" />
+		<PORT NAME="elecidleinfersel" TYPE="INPUT" WIDTH="3" DEFAULT_VALUE="0" />
+		<PORT NAME="hipdatain" TYPE="INPUT" WIDTH="10" DEFAULT_VALUE="0" />
+		<PORT NAME="hippowerdn" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="hipelecidleinfersel" TYPE="INPUT" WIDTH="3" DEFAULT_VALUE="0" />
+		<PORT NAME="revparallelfdbk" TYPE="INPUT" WIDTH="20" DEFAULT_VALUE="0" />
+		<PORT NAME="xgmdatain" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="clkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifooverflow" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifounderflow" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pipeenrevparallellpbkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="forceelecidleout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txdetectrx" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="coreclkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfiforesetout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfiforddisableout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="phfifowrenableout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="hiptxclkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="xgmctrlenable" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rdenablesync" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dataout" TYPE="OUTPUT" WIDTH="10" DEFAULT_VALUE="0" />
+		<PORT NAME="pipepowerdownout" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="pipepowerstateout" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="grayelecidleinferselout" TYPE="OUTPUT" WIDTH="3" DEFAULT_VALUE="0" />
+		<PORT NAME="parallelfdbkout" TYPE="OUTPUT" WIDTH="20" DEFAULT_VALUE="0" />
+		<PORT NAME="dprioout" TYPE="OUTPUT" WIDTH="150" DEFAULT_VALUE="0" />
+		<PORT NAME="xgmdataout" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="observableout" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observabledigitalreset" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablequadreset" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observableinvpol" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablephfiforddisable" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablephfiforeset" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observableenrevparallellpbk" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observableprbscidenable" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablebitslipboundaryselect" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+	</PORTS>
+</ROOT>

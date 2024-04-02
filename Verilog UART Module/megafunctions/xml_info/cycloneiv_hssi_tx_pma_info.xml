@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="dprio_config_mode" TYPE="Vector" DEFAULT_VALUE="000000" WIDTH="6" />
+		<PARAMETER NAME="channel_number" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="protocol_hint" TYPE="String" VALUE="gige|pcie|basic|bist|prbs|cpri|xaui|srio|sdi_3g|sdi_hd" DEFAULT_VALUE="basic" />
+		<PARAMETER NAME="serialization_factor" TYPE="Integer" VALUE="8|10" DEFAULT_VALUE="8" />
+		<PARAMETER NAME="rx_detect" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="use_rx_detect" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="vod_selection" TYPE="Integer" VALUE="0..7" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="preemp_tap_1" TYPE="Integer" VALUE="0..31" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="common_mode" TYPE="String" VALUE="tristate|0.65V" DEFAULT_VALUE="0.65V" />
+		<PARAMETER NAME="termination" TYPE="String" VALUE="Off|OCT 100 Ohms|OCT 150 Ohms" DEFAULT_VALUE="OCT 100 Ohms" />
+		<PARAMETER NAME="use_external_termination" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="slew_rate" TYPE="String" VALUE="off|low|medium|high" DEFAULT_VALUE="low" />
+		<PARAMETER NAME="logical_channel_address" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="enable_reverse_serial_loopback" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_diagnostic_loopback" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_txclkout_loopback" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="effective_data_rate" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cycloneiv_hssi_tx_pma" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="dpriodisable" TYPE="INPUT" DEFAULT_VALUE="0" SIM_DEFAULT_VALUE="1" />
+		<PORT NAME="txpmareset" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="powerdn" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="refclk0in" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="fastrefclk0in" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="refclk0inpulse" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxdetectclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxdetecten" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="detectrxpowerdown" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="forceelecidle" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="reverselpbkin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="diagnosticlpbkin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="cgbpowerdn" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dprioin" TYPE="INPUT" WIDTH="300" DEFAULT_VALUE="0" />
+		<PORT NAME="datain" TYPE="INPUT" WIDTH="10" DEFAULT_VALUE="0" />
+		<PORT NAME="dataout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clockout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxdetectvalidout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxfoundout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="seriallpbkout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dprioout" TYPE="OUTPUT" WIDTH="300" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

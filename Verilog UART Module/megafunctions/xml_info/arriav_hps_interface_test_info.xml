@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_hps_interface_test">
+	<PARAMETERS>
+		<PARAMETER NAME="user_mode" TYPE="String" VALUE="true|false" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_hps_interface_test" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="dfx_in_fpga_t2_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dfx_in_fpga_t2_datain" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dfx_in_fpga_t2_scan_en_n" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dfx_scan_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dfx_scan_din" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dfx_scan_en" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dfx_scan_load" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="cfg_dfx_bypass_enable" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="f2s_ctrl" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="f2s_jtag_enable_core" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_scan_en" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_atpg_en" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pllbypass" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pllbypass_sel" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_osc1testen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_mpuperitesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_mpul2ramtesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_mputesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_mpu_scan_mode" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_dbgattesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_dbgtesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_dbgtrtesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_dbgtmtesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_l4maintesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_l3maintesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_l3mptesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_l3sptesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_cfgtesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_l4mptesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_l4sptesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_usbmptesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_spimtesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_ddrdqstesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_ddr2xdqstesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_ddrdqtesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_emac0testen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_emac1testen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_can0testen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_can1testen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_gpiodbtesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_sdmmctesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_nandtesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_nandxtesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_qspitesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_test_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_test_clkoff" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_test_cken" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pipeline_se_enable" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_hps_testmode_n" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_bist_se" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_bisten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_bist_nrst" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_bist_peri_si_0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_bist_peri_si_1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_bist_peri_si_2" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_bist_cpu_si" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_bist_l2_si" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_mem_se" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_mem_peri_si_0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_mem_peri_si_1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_mem_peri_si_2" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_mem_cpu_si" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_mem_l2_si" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_mtesten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_eccbyp" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_vioscanin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_vioscanen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_octscanin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_octscanen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_octscanclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_octenseruser" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_octclkenusr" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_octs2pload" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_octnclrusr" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_octclkusr" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_octserdata" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_hioscanen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_hiosclr" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_hioclkin0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pstdqsena" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_ipscin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_ipscupdate" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_ipscclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_dllnrst" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_dllupdwnen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_dllupndn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_fmbhniotri" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_fmniotri" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_fmplniotri" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_fmcsren" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll1_reset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll1_pwrdn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll1_test" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll1_outreset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll1_outresetall" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll_fasten" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll_ensat" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll_advance" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll_step" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll2_reset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll2_pwrdn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll2_test" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll2_outreset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll2_outresetall" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll3_reset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll3_pwrdn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll3_test" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll3_outreset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll3_outresetall" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll1_clk_select" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll2_clk_select" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll3_clk_select" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll1_bg_reset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll1_bg_pwrdn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll1_reg_reset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll1_reg_pwrdn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll2_bg_reset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll2_bg_pwrdn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll2_reg_reset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll2_reg_pwrdn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll3_bg_reset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll3_bg_pwrdn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll3_reg_reset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll3_reg_pwrdn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll_reg_ext_sel" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll1_reg_test_sel" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll2_reg_test_sel" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll3_reg_test_sel" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll_reg_test_rep" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll_reg_test_out" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll_reg_test_drv" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_plltest_input_en" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_vioscanclk_testen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_hioscanclk_testen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_cticlk_testen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_tpiutraceclkin_testen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_f2saxiclk_testen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_s2faxiclk_testen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_f2spclkdbg_testen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_lwh2faxiclk_testen" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_hioscanin" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_dqsupdten" TYPE="INPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_ipscenable" TYPE="INPUT" WIDTH="12" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll_clkr" TYPE="INPUT" WIDTH="6" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll_clkf" TYPE="INPUT" WIDTH="13" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll_clkod" TYPE="INPUT" WIDTH="9" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll_bwadj" TYPE="INPUT" WIDTH="12" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_pll_testbus_sel" TYPE="INPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_avstwrclk_testen" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_avstrdclk_testen" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_avstcmdportclk_testen" TYPE="INPUT" WIDTH="6" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_usbulpiclk_testen" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_in_fpga_scanin" TYPE="INPUT" WIDTH="390" DEFAULT_VALUE="0"/>
+		<PORT NAME="dfx_out_fpga_pr_request" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dfx_out_fpga_dclk" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dfx_scan_dout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dfx_out_fpga_osc1_clk" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dfx_out_fpga_t2_dataout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_bist_peri_so_0" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_bist_peri_so_1" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_bist_peri_so_2" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_bist_cpu_so" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_bist_l2_so" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_mem_peri_so_0" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_mem_peri_so_1" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_mem_peri_so_2" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_mem_cpu_so" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_mem_l2_so" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_vioscanout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_octserdata" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_octcompout_rup" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_octcompout_rdn" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_octclkusrdft" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_octscanout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_dllupdwncore" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_dlllocked" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dfx_out_fpga_s2f_data" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="dfx_out_fpga_sdram_observe" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="dfx_out_fpga_data" TYPE="OUTPUT" WIDTH="18" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_hiocdata3in" TYPE="OUTPUT" WIDTH="45" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_hiodqsungating" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_hiodqsout" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_hiooctrt" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_hioscanout" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_psttracksample" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_pstvfifo" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_ipscout" TYPE="OUTPUT" WIDTH="5" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_dllsetting" TYPE="OUTPUT" WIDTH="7" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_pll_testbus_out" TYPE="OUTPUT" WIDTH="3" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_scanout_2_3" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_scanout_15_83" TYPE="OUTPUT" WIDTH="69" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_scanout_100_126" TYPE="OUTPUT" WIDTH="27" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_scanout_131_250" TYPE="OUTPUT" WIDTH="120" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_scanout_254_264" TYPE="OUTPUT" WIDTH="11" DEFAULT_VALUE="0"/>
+		<PORT NAME="dft_out_fpga_scanout_271_389" TYPE="OUTPUT" WIDTH="119" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

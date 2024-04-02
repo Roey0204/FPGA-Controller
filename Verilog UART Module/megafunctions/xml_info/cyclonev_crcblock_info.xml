@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="oscillator_divider" TYPE="Integer" VALUE="1|2|4|8|16|32|64|128|256" DEFAULT_VALUE="256" />
+		<PARAMETER NAME="error_delay" TYPE="Integer" VALUE="0..63" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="error_dra_dl_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="crc_deld_disable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="triple_adj_err_correction" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="quad_adj_err_correction" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_crcblock" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="shiftnld" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="crcerror" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="regout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="endofedfullchip" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+	</PORTS>
+</ROOT>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="sim_intrinsic_rising_delay" TYPE="Integer" DEFAULT_VALUE="200" />
+		<PARAMETER NAME="sim_intrinsic_falling_delay" TYPE="Integer" DEFAULT_VALUE="200" />
+		<PARAMETER NAME="sim_rising_delay_increment" TYPE="Integer" DEFAULT_VALUE="10" />
+		<PARAMETER NAME="sim_falling_delay_increment" TYPE="Integer" DEFAULT_VALUE="10" />
+		<PARAMETER NAME="use_pvt_compensation" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriavgz_delay_chain" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="datain" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="delayctrlin" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="dataout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

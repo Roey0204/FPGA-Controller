@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="avmm_group_channel_index" TYPE="Integer" VALUE="0..2" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="use_default_base_address" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true" />
+		<PARAMETER NAME="user_base_address" TYPE="Integer" VALUE="0..2047" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="reference_clock_frequency" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="output_clock_frequency" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="enabled_for_reconfig" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="bbpd_salatch_offset_ctrl_clk0" TYPE="String" VALUE="offset_0mv|offset_delta1_left|offset_delta2_left|offset_delta3_left|offset_delta4_left|offset_delta5_left|offset_delta6_left|offset_delta7_left|offset_delta1_right|offset_delta2_right|offset_delta3_right|offset_delta4_right|offset_delta5_right|offset_delta6_right|offset_delta7_right" DEFAULT_VALUE="offset_0mv" />
+		<PARAMETER NAME="bbpd_salatch_offset_ctrl_clk180" TYPE="String" VALUE="offset_0mv|offset_delta1_left|offset_delta2_left|offset_delta3_left|offset_delta4_left|offset_delta5_left|offset_delta6_left|offset_delta7_left|offset_delta1_right|offset_delta2_right|offset_delta3_right|offset_delta4_right|offset_delta5_right|offset_delta6_right|offset_delta7_right" DEFAULT_VALUE="offset_0mv" />
+		<PARAMETER NAME="bbpd_salatch_offset_ctrl_clk270" TYPE="String" VALUE="offset_0mv|offset_delta1_left|offset_delta2_left|offset_delta3_left|offset_delta4_left|offset_delta5_left|offset_delta6_left|offset_delta7_left|offset_delta1_right|offset_delta2_right|offset_delta3_right|offset_delta4_right|offset_delta5_right|offset_delta6_right|offset_delta7_right" DEFAULT_VALUE="offset_0mv" />
+		<PARAMETER NAME="bbpd_salatch_offset_ctrl_clk90" TYPE="String" VALUE="offset_0mv|offset_delta1_left|offset_delta2_left|offset_delta3_left|offset_delta4_left|offset_delta5_left|offset_delta6_left|offset_delta7_left|offset_delta1_right|offset_delta2_right|offset_delta3_right|offset_delta4_right|offset_delta5_right|offset_delta6_rightoffset_delta7_right" DEFAULT_VALUE="offset_0mv" />
+		<PARAMETER NAME="bbpd_salatch_sel" TYPE="String" VALUE="testmux|normal" DEFAULT_VALUE="normal" />
+		<PARAMETER NAME="bypass_cp_rgla" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="cdr_atb_select" TYPE="String" VALUE="atb_disable|atb_sel_1|atb_sel_2|atb_sel_3|atb_sel_4|atb_sel_5|atb_sel_6|atb_sel_7|atb_sel_8|atb_sel_9|atb_sel_10|atb_sel_11|atb_sel_12|atb_sel_13|atb_sel_14" DEFAULT_VALUE="atb_disable" />
+		<PARAMETER NAME="cgb_clk_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="charge_pump_current_test" TYPE="String" VALUE="enable_ch_pump_normal|enable_ch_pump_curr_test_up|enable_ch_pump_curr_test_down|disable_ch_pump_curr_test" DEFAULT_VALUE="enable_ch_pump_normal" />
+		<PARAMETER NAME="clklow_fref_to_ppm_div_sel" TYPE="Integer" VALUE="1|2" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="clock_monitor" TYPE="String" VALUE="lpbk_clk|lpbk_data" DEFAULT_VALUE="lpbk_data" />
+		<PARAMETER NAME="diag_rev_lpbk" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="enable_gpon_detection" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="fast_lock_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true" />
+		<PARAMETER NAME="fb_sel" TYPE="String" VALUE="vcoclk|extclk" DEFAULT_VALUE="vcoclk" />
+		<PARAMETER NAME="hs_levshift_power_supply_setting" TYPE="Integer" VALUE="0|1|2|3" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="ignore_phslock" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="l_counter_pd_clock_disable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="m_counter" TYPE="Integer" VALUE="0|1|4|5|8|10|12|16|20|25|32|40|50" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="pcie_freq_control" TYPE="String" VALUE="pcie_100mhz|pcie_125mhz" DEFAULT_VALUE="pcie_100mhz" />
+		<PARAMETER NAME="pd_charge_pump_current_ctrl" TYPE="Integer" VALUE="0|5|10|20|30|40" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="pd_l_counter" TYPE="Integer" VALUE="0|1|2|4|8" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="pfd_charge_pump_current_ctrl" TYPE="Integer" VALUE="0|5|10|20|30|40|50|60|80|100|120" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="pfd_l_counter" TYPE="Integer" VALUE="0|1|2|4|8" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="powerdown" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="ref_clk_div" TYPE="Integer" VALUE="0|1|2|4|8" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="regulator_volt_inc" TYPE="String" VALUE="0|5|10|15|20|25|30|not_used" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="replica_bias_ctrl" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true" />
+		<PARAMETER NAME="reverse_serial_lpbk" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="ripple_cap_ctrl" TYPE="String" VALUE="reserved_11|reserved_10|plus_2pf|none" DEFAULT_VALUE="none" />
+		<PARAMETER NAME="rxpll_pd_bw_ctrl" TYPE="Integer" VALUE="0|600|300|240|170" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="rxpll_pfd_bw_ctrl" TYPE="Integer" VALUE="0|1600|3200|4800|6400" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="txpll_hclk_driver_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="vco_overange_ref" TYPE="String" VALUE="off|ref_1|ref_2|ref_3" DEFAULT_VALUE="ref_2" />
+		<PARAMETER NAME="vco_range_ctrl_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_channel_pll" />
+		<PARAMETER NAME="enable_debug_info" TYPE="STRING" VALUE="false" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="sim_use_fast_model" TYPE="STRING" VALUE="true" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="avmmclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="avmmread" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="avmmrstn" TYPE="INPUT" DEFAULT_VALUE="1" SIM_DEFAULT_VALUE="0" />
+		<PORT NAME="avmmwrite" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clkindeser" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="crurstb" TYPE="INPUT" DEFAULT_VALUE="1" SIM_DEFAULT_VALUE="0" />
+		<PORT NAME="earlyeios" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="extclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="lpbkpreen" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ltd" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ltr" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="occalen" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pciel" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ppmlock" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="refclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rstn" TYPE="INPUT" DEFAULT_VALUE="1" SIM_DEFAULT_VALUE="0" />
+		<PORT NAME="rxp" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="sd" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="avmmaddress" TYPE="INPUT" WIDTH="11" DEFAULT_VALUE="0" />
+		<PORT NAME="avmmbyteen" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="avmmwritedata" TYPE="INPUT" WIDTH="16" DEFAULT_VALUE="0" />
+		<PORT NAME="pciesw" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="blockselect" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ck0pd" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ck180pd" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ck270pd" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ck90pd" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clk270bdes" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clk90bdes" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clkcdr" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clklow" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="deven" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dodd" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="fref" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pfdmodelock" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxlpbdp" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxlpbp" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rxplllock" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txpllhclk" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txrlpbk" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="vctrloverrange" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="avmmreaddata" TYPE="OUTPUT" WIDTH="16" DEFAULT_VALUE="0" />
+		<PORT NAME="pdof" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

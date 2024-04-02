@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="stratixv_phb">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="stratixv_phb" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="phbinp" TYPE="INPUT" WIDTH="64" DEFAULT_VALUE="0"/>
+		<PORT NAME="phbout" TYPE="OUTPUT" WIDTH="64" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

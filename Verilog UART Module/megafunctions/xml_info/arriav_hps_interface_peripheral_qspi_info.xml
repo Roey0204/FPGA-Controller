@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_hps_interface_peripheral_qspi">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_hps_interface_peripheral_qspi" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="mi0" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mi1" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mi2" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mi3" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mo0" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mo1" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mo2_wpn" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="mo3_hold" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="sclk_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="n_mo_en" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="n_ss_out" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_hps_peripheral_nand">
+	<PARAMETERS>
+		<PARAMETER NAME="dummy_param" TYPE="Integer" DEFAULT_VALUE="256"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_hps_peripheral_nand" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="nand_adq_i" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="nand_rdy_busyn" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="nand_adq_oe" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="nand_ale" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="nand_cle" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="nand_re_n" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="nand_we_n" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="nand_wp_n" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="nand_adq_o" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="nand_ce_n" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_pll_aux">
+	<PARAMETERS>
+		<PARAMETER NAME="pl_aux_atb_atben0_precomp" TYPE="Vector" WIDTH="1" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pl_aux_atb_atben1_precomp" TYPE="Vector" WIDTH="1" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="pl_aux_atb_comp_minus" TYPE="Vector" WIDTH="1" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="pl_aux_atb_comp_plus" TYPE="Vector" WIDTH="1" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="pl_aux_comp_pwr_dn" TYPE="Vector" WIDTH="1" DEFAULT_VALUE="1"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_pll_aux" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="atb0out" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="atb1out" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="atbcompout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="a_iob_oct_block" TYPE="String" VALUE="a_iob_oct_block_none|a_iob_oct_block_0|a_iob_oct_block_1|a_iob_oct_block_2|a_iob_oct_block_3|a_iob_oct_block_4|a_iob_oct_block_5|a_iob_oct_block_6|a_iob_oct_block_7|a_iob_oct_block_8|a_iob_oct_block_9|a_iob_oct_block_10" DEFAULT_VALUE="a_iob_oct_block_none" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="a_iob_oct_test" TYPE="String" VALUE="a_iob_oct_test_off|a_iob_oct_test_on" DEFAULT_VALUE="a_iob_oct_test_off" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="stratixv_termination_logic" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="s2pload" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="scanclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="scanenable" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="serdata" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enser" TYPE="INPUT" WIDTH="11" DEFAULT_VALUE="0" />
+		<PORT NAME="parallelterminationcontrol" TYPE="OUTPUT" WIDTH="16" DEFAULT_VALUE="0" />
+		<PORT NAME="seriesterminationcontrol" TYPE="OUTPUT" WIDTH="16" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

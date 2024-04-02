@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="a_rb_fifo_mode" TYPE="String" VALUE="hrate_mode|frate_mode|bslip_mode|deserializer_mode|serializer_mode" DEFAULT_VALUE="hrate_mode" />
+		<PARAMETER NAME="a_rb_bslipcfg" TYPE="Integer" VALUE="1..11" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="a_use_dynamic_fifo_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="a_rb_data_width" TYPE="Integer" VALUE="3..10" DEFAULT_VALUE="10" />
+		<PARAMETER NAME="a_rb_tx_outclk" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="a_rb_bypass_serializer" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="a_enable_soft_cdr" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="a_sim_wclk_pre_delay" TYPE="Integer" VALUE="0..10000" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="a_sim_readenable_pre_delay" TYPE="Integer" VALUE="0..10000" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_ir_fifo_userdes" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="bslipctl" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="bslipin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="loaden" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="readclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="readenable" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="regscan" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="regscanovrd" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rstn" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="scanin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="tstclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="writeclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="writeenable" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dinfiforx" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="dynfifomode" TYPE="INPUT" WIDTH="3" DEFAULT_VALUE="0" />
+		<PORT NAME="txin" TYPE="INPUT" WIDTH="10" DEFAULT_VALUE="0" />
+		<PORT NAME="bslipmax" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="bslipout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="lvdsmodeen" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="lvdstxsel" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="scanout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dout" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+		<PORT NAME="rxout" TYPE="OUTPUT" WIDTH="10" DEFAULT_VALUE="0" />
+		<PORT NAME="observablefout1" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE" />
+		<PORT NAME="observablefout2" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE" />
+		<PORT NAME="observablefout3" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE" />
+		<PORT NAME="observablefout4" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE" />
+		<PORT NAME="observableraddrcnt" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+		<PORT NAME="observablewaddrcnt" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE" />
+		<PORT NAME="observableout" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE" />
+	</PORTS>
+</ROOT>

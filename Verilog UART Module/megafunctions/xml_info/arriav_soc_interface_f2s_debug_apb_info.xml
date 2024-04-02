@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_soc_interface_f2s_debug_apb">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_soc_interface_f2s_debug_apb" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="f2spaddr31" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="f2spclkdbg" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="f2spclkendbg" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="f2spenabledbg" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="f2spwritedbg" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="f2spaddr" TYPE="INPUT" WIDTH="10" DEFAULT_VALUE="0"/>
+		<PORT NAME="f2spwdata" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="f2spreadydbg" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="f2spseldbg" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="f2sprdata" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

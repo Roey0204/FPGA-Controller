@@ -1,0 +1,235 @@
+--------------------------------------------------------------------
+--
+--	ALT3PRAM Parameterized Megafunction
+--
+--  Copyright (C) 1991-2013 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions  
+--  and other software and tools, and its AMPP partner logic  
+--  functions, and any output files from any of the foregoing  
+--  (including device programming or simulation files), and any  
+--  associated documentation or information are expressly subject  
+--  to the terms and conditions of the Altera Program License  
+--  Subscription Agreement, Altera MegaCore Function License  
+--  Agreement, or other applicable license agreement, including,  
+--  without limitation, that your use is for the sole purpose of  
+--  programming logic devices manufactured by Altera and sold by  
+--  Altera or its authorized distributors.  Please refer to the  
+--  applicable agreement for further details. 
+--  
+--  Quartus II 13.0.0 Build 156 04/24/2013 
+--
+--	Version 1.0
+--
+--------------------------------------------------------------------
+
+INCLUDE "altdpram.inc";
+INCLUDE "aglobal130.inc";
+
+
+PARAMETERS
+(
+	WIDTH,
+	WIDTHAD,
+	NUMWORDS = 2^WIDTHAD,
+	LPM_FILE = "UNUSED",
+
+	INDATA_REG = "INCLOCK",
+	INDATA_ACLR = "ON",
+	WRITE_REG = "INCLOCK",
+	WRITE_ACLR = "ON",
+	RDADDRESS_REG_A = "INCLOCK",
+	RDADDRESS_ACLR_A = "ON",
+	RDCONTROL_REG_A = "INCLOCK",
+	RDCONTROL_ACLR_A = "ON",
+	OUTDATA_REG_A = "OUTCLOCK",
+	OUTDATA_ACLR_A = "ON",
+	
+	RDADDRESS_REG_B = "INCLOCK",
+	RDADDRESS_ACLR_B = "ON",
+	RDCONTROL_REG_B = "INCLOCK",
+	RDCONTROL_ACLR_B = "ON",
+	OUTDATA_REG_B = "OUTCLOCK",
+	OUTDATA_ACLR_B = "ON",
+	USE_EAB = "ON",
+	RAM_BLOCK_TYPE = "AUTO",
+	MAXIMUM_DEPTH = 0,
+	DEVICE_FAMILY
+);
+
+
+--Macros to check if a particular signal/port is needed in the qpram/dpram instantiation.
+DEFINE INCLOCK_A_NEEDED() = USED(inclock) & (INDATA_REG == "INCLOCK" # WRITE_REG == "INCLOCK"
+					# RDADDRESS_REG_A == "INCLOCK" # RDCONTROL_REG_A == "INCLOCK");
+
+DEFINE INCLOCK_B_NEEDED_QPRAM() = USED(inclock) & (RDADDRESS_REG_B == "INCLOCK" # RDCONTROL_REG_B == "INCLOCK" # WRITE_REG == "INCLOCK");
+
+DEFINE INCLOCK_B_NEEDED_DPRAM() = USED(inclock) & (INDATA_REG == "INCLOCK" # WRITE_REG == "INCLOCK"
+					# RDADDRESS_REG_B == "INCLOCK" # RDCONTROL_REG_B == "INCLOCK");
+
+DEFINE OUTCLOCK_A_NEEDED() = USED(outclock) & (RDADDRESS_REG_A == "OUTCLOCK" # RDCONTROL_REG_A == "OUTCLOCK"
+								# OUTDATA_REG_A == "OUTCLOCK");
+
+DEFINE OUTCLOCK_B_NEEDED() = USED(outclock) & (RDADDRESS_REG_B == "OUTCLOCK" # RDCONTROL_REG_B == "OUTCLOCK"
+								#OUTDATA_REG_B == "OUTCLOCK");
+
+DEFINE ACLR_A_NEEDED_INCLOCK() =  USED(aclr) & (INDATA_ACLR == "ON" # WRITE_ACLR == "ON"
+				# (RDADDRESS_ACLR_A == "ON" & RDADDRESS_REG_A == "INCLOCK")
+				#  (RDCONTROL_ACLR_A == "ON" & RDCONTROL_REG_A == "INCLOCK"));
+
+DEFINE ACLR_B_NEEDED_INCLOCK_DPRAM() =  USED(aclr) & (INDATA_ACLR == "ON" # WRITE_ACLR == "ON" 
+				# (RDADDRESS_ACLR_B == "ON" & RDADDRESS_REG_B == "INCLOCK")
+				#  (RDCONTROL_ACLR_B == "ON" & RDCONTROL_REG_B == "INCLOCK"));
+
+DEFINE ACLR_B_NEEDED_INCLOCK_QPRAM() =  USED(aclr) & ((RDADDRESS_ACLR_B == "ON" & RDADDRESS_REG_B == "INCLOCK")
+				# (RDCONTROL_ACLR_B == "ON" & RDCONTROL_REG_B == "INCLOCK"));
+
+DEFINE ACLR_A_NEEDED_OUTCLOCK() =  USED(aclr) & ((RDADDRESS_ACLR_A == "ON" & RDADDRESS_REG_A == "OUTCLOCK")
+				#  (RDCONTROL_ACLR_A == "ON" & RDCONTROL_REG_A == "OUTCLOCK")
+				#  OUTDATA_ACLR_A == "ON");
+
+DEFINE ACLR_B_NEEDED_OUTCLOCK() =  USED(aclr) & ((RDADDRESS_ACLR_B == "ON" & RDADDRESS_REG_B == "OUTCLOCK")
+				#  (RDCONTROL_ACLR_B == "ON" & RDCONTROL_REG_B == "OUTCLOCK")
+				#  OUTDATA_ACLR_B == "ON");
+
+SUBDESIGN alt3pram
+(
+	wren					: INPUT;
+	data[WIDTH-1..0]		: INPUT;
+	wraddress[WIDTHAD-1..0]	: INPUT;
+	inclock					: INPUT = VCC;
+	inclocken				: INPUT = VCC;
+	outclock				: INPUT = VCC;
+	outclocken				: INPUT = VCC;
+	aclr					: INPUT = GND;
+	rden_a					: INPUT = VCC;
+	rden_b					: INPUT = VCC;
+	rdaddress_a[WIDTHAD-1..0]	: INPUT;
+	rdaddress_b[WIDTHAD-1..0]   : INPUT;
+	qa[WIDTH-1..0]				: OUTPUT;
+	qb[WIDTH-1..0]				: OUTPUT;
+)
+
+variable
+
+altdpram_component1 : altdpram WITH (
+	WIDTH = WIDTH,
+	WIDTHAD = WIDTHAD,
+	NUMWORDS = NUMWORDS,
+	FILE = LPM_FILE,
+	LPM_FILE = LPM_FILE,
+	INDATA_REG =INDATA_REG,
+	INDATA_ACLR =INDATA_ACLR,
+	WRADDRESS_REG =WRITE_REG,
+	WRADDRESS_ACLR =WRITE_ACLR,
+	WRCONTROL_REG = WRITE_REG,
+	WRCONTROL_ACLR = WRITE_ACLR,
+
+	RDADDRESS_REG = RDADDRESS_REG_A,
+	RDADDRESS_ACLR = RDADDRESS_ACLR_A,
+	RDCONTROL_REG = RDCONTROL_REG_A,
+	RDCONTROL_ACLR = RDCONTROL_ACLR_A,
+	OUTDATA_REG = OUTDATA_REG_A,
+	OUTDATA_ACLR = OUTDATA_ACLR_A,
+	USE_EAB = USE_EAB
+	);
+
+altdpram_component2 : altdpram WITH (
+	WIDTH = WIDTH,
+	WIDTHAD = WIDTHAD,
+	NUMWORDS = NUMWORDS,
+	FILE =LPM_FILE,
+	LPM_FILE = LPM_FILE,
+
+	INDATA_REG = INDATA_REG,
+	INDATA_ACLR = INDATA_ACLR,
+	WRADDRESS_REG = WRITE_REG,
+	WRADDRESS_ACLR = WRITE_ACLR,
+	WRCONTROL_REG = WRITE_REG,
+	WRCONTROL_ACLR = WRITE_ACLR,
+
+	RDADDRESS_REG = RDADDRESS_REG_B,
+	RDADDRESS_ACLR = RDADDRESS_ACLR_B,
+	
+	RDCONTROL_REG = RDCONTROL_REG_B,
+	RDCONTROL_ACLR = RDCONTROL_ACLR_B,
+	
+	OUTDATA_REG = OUTDATA_REG_B,
+	OUTDATA_ACLR = OUTDATA_ACLR_B,
+
+	USE_EAB = USE_EAB
+	);
+
+
+BEGIN
+
+    -- Make connections to both altdpram instances
+
+    altdpram_component1.data[] = data[];
+    altdpram_component2.data[] = data[];
+
+    altdpram_component1.rdaddress[] = rdaddress_a[];
+    altdpram_component2.rdaddress[] = rdaddress_b[];
+
+    altdpram_component1.wraddress[] = wraddress[];
+    altdpram_component2.wraddress[] = wraddress[];
+
+    IF (USED(wren)) GENERATE
+    	altdpram_component1.wren = wren;
+    	altdpram_component2.wren = wren;
+    END GENERATE;
+
+    IF (INCLOCK_A_NEEDED()) GENERATE
+    	altdpram_component1.inclock  = inclock;
+    	IF (USED(inclocken)) GENERATE
+    		altdpram_component1.inclocken = inclocken;
+    	END GENERATE;
+    END GENERATE;
+
+    IF (INCLOCK_B_NEEDED_DPRAM()) GENERATE
+    	altdpram_component2.inclock  = inclock;
+    	IF (USED(inclocken)) GENERATE
+    		altdpram_component2.inclocken = inclocken;
+    	END GENERATE;
+    END GENERATE;
+
+    IF (USED(rden_a)) GENERATE
+    	altdpram_component1.rden = rden_a;
+    END GENERATE;
+
+    IF (USED(rden_b)) GENERATE
+    	altdpram_component2.rden = rden_b;
+    END GENERATE;
+
+    IF (OUTCLOCK_A_NEEDED()) GENERATE
+    	altdpram_component1.outclock  = outclock;
+    	IF (USED(outclocken)) GENERATE
+    		altdpram_component1.outclocken = outclocken;
+    	END GENERATE;
+    END GENERATE;
+
+    IF (OUTCLOCK_B_NEEDED()) GENERATE
+    	altdpram_component2.outclock  = outclock;
+    	IF (USED(outclocken)) GENERATE
+    		altdpram_component2.outclocken = outclocken;
+    	END GENERATE;
+    END GENERATE;
+
+    IF(ACLR_A_NEEDED_INCLOCK() # ACLR_A_NEEDED_OUTCLOCK()) GENERATE
+    	altdpram_component1.aclr = aclr;
+    END GENERATE;
+
+    IF(ACLR_B_NEEDED_INCLOCK_DPRAM() # ACLR_B_NEEDED_OUTCLOCK()) GENERATE
+    	altdpram_component2.aclr = aclr;
+    END GENERATE;
+
+    qa[] = altdpram_component1.q[];
+    qb[] = altdpram_component2.q[];
+
+
+	IF !USED(qa) GENERATE
+		qa[] = GND;
+	END GENERATE;
+	IF !USED(qb) GENERATE
+		qb[] = GND;
+	END GENERATE;
+END;

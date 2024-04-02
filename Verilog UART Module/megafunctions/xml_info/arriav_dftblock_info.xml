@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_dftblock">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_dftblock" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="dftin" TYPE="INPUT" WIDTH="6" DEFAULT_VALUE="0"/>
+		<PORT NAME="dftout" TYPE="OUTPUT" WIDTH="25" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

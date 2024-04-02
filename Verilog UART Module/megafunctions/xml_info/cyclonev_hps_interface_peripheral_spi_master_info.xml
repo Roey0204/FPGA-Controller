@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_hps_interface_peripheral_spi_master">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_hps_interface_peripheral_spi_master" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="rxd" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ss_in_n" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="sclk_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ss_0_n" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ss_1_n" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ss_2_n" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ss_3_n" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ssi_oe_n" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="txd" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

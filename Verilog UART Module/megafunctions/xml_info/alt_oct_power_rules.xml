@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<ROOT>
+	<INCLUDE FILE="mfam_family_macros.xml" />
+	<MACROS>
+		<MACRO NAME="mfam_stratixiii_oct" DEFINITION="mfam_family_stratixiii and !mfam_family_arriaii and !mfam_family_stratixv and !mfam_family_arriav and !mfam_family_cyclonev and !mfam_family_arriavgz_strict" />
+	</MACROS>
+	<PARAMETER_RULES>
+		<PARAMETER NAME="WIDTH_STC" TYPE="INTEGER">
+			<FORCE_VALUE TO="14" WHEN="mfam_stratixiii_oct" />
+			<FORCE_VALUE TO="16" WHEN="mfam_family_stratixv  || mfam_family_arriav || mfam_family_cyclonev || mfam_family_arriavgz_strict" />
+			<!-- <FORCE_VALUE TO="16" WHEN="mfam_family_arriaii" /> -->
+		</PARAMETER>
+		<PARAMETER NAME="WIDTH_PTC" TYPE="INTEGER">
+			<FORCE_VALUE TO="14" WHEN="mfam_stratixiii_oct" />
+			<FORCE_VALUE TO="16" WHEN="mfam_family_stratixv || mfam_family_arriav || mfam_family_cyclonev || mfam_family_arriavgz_strict" />
+			<!-- <FORCE_VALUE TO="UNUSED" WHEN="mfam_family_arriaii" /> -->
+		</PARAMETER>
+	</PARAMETER_RULES>
+	<PORT_RULES>
+		<PORT NAME="rup" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE TO="UNUSED" WHEN="mfam_family_stratixv || mfam_family_arriav || mfam_family_cyclonev || mfam_family_arriavgz_strict" ELSE="USED" />
+		</PORT>
+		<PORT NAME="rdn" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE TO="UNUSED" WHEN="mfam_family_stratixv || mfam_family_arriav || mfam_family_cyclonev || mfam_family_arriavgz_strict" ELSE="USED" />
+		</PORT>
+		<PORT NAME="rzqin" TYPE="INPUT" USAGE="VARIABLE">
+			<STATE TO="USED" WHEN="mfam_family_stratixv || mfam_family_arriav || mfam_family_cyclonev || mfam_family_arriavgz_strict" ELSE="UNUSED" />
+		</PORT>
+		<PORT NAME="seriesterminationcontrol" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE TO="UNUSED" WHEN="mfam_family_arriaii" ELSE="USED" />
+		</PORT>
+		<PORT NAME="parallelterminationcontrol" TYPE="OUTPUT" USAGE="VARIABLE">
+			<STATE TO="UNUSED" WHEN="mfam_family_arriaii" ELSE="USED" />
+		</PORT>
+		<PORT NAME="termination_control" TYPE="OUTPUT" USAGE="VARIABLE" >
+			<STATE TO="USED" WHEN="mfam_family_arriaii" ELSE="UNUSED"/>
+		</PORT>
+	</PORT_RULES>
+</ROOT>

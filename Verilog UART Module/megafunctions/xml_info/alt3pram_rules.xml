@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<ROOT>
+	<INCLUDE FILE="mfam_family_macros.xml" />
+	<MACROS>
+		<MACRO NAME="m_stratix_or_cyclone_only" >
+			<DEFINITION>		
+				mfam_family_base_stratix or mfam_family_base_cyclone
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_titan_lutram" >
+			<DEFINITION>		
+				mfam_family_stratixiii and (USE_EAB == "ON") and (RAM_BLOCK_TYPE == mfam_lutram)
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_par_reg" ARGUMENTS="REG_PARAM" >
+			<DEFINITION>
+				REG_PARAM != "UNREGISTERED"
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_inclk_used" >
+			<DEFINITION>
+				(INDATA_REG == str(INCLOCK)) ||
+				(WRITE_REG == str(INCLOCK)) ||				
+				(RDADDRESS_REG_A == str(INCLOCK)) ||
+				(RDADDRESS_REG_B == str(INCLOCK)) ||
+				(RDCONTROL_REG_A == str(INCLOCK) and is_used(rden_a)) ||
+				(RDCONTROL_REG_B == str(INCLOCK) and is_used(rden_b)) ||
+				(OUTDATA_REG_A == str(INCLOCK)) ||				
+				(OUTDATA_REG_B == str(INCLOCK))				
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_outclk_used" >
+			<DEFINITION>
+				(RDADDRESS_REG_A == str(OUTCLOCK)) ||
+				(RDADDRESS_REG_B == str(OUTCLOCK)) ||
+				(RDCONTROL_REG_A == str(OUTCLOCK) and is_used(rden_a)) ||
+				(RDCONTROL_REG_B == str(OUTCLOCK) and is_used(rden_b)) ||
+				(OUTDATA_REG_A == str(OUTCLOCK))	||			
+				(OUTDATA_REG_B == str(OUTCLOCK))				
+			</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_aclr_used" >
+			<DEFINITION>
+				((INDATA_ACLR == "ON") and m_par_reg(INDATA_REG)) || 
+				((WRITE_ACLR == "ON") and m_par_reg(WRITE_REG)) ||
+				((RDADDRESS_ACLR_A == "ON") and m_par_reg(RDADDRESS_REG_A)) ||		
+				((RDADDRESS_ACLR_B== "ON") and m_par_reg(RDADDRESS_REG_B)) ||		
+				((RDCONTROL_ACLR_A == "ON") and m_par_reg(RDCONTROL_REG_A) and is_used(rden_a)) ||		
+				((RDCONTROL_ACLR_B == "ON") and m_par_reg(RDCONTROL_REG_B) and is_used(rden_b)) ||		
+				((OUTDATA_ACLR_A == "ON") and m_par_reg(OUTDATA_REG_A))	||															
+				((OUTDATA_ACLR_B == "ON") and m_par_reg(OUTDATA_REG_B))							</DEFINITION>
+		</MACRO>
+		<MACRO NAME="m_no_eab_sync_write" >
+			<DEFINITION>
+				(USE_EAB == "OFF") and m_par_reg(WRITE_REG)
+			</DEFINITION>
+		</MACRO>
+	</MACROS>
+	<PARAMETERS>
+		<PARAMETER NAME="INDATA_ACLR" >
+			<FORCE_VALUE TO="OFF" WHEN="!m_stratix_or_cyclone_only" />
+		</PARAMETER>
+		<PARAMETER NAME="INDATA_REG" >
+			<FORCE_VALUE TO="str(INCLOCK)" WHEN="m_titan_lutram" />
+			<FORCE_VALUE TO="WRITE_REG" WHEN="m_no_eab_sync_write" />
+		</PARAMETER>
+		<PARAMETER NAME="MAXIMUM_DEPTH" >
+			<FORCE_RANGE TO="0|32|64" WHEN="m_titan_lutram" />
+		</PARAMETER>
+		<PARAMETER NAME="NUMWORDS" DEFAULT_VALUE="256" >
+			<FORCE_RANGE MAX="(2 exp WIDTHAD)" MIN="(2 exp (WIDTHAD - 1)) + 1" />
+		</PARAMETER>
+		<PARAMETER NAME="RDADDRESS_ACLR_A" >
+			<FORCE_VALUE TO="OFF" WHEN="RDADDRESS_REG_A == UNREGISTERED" />
+		</PARAMETER>
+		<PARAMETER NAME="RDADDRESS_ACLR_B" >
+			<FORCE_VALUE TO="OFF" WHEN="RDADDRESS_REG_B == UNREGISTERED" />
+		</PARAMETER>
+		<PARAMETER NAME="OUTDATA_ACLR_A" >
+			<FORCE_VALUE TO="OFF" WHEN="!m_par_reg(OUTDATA_REG_A)" />
+		</PARAMETER>
+		<PARAMETER NAME="OUTDATA_ACLR_B" >
+			<FORCE_VALUE TO="OFF" WHEN="!m_par_reg(OUTDATA_REG_B)" />
+		</PARAMETER>
+		<PARAMETER NAME="OUTDATA_REG_A" >
+			<FORCE_RANGE TO="str(OUTCLOCK)|UNREGISTERED" WHEN="!m_titan_lutram" />
+		</PARAMETER>
+		<PARAMETER NAME="OUTDATA_REG_B" >
+			<FORCE_RANGE TO="str(OUTCLOCK)|UNREGISTERED" WHEN="!m_titan_lutram" />
+		</PARAMETER>
+		<PARAMETER NAME="WRITE_ACLR" >
+			<FORCE_VALUE TO="OFF" WHEN="m_titan_lutram || m_no_eab_sync_write || !m_par_reg(WRITE_REG)" />
+		</PARAMETER>
+		<PARAMETER NAME="WRITE_REG" >
+			<FORCE_VALUE TO="str(INCLOCK)" WHEN="m_titan_lutram" />
+		</PARAMETER>
+		<PARAMETER NAME="RDCONTROL_ACLR_A" >
+			<FORCE_VALUE TO="OFF" WHEN="!m_par_reg(RDCONTROL_REG_A) || m_titan_lutram" />
+		</PARAMETER>
+		<PARAMETER NAME="RDCONTROL_ACLR_B" >
+			<FORCE_VALUE TO="OFF" WHEN="!m_par_reg(RDCONTROL_REG_B) || m_titan_lutram" />
+		</PARAMETER>
+		<PARAMETER NAME="RDCONTROL_REG_A" >
+			<VALUE_RULE> !is_used(rden_a) || (is_used(rden_a) and ((RDCONTROL_REG_A == "UNREGISTERED") || !m_par_reg(RDADDRESS_REG_A) || (RDCONTROL_REG_A == RDADDRESS_REG_A)))
+			</VALUE_RULE>
+		</PARAMETER>
+		<PARAMETER NAME="RDCONTROL_REG_B" >
+			<VALUE_RULE> !is_used(rden_b) || (is_used(rden_b) and ((RDCONTROL_REG_B == "UNREGISTERED") || !m_par_reg(RDADDRESS_REG_B) || (RDCONTROL_REG_B == RDADDRESS_REG_B)))
+			</VALUE_RULE>
+		</PARAMETER>
+		<PARAMETER NAME="RAM_BLOCK_TYPE" >
+			<FORCE_VALUE TO="UNUSED" WHEN="!mfam_family_stratix" />
+			<FORCE_RANGE TO="AUTO|M4K|M512|M-RAM" WHEN="mfam_family_has_m512 and mfam_family_has_megaram" />
+			<FORCE_RANGE TO="AUTO|M4K" WHEN="mfam_family_stratix and !mfam_family_has_m512 and !mfam_family_has_megaram" />
+			<FORCE_RANGE TO="AUTO|mfam_lutram" WHEN="mfam_family_stratixiii" />
+		</PARAMETER>
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="aclr" USAGE="VARIABLE" >
+			<STATE TO="USED" WHEN="m_aclr_used" ELSE="UNUSED" />
+		</PORT>
+		<PORT NAME="inclock"  USAGE="VARIABLE" >
+			<STATE TO="USED" WHEN="m_inclk_used" ELSE="UNUSED" />
+		</PORT>
+		<PORT NAME="inclocken"  USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!is_used(inclock)" />		
+		</PORT>
+		<PORT NAME="outclock"  USAGE="VARIABLE" >
+			<STATE TO="USED" WHEN="m_outclk_used" ELSE="UNUSED" />		
+		</PORT>
+		<PORT NAME="outclocken"  USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="!is_used(outclock)" />		
+		</PORT>
+		<PORT NAME="rden_a"  USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="m_titan_lutram" />
+		</PORT>
+		<PORT NAME="rden_b"  USAGE="VARIABLE" >
+			<STATE TO="UNUSED" WHEN="m_titan_lutram" />
+		</PORT>
+		<PORT NAME="rdaddress_a"  USAGE="USED" >
+			<FORCE_RANGE MAX="NUMWORDS - 1" MIN="0" />
+		</PORT>
+		<PORT NAME="rdaddress_b"  USAGE="USED" >
+			<FORCE_RANGE MAX="NUMWORDS - 1" MIN="0" />
+		</PORT>
+		<PORT NAME="wraddress" USAGE="USED" >
+			<FORCE_RANGE MAX="NUMWORDS - 1" MIN="0" />		
+		</PORT>
+		<PORT NAME="data" USAGE="USED" />		
+	</PORTS>
+</ROOT>

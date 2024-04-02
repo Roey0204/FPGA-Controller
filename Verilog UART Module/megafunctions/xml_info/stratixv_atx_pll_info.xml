@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="avmm_group_channel_index" TYPE="Integer" VALUE="0..2" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="enabled_for_reconfig" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="output_clock_frequency" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="reference_clock_frequency" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="silicon_rev" TYPE="String" VALUE="reve|es" DEFAULT_VALUE="reve" />
+		<PARAMETER NAME="use_default_base_address" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true" />
+		<PARAMETER NAME="user_base_address0" TYPE="Integer" VALUE="0..2047" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="user_base_address1" TYPE="Integer" VALUE="0..2047" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="user_base_address2" TYPE="Integer" VALUE="0..2047" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="ac_cap" TYPE="String" VALUE="disable_ac_cap|enable_ac_cap" DEFAULT_VALUE="disable_ac_cap" />
+		<PARAMETER NAME="cp_current_ctrl" TYPE="Integer" VALUE="0|5|10|20|30|40|50|60|80|100|120|160|180|200|240|300|320|400" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="cp_current_test" TYPE="String" VALUE="enable_ch_pump_normal|enable_ch_pump_curr_test_up|enable_ch_pump_curr_test_down|disable_ch_pump_curr_test" DEFAULT_VALUE="enable_ch_pump_normal" />
+		<PARAMETER NAME="cp_hs_levshift_power_supply_setting" TYPE="Integer" VALUE="0|1|2|3" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="cp_replica_bias_ctrl" TYPE="String" VALUE="enable_replica_bias_ctrl|disable_replica_bias_ctrl" DEFAULT_VALUE="disable_replica_bias_ctrl" />
+		<PARAMETER NAME="cp_rgla_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="cp_rgla_volt_inc" TYPE="String" VALUE="boost_0pct|boost_5_pct|boost_10pct|boost_15pct|boost_20pct|boost_25pct|boost_30pct|not_used_boost" DEFAULT_VALUE="boost_30pct" />
+		<PARAMETER NAME="fbclk_sel" TYPE="String" VALUE="internal_fb|external_fb" DEFAULT_VALUE="internal_fb" />
+		<PARAMETER NAME="l_counter" TYPE="Integer" VALUE="0|2|4|8" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="lc_cmu_pdb" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="lc_div33_pdb" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="lcpll_atb_select" TYPE="String" VALUE="atb_disable|atb_sel_1|atb_sel_2|atb_sel_3|atb_sel_4|atb_sel_5|atb_sel_6|atb_sel_7|atb_sel_8|atb_sel_9|atb_sel_10|atb_sel_11|atb_sel_12|atb_sel_13|atb_sel_14|atb_sel_15|atb_sel_16|atb_sel_17|atb_sel_18|atb_sel_19|atb_sel_20|atb_sel_21|atb_sel_22|atb_sel_23|atb_sel_24|atb_sel_25|atb_sel_26|atb_sel_27|atb_sel_28|atb_sel_29|atb_sel_30|atb_sel_31" DEFAULT_VALUE="atb_disable" />
+		<PARAMETER NAME="lcpll_d2a_sel" TYPE="String" VALUE="volt_0p26v|volt_0p51v|volt_0p77v|volt_1p02v|volt_1p23v|volt_1p53v|volt_1p8v|off" DEFAULT_VALUE="volt_1p02v" />
+		<PARAMETER NAME="lcpll_hclk_driver_enable" TYPE="String" VALUE="driver_off|driver_on" DEFAULT_VALUE="driver_off" />
+		<PARAMETER NAME="lcvco_gear_sel" TYPE="String" VALUE="high_gear|low_gear" DEFAULT_VALUE="high_gear" />
+		<PARAMETER NAME="lcvco_sel" TYPE="String" VALUE="high_freq_14g|low_freq_8g" DEFAULT_VALUE="high_freq_14g" />
+		<PARAMETER NAME="lpf_ripple_cap_ctrl" TYPE="String" VALUE="reserved_11|reserved_10|plus_2pf|none" DEFAULT_VALUE="none" />
+		<PARAMETER NAME="lpf_rxpll_pfd_bw_ctrl" TYPE="Integer" VALUE="0|1600|2000|2400|3000|3400|4000|5000|5400" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="m_counter" TYPE="Integer" VALUE="0|1|4|5|8|10|12|16|20|25|32|40|50" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="ref_clk_div" TYPE="Integer" VALUE="0|1|2|4|8" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="refclk_sel" TYPE="String" VALUE="iqclk|refclk|pldclk|dcd_cal_clk" DEFAULT_VALUE="refclk" />
+		<PARAMETER NAME="sel_buf14g" TYPE="String" VALUE="disable_buf14g|enable_buf14g" DEFAULT_VALUE="disable_buf14g" />
+		<PARAMETER NAME="sel_buf8g" TYPE="String" VALUE="disable_buf8g|enable_buf8g" DEFAULT_VALUE="disable_buf8g" />
+		<PARAMETER NAME="vco_over_range_ref" TYPE="String" VALUE="auto|vco_over_range_off|vco_over_range_ref_1|vco_over_range_ref_2|vco_over_range_ref_3" DEFAULT_VALUE="auto" />
+		<PARAMETER NAME="vco_under_range_ref" TYPE="String" VALUE="auto| vco_under_range_off|vco_under_range_ref_1|vco_under_range_ref_2|vco_under_range_ref_3" DEFAULT_VALUE="auto" />
+		<PARAMETER NAME="vreg1_lcvco_volt_inc" TYPE="String" VALUE="auto|volt_0p8v|volt_0p9v|volt_1p0v|volt_1p1v|volt_1p2v|volt_1p3v|volt_1p4v|volt_1p5v" DEFAULT_VALUE="auto" />
+		<PARAMETER NAME="vreg1_vccehlow" TYPE="String" VALUE="normal_operation|lower_vcceh" DEFAULT_VALUE="normal_operation" />
+		<PARAMETER NAME="vreg2_lcpll_volt_sel" TYPE="String" VALUE="auto|vreg2_volt_1p0v|vreg2_volt_1p004v|vreg2_volt_1p008v|vreg2_volt_1p013v|vreg2_volt_1p016v|vreg2_volt_0p992v|vreg2_volt_0p986v|vreg2_volt_0p981v|vreg2_volt_setting0|vreg2_volt_setting1|vreg2_volt_setting2|vreg2_volt_setting3|vreg2_volt_setting4|vreg2_volt_setting5|vreg2_volt_setting6|vreg2_volt_setting7" DEFAULT_VALUE="auto" />
+		<PARAMETER NAME="vreg3_lcpll_volt_sel" TYPE="String" VALUE="auto|vreg3_volt_1p0v|vreg3_volt_1p004v|vreg3_volt_1p008v|vreg3_volt_1p013v|vreg3_volt_1p016v|vreg3_volt_0p992v|vreg3_volt_0p986v|vreg3_volt_0p981v|vreg3_volt_setting0|vreg3_volt_setting1|vreg3_volt_setting2|vreg3_volt_setting3|vreg3_volt_setting4|vreg3_volt_setting5|vreg3_volt_setting6|vreg3_volt_setting7" DEFAULT_VALUE="auto" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="stratixv_atx_pll" />
+		<PARAMETER NAME="sim_use_fast_model" TYPE="STRING" VALUE="true" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="avmmclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="avmmread" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="avmmrstn" TYPE="INPUT" DEFAULT_VALUE="1" SIM_DEFAULT_VALUE="0" />
+		<PORT NAME="avmmwrite" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="cmurstn" TYPE="INPUT" DEFAULT_VALUE="1" SIM_DEFAULT_VALUE="0" />
+		<PORT NAME="cmurstnlpf" TYPE="INPUT" DEFAULT_VALUE="1" SIM_DEFAULT_VALUE="0" />
+		<PORT NAME="extfbclk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="fixedclklc" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="iqclklc" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pldclklc" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pllfbswblc" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pllfbswtlc" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="refclklc" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="avmmaddress" TYPE="INPUT" WIDTH="11" DEFAULT_VALUE="0" />
+		<PORT NAME="avmmbyteen" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="avmmwritedata" TYPE="INPUT" WIDTH="16" DEFAULT_VALUE="0" />
+		<PORT NAME="ch0rcsrlc" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0" />
+		<PORT NAME="ch1rcsrlc" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0" />
+		<PORT NAME="ch2rcsrlc" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0" />
+		<PORT NAME="blockselect" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clk010g" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clk025g" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clk18010g" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clk18025g" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clk33cmu" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="clklowcmu" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="frefcmu" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="iqclkatt" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pfdmodelockcmu" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="pldclkatt" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="refclkatt" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="txpllhclk" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="avmmreaddata" TYPE="OUTPUT" WIDTH="16" DEFAULT_VALUE="0" />
+		<PORT NAME="ch0lctestout" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="ch1lctestout" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="ch2lctestout" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_hps_sdram_pll">
+	<PARAMETERS>
+		<PARAMETER NAME="ref_clk_frequency" TYPE="String" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="clk0_frequency" TYPE="String" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="clk0_phase_shift" TYPE="String" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="clk1_frequency" TYPE="String" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="clk1_phase_shift" TYPE="String" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="clk2_frequency" TYPE="String" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="clk2_phase_shift" TYPE="String" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="clk3_frequency" TYPE="String" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="clk3_phase_shift" TYPE="String" DEFAULT_VALUE="0"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_hps_sdram_pll" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="ref_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clk_out" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

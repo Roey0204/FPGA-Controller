@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="physical_clock_source" TYPE="String" VALUE="dqs|dq|resync" DEFAULT_VALUE="dqs" />
+		<PARAMETER NAME="use_duty_cycle_correction" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="test_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="sim_buffer_intrinsic_delay" TYPE="Integer" DEFAULT_VALUE="175" />
+		<PARAMETER NAME="sim_buffer_delay_increment" TYPE="Integer" DEFAULT_VALUE="10" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriavgz_leveling_delay_chain" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clkin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="delayctrlin" TYPE="INPUT" WIDTH="7" DEFAULT_VALUE="0" />
+		<PORT NAME="clkout" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

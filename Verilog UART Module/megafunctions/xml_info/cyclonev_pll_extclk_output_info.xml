@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="pll_extclk_cnt_src" TYPE="String" VALUE="c_0_cnt|c_1_cnt|c_2_cnt|c_3_cnt|c_4_cnt|c_5_cnt|c_6_cnt|c_7_cnt|c_8_cnt|m0_cnt|m1_cnt|clkin0|clkin1|clkin2|clkin3|vss" DEFAULT_VALUE="m0_cnt" />
+		<PARAMETER NAME="pll_extclk_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true" />
+		<PARAMETER NAME="pll_extclk_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_pll_extclk_output" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clken" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="mcnt0" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="cclk" TYPE="INPUT" WIDTH="9" DEFAULT_VALUE="0" />
+		<PORT NAME="extclk" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="mcnt1" TYPE="INPUT" CONTEXT="SIM_ONLY" />
+	</PORTS>
+</ROOT>

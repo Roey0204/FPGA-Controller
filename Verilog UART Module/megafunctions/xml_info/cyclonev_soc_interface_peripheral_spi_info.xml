@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_soc_interface_peripheral_spi">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_soc_interface_peripheral_spi" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="rxd" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="sclkin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ssinn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="sclkout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ssioen" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ssoutn" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="txd" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

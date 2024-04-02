@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_fp_mac">
+	<PARAMETERS>
+		<PARAMETER NAME="operation_mode" TYPE="String" VALUE="SP_MULT|SP_ADD|SP_MULT_ADD|SP_MULT_ACC|SP_VECTOR1|SP_VECTOR2" DEFAULT_VALUE="SP_MULT_ADD"/>
+		<PARAMETER NAME="use_chainin" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="adder_subtract" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="ax_clock" TYPE="String" VALUE="NONE|0|1|2" DEFAULT_VALUE="NONE"/>
+		<PARAMETER NAME="ay_clock" TYPE="String" VALUE="NONE|0|1|2" DEFAULT_VALUE="NONE"/>
+		<PARAMETER NAME="az_clock" TYPE="String" VALUE="NONE|0|1|2" DEFAULT_VALUE="NONE"/>
+		<PARAMETER NAME="output_clock" TYPE="String" VALUE="NONE|0|1|2" DEFAULT_VALUE="NONE"/>
+		<PARAMETER NAME="accumulate_clock" TYPE="String" VALUE="NONE|0|1|2" DEFAULT_VALUE="NONE"/>
+		<PARAMETER NAME="ax_chainin_pl_clock" TYPE="String" VALUE="NONE|0|1|2" DEFAULT_VALUE="NONE"/>
+		<PARAMETER NAME="accum_pipeline_clock" TYPE="String" VALUE="NONE|0|1|2" DEFAULT_VALUE="NONE"/>
+		<PARAMETER NAME="mult_pipeline_clock" TYPE="String" VALUE="NONE|0|1|2" DEFAULT_VALUE="NONE"/>
+		<PARAMETER NAME="adder_input_clock" TYPE="String" VALUE="NONE|0|1|2" DEFAULT_VALUE="NONE"/>
+		<PARAMETER NAME="accum_adder_clock" TYPE="String" VALUE="NONE|0|1|2" DEFAULT_VALUE="NONE"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_fp_mac" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="accumulate" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="chainin_overflow" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="chainin_invalid" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="chainin_underflow" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="chainin_inexact" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ax" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="ay" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="az" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="clk" TYPE="INPUT" WIDTH="3" DEFAULT_VALUE="0"/>
+		<PORT NAME="aclr" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0"/>
+		<PORT NAME="ena" TYPE="INPUT" WIDTH="3" DEFAULT_VALUE="1"/>
+		<PORT NAME="chainin" TYPE="INPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="overflow" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="invalid" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="underflow" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="inexact" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="chainout_overflow" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="chainout_invalid" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="chainout_underflow" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="chainout_inexact" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="resulta" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="chainout" TYPE="OUTPUT" WIDTH="32" DEFAULT_VALUE="0"/>
+		<PORT NAME="dftout" TYPE="OUTPUT" CONTEXT="HIDDEN" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

@@ -1,0 +1,497 @@
+------------------------------------------------------------------
+-- altera_mult_add parameterized megafunction
+-- Generated with 'clearbox' loader - do not edit
+------------------------------------------------------------------
+
+
+-- Copyright (C) 1991-2013 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+--  Version 13.0 Build 156 04/24/2013
+
+OPTIONS NAME_SUBSTITUTION = ON;
+
+OPTIONS TREAT_DEFAULT_VALUE_AS_UNUSED = ON;
+
+PARAMETERS
+(
+	ACCUM_DIRECTION = "ADD",
+	ACCUM_SLOAD_ACLR = "NONE",
+	ACCUM_SLOAD_PIPELINE_ACLR = "NONE",
+	ACCUM_SLOAD_PIPELINE_REGISTER = "UNREGISTERED",
+	ACCUM_SLOAD_REGISTER = "UNREGISTERED",
+	ACCUMULATOR = "NO",
+	ADDER1_ROUNDING = "NO",
+	ADDER3_ROUNDING = "NO",
+	ADDNSUB1_ROUND_ACLR = "NONE",
+	ADDNSUB1_ROUND_PIPELINE_ACLR = "NONE",
+	ADDNSUB1_ROUND_PIPELINE_REGISTER = "UNREGISTERED",
+	ADDNSUB1_ROUND_REGISTER = "UNREGISTERED",
+	ADDNSUB3_ROUND_ACLR = "NONE",
+	ADDNSUB3_ROUND_PIPELINE_ACLR = "NONE",
+	ADDNSUB3_ROUND_PIPELINE_REGISTER = "UNREGISTERED",
+	ADDNSUB3_ROUND_REGISTER = "UNREGISTERED",
+	ADDNSUB_MULTIPLIER_ACLR1 = "NONE",
+	ADDNSUB_MULTIPLIER_ACLR3 = "NONE",
+	ADDNSUB_MULTIPLIER_PIPELINE_ACLR1 = "NONE",
+	ADDNSUB_MULTIPLIER_PIPELINE_ACLR3 = "NONE",
+	ADDNSUB_MULTIPLIER_PIPELINE_REGISTER1 = "UNREGISTERED",
+	ADDNSUB_MULTIPLIER_PIPELINE_REGISTER3 = "UNREGISTERED",
+	ADDNSUB_MULTIPLIER_REGISTER1 = "UNREGISTERED",
+	ADDNSUB_MULTIPLIER_REGISTER3 = "UNREGISTERED",
+	CHAINOUT_ACLR = "NONE",
+	CHAINOUT_ADDER = "NO",
+	CHAINOUT_REGISTER = "UNREGISTERED",
+	CHAINOUT_ROUND_ACLR = "NONE",
+	CHAINOUT_ROUND_OUTPUT_ACLR = "NONE",
+	CHAINOUT_ROUND_OUTPUT_REGISTER = "UNREGISTERED",
+	CHAINOUT_ROUND_PIPELINE_ACLR = "NONE",
+	CHAINOUT_ROUND_PIPELINE_REGISTER = "UNREGISTERED",
+	CHAINOUT_ROUND_REGISTER = "UNREGISTERED",
+	CHAINOUT_ROUNDING = "NO",
+	CHAINOUT_SATURATE_ACLR = "NONE",
+	CHAINOUT_SATURATE_OUTPUT_ACLR = "NONE",
+	CHAINOUT_SATURATE_OUTPUT_REGISTER = "UNREGISTERED",
+	CHAINOUT_SATURATE_PIPELINE_ACLR = "NONE",
+	CHAINOUT_SATURATE_PIPELINE_REGISTER = "UNREGISTERED",
+	CHAINOUT_SATURATE_REGISTER = "UNREGISTERED",
+	CHAINOUT_SATURATION = "NO",
+	COEF0_0 = 0,
+	COEF0_1 = 0,
+	COEF0_2 = 0,
+	COEF0_3 = 0,
+	COEF0_4 = 0,
+	COEF0_5 = 0,
+	COEF0_6 = 0,
+	COEF0_7 = 0,
+	COEF1_0 = 0,
+	COEF1_1 = 0,
+	COEF1_2 = 0,
+	COEF1_3 = 0,
+	COEF1_4 = 0,
+	COEF1_5 = 0,
+	COEF1_6 = 0,
+	COEF1_7 = 0,
+	COEF2_0 = 0,
+	COEF2_1 = 0,
+	COEF2_2 = 0,
+	COEF2_3 = 0,
+	COEF2_4 = 0,
+	COEF2_5 = 0,
+	COEF2_6 = 0,
+	COEF2_7 = 0,
+	COEF3_0 = 0,
+	COEF3_1 = 0,
+	COEF3_2 = 0,
+	COEF3_3 = 0,
+	COEF3_4 = 0,
+	COEF3_5 = 0,
+	COEF3_6 = 0,
+	COEF3_7 = 0,
+	COEFSEL0_ACLR = "NONE",
+	COEFSEL0_REGISTER = "UNREGISTERED",
+	COEFSEL1_ACLR = "NONE",
+	COEFSEL1_REGISTER = "UNREGISTERED",
+	COEFSEL2_ACLR = "NONE",
+	COEFSEL2_REGISTER = "UNREGISTERED",
+	COEFSEL3_ACLR = "NONE",
+	COEFSEL3_REGISTER = "UNREGISTERED",
+	DEDICATED_MULTIPLIER_CIRCUITRY = "AUTO",
+	DOUBLE_ACCUM = "NO",
+	DSP_BLOCK_BALANCING = "Auto",
+	EXTRA_LATENCY = 0,
+	INPUT_ACLR_A0 = "NONE",
+	INPUT_ACLR_A1 = "NONE",
+	INPUT_ACLR_A2 = "NONE",
+	INPUT_ACLR_A3 = "NONE",
+	INPUT_ACLR_B0 = "NONE",
+	INPUT_ACLR_B1 = "NONE",
+	INPUT_ACLR_B2 = "NONE",
+	INPUT_ACLR_B3 = "NONE",
+	INPUT_ACLR_C0 = "NONE",
+	INPUT_ACLR_C1 = "NONE",
+	INPUT_ACLR_C2 = "NONE",
+	INPUT_ACLR_C3 = "NONE",
+	INPUT_REGISTER_A0 = "UNREGISTERED",
+	INPUT_REGISTER_A1 = "UNREGISTERED",
+	INPUT_REGISTER_A2 = "UNREGISTERED",
+	INPUT_REGISTER_A3 = "UNREGISTERED",
+	INPUT_REGISTER_B0 = "UNREGISTERED",
+	INPUT_REGISTER_B1 = "UNREGISTERED",
+	INPUT_REGISTER_B2 = "UNREGISTERED",
+	INPUT_REGISTER_B3 = "UNREGISTERED",
+	INPUT_REGISTER_C0 = "UNREGISTERED",
+	INPUT_REGISTER_C1 = "UNREGISTERED",
+	INPUT_REGISTER_C2 = "UNREGISTERED",
+	INPUT_REGISTER_C3 = "UNREGISTERED",
+	INPUT_SOURCE_A0 = "DATAA",
+	INPUT_SOURCE_A1 = "DATAA",
+	INPUT_SOURCE_A2 = "DATAA",
+	INPUT_SOURCE_A3 = "DATAA",
+	INPUT_SOURCE_B0 = "DATAB",
+	INPUT_SOURCE_B1 = "DATAB",
+	INPUT_SOURCE_B2 = "DATAB",
+	INPUT_SOURCE_B3 = "DATAB",
+	LOADCONST_CONTROL_ACLR = "NONE",
+	LOADCONST_CONTROL_REGISTER = "UNREGISTERED",
+	LOADCONST_VALUE = 64,
+	MULT01_ROUND_ACLR = "NONE",
+	MULT01_ROUND_REGISTER = "UNREGISTERED",
+	MULT01_SATURATION_ACLR = "ACLR0",
+	MULT01_SATURATION_REGISTER = "UNREGISTERED",
+	MULT23_ROUND_ACLR = "NONE",
+	MULT23_ROUND_REGISTER = "UNREGISTERED",
+	MULT23_SATURATION_ACLR = "NONE",
+	MULT23_SATURATION_REGISTER = "UNREGISTERED",
+	MULTIPLIER01_ROUNDING = "NO",
+	MULTIPLIER01_SATURATION = "NO",
+	MULTIPLIER1_DIRECTION = "ADD",
+	MULTIPLIER23_ROUNDING = "NO",
+	MULTIPLIER23_SATURATION = "NO",
+	MULTIPLIER3_DIRECTION = "ADD",
+	MULTIPLIER_ACLR0 = "NONE",
+	MULTIPLIER_ACLR1 = "NONE",
+	MULTIPLIER_ACLR2 = "NONE",
+	MULTIPLIER_ACLR3 = "NONE",
+	MULTIPLIER_REGISTER0 = "UNREGISTERED",
+	MULTIPLIER_REGISTER1 = "UNREGISTERED",
+	MULTIPLIER_REGISTER2 = "UNREGISTERED",
+	MULTIPLIER_REGISTER3 = "UNREGISTERED",
+	NUMBER_OF_MULTIPLIERS,
+	OUTPUT_ACLR = "NONE",
+	OUTPUT_REGISTER = "UNREGISTERED",
+	OUTPUT_ROUND_ACLR = "NONE",
+	OUTPUT_ROUND_PIPELINE_ACLR = "NONE",
+	OUTPUT_ROUND_PIPELINE_REGISTER = "UNREGISTERED",
+	OUTPUT_ROUND_REGISTER = "UNREGISTERED",
+	OUTPUT_ROUND_TYPE = "NEAREST_INTEGER",
+	OUTPUT_ROUNDING = "NO",
+	OUTPUT_SATURATE_ACLR = "NONE",
+	OUTPUT_SATURATE_PIPELINE_ACLR = "NONE",
+	OUTPUT_SATURATE_PIPELINE_REGISTER = "UNREGISTERED",
+	OUTPUT_SATURATE_REGISTER = "UNREGISTERED",
+	OUTPUT_SATURATE_TYPE = "ASYMMETRIC",
+	OUTPUT_SATURATION = "NO",
+	port_addnsub1 = "PORT_UNUSED",
+	port_addnsub3 = "PORT_UNUSED",
+	PORT_CHAINOUT_SAT_IS_OVERFLOW = "PORT_UNUSED",
+	PORT_MULT0_IS_SATURATED = "UNUSED",
+	PORT_MULT1_IS_SATURATED = "UNUSED",
+	PORT_MULT2_IS_SATURATED = "UNUSED",
+	PORT_MULT3_IS_SATURATED = "UNUSED",
+	PORT_OUTPUT_IS_OVERFLOW = "PORT_UNUSED",
+	port_signa = "PORT_UNUSED",
+	port_signb = "PORT_UNUSED",
+	PREADDER_DIRECTION_0 = "ADD",
+	PREADDER_DIRECTION_1 = "ADD",
+	PREADDER_DIRECTION_2 = "ADD",
+	PREADDER_DIRECTION_3 = "ADD",
+	PREADDER_MODE = "SIMPLE",
+	REPRESENTATION_A = "UNSIGNED",
+	REPRESENTATION_B = "UNSIGNED",
+	ROTATE_ACLR = "NONE",
+	ROTATE_OUTPUT_ACLR = "NONE",
+	ROTATE_OUTPUT_REGISTER = "UNREGISTERED",
+	ROTATE_PIPELINE_ACLR = "NONE",
+	ROTATE_PIPELINE_REGISTER = "UNREGISTERED",
+	ROTATE_REGISTER = "UNREGISTERED",
+	SCANOUTA_ACLR = "NONE",
+	SCANOUTA_REGISTER = "UNREGISTERED",
+	SELECTED_DEVICE_FAMILY,
+	SHIFT_MODE = "NO",
+	SHIFT_RIGHT_ACLR = "NONE",
+	SHIFT_RIGHT_OUTPUT_ACLR = "NONE",
+	SHIFT_RIGHT_OUTPUT_REGISTER = "UNREGISTERED",
+	SHIFT_RIGHT_PIPELINE_ACLR = "NONE",
+	SHIFT_RIGHT_PIPELINE_REGISTER = "UNREGISTERED",
+	SHIFT_RIGHT_REGISTER = "UNREGISTERED",
+	SIGNED_ACLR_A = "NONE",
+	SIGNED_ACLR_B = "NONE",
+	SIGNED_PIPELINE_ACLR_A = "NONE",
+	SIGNED_PIPELINE_ACLR_B = "NONE",
+	SIGNED_PIPELINE_REGISTER_A = "UNREGISTERED",
+	SIGNED_PIPELINE_REGISTER_B = "UNREGISTERED",
+	SIGNED_REGISTER_A = "UNREGISTERED",
+	SIGNED_REGISTER_B = "UNREGISTERED",
+	SYSTOLIC_ACLR1 = "NONE",
+	SYSTOLIC_ACLR3 = "NONE",
+	SYSTOLIC_DELAY1 = "UNREGISTERED",
+	SYSTOLIC_DELAY3 = "UNREGISTERED",
+	USE_SLOAD_ACCUM_PORT = "NO",
+	WIDTH_A,
+	WIDTH_B,
+	WIDTH_C = 22,
+	WIDTH_CHAININ = 1,
+	WIDTH_COEF = 18,
+	WIDTH_MSB = 17,
+	WIDTH_RESULT,
+	WIDTH_SATURATE_SIGN = 1,
+	ZERO_CHAINOUT_OUTPUT_ACLR = "NONE",
+	ZERO_CHAINOUT_OUTPUT_REGISTER = "UNREGISTERED",
+	ZERO_LOOPBACK_ACLR = "NONE",
+	ZERO_LOOPBACK_OUTPUT_ACLR = "NONE",
+	ZERO_LOOPBACK_OUTPUT_REGISTER = "UNREGISTERED",
+	ZERO_LOOPBACK_PIPELINE_ACLR = "NONE",
+	ZERO_LOOPBACK_PIPELINE_REGISTER = "UNREGISTERED",
+	ZERO_LOOPBACK_REGISTER = "UNREGISTERED",
+	CBXI_PARAMETER = "NOTHING"
+);
+FUNCTION @CBXI_PARAMETER (accum_sload, aclr0, aclr1, aclr2, aclr3, addnsub1, addnsub1_round, addnsub3, addnsub3_round, chainin[WIDTH_CHAININ-1..0], chainout_round, chainout_saturate, clock0, clock1, clock2, clock3, coefsel0[2..0], coefsel1[2..0], coefsel2[2..0], coefsel3[2..0], dataa[WIDTH_A*NUMBER_OF_MULTIPLIERS-1..0], datab[WIDTH_B*NUMBER_OF_MULTIPLIERS-1..0], datac[WIDTH_C*NUMBER_OF_MULTIPLIERS-1..0], ena0, ena1, ena2, ena3, mult01_round, mult01_saturation, mult23_round, mult23_saturation, output_round, output_saturate, rotate, scanina[WIDTH_A-1..0], scaninb[WIDTH_B-1..0], shift_right, signa, signb, sload_accum, sourcea[NUMBER_OF_MULTIPLIERS-1..0], sourceb[NUMBER_OF_MULTIPLIERS-1..0], zero_chainout, zero_loopback)
+RETURNS (chainout_sat_overflow, mult0_is_saturated, mult1_is_saturated, mult2_is_saturated, mult3_is_saturated, overflow, result[WIDTH_RESULT-1..0], scanouta[WIDTH_A-1..0], scanoutb[WIDTH_B-1..0]);
+
+
+SUBDESIGN altera_mult_add
+(
+	accum_sload		:	INPUT = GND;
+	aclr0		:	INPUT = GND;
+	aclr1		:	INPUT = GND;
+	aclr2		:	INPUT = GND;
+	aclr3		:	INPUT = GND;
+	addnsub1		:	INPUT = VCC;
+	addnsub1_round		:	INPUT = GND;
+	addnsub3		:	INPUT = VCC;
+	addnsub3_round		:	INPUT = GND;
+	chainin[WIDTH_CHAININ-1..0]		:	INPUT = GND;
+	chainout_round		:	INPUT = GND;
+	chainout_sat_overflow		:	OUTPUT;
+	chainout_saturate		:	INPUT = GND;
+	clock0		:	INPUT = VCC;
+	clock1		:	INPUT = VCC;
+	clock2		:	INPUT = VCC;
+	clock3		:	INPUT = VCC;
+	coefsel0[2..0]		:	INPUT = GND;
+	coefsel1[2..0]		:	INPUT = GND;
+	coefsel2[2..0]		:	INPUT = GND;
+	coefsel3[2..0]		:	INPUT = GND;
+	dataa[WIDTH_A*NUMBER_OF_MULTIPLIERS-1..0]		:	INPUT = GND;
+	datab[WIDTH_B*NUMBER_OF_MULTIPLIERS-1..0]		:	INPUT = GND;
+	datac[WIDTH_C*NUMBER_OF_MULTIPLIERS-1..0]		:	INPUT = GND;
+	ena0		:	INPUT = VCC;
+	ena1		:	INPUT = VCC;
+	ena2		:	INPUT = VCC;
+	ena3		:	INPUT = VCC;
+	mult01_round		:	INPUT = GND;
+	mult01_saturation		:	INPUT = GND;
+	mult0_is_saturated		:	OUTPUT;
+	mult1_is_saturated		:	OUTPUT;
+	mult23_round		:	INPUT = GND;
+	mult23_saturation		:	INPUT = GND;
+	mult2_is_saturated		:	OUTPUT;
+	mult3_is_saturated		:	OUTPUT;
+	output_round		:	INPUT = GND;
+	output_saturate		:	INPUT = GND;
+	overflow		:	OUTPUT;
+	result[WIDTH_RESULT-1..0]		:	OUTPUT;
+	rotate		:	INPUT = GND;
+	scanina[WIDTH_A-1..0]		:	INPUT = GND;
+	scaninb[WIDTH_B-1..0]		:	INPUT = GND;
+	scanouta[WIDTH_A-1..0]		:	OUTPUT;
+	scanoutb[WIDTH_B-1..0]		:	OUTPUT;
+	shift_right		:	INPUT = GND;
+	signa		:	INPUT = GND;
+	signb		:	INPUT = GND;
+	sload_accum		:	INPUT = GND;
+	sourcea[NUMBER_OF_MULTIPLIERS-1..0]		:	INPUT = GND;
+	sourceb[NUMBER_OF_MULTIPLIERS-1..0]		:	INPUT = GND;
+	zero_chainout		:	INPUT = GND;
+	zero_loopback		:	INPUT = GND;
+)
+VARIABLE
+	IF CBXI_PARAMETER != "NOTHING" GENERATE
+		auto_generated : @CBXI_PARAMETER WITH ( CBXI_PARAMETER = "NOTHING" );
+	END GENERATE;
+BEGIN
+	ASSERT (CBXI_PARAMETER != "NOTHING")
+	REPORT "Valid clear box generator not found or Errors encountered during clear box generation"
+	SEVERITY ERROR;
+	IF (CBXI_PARAMETER != "NOTHING") GENERATE
+		IF USED(accum_sload) GENERATE
+			auto_generated.accum_sload = accum_sload;
+		END GENERATE;
+		IF USED(aclr0) GENERATE
+			auto_generated.aclr0 = aclr0;
+		END GENERATE;
+		IF USED(aclr1) GENERATE
+			auto_generated.aclr1 = aclr1;
+		END GENERATE;
+		IF USED(aclr2) GENERATE
+			auto_generated.aclr2 = aclr2;
+		END GENERATE;
+		IF USED(aclr3) GENERATE
+			auto_generated.aclr3 = aclr3;
+		END GENERATE;
+		IF USED(addnsub1) GENERATE
+			auto_generated.addnsub1 = addnsub1;
+		END GENERATE;
+		IF USED(addnsub1_round) GENERATE
+			auto_generated.addnsub1_round = addnsub1_round;
+		END GENERATE;
+		IF USED(addnsub3) GENERATE
+			auto_generated.addnsub3 = addnsub3;
+		END GENERATE;
+		IF USED(addnsub3_round) GENERATE
+			auto_generated.addnsub3_round = addnsub3_round;
+		END GENERATE;
+		IF USED(chainin) GENERATE
+			auto_generated.chainin[] = chainin[];
+		END GENERATE;
+		IF USED(chainout_round) GENERATE
+			auto_generated.chainout_round = chainout_round;
+		END GENERATE;
+		IF USED(chainout_sat_overflow) GENERATE
+			chainout_sat_overflow = auto_generated.chainout_sat_overflow;
+		ELSE GENERATE
+			chainout_sat_overflow = GND;
+		END GENERATE;
+		IF USED(chainout_saturate) GENERATE
+			auto_generated.chainout_saturate = chainout_saturate;
+		END GENERATE;
+		IF USED(clock0) GENERATE
+			auto_generated.clock0 = clock0;
+		END GENERATE;
+		IF USED(clock1) GENERATE
+			auto_generated.clock1 = clock1;
+		END GENERATE;
+		IF USED(clock2) GENERATE
+			auto_generated.clock2 = clock2;
+		END GENERATE;
+		IF USED(clock3) GENERATE
+			auto_generated.clock3 = clock3;
+		END GENERATE;
+		IF USED(coefsel0) GENERATE
+			auto_generated.coefsel0[] = coefsel0[];
+		END GENERATE;
+		IF USED(coefsel1) GENERATE
+			auto_generated.coefsel1[] = coefsel1[];
+		END GENERATE;
+		IF USED(coefsel2) GENERATE
+			auto_generated.coefsel2[] = coefsel2[];
+		END GENERATE;
+		IF USED(coefsel3) GENERATE
+			auto_generated.coefsel3[] = coefsel3[];
+		END GENERATE;
+		IF USED(dataa) GENERATE
+			auto_generated.dataa[] = dataa[];
+		END GENERATE;
+		IF USED(datab) GENERATE
+			auto_generated.datab[] = datab[];
+		END GENERATE;
+		IF USED(datac) GENERATE
+			auto_generated.datac[] = datac[];
+		END GENERATE;
+		IF USED(ena0) GENERATE
+			auto_generated.ena0 = ena0;
+		END GENERATE;
+		IF USED(ena1) GENERATE
+			auto_generated.ena1 = ena1;
+		END GENERATE;
+		IF USED(ena2) GENERATE
+			auto_generated.ena2 = ena2;
+		END GENERATE;
+		IF USED(ena3) GENERATE
+			auto_generated.ena3 = ena3;
+		END GENERATE;
+		IF USED(mult01_round) GENERATE
+			auto_generated.mult01_round = mult01_round;
+		END GENERATE;
+		IF USED(mult01_saturation) GENERATE
+			auto_generated.mult01_saturation = mult01_saturation;
+		END GENERATE;
+		IF USED(mult0_is_saturated) GENERATE
+			mult0_is_saturated = auto_generated.mult0_is_saturated;
+		ELSE GENERATE
+			mult0_is_saturated = GND;
+		END GENERATE;
+		IF USED(mult1_is_saturated) GENERATE
+			mult1_is_saturated = auto_generated.mult1_is_saturated;
+		ELSE GENERATE
+			mult1_is_saturated = GND;
+		END GENERATE;
+		IF USED(mult23_round) GENERATE
+			auto_generated.mult23_round = mult23_round;
+		END GENERATE;
+		IF USED(mult23_saturation) GENERATE
+			auto_generated.mult23_saturation = mult23_saturation;
+		END GENERATE;
+		IF USED(mult2_is_saturated) GENERATE
+			mult2_is_saturated = auto_generated.mult2_is_saturated;
+		ELSE GENERATE
+			mult2_is_saturated = GND;
+		END GENERATE;
+		IF USED(mult3_is_saturated) GENERATE
+			mult3_is_saturated = auto_generated.mult3_is_saturated;
+		ELSE GENERATE
+			mult3_is_saturated = GND;
+		END GENERATE;
+		IF USED(output_round) GENERATE
+			auto_generated.output_round = output_round;
+		END GENERATE;
+		IF USED(output_saturate) GENERATE
+			auto_generated.output_saturate = output_saturate;
+		END GENERATE;
+		IF USED(overflow) GENERATE
+			overflow = auto_generated.overflow;
+		ELSE GENERATE
+			overflow = GND;
+		END GENERATE;
+		IF USED(result) GENERATE
+			result[] = auto_generated.result[];
+		ELSE GENERATE
+			result[] = GND;
+		END GENERATE;
+		IF USED(rotate) GENERATE
+			auto_generated.rotate = rotate;
+		END GENERATE;
+		IF USED(scanina) GENERATE
+			auto_generated.scanina[] = scanina[];
+		END GENERATE;
+		IF USED(scaninb) GENERATE
+			auto_generated.scaninb[] = scaninb[];
+		END GENERATE;
+		IF USED(scanouta) GENERATE
+			scanouta[] = auto_generated.scanouta[];
+		ELSE GENERATE
+			scanouta[] = GND;
+		END GENERATE;
+		IF USED(scanoutb) GENERATE
+			scanoutb[] = auto_generated.scanoutb[];
+		ELSE GENERATE
+			scanoutb[] = GND;
+		END GENERATE;
+		IF USED(shift_right) GENERATE
+			auto_generated.shift_right = shift_right;
+		END GENERATE;
+		IF USED(signa) GENERATE
+			auto_generated.signa = signa;
+		END GENERATE;
+		IF USED(signb) GENERATE
+			auto_generated.signb = signb;
+		END GENERATE;
+		IF USED(sload_accum) GENERATE
+			auto_generated.sload_accum = sload_accum;
+		END GENERATE;
+		IF USED(sourcea) GENERATE
+			auto_generated.sourcea[] = sourcea[];
+		END GENERATE;
+		IF USED(sourceb) GENERATE
+			auto_generated.sourceb[] = sourceb[];
+		END GENERATE;
+		IF USED(zero_chainout) GENERATE
+			auto_generated.zero_chainout = zero_chainout;
+		END GENERATE;
+		IF USED(zero_loopback) GENERATE
+			auto_generated.zero_loopback = zero_loopback;
+		END GENERATE;
+	END GENERATE;
+END;

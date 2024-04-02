@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_hps_interface_peripheral_spi_slave">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_hps_interface_peripheral_spi_slave" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="rxd" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="sclk_in" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ss_in_n" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ssi_oe_n" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="txd" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

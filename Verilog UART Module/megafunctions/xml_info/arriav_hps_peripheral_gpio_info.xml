@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_hps_peripheral_gpio">
+	<PARAMETERS>
+		<PARAMETER NAME="dummy_param" TYPE="Integer" DEFAULT_VALUE="256"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_hps_peripheral_gpio" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="gpio0_porta_i" TYPE="INPUT" WIDTH="29" DEFAULT_VALUE="0"/>
+		<PORT NAME="gpio1_porta_i" TYPE="INPUT" WIDTH="29" DEFAULT_VALUE="0"/>
+		<PORT NAME="gpio2_porta_i" TYPE="INPUT" WIDTH="27" DEFAULT_VALUE="0"/>
+		<PORT NAME="gpio0_porta_o" TYPE="OUTPUT" WIDTH="29" DEFAULT_VALUE="0"/>
+		<PORT NAME="gpio0_porta_oe" TYPE="OUTPUT" WIDTH="29" DEFAULT_VALUE="0"/>
+		<PORT NAME="gpio1_porta_o" TYPE="OUTPUT" WIDTH="29" DEFAULT_VALUE="0"/>
+		<PORT NAME="gpio1_porta_oe" TYPE="OUTPUT" WIDTH="29" DEFAULT_VALUE="0"/>
+		<PORT NAME="gpio2_porta_o" TYPE="OUTPUT" WIDTH="13" DEFAULT_VALUE="0"/>
+		<PORT NAME="gpio2_porta_oe" TYPE="OUTPUT" WIDTH="13" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

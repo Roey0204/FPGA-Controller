@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="sim_init_config_is_application" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="sim_init_watchdog_enabled" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="sim_init_watchdog_value" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="sim_init_status" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="operation_mode" TYPE="String" VALUE="active_serial_remote|active_parallel_remote" DEFAULT_VALUE="active_serial_remote" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cycloneiv_rublock" />
+		<PARAMETER NAME="sim_init_config" TYPE="STRING" VALUE="factory" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="shiftnld" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="captnupdt" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="regin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rsttimer" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="rconfig" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="regout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

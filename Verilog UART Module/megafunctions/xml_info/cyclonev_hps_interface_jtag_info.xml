@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_hps_interface_jtag">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_hps_interface_jtag" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="fake_din" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="nenab_jtag" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ntrst" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="tck" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="tdi" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="tms" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

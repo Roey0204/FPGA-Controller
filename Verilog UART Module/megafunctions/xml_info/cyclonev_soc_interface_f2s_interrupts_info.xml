@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_soc_interface_f2s_interrupts">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_soc_interface_f2s_interrupts" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="f2sintt" TYPE="INPUT" WIDTH="64" DEFAULT_VALUE="0"/>
+		<PORT NAME="fakedout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

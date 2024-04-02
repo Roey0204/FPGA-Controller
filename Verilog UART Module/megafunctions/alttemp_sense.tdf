@@ -1,0 +1,128 @@
+------------------------------------------------------------------
+-- alttemp_sense parameterized megafunction
+-- Generated with 'clearbox' loader - do not edit
+------------------------------------------------------------------
+
+
+-- Copyright (C) 1991-2013 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+--  Version 13.0 Build 156 04/24/2013
+
+OPTIONS NAME_SUBSTITUTION = ON;
+
+OPTIONS TREAT_DEFAULT_VALUE_AS_UNUSED = ON;
+
+PARAMETERS
+(
+	CLK_FREQUENCY,
+	CLOCK_DIVIDER_ENABLE = "off",
+	CLOCK_DIVIDER_VALUE = 40,
+	NUMBER_OF_SAMPLES = 128,
+	POI_CAL_TEMPERATURE = 85,
+	SIM_TSDCALO = 0,
+	USE_WYS = "on",
+	USER_OFFSET_ENABLE = "off",
+	CBXI_PARAMETER = "NOTHING"
+);
+FUNCTION @CBXI_PARAMETER (aclr, ce, clk, clr, compouttest, fdbkctrlfromcore, offset[5..0], testin[7..0], tsd_trig)
+RETURNS (offsetout[5..0], tsd_avg[7..0], tsd_busy, tsdcaldone, tsdcalo[7..0], tsdcompout);
+
+
+SUBDESIGN alttemp_sense
+(
+	aclr		:	INPUT = GND;
+	ce		:	INPUT = VCC;
+	clk		:	INPUT;
+	clr		:	INPUT = GND;
+	compouttest		:	INPUT = GND;
+	fdbkctrlfromcore		:	INPUT = GND;
+	offset[5..0]		:	INPUT = GND;
+	offsetout[5..0]		:	OUTPUT;
+	testin[7..0]		:	INPUT = GND;
+	tsd_avg[7..0]		:	OUTPUT;
+	tsd_busy		:	OUTPUT;
+	tsd_trig		:	INPUT = GND;
+	tsdcaldone		:	OUTPUT;
+	tsdcalo[7..0]		:	OUTPUT;
+	tsdcompout		:	OUTPUT;
+)
+VARIABLE
+	IF CBXI_PARAMETER != "NOTHING" GENERATE
+		auto_generated : @CBXI_PARAMETER WITH ( CBXI_PARAMETER = "NOTHING" );
+	END GENERATE;
+BEGIN
+	ASSERT (CBXI_PARAMETER != "NOTHING")
+	REPORT "Valid clear box generator not found or Errors encountered during clear box generation"
+	SEVERITY ERROR;
+	IF (CBXI_PARAMETER != "NOTHING") GENERATE
+		IF USED(aclr) GENERATE
+			auto_generated.aclr = aclr;
+		END GENERATE;
+		IF USED(ce) GENERATE
+			auto_generated.ce = ce;
+		END GENERATE;
+		IF USED(clk) GENERATE
+			auto_generated.clk = clk;
+		END GENERATE;
+		IF USED(clr) GENERATE
+			auto_generated.clr = clr;
+		END GENERATE;
+		IF USED(compouttest) GENERATE
+			auto_generated.compouttest = compouttest;
+		END GENERATE;
+		IF USED(fdbkctrlfromcore) GENERATE
+			auto_generated.fdbkctrlfromcore = fdbkctrlfromcore;
+		END GENERATE;
+		IF USED(offset) GENERATE
+			auto_generated.offset[] = offset[];
+		END GENERATE;
+		IF USED(offsetout) GENERATE
+			offsetout[] = auto_generated.offsetout[];
+		ELSE GENERATE
+			offsetout[] = GND;
+		END GENERATE;
+		IF USED(testin) GENERATE
+			auto_generated.testin[] = testin[];
+		END GENERATE;
+		IF USED(tsd_avg) GENERATE
+			tsd_avg[] = auto_generated.tsd_avg[];
+		ELSE GENERATE
+			tsd_avg[] = GND;
+		END GENERATE;
+		IF USED(tsd_busy) GENERATE
+			tsd_busy = auto_generated.tsd_busy;
+		ELSE GENERATE
+			tsd_busy = GND;
+		END GENERATE;
+		IF USED(tsd_trig) GENERATE
+			auto_generated.tsd_trig = tsd_trig;
+		END GENERATE;
+		IF USED(tsdcaldone) GENERATE
+			tsdcaldone = auto_generated.tsdcaldone;
+		ELSE GENERATE
+			tsdcaldone = GND;
+		END GENERATE;
+		IF USED(tsdcalo) GENERATE
+			tsdcalo[] = auto_generated.tsdcalo[];
+		ELSE GENERATE
+			tsdcalo[] = GND;
+		END GENERATE;
+		IF USED(tsdcompout) GENERATE
+			tsdcompout = auto_generated.tsdcompout;
+		ELSE GENERATE
+			tsdcompout = GND;
+		END GENERATE;
+	END GENERATE;
+END;

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="pll_loaden_coarse_dly" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="pll_loaden_enable_disable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_loaden_fine_dly" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="pll_lvdsclk_coarse_dly" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="pll_lvdsclk_enable_disable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_lvdsclk_fine_dly" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriavgz_pll_lvds_output" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="ccout" TYPE="INPUT" WIDTH="2" DEFAULT_VALUE="0" />
+		<PORT NAME="loaden" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="lvdsclk" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_soc_interface_peripheral_uart">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_soc_interface_peripheral_uart" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="ctsn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dcdn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dsrn" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="sin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dtrn" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="outn0" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="outn1" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rtsn" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="sout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

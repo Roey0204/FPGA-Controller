@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_hps_peripheral_emac">
+	<PARAMETERS>
+		<PARAMETER NAME="dummy_param" TYPE="Integer" DEFAULT_VALUE="256"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_hps_peripheral_emac" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="emac_clk_rx" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="emac_phy_rxdv" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="emac_gmii_mdo_i" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="emac_phy_rxd" TYPE="INPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+		<PORT NAME="emac_clk_tx" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="emac_phy_tx_oe" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="emac_gmii_mdo_o" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="emac_gmii_mdo_oe" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="emac_gmii_mdc" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="emac_phy_txd" TYPE="OUTPUT" WIDTH="4" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

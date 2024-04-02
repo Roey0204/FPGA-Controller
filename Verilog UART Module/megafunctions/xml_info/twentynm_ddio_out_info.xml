@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_ddio_out">
+	<PARAMETERS>
+		<PARAMETER NAME="async_mode" TYPE="String" VALUE="none|clear|preset" DEFAULT_VALUE="none"/>
+		<PARAMETER NAME="sync_mode" TYPE="String" VALUE="none|clear|preset" DEFAULT_VALUE="none"/>
+		<PARAMETER NAME="half_rate_mode" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="power_up" TYPE="String" VALUE="low|high" DEFAULT_VALUE="low"/>
+		<PARAMETER NAME="use_new_clocking_model" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_ddio_out" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="datainlo" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="datainhi" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clkhi" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clklo" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="muxsel" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ena" TYPE="INPUT" DEFAULT_VALUE="1"/>
+		<PORT NAME="areset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="sreset" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="hrbypass" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dataout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="dfflo" TYPE="OUTPUT" CONTEXT="OBSERVABLE" DEFAULT_VALUE="0"/>
+		<PORT NAME="dffhi" TYPE="OUTPUT" CONTEXT="OBSERVABLE" WIDTH="2" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

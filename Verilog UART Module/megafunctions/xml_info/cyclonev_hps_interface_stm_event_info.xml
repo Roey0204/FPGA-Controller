@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_hps_interface_stm_event">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_hps_interface_stm_event" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="stm_event" TYPE="INPUT" WIDTH="28" DEFAULT_VALUE="0"/>
+		<PORT NAME="fake_dout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

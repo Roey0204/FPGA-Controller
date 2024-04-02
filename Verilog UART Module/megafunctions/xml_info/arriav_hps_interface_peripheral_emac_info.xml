@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="arriav_hps_interface_peripheral_emac">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriav_hps_interface_peripheral_emac" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clk_rx_i" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="clk_tx_i" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="gmii_mdi_i" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="phy_col_i" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="phy_crs_i" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="phy_rxdv_i" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="phy_rxer_i" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ptp_aux_ts_trig_i" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="phy_rxd_i" TYPE="INPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+		<PORT NAME="gmii_mdc_o" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="gmii_mdo_o" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="gmii_mdo_o_e" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="phy_txclk_o" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="phy_txen_o" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="phy_txer_o" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ptp_pps_o" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rst_clk_rx_n_o" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="rst_clk_tx_n_o" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="phy_txd_o" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_hps_interface_clocks_resets">
+	<PARAMETERS>
+		<PARAMETER NAME="h2f_user0_clk_freq" TYPE="Integer" VALUE="1..2000" DEFAULT_VALUE="100"/>
+		<PARAMETER NAME="h2f_user1_clk_freq" TYPE="Integer" VALUE="1..2000" DEFAULT_VALUE="100"/>
+		<PARAMETER NAME="h2f_user2_clk_freq" TYPE="Integer" VALUE="1..2000" DEFAULT_VALUE="100"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_hps_interface_clocks_resets" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="f2h_cold_rst_req_n" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="f2h_dbg_rst_req_n" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="f2h_pending_rst_ack" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="f2h_periph_ref_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="f2h_sdram_ref_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="f2h_warm_rst_req_n" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ptp_ref_clk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="h2f_cold_rst_n" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="h2f_pending_rst_req_n" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="h2f_rst_n" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="h2f_user0_clk" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="h2f_user1_clk" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="h2f_user2_clk" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

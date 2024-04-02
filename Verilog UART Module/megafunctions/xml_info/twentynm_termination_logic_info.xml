@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="twentynm_termination_logic">
+	<PARAMETERS>
+		<PARAMETER NAME="a_iob_oct_block" TYPE="String" VALUE="a_iob_oct_block_none|a_iob_oct_block_0|a_iob_oct_block_1|a_iob_oct_block_2|a_iob_oct_block_3|a_iob_oct_block_4|a_iob_oct_block_5|a_iob_oct_block_6|a_iob_oct_block_7|a_iob_oct_block_8|a_iob_oct_block_9|a_iob_oct_block_10" DEFAULT_VALUE="a_iob_oct_block_none"/>
+		<PARAMETER NAME="a_iob_oct_test" TYPE="String" VALUE="a_iob_oct_test_off|a_iob_oct_test_on" DEFAULT_VALUE="a_iob_oct_test_off"/>
+		<PARAMETER NAME="a_iob_oct_serdata" TYPE="String" VALUE="a_iob_oct_ser_data_ca|a_iob_oct_ser_data_dq" DEFAULT_VALUE="a_iob_oct_ser_data_ca"/>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="twentynm_termination_logic" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="s2pload" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="scan_shift_n" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="scanclk" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="scanin" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ser_data_ca" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="ser_data_dq" TYPE="INPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="enser" TYPE="INPUT" WIDTH="12" DEFAULT_VALUE="0"/>
+		<PORT NAME="scan_out" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="parallelterminationcontrol" TYPE="OUTPUT" WIDTH="16" DEFAULT_VALUE="0"/>
+		<PORT NAME="seriesterminationcontrol" TYPE="OUTPUT" WIDTH="16" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>

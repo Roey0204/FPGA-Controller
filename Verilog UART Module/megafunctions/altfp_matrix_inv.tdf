@@ -1,0 +1,97 @@
+------------------------------------------------------------------
+-- altfp_matrix_inv parameterized megafunction
+-- Generated with 'clearbox' loader - do not edit
+------------------------------------------------------------------
+
+
+-- Copyright (C) 1991-2013 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+--  Version 13.0 Build 156 04/24/2013
+
+OPTIONS NAME_SUBSTITUTION = ON;
+
+OPTIONS TREAT_DEFAULT_VALUE_AS_UNUSED = ON;
+
+PARAMETERS
+(
+	BLOCKS = 2,
+	CLUSTER = 16,
+	DIMENSION = 4,
+	WIDTH_EXP = 8,
+	WIDTH_MAN = 23,
+	CBXI_PARAMETER = "NOTHING"
+);
+FUNCTION @CBXI_PARAMETER (datain[WIDTH_EXP+WIDTH_MAN+1-1..0], enable, load, reset, sysclk)
+RETURNS (busy, dataout[WIDTH_EXP+WIDTH_MAN+1-1..0], done, outvalid);
+
+
+SUBDESIGN altfp_matrix_inv
+(
+	busy		:	OUTPUT;
+	datain[WIDTH_EXP+WIDTH_MAN+1-1..0]		:	INPUT = GND;
+	dataout[WIDTH_EXP+WIDTH_MAN+1-1..0]		:	OUTPUT;
+	done		:	OUTPUT;
+	enable		:	INPUT = VCC;
+	load		:	INPUT = GND;
+	outvalid		:	OUTPUT;
+	reset		:	INPUT = GND;
+	sysclk		:	INPUT;
+)
+VARIABLE
+	IF CBXI_PARAMETER != "NOTHING" GENERATE
+		auto_generated : @CBXI_PARAMETER WITH ( CBXI_PARAMETER = "NOTHING" );
+	END GENERATE;
+BEGIN
+	ASSERT (CBXI_PARAMETER != "NOTHING")
+	REPORT "Valid clear box generator not found or Errors encountered during clear box generation"
+	SEVERITY ERROR;
+	IF (CBXI_PARAMETER != "NOTHING") GENERATE
+		IF USED(busy) GENERATE
+			busy = auto_generated.busy;
+		ELSE GENERATE
+			busy = GND;
+		END GENERATE;
+		IF USED(datain) GENERATE
+			auto_generated.datain[] = datain[];
+		END GENERATE;
+		IF USED(dataout) GENERATE
+			dataout[] = auto_generated.dataout[];
+		ELSE GENERATE
+			dataout[] = GND;
+		END GENERATE;
+		IF USED(done) GENERATE
+			done = auto_generated.done;
+		ELSE GENERATE
+			done = GND;
+		END GENERATE;
+		IF USED(enable) GENERATE
+			auto_generated.enable = enable;
+		END GENERATE;
+		IF USED(load) GENERATE
+			auto_generated.load = load;
+		END GENERATE;
+		IF USED(outvalid) GENERATE
+			outvalid = auto_generated.outvalid;
+		ELSE GENERATE
+			outvalid = GND;
+		END GENERATE;
+		IF USED(reset) GENERATE
+			auto_generated.reset = reset;
+		END GENERATE;
+		IF USED(sysclk) GENERATE
+			auto_generated.sysclk = sysclk;
+		END GENERATE;
+	END GENERATE;
+END;

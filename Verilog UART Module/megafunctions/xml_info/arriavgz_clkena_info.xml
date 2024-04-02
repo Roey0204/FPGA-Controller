@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="clock_type" TYPE="String" VALUE="Auto|Global Clock|Regional Clock|External Clock Output|Dual-Regional Clock|Periphery Clock" DEFAULT_VALUE="Auto" />
+		<PARAMETER NAME="ena_register_mode" TYPE="String" VALUE="none|falling edge|double register|always enabled" DEFAULT_VALUE="always enabled" />
+		<PARAMETER NAME="ena_register_power_up" TYPE="String" VALUE="low|high" DEFAULT_VALUE="high" />
+		<PARAMETER NAME="disable_mode" TYPE="String" VALUE="low|high" DEFAULT_VALUE="low" />
+		<PARAMETER NAME="test_syn" TYPE="String" VALUE="low|high" DEFAULT_VALUE="high" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriavgz_clkena" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="inclk" TYPE="INPUT" DEFAULT_VALUE="1" />
+		<PORT NAME="ena" TYPE="INPUT" DEFAULT_VALUE="1" />
+		<PORT NAME="outclk" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="enaout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="observableena" TYPE="OUTPUT" WIDTH="2" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE|SYNTH_ONLY" />
+	</PORTS>
+</ROOT>

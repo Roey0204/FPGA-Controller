@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="output_clock_frequency" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="reference_clock_frequency" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="mimic_fbclk_type" TYPE="String" VALUE="gclk|gclk_near|gclk_far|qclk|qclk_near|qclk_far|none" DEFAULT_VALUE="gclk" />
+		<PARAMETER NAME="pll_fractional_division_string" TYPE="String" DEFAULT_VALUE="'0'" />
+		<PARAMETER NAME="dsm_accumulator_reset_value" TYPE="Integer" VALUE="0|1" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="forcelock" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="nreset_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_atb" TYPE="Integer" VALUE="0..15" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="pll_bwctrl" TYPE="Integer" VALUE="18000|16000|14000|12000|10000|8000|6000|4000|2000|1000|500" DEFAULT_VALUE="10000" />
+		<PARAMETER NAME="pll_cmp_buf_dly" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="pll_cp_comp" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true" />
+		<PARAMETER NAME="pll_cp_current" TYPE="Integer" VALUE="5|10|20|30|40" DEFAULT_VALUE="20" />
+		<PARAMETER NAME="pll_ctrl_override_setting" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_dsm_dither" TYPE="String" VALUE="disable|pattern1|pattern2|pattern3" DEFAULT_VALUE="disable" />
+		<PARAMETER NAME="pll_dsm_out_sel" TYPE="String" VALUE="disable|1st_order|2nd_order|3rd_order" DEFAULT_VALUE="disable" />
+		<PARAMETER NAME="pll_dsm_reset" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_ecn_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_ecn_test_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true" />
+		<PARAMETER NAME="pll_fbclk_mux_1" TYPE="String" VALUE="glb|zbd|lvds|fbclk_fpll" DEFAULT_VALUE="glb" />
+		<PARAMETER NAME="pll_fbclk_mux_2" TYPE="String" VALUE="fb_1|m_cnt" DEFAULT_VALUE="fb_1" />
+		<PARAMETER NAME="pll_fractional_carry_out" TYPE="Integer" VALUE="8|16|24|32" DEFAULT_VALUE="24" />
+		<PARAMETER NAME="pll_fractional_division" TYPE="Integer" VALUE="1.." DEFAULT_VALUE="1" />
+		<PARAMETER NAME="pll_fractional_value_ready" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true" />
+		<PARAMETER NAME="pll_lf_testen" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_lock_fltr_cfg" TYPE="Integer" VALUE="0..4095" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="pll_lock_fltr_test" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_m_cnt_bypass_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_m_cnt_coarse_dly" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="pll_m_cnt_fine_dly" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="pll_m_cnt_hi_div" TYPE="Integer" VALUE="1..256" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="pll_m_cnt_in_src" TYPE="String" VALUE="ph_mux_clk|fblvds|test_clk|vss" DEFAULT_VALUE="ph_mux_clk" />
+		<PARAMETER NAME="pll_m_cnt_lo_div" TYPE="Integer" VALUE="1..256" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="pll_m_cnt_odd_div_duty_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_m_cnt_ph_mux_prst" TYPE="Integer" VALUE="0..7" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="pll_m_cnt_prst" TYPE="Integer" VALUE="1..256" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="pll_n_cnt_bypass_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_n_cnt_coarse_dly" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="pll_n_cnt_fine_dly" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="pll_n_cnt_hi_div" TYPE="Integer" VALUE="1..256" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="pll_n_cnt_lo_div" TYPE="Integer" VALUE="1..256" DEFAULT_VALUE="1" />
+		<PARAMETER NAME="pll_n_cnt_odd_div_duty_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_ref_buf_dly" TYPE="String" DEFAULT_VALUE="0 ps" />
+		<PARAMETER NAME="pll_reg_boost" TYPE="Integer" VALUE="0|10|15|20|30|40|50|60" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="pll_regulator_bypass" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_ripplecap_ctrl" TYPE="Integer" VALUE="0|2" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="pll_slf_rst" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_tclk_mux_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_tclk_sel" TYPE="String" VALUE="n_src|m_src" DEFAULT_VALUE="m_src" />
+		<PARAMETER NAME="pll_test_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_testdn_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_testup_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_unlock_fltr_cfg" TYPE="Integer" VALUE="0..7" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="pll_vco_div" TYPE="Integer" VALUE="1|2" DEFAULT_VALUE="2" />
+		<PARAMETER NAME="pll_vco_ph0_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_vco_ph1_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_vco_ph2_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_vco_ph3_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_vco_ph4_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_vco_ph5_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_vco_ph6_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_vco_ph7_en" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="pll_vctrl_test_voltage" TYPE="Integer" VALUE="0|450|600|750|900|1050|1350|1500" DEFAULT_VALUE="750" />
+		<PARAMETER NAME="vccd0g_atb" TYPE="String" VALUE="disable|vccregx_vregb|vregs_vregc" DEFAULT_VALUE="disable" />
+		<PARAMETER NAME="vccd0g_output" TYPE="Integer" VALUE="0|4|8|13|16|-8|-14|-19" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="vccd1g_atb" TYPE="String" VALUE="disable|vccregx_vregb|vregs_vregc" DEFAULT_VALUE="disable" />
+		<PARAMETER NAME="vccd1g_output" TYPE="Integer" VALUE="0|4|8|13|16|-8|-14|-19" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="vccm1g_tap" TYPE="Integer" VALUE="0..3" DEFAULT_VALUE="2" />
+		<PARAMETER NAME="vccr_pd" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="vcodiv_override" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="stratixv_fractional_pll" />
+		<PARAMETER NAME="fractional_pll_index" TYPE="INTEGER" VALUE="1" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="coreclkfb" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ecnc1test" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="ecnc2test" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="fbclkfpll" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="lvdsfbin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="nresync" TYPE="INPUT" DEFAULT_VALUE="1" />
+		<PORT NAME="pfden" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="refclkin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="shift" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="shiftdonein" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="shiften" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="up" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="zdb" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="cntnen" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="fbclk" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="fblvdsout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="lock" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="mcntout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="plniotribuf" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="shiftdoneout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="tclk" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="mhi" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="vcoph" TYPE="OUTPUT" WIDTH="8" DEFAULT_VALUE="0" />
+		<PORT NAME="vsspl" TYPE="INPUT" DEFAULT_VALUE="0" CONTEXT="SIM_ONLY" />
+	</PORTS>
+</ROOT>

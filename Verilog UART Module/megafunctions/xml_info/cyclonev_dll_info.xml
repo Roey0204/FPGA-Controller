@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="input_frequency" TYPE="String" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="delayctrlout_mode" TYPE="String" VALUE="normal|static" DEFAULT_VALUE="normal" />
+		<PARAMETER NAME="jitter_reduction" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="use_upndnin" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="use_upndninclkena" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="upndnout_mode" TYPE="String" VALUE="clock|upndn|upndni|upndnen" DEFAULT_VALUE="clock" CONTEXT="SYNTH_ONLY" />
+		<PARAMETER NAME="sim_valid_lock" TYPE="Integer" DEFAULT_VALUE="16" />
+		<PARAMETER NAME="sim_valid_lockcount" TYPE="Integer" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="sim_buffer_intrinsic_delay" TYPE="Integer" DEFAULT_VALUE="175" />
+		<PARAMETER NAME="sim_buffer_delay_increment" TYPE="Integer" DEFAULT_VALUE="10" />
+		<PARAMETER NAME="static_delay_ctrl" TYPE="Integer" VALUE="0..127" DEFAULT_VALUE="0" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_dll" />
+		<PARAMETER NAME="delay_chain_length" TYPE="INTEGER" VALUE="8" CONTEXT="SIM_ONLY" />
+		<PARAMETER NAME="lpm_hint" TYPE="STRING" VALUE="unused" DEFAULT_VALUE_INDEX="0" />
+		<PARAMETER NAME="dual_phase_comparators" TYPE="STRING" VALUE="true" DEFAULT_VALUE_INDEX="0" CONTEXT="SIM_ONLY" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clk" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="aload" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="upndnin" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="upndninclkena" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="dqsupdate" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="upndnout" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="delayctrlout" TYPE="OUTPUT" WIDTH="7" DEFAULT_VALUE="0" />
+		<PORT NAME="locked" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="SYNTH_ONLY" />
+		<PORT NAME="dffin" TYPE="OUTPUT" DEFAULT_VALUE="0" CONTEXT="OBSERVABLE" />
+		<PORT NAME="offsetdelayctrlclkout" TYPE="OUTPUT" CONTEXT="SIM_ONLY" />
+		<PORT NAME="offsetdelayctrlout" TYPE="OUTPUT" WIDTH="7" CONTEXT="SIM_ONLY" />
+	</PORTS>
+</ROOT>

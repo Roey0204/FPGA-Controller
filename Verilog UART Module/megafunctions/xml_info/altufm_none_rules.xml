@@ -1,0 +1,47 @@
+﻿<?xml version="1.0"?>
+<ROOT>
+  <!-- macros -->
+  <MACROS>
+    <MACRO NAME="oscena_used" DEFINITION="is_used(oscena)" />
+    <MACRO NAME="osc_used" DEFINITION="is_used(osc)" />
+    <MACRO NAME="arclkena_used" DEFINITION="is_used(arclkena)" />
+    <MACRO NAME="drclkena_used" DEFINITION="is_used(drclkena)" />
+  </MACROS>
+  
+  <PARAMETERS>
+    <PARAMETER NAME="ERASE_TIME" TYPE="INTEGER" DEFAULT_VALUE="500000000">
+      <FORCE_RANGE MIN="1600000" MAX="999999999" />
+    </PARAMETER>
+    <PARAMETER NAME="OSC_FREQUENCY" TYPE="INTEGER" DEFAULT_VALUE_INDEX="0">
+      <FORCE_RANGE TO="180000|300000" />
+    </PARAMETER>
+    <PARAMETER NAME="PROGRAM_TIME" TYPE="INTEGER" DEFAULT_VALUE="1600000">
+      <FORCE_RANGE MIN="1600000" MAX="100000000" />
+    </PARAMETER>
+  </PARAMETERS>
+  <PORTS>
+    <PORT NAME="arclk" TYPE="INPUT" USAGE="USED" />
+    <PORT NAME="arclkena" TYPE="INPUT" DEFAULT_VALUE="1" USAGE="UNUSED">
+      <STATE V="USED" WHEN="arclkena_used" />
+    </PORT>
+    <PORT NAME="ardin" TYPE="INPUT" USAGE="USED" />
+    <PORT NAME="arshft" TYPE="INPUT" USAGE="USED" />
+    <PORT NAME="busy" TYPE="OUTPUT" USAGE="USED" />
+    <PORT NAME="drclk" TYPE="INPUT" USAGE="USED" />
+    <PORT NAME="drclkena" TYPE="INPUT" DEFAULT_VALUE="1" USAGE="UNUSED">
+      <STATE V="USED" WHEN="drclkena_used" />
+    </PORT>
+    <PORT NAME="drdin" TYPE="INPUT" USAGE="USED" />
+    <PORT NAME="drdout" TYPE="OUTPUT" USAGE="USED" />
+    <PORT NAME="drshft" TYPE="INPUT" USAGE="USED" />
+    <PORT NAME="erase" TYPE="INPUT" USAGE="USED" />
+    <PORT NAME="osc" TYPE="OUTPUT" USAGE="UNUSED">
+      <STATE V="USED" WHEN="osc_used" />
+    </PORT>
+    <PORT NAME="oscena" TYPE="INPUT" USAGE="UNUSED" DEFAULT_VALUE="1">
+      <STATE V="USED" WHEN="oscena_used" />
+    </PORT>
+    <PORT NAME="program" TYPE="INPUT" USAGE="USED" />
+    <PORT NAME="rtpbusy" TYPE="OUTPUT" USAGE="USED" />
+  </PORTS>
+</ROOT>

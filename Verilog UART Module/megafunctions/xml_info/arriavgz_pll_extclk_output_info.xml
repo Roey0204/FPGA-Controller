@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<ROOT>
+	<FUNCTION_INFORMATION>
+		<HAS_SIM_LIB VALUE="ON" />
+	</FUNCTION_INFORMATION>
+	<PARAMETERS>
+		<PARAMETER NAME="pll_extclk_cnt_src" TYPE="String" VALUE="c_0_cnt|c_1_cnt|c_2_cnt|c_3_cnt|c_4_cnt|c_5_cnt|c_6_cnt|c_7_cnt|c_8_cnt|c_9_cnt|c_10_cnt|c_11_cnt|c_12_cnt|c_13_cnt|c_14_cnt|c_15_cnt|c_16_cnt|c_17_cnt|m0_cnt|m1_cnt|vss" DEFAULT_VALUE="vss" />
+		<PARAMETER NAME="pll_extclk_enable" TYPE="String" VALUE="false|true" DEFAULT_VALUE="true" />
+		<PARAMETER NAME="pll_extclk_invert" TYPE="String" VALUE="false|true" DEFAULT_VALUE="false" />
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="arriavgz_pll_extclk_output" />
+		<PARAMETER NAME="LPM_HINT" TYPE="STRING" VALUE="UNUSED" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="clken" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="mcnt0" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="mcnt1" TYPE="INPUT" DEFAULT_VALUE="0" />
+		<PORT NAME="cclk" TYPE="INPUT" WIDTH="18" DEFAULT_VALUE="0" />
+		<PORT NAME="extclk" TYPE="OUTPUT" DEFAULT_VALUE="0" />
+	</PORTS>
+</ROOT>

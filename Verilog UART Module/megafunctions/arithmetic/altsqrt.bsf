@@ -1,0 +1,105 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 64 64 224 160)
+	(text "ALTSQRT0" (rect 48 1 124 17)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 80 25 92)(font "Arial" ))
+	(port
+		(pt 0 40)
+		(input)
+		(text "clk" (rect 0 0 15 14)(font "Arial" (font_size 8)))
+		(text "clk" (rect 20 34 35 48)(font "Arial" (font_size 8)))
+		(line (pt 0 40)(pt 16 40)(line_width 1))
+	)
+	(port
+		(pt 0 56)
+		(input)
+		(text "ena" (rect 0 0 21 14)(font "Arial" (font_size 8)))
+		(text "ena" (rect 20 50 41 64)(font "Arial" (font_size 8)))
+		(line (pt 0 56)(pt 16 56)(line_width 1))
+	)
+	(port
+		(pt 0 72)
+		(input)
+		(text "aclr" (rect 0 0 21 14)(font "Arial" (font_size 8)))
+		(text "aclr" (rect 20 66 41 80)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 16 72)(line_width 1))
+	)
+	(port
+		(pt 0 24)
+		(input)
+		(text "radical[]" (rect 0 0 44 14)(font "Arial" (font_size 8)))
+		(text "radical[]" (rect 20 18 64 32)(font "Arial" (font_size 8)))
+		(line (pt 0 24)(pt 16 24)(line_width 3))
+	)
+	(port
+		(pt 160 24)
+		(output)
+		(text "q[]" (rect 0 0 14 14)(font "Arial" (font_size 8)))
+		(text "q[]" (rect 111 18 125 32)(font "Arial" (font_size 8)))
+		(line (pt 160 24)(pt 144 24)(line_width 3))
+	)
+	(port
+		(pt 160 40)
+		(output)
+		(text "remainder[]" (rect 0 0 63 14)(font "Arial" (font_size 8)))
+		(text "remainder[]" (rect 69 34 132 48)(font "Arial" (font_size 8)))
+		(line (pt 160 40)(pt 144 40)(line_width 3))
+	)
+	(parameter
+		"WIDTH"
+		""
+		"Specifies the width of the radical input port."
+	)
+	(parameter
+		"Q_PORT_WIDTH"
+		""
+		"Specifies the width of the q output port."
+	)
+	(parameter
+		"R_PORT_WIDTH"
+		""
+		"Specifies the width of the remainder output port."
+	)
+	(parameter
+		"PIPELINE"
+		""
+		"Specifies the number of clock cycles of latency to add."
+	)
+	(parameter
+		"LPM_HINT"
+		""
+		""
+	)
+	(parameter
+		"LPM_TYPE"
+		""
+		"Identifies the library of parameterized modules (LPM) entity name in VHDL Design Files."
+	)
+	(drawing
+		(line (pt 16 16)(pt 144 16)(line_width 1))
+		(line (pt 144 16)(pt 144 80)(line_width 1))
+		(line (pt 16 80)(pt 144 80)(line_width 1))
+		(line (pt 16 16)(pt 16 80)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 224 -40 344 64))
+)

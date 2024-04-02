@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ROOT NAME="cyclonev_hps_interface_loan_io">
+	<PARAMETERS>
+		<PARAMETER NAME="LPM_TYPE" TYPE="STRING" VALUE="cyclonev_hps_interface_loan_io" />
+	</PARAMETERS>
+	<PORTS>
+		<PORT NAME="loanio_oe" TYPE="INPUT" WIDTH="71" DEFAULT_VALUE="0"/>
+		<PORT NAME="loanio_out" TYPE="INPUT" WIDTH="71" DEFAULT_VALUE="0"/>
+		<PORT NAME="fake_dout" TYPE="OUTPUT" DEFAULT_VALUE="0"/>
+		<PORT NAME="input_only" TYPE="OUTPUT" WIDTH="14" DEFAULT_VALUE="0"/>
+		<PORT NAME="loanio_in" TYPE="OUTPUT" WIDTH="71" DEFAULT_VALUE="0"/>
+	</PORTS>
+</ROOT>
