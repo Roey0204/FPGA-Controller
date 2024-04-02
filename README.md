@@ -5,8 +5,8 @@
   
 - PWM technique and A4988 drivers were designed in FPGA controller to rotate the
 motor with adjustable angles, speeds and direction.
-o Desired angle can be performed by calculating the step angle of the stepper motor.
-o PWM technique apply on speed of stepper motor by controlling the width of the
+i) Desired angle can be performed by calculating the step angle of the stepper motor.
+ii) PWM technique apply on speed of stepper motor by controlling the width of the
 pulse
 
 - Zero position detection of the system also designed by placing the magnetic sensor
@@ -14,7 +14,7 @@ at the 0 position.
 
 - Wireless communication using XBee were establish through FPGA controller to send
 and receive data from host to the slave devices.
-o UART was used by taking bytes of data and transmitting individual bits in a sequential
+i) UART was used by taking bytes of data and transmitting individual bits in a sequential
 fashion.
 
 - Graphic user Interface (GUI) was created using Visual Studio(C#) to perform the
