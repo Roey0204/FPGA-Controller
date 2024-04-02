@@ -19,5 +19,5 @@ wireless connection between FPGA board and PC.
 Quartus II.
 
 # Schematic Diagram
-<img src="https://github.com/Roey0204/FPGA-Controller/blob/main/img/Schematic.PNG" alt="Image1" width="800" height="300">
+<img src="https://github.com/Roey0204/FPGA-Controller/blob/main/img/Schematic.PNG" alt="Image1">
 
