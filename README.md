@@ -25,7 +25,7 @@ Quartus II.
 <img src="https://github.com/Roey0204/FPGA-Controller/blob/main/img/Schematic.PNG" alt="Image1" width=700 height=500>
 
 ## FPGA UART Controller Architecture
-<img src="https://github.com/Roey0204/FPGA-Controller/blob/main/img/Architecture.png" alt="Image1">
+<img src="https://github.com/Roey0204/FPGA-Controller/blob/main/img/Architecture.png" alt="Image1" width=850 height=500>
 
 ## Result 
 <img src="https://github.com/Roey0204/FPGA-Controller/blob/main/img/result.png" alt="Image1">
